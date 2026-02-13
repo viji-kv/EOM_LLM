@@ -21,7 +21,7 @@ class Configuration:
     prompt: str = field(
         default=prompts.MAIN_PROMPT,
         metadata={
-            "description": "The main prompt template. Expects two arguments: {info} and {topic}."
+            "description": "The main prompt template. Expects two arguments: {schema} and {topic}."
         },
     )
     max_loops: int = field(

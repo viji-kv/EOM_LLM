@@ -24,7 +24,7 @@ async def call_agent_model(
 
     # Format the prompt with the extraction schema and topic.
     prompt_text = configuration.prompt.format(
-        info=json.dumps(state.extraction_schema, indent=2), topic=state.topic
+        schema=json.dumps(state.extraction_schema, indent=2), topic=state.topic
     )
     # Start with the new prompt message, then include any prior messages.
     messages: List[BaseMessage] = [HumanMessage(content=prompt_text)] + state.messages
@@ -34,12 +34,12 @@ async def call_agent_model(
     response = cast(AIMessage, await model.ainvoke(messages))
 
     # In this simplified version, we take the LLM's response as the final info.
-    info = response.content
+    answer = response.content  # final answer
 
     new_messages = state.messages + [response]
     return {
         "messages": new_messages,
-        "info": info,
+        "answer": answer,  # REPLACED
         "loop_step": state.loop_step + 1,
     }
 
@@ -62,9 +62,10 @@ async def reflect(
     print("---Reflect step---")
     prompt_text = (
         "Review the following answer and determine if it adequately addresses the topic.\n\n"
-        f"Answer:\n{state.info}\n\n"
+        f"Answer:\n{state.answer}\n\n"  # REPLACED
         "Respond with 'Yes' if the answer is satisfactory; otherwise, include feedback and suggestions."
     )
+
     messages: List[BaseMessage] = [HumanMessage(content=prompt_text)]
     model = init_model(config).with_structured_output(ReflectionResult)
     reflection: ReflectionResult = await model.ainvoke(messages)
@@ -72,7 +73,7 @@ async def reflect(
     # If the answer is satisfactory, we finish. Otherwise, we can loop for improvement.
     if reflection.is_satisfactory:
         return {
-            "info": state.info,
+            "answer": state.answer,  # REPLACED
             "messages": [HumanMessage(content=reflection.feedback)],
         }
     else:
@@ -90,7 +91,7 @@ def route_after_agent(state: State) -> str:
     If an answer is produced, move to reflection.
     """
     print("---Route_after_agent step---")
-    if state.info:
+    if state.answer:  # REPLACED
         return "reflect"
     return "call_agent_model"
 
@@ -102,7 +103,7 @@ def route_after_checker(state: State, config: RunnableConfig) -> str:
     Otherwise, terminate.
     """
     configuration = Configuration.from_runnable_config(config)
-    if state.loop_step < configuration.max_loops and not state.info:
+    if state.loop_step < configuration.max_loops and not state.answer:  # REPLACED
         return "call_agent_model"
     return "__end__"
 

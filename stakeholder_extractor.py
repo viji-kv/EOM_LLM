@@ -15,11 +15,12 @@ from dotenv import load_dotenv
 from pathlib import Path
 import re
 from normalize_stakeholder import normalize_stakeholder_names
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 load_dotenv()
 
 # Import from files
-sys.path.insert(0, "supabase")  # Add supabase/ folder to Python path
+sys.path.insert(0, "supabase")  # Add supabase folder to Python path
 from select_data import (
     select_brain_from_workspace,
     initialize_supabase,
@@ -30,30 +31,33 @@ from supabase_db import get_document_data, decode_string
 
 # Stakeholder extraction schema
 STAKEHOLDER_SCHEMA = {
-    "type": "object",
-    "properties": {
-        "Stakeholder Name": {
-            "type": "string",
-            "description": "Exact name of the stakeholder/organization (e.g., 'Social Welfare Department')",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "Stakeholder Name": {
+                "type": "string",
+                "description": "Exact name of the stakeholder/organization (e.g., 'Social Welfare Department')",
+            },
+            "Canonical Name": {
+                "type": "string",
+                "description": "Normalized name of the stakeholder/organization (e.g., 'Social Welfare Department' and 'SWD','Taiwanese Government' and 'Government of Taiwan')",
+            },
+            "Category": {
+                "type": "string",
+                "description": "Stakeholder category (Regulator, Supplier, Consumer, Competitor, Partner, etc.)",
+            },
+            "Role": {
+                "type": "string",
+                "description": "Specific role/description (e.g., 'Regulates public elderly services')",
+            },
+            "Confidence Score": {
+                "type": "string",
+                "description": "Confidence as percentage string (e.g., '95%', '90%', '85%')",
+            },
         },
-        "Canonical Name": {
-            "type": "string",
-            "description": "Normalized name of the stakeholder/organization (e.g., 'Social Welfare Department' and 'SWD','Taiwanese Government' and 'Government of Taiwan')",
-        },
-        "Category": {
-            "type": "string",
-            "description": "Stakeholder category (Regulator, Supplier, Consumer, Competitor, Partner, etc.)",
-        },
-        "Role": {
-            "type": "string",
-            "description": "Specific role/description (e.g., 'Regulates public elderly services')",
-        },
-        "Confidence Score": {
-            "type": "string",
-            "description": "Confidence as percentage string (e.g., '95%', '90%', '85%')",
-        },
+        "required": ["Stakeholder Name", "Category", "Role", "Confidence Score"],
     },
-    "required": ["Stakeholder Name", "Category", "Role", "Confidence Score"],
 }
 
 
@@ -85,36 +89,17 @@ async def extract_stakeholders_from_text(supabase, text: str) -> List[Dict[str, 
         model="openai/gpt-4o-mini",
         prompt=(
             "You are an assistant tasked with extracting specific information from the provided text using the extraction schema.\n\n"
-            "Schema:\n{info}\n\n"
+            "Schema:\n{schema}\n\n"
             "Text:\n{topic}\n\n"
-            "Please provide your answer directly in clear text, filling in the schema."
-            # "RAW JSON ARRAY ONLY. NO TEXT. NO EXPLANATION. NO MARKDOWN.\n\n"
+            "Please provide your answer directly in clear text, filling in the schema (In English)."
         ),
         max_loops=2,
     ).__dict__
 
     final_state = await graph.ainvoke(initial_state, config)
 
-    # # DEBUG: structure
-    # print("\n🔍 DEBUG final_state:")
-    # print("Keys:", list(final_state.keys()))
-    # print("info type:", type(final_state.get("info")))
-    # print("info preview:", repr(str(final_state.get("info"))[:300]))
-
-    # # Raw JSON attempt
-    # try:
-    #     import json
-
-    #     parsed_info = json.loads(str(final_state["info"]))
-    #     print(
-    #         "Parsed keys:",
-    #         list(parsed_info.keys()) if isinstance(parsed_info, dict) else "Not dict",
-    #     )
-    #     print("Has stakeholders?", "Stakeholder Name" in parsed_info)
-    # except:
-    #     print("Raw info not valid JSON")
-
-    return parse_json_response(final_state.get("info", ""))
+    print(final_state.get("answer", ""))
+    return parse_json_response(final_state.get("answer", ""))
 
 
 def calculate_splitter_params(model_context=128000) -> tuple:
@@ -156,12 +141,10 @@ async def extract_stakeholders_adaptive(supabase, full_text, threshold=100000):
         try:
             stakeholders = await extract_stakeholders_from_text(supabase, chunk)
             all_stakeholders.extend(stakeholders)
-        except:
+        except Exception as e:
+            print(f"    Chunk {i} error: {e}")
             continue
 
-    # # Dedupe
-    # unique = {s['Stakeholder Name']: s for s in all_stakeholders}
-    # return list(unique.values())
     return all_stakeholders
 
 
@@ -229,80 +212,10 @@ async def main():
     }
     # print(f"OUTPUT:{output}")
     output_file = f"stakeholders_output_{output['brain']}"
-    with open(output_file + ".json", "w") as f:
-        json.dump(output, f, indent=2)
-    print(f"\n Full results saved to: stakeholders_output.json")
+    with open(output_file + ".json", "w", encoding="utf-8") as f:
+        json.dump(output, f, indent=2, ensure_ascii=False)
+    print(f"\n Full results saved to: {output_file}.json")
 
 
 if __name__ == "__main__":
     asyncio.run(main())
-
-
-# # #######################################
-
-# from enrichment.state import InputState
-# from enrichment.configuration import Configuration
-# from enrichment import graph
-
-
-# config = Configuration(
-#     model="openai/gpt-4o-mini",
-#     prompt=(
-#         "Extract ALL stakeholders from this document text using the schema.\n"
-#         "Schema: {info}\n\nText: {topic}\n\n"
-#         "Be precise with names, categories, roles, and confidence (0.0-1.0)."
-#         "RAW JSON ARRAY ONLY. NO TEXT. NO EXPLANATION. NO MARKDOWN.\n\n"
-#     ),
-#     # max_loops=3,
-# ).__dict__
-
-# supabase = initialize_supabase()
-# selections = select()
-# brain_id = "0007f8b8-72d9-4952-b0a3-0fd2ff1cc2ed"
-# selected_brain = selections["brains"]
-# documents = get_documents_per_brain(supabase, brain_id)
-# print(f"Found {len(documents)} documents")
-# documents[0]
-
-# # Step 3: Fetch full text for each document
-# all_stakeholders = []
-# for i, doc in enumerate(documents[:1], 1):
-#     doc_id = doc["id"]
-#     filename = doc.get("file_name", "Unknown")
-#     print(f"  {i}/{len(documents)}: {filename} ({doc_id[:8]}...)")
-
-#     try:
-#         full_text = get_document_data(supabase, doc_id)
-#         if full_text:
-#             stakeholders = await extract_stakeholders_from_text(supabase, full_text)
-#             all_stakeholders.extend(stakeholders)
-#     except Exception as e:
-#         print(f"    Error processing {filename}: {e}")
-
-# stakeholders = await extract_stakeholders_from_text(supabase, full_text)
-
-
-# all_stakeholders
-# unique_stakeholders = dedupe_stakeholders(all_stakeholders)
-# type(unique_stakeholders)
-
-
-# unique_stakeholders
-# output = {
-#     # "brain": brain_name,
-#     # "brain_id": brain_id,
-#     "stakeholders": unique_stakeholders,
-# }
-
-# #####################
-threshold = 6
-full_text = "Hello, this is a test run to check chunks"
-chunk_size = threshold // 2  # 40k chunks
-step = chunk_size // 2
-chunks = [full_text[i : i + chunk_size] for i in range(0, len(full_text), step)]
-
-
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-
-splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=step)
-chunks = splitter.split_text(full_text)
