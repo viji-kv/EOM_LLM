@@ -98,7 +98,7 @@ async def extract_stakeholders_from_text(supabase, text: str) -> List[Dict[str, 
 
     final_state = await graph.ainvoke(initial_state, config)
 
-    print(final_state.get("answer", ""))
+    # print(final_state.get("answer", ""))
     return parse_json_response(final_state.get("answer", ""))
 
 
@@ -219,3 +219,65 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
+
+# # # #######################################
+
+# from enrichment.state import InputState
+# from enrichment.configuration import Configuration
+# from enrichment import graph
+
+
+# # initial_state = InputState(topic=text, extraction_schema=STAKEHOLDER_SCHEMA)
+
+# config = Configuration(
+#     model="openai/gpt-4o-mini",
+#     prompt=(
+#         "You are an assistant tasked with extracting specific information from the provided text using the extraction schema.\n\n"
+#         "Schema:\n{schema}\n\n"
+#         "Text:\n{topic}\n\n"
+#         "Please provide your answer directly in clear text, filling in the schema (In English)."
+#         "CRITICAL: Multiple stakeholders expected. Return **COMPLETE ARRAY**.\n"
+#         "Even if only 1 stakeholder found, use array format: [{}]\n\n"
+#         # "RAW JSON ARRAY ONLY. NO TEXT. NO EXPLANATION. NO MARKDOWN.\n\n"
+#     ),
+#     max_loops=2,
+# ).__dict__
+
+# supabase = initialize_supabase()
+# # selections = select_brain_from_workspace()
+# brain_id = "0007f8b8-72d9-4952-b0a3-0fd2ff1cc2ed"
+# # selected_brain = selections["brains"]
+# documents = get_documents_per_brain(supabase, brain_id)
+# print(f"Found {len(documents)} documents")
+# documents[0]
+# full_text = get_document_data(supabase, '0e677b8e-f337-427c-83b8-9e06ac991bd2')
+# # stakeholders = await extract_stakeholders_adaptive(supabase, full_text)
+
+# # Fetch full text for each document
+# all_stakeholders = []
+# for i, doc in enumerate(documents, 1):
+#     doc_id = doc["id"]
+#     filename = doc.get("file_name", "Unknown")
+#     print(f"  {i}/{len(documents)}: {filename} ({doc_id[:8]}...)")
+
+#     try:
+#         full_text = get_document_data(supabase, doc_id)
+#         full_text = full_text.encode("utf-8").decode("unicode_escape")
+#         if full_text:
+#             # stakeholders = await extract_stakeholders_from_text(supabase, full_text)
+#             stakeholders = await extract_stakeholders_adaptive(supabase, full_text)
+#             all_stakeholders.extend(stakeholders)
+#     except Exception as e:
+#         print(f"    Error processing {filename}: {e}")
+
+# all_stakeholders = await normalize_stakeholder_names(all_stakeholders)
+# print(f"Normalized: {len(all_stakeholders)} stakeholders with canonical names.")
+
+# # Save JSON
+# output = {
+#     "brain": brain_name,
+#     "brain_id": brain_id,
+#     "stakeholders": all_stakeholders,
+# }
+# # print(f"OUTPUT:{output}")

@@ -22,6 +22,7 @@ class State(InputState):
     answer: Optional[dict[str, Any]] = None
     messages: Annotated[List[BaseMessage], add_messages] = field(default_factory=list)
     loop_step: Annotated[int, operator.add] = field(default=0)
+    reflect_score: Optional[bool] = None
 
 
 @dataclass(kw_only=True)

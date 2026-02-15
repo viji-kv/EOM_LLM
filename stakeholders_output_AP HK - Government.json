@@ -3,185 +3,192 @@
   "brain_id": "d03cb608-a2d0-4c80-ba37-d23ebf25cfeb",
   "stakeholders": [
     {
-      "Stakeholder Name": "The Hong Kong Polytechnic University Consulting Team",
-      "Canonical Name": "The Hong Kong Polytechnic University",
-      "Category": "Partner",
-      "Role": "Conducted a consultancy study on the needs and support required of informal carers of elderly persons and persons with disabilities in Hong Kong",
+      "Stakeholder Name": "Hong Kong Polytechnic University Consulting Team",
+      "Canonical Name": "Hong Kong Polytechnic University",
+      "Category": "Research Institution",
+      "Role": "Conducts consultancy study on needs and support for carers of elderly persons and persons with disabilities",
       "Confidence Score": "95%"
     },
     {
       "Stakeholder Name": "Labour and Welfare Bureau",
       "Canonical Name": "Labour and Welfare Bureau",
-      "Category": "Regulator",
-      "Role": "Commissioned the consultancy study on carer support needs",
+      "Category": "Government",
+      "Role": "Commissioned the consultancy study on carer support",
+      "Confidence Score": "90%"
+    },
+    {
+      "Stakeholder Name": "Elderly Commission",
+      "Canonical Name": "Elderly Commission",
+      "Category": "Government",
+      "Role": "Formulated the Elderly Service Programme Plan in 2017",
       "Confidence Score": "90%"
     },
     {
       "Stakeholder Name": "Social Welfare Department (SWD)",
       "Canonical Name": "Social Welfare Department",
-      "Category": "Regulator",
-      "Role": "Involved in the administration of carer-related subsidies and policies",
-      "Confidence Score": "90%"
-    },
-    {
-      "Stakeholder Name": "Human services professionals",
-      "Canonical Name": "Human Services Professionals",
-      "Category": "Consumer",
-      "Role": "Provided insights and evaluations on carer services and subsidies during the study",
-      "Confidence Score": "85%"
-    },
-    {
-      "Stakeholder Name": "Carers of elderly persons and persons with disabilities",
-      "Canonical Name": "Carers of Elderly Persons and Persons with Disabilities",
-      "Category": "Consumer",
-      "Role": "Primary recipients of support and services evaluated in the consultancy study",
+      "Category": "Government",
+      "Role": "Responsible for implementing policies related to welfare and support services for elderly persons and persons with disabilities",
       "Confidence Score": "95%"
     },
     {
-      "Stakeholder Name": "Non-Governmental Organizations (NGOs)",
+      "Stakeholder Name": "Various NGOs (Non-Governmental Organizations)",
       "Canonical Name": "Non-Governmental Organizations",
-      "Category": "Partner",
-      "Role": "Provided additional support services for carers such as training and counseling",
+      "Category": "Non-Profit",
+      "Role": "Provide additional support services and aid to caregivers",
       "Confidence Score": "85%"
     },
     {
-      "Stakeholder Name": "Community Support Services",
-      "Canonical Name": "Community Support Services",
-      "Category": "Consumer",
-      "Role": "Facilitated services for carers and recipients, enhancing access and coordination",
+      "Stakeholder Name": "Caritas Hong Kong",
+      "Canonical Name": "Caritas Hong Kong",
+      "Category": "NGO",
+      "Role": "Provides resource and support centre for carers",
       "Confidence Score": "80%"
     },
     {
-      "Stakeholder Name": "Stakeholders in the elderly and rehabilitation sectors",
-      "Canonical Name": "Elderly and Rehabilitation Sector Stakeholders",
-      "Category": "Partner",
-      "Role": "Participated in focus groups and provided feedback on the needs and expectations of carers",
+      "Stakeholder Name": "Caregiver Alliance Limited (CAL)",
+      "Canonical Name": "Caregiver Alliance Limited",
+      "Category": "NGO",
+      "Role": "Offers community support and resources for caregivers",
+      "Confidence Score": "80%"
+    },
+    {
+      "Stakeholder Name": "Community Care Fund (CCF)",
+      "Canonical Name": "Community Care Fund",
+      "Category": "Government",
+      "Role": "Provides financial assistance to low-income families with persons with disabilities",
       "Confidence Score": "85%"
+    },
+    {
+      "Stakeholder Name": "Various Human Services Professionals",
+      "Canonical Name": "Human Services Professionals",
+      "Category": "Professionals",
+      "Role": "Provide care and support services to clients and their families",
+      "Confidence Score": "80%"
+    },
+    {
+      "Stakeholder Name": "Government",
+      "Canonical Name": "Government",
+      "Category": "Regulator",
+      "Role": "Facilitates social enterprises or NGOs to help carers build strengths and provides services and support.",
+      "Confidence Score": "90%"
     },
     {
       "Stakeholder Name": "Social Welfare Department",
       "Canonical Name": "Social Welfare Department",
       "Category": "Regulator",
-      "Role": "Regulates and provides support for informal unpaid carers in Hong Kong",
+      "Role": "Oversees various social services and assists in implementing carer support initiatives.",
       "Confidence Score": "95%"
     },
     {
-      "Stakeholder Name": "Hong Kong Federation of Women’s Centres",
-      "Canonical Name": "Hong Kong Federation of Women’s Centres",
-      "Category": "NGO",
-      "Role": "Provides information and support services for carers",
+      "Stakeholder Name": "NGOs",
+      "Canonical Name": "Non-Governmental Organizations",
+      "Category": "Partner",
+      "Role": "Collaborate with the government to provide community-based services and support for carers.",
+      "Confidence Score": "85%"
+    },
+    {
+      "Stakeholder Name": "Carers",
+      "Canonical Name": "Carers",
+      "Category": "Consumer",
+      "Role": "Primary individuals providing care for elderly persons and persons with disabilities.",
       "Confidence Score": "90%"
     },
     {
-      "Stakeholder Name": "Government of Hong Kong",
-      "Canonical Name": "Government of Hong Kong",
-      "Category": "Regulator",
-      "Role": "Facilitates carer support through various policies and initiatives",
-      "Confidence Score": "90%"
-    },
-    {
-      "Stakeholder Name": "Community Enterprises",
-      "Canonical Name": "Community Enterprises",
+      "Stakeholder Name": "Community Centres",
+      "Canonical Name": "Community Centres",
       "Category": "Supplier",
-      "Role": "Offers community resources and support for caregivers and care recipients",
-      "Confidence Score": "85%"
-    },
-    {
-      "Stakeholder Name": "Human Services Professionals",
-      "Canonical Name": "Human Services Professionals",
-      "Category": "Provider",
-      "Role": "Provides professional guidance and support to carers",
-      "Confidence Score": "85%"
+      "Role": "Provide services and resources to support carers in building their competencies.",
+      "Confidence Score": "80%"
     },
     {
       "Stakeholder Name": "Social Welfare Department",
       "Canonical Name": "Social Welfare Department",
       "Category": "Regulator",
-      "Role": "Regulates elderly abuse prevention and intervention procedures.",
-      "Confidence Score": "90%"
+      "Role": "Oversees policies and procedures for handling elder abuse cases",
+      "Confidence Score": "95%"
     },
     {
       "Stakeholder Name": "Hong Kong Police Force",
       "Canonical Name": "Hong Kong Police Force",
       "Category": "Regulator",
-      "Role": "Responsible for investigating elder abuse cases.",
+      "Role": "Investigates suspected elder abuse cases and enforces laws",
       "Confidence Score": "90%"
     },
     {
       "Stakeholder Name": "Hospital Authority",
       "Canonical Name": "Hospital Authority",
       "Category": "Healthcare Provider",
-      "Role": "Provides medical care and mental health services for elder abuse victims.",
+      "Role": "Provides medical examination and treatment for suspected elder abuse cases",
+      "Confidence Score": "90%"
+    },
+    {
+      "Stakeholder Name": "Crisis Intervention and Support Center (Tung Wah Group of Hospitals)",
+      "Canonical Name": "Crisis Intervention and Support Center",
+      "Category": "Support Service",
+      "Role": "Offers comprehensive assistance to elderly victims of abuse",
       "Confidence Score": "85%"
     },
     {
-      "Stakeholder Name": "Mental Health Services",
-      "Canonical Name": "Mental Health Services",
-      "Category": "Healthcare Provider",
-      "Role": "Offers psychological support and treatment for elderly victims of abuse.",
-      "Confidence Score": "85%"
-    },
-    {
-      "Stakeholder Name": "Community Care Services",
-      "Canonical Name": "Community Care Services",
-      "Category": "Service Provider",
-      "Role": "Provides support services for elderly to prevent abuse.",
+      "Stakeholder Name": "Society for the Prevention of Cruelty to Animals",
+      "Canonical Name": "Society for the Prevention of Cruelty to Animals",
+      "Category": "Advocacy",
+      "Role": "Advocates for the protection and welfare of vulnerable populations including the elderly",
       "Confidence Score": "80%"
     },
     {
-      "Stakeholder Name": "Korean Government",
-      "Canonical Name": "Government of South Korea",
+      "Stakeholder Name": "Government of Korea",
+      "Canonical Name": "Government of Korea",
       "Category": "Regulator",
-      "Role": "Introduces targeted employment support programmes for elderly workers",
+      "Role": "Introduced measures to require companies to extend retirement age limits and provide incentives for elderly employment",
       "Confidence Score": "90%"
     },
     {
       "Stakeholder Name": "Japanese Government",
-      "Canonical Name": "Government of Japan",
+      "Canonical Name": "Japanese Government",
       "Category": "Regulator",
-      "Role": "Introduces trial employment incentives for middle-aged and older workers",
+      "Role": "Enacted the Employment Measure Act to prohibit age discrimination and raised pensionable age",
       "Confidence Score": "90%"
     },
     {
-      "Stakeholder Name": "Department of Health (Hong Kong)",
-      "Canonical Name": "Department of Health (Hong Kong)",
+      "Stakeholder Name": "Government of Singapore",
+      "Canonical Name": "Government of Singapore",
       "Category": "Regulator",
-      "Role": "Conducts territory-wide Population Health Surveys",
-      "Confidence Score": "85%"
+      "Role": "Provides financial incentives and sets minimum retirement age for re-employment of older workers",
+      "Confidence Score": "90%"
     },
     {
       "Stakeholder Name": "Office of the Government Economist",
       "Canonical Name": "Office of the Government Economist",
-      "Category": "Regulator",
-      "Role": "Analyzes elderly employment trends and policies",
-      "Confidence Score": "95%"
-    },
-    {
-      "Stakeholder Name": "Hospital Authority (Hong Kong)",
-      "Canonical Name": "Hospital Authority",
-      "Category": "Employer",
-      "Role": "Raises retirement age for new recruits from 60 to 65",
+      "Category": "Research/Policy Advisor",
+      "Role": "Published economic letters analyzing elderly employment trends and policies",
       "Confidence Score": "85%"
     },
     {
-      "Stakeholder Name": "Labour Department (Hong Kong)",
-      "Canonical Name": "Labour Department (Hong Kong)",
+      "Stakeholder Name": "Equal Employment Opportunity Commission (EEOC)",
+      "Canonical Name": "Equal Employment Opportunity Commission",
       "Category": "Regulator",
-      "Role": "Offers employment programmes and training allowances for elderly job seekers",
+      "Role": "Promotes compliance with the Age Discrimination in Employment Act in the US",
       "Confidence Score": "90%"
     },
     {
-      "Stakeholder Name": "Singapore Government",
-      "Canonical Name": "Government of Singapore",
+      "Stakeholder Name": "Hospital Authority",
+      "Canonical Name": "Hospital Authority",
+      "Category": "Employer",
+      "Role": "Raised the retirement age for new recruits to provide job opportunities for older workers",
+      "Confidence Score": "85%"
+    },
+    {
+      "Stakeholder Name": "Labour Department (LD, Hong Kong)",
+      "Canonical Name": "Labour Department",
       "Category": "Regulator",
-      "Role": "Implements policies and acts to improve elderly employment",
+      "Role": "Offers training allowances and employment support programs for elderly job seekers",
       "Confidence Score": "90%"
     },
     {
-      "Stakeholder Name": "OECD",
-      "Canonical Name": "OECD",
-      "Category": "Research Institution",
-      "Role": "Provides policy recommendations on ageing and employment",
+      "Stakeholder Name": "Employees Retraining Board (ERB, Hong Kong)",
+      "Canonical Name": "Employees Retraining Board",
+      "Category": "Training Provider",
+      "Role": "Provides training courses and placement services for mature persons",
       "Confidence Score": "85%"
     }
   ]

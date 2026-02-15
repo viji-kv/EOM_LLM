@@ -46,7 +46,7 @@ async def call_agent_model(
 
 # A simplified reflection step that asks the LLM if the answer is satisfactory.
 class ReflectionResult(BaseModel):
-    reflect_score: bool = Field(
+    is_satisfactory: bool = Field(
         ...,
         description=(
             "Whether the answer is satisfactory."
@@ -72,52 +72,44 @@ async def reflect(
 
     messages: List[BaseMessage] = [HumanMessage(content=prompt_text)]
     model = init_model(config).with_structured_output(ReflectionResult)
-    response: ReflectionResult = await model.ainvoke(messages)
+    reflection: ReflectionResult = await model.ainvoke(messages)
 
-    return {
-        "reflect_score": response.reflect_score,
-        "messages": [HumanMessage(f"Score: {response.reflect_score}")],
-    }
-
-    # # If the answer is satisfactory, we finish. Otherwise, we can loop for improvement.
-    # if reflection.is_satisfactory:
-    #     return {
-    #         "answer": state.answer,  # REPLACED
-    #         "messages": [HumanMessage(content=reflection.feedback)],
-    #     }
-    # else:
-    #     return {
-    #         "messages": [HumanMessage(content=f"Feedback: {reflection.feedback}")],
-    #     }
+    # If the answer is satisfactory, we finish. Otherwise, we can loop for improvement.
+    if reflection.is_satisfactory:
+        return {
+            "answer": state.answer,  # REPLACED
+            "messages": [HumanMessage(content=reflection.feedback)],
+        }
+    else:
+        return {
+            "messages": [HumanMessage(content=f"Feedback: {reflection.feedback}")],
+        }
 
 
 ### Routing Functions
 
 
-def route_after_agent(state: State, config: RunnableConfig) -> str:
+def route_after_agent(state: State) -> str:
     """
     Decide the next step.
     If an answer is produced, move to reflection.
     """
     print("---Route_after_agent step---")
+    if state.answer:  # REPLACED
+        return "reflect"
+    return "call_agent_model"
+
+
+def route_after_checker(state: State, config: RunnableConfig) -> str:
+    """
+    Decide whether to iterate or finish.
+    If the loop count is below max_loops and the answer is unsatisfactory, repeat.
+    Otherwise, terminate.
+    """
     configuration = Configuration.from_runnable_config(config)
-    if state.reflect_score:
-        return "__end__"
-    elif not state.reflect_score and state.loop_step < configuration.max_loops:
+    if state.loop_step < configuration.max_loops and not state.answer:  # REPLACED
         return "call_agent_model"
     return "__end__"
-
-
-# def route_after_checker(state: State, config: RunnableConfig) -> str:
-#     """
-#     Decide whether to iterate or finish.
-#     If the loop count is below max_loops and the answer is unsatisfactory, repeat.
-#     Otherwise, terminate.
-#     """
-#     configuration = Configuration.from_runnable_config(config)
-#     if state.loop_step < configuration.max_loops and not state.answer:  # REPLACED
-#         return "call_agent_model"
-#     return "__end__"
 
 
 ### Workflow Graph
@@ -129,13 +121,8 @@ workflow = StateGraph(
 workflow.add_node(call_agent_model)
 workflow.add_node(reflect)
 workflow.add_edge("__start__", "call_agent_model")
-workflow.add_edge("call_agent_model", "reflect")
-workflow.add_conditional_edges(
-    "reflect",
-    route_after_agent,
-    {"call_agent_model": "call_agent_model", "__end__": "__end__"},
-)
-# workflow.add_conditional_edges("reflect", route_after_checker)
+workflow.add_conditional_edges("call_agent_model", route_after_agent)
+workflow.add_conditional_edges("reflect", route_after_checker)
 
 graph = workflow.compile()
 graph.name = "ResearchTopic"
