@@ -55,8 +55,30 @@ STAKEHOLDER_SCHEMA = {
                 "type": "string",
                 "description": "Confidence as percentage string (e.g., '95%', '90%', '85%')",
             },
+            "Source metadata": {
+                "type": "object",
+                "properties": {
+                    "filename": {"type": "string", "description": "Source file name"},
+                    "document_id": {
+                        "type": "string",
+                        "description": "Source document ID",
+                    },
+                    "chunk_index": {"type": "integer"},
+                    "extraction_context": {
+                        "type": "string",
+                        "description": "Exact snippet containing stakeholder mention (max 300 chars)",
+                    },
+                },
+                "required": ["filename", "extraction_context"],
+            },
+            "required": [
+                "Stakeholder Name",
+                "Category",
+                "Role",
+                "Confidence Score",
+                "Source metadata",
+            ],
         },
-        "required": ["Stakeholder Name", "Category", "Role", "Confidence Score"],
     },
 }
 
@@ -76,14 +98,26 @@ def parse_json_response(raw_info: str) -> List[Dict]:
         return []
 
 
-async def extract_stakeholders_from_text(supabase, text: str) -> List[Dict[str, Any]]:
+async def extract_stakeholders_from_text(
+    supabase, text: str, doc_id: str, filename: str, chunk_index: int = 0
+) -> List[Dict[str, Any]]:
     """Extract stakeholders using enrichment pipeline."""
     # Create InputState and run the graph
     from enrichment.state import InputState
     from enrichment.configuration import Configuration
     from enrichment import graph
 
-    initial_state = InputState(topic=text, extraction_schema=STAKEHOLDER_SCHEMA)
+    source_header = (
+        f"\n\n=== SOURCE METADATA ===\n"
+        f"Document ID: {doc_id}\n"
+        f"Filename: {filename}\n"
+        f"Chunk Index: {chunk_index}\n"
+        f"=== END METADATA ===\n\n"
+    )
+
+    full_input = source_header + text
+
+    initial_state = InputState(topic=full_input, extraction_schema=STAKEHOLDER_SCHEMA)
 
     config = Configuration(
         model="openai/gpt-4o-mini",
@@ -92,6 +126,7 @@ async def extract_stakeholders_from_text(supabase, text: str) -> List[Dict[str, 
             "Schema:\n{schema}\n\n"
             "Text:\n{topic}\n\n"
             "Please provide your answer directly in clear text, filling in the schema (In English)."
+            "For each stakeholder, copy 200-300 chars around the mention → extraction_context in Source metadata.\n"
         ),
         max_loops=2,
     ).__dict__
@@ -114,13 +149,17 @@ def calculate_splitter_params(model_context=128000) -> tuple:
     return chunk_size, overlap
 
 
-async def extract_stakeholders_adaptive(supabase, full_text, threshold=100000):
+async def extract_stakeholders_adaptive(
+    supabase, full_text, doc_id, filename, threshold=100000
+):
     """Extract: Whole if small, chunk if large"""
-    print(f"    Text: {len(full_text) / 1000:.0f}k chars")
+    print(f"   {filename}: Text: {len(full_text) / 1000:.0f}k chars")
 
     if len(full_text) <= threshold:
         print("    → Whole doc extraction")
-        return await extract_stakeholders_from_text(supabase, full_text)
+        return await extract_stakeholders_from_text(
+            supabase, text=full_text, doc_id=doc_id, filename=filename, chunk_index=0
+        )
 
     chunk_size, chunk_overlap = calculate_splitter_params()
 
@@ -139,7 +178,9 @@ async def extract_stakeholders_adaptive(supabase, full_text, threshold=100000):
     for i, chunk in enumerate(chunks, 1):
         print(f"    Chunk {i}/{len(chunks)}")
         try:
-            stakeholders = await extract_stakeholders_from_text(supabase, chunk)
+            stakeholders = await extract_stakeholders_from_text(
+                supabase, text=chunk, doc_id=doc_id, filename=filename, chunk_index=i
+            )
             all_stakeholders.extend(stakeholders)
         except Exception as e:
             print(f"    Chunk {i} error: {e}")
@@ -196,7 +237,9 @@ async def main():
             full_text = full_text.encode("utf-8").decode("unicode_escape")
             if full_text:
                 # stakeholders = await extract_stakeholders_from_text(supabase, full_text)
-                stakeholders = await extract_stakeholders_adaptive(supabase, full_text)
+                stakeholders = await extract_stakeholders_adaptive(
+                    supabase, full_text, doc_id, filename
+                )
                 all_stakeholders.extend(stakeholders)
         except Exception as e:
             print(f"    Error processing {filename}: {e}")
