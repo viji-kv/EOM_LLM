@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 Brain Stakeholder Extractor
 1. Selects a brain interactively (workspaces -> brains -> documents)
@@ -94,7 +93,10 @@ def parse_json_response(raw_info: str) -> List[Dict]:
     try:
         parsed = json.loads(json_str)
         return [parsed] if isinstance(parsed, dict) else parsed
-    except:
+    # except:
+    #     return []
+    except Exception as e:
+        print(f" Parse error: {type(e).__name__}: {e}")
         return []
 
 
@@ -150,15 +152,15 @@ def calculate_splitter_params(model_context=128000) -> tuple:
 
 
 async def extract_stakeholders_adaptive(
-    supabase, full_text, doc_id, filename, threshold=100000
+    supabase, text, doc_id, filename, threshold=100000
 ):
     """Extract: Whole if small, chunk if large"""
-    print(f"   {filename}: Text: {len(full_text) / 1000:.0f}k chars")
+    print(f"   {filename}: Text: {len(text) / 1000:.0f}k chars")
 
-    if len(full_text) <= threshold:
+    if len(text) <= threshold:
         print("    → Whole doc extraction")
         return await extract_stakeholders_from_text(
-            supabase, text=full_text, doc_id=doc_id, filename=filename, chunk_index=0
+            supabase, text=text, doc_id=doc_id, filename=filename, chunk_index=0
         )
 
     chunk_size, chunk_overlap = calculate_splitter_params()
@@ -168,7 +170,7 @@ async def extract_stakeholders_adaptive(
         chunk_overlap=chunk_overlap,  # ~38k chars
         separators=["\n\n", "\n", ". ", " ", ""],
     )
-    chunks = splitter.split_text(full_text)
+    chunks = splitter.split_text(text)
     print(
         f"    → {len(chunks)} chunks ({chunk_size // 1000}k/{chunk_overlap // 1000}k)"
     )
@@ -238,7 +240,7 @@ async def main():
             if full_text:
                 # stakeholders = await extract_stakeholders_from_text(supabase, full_text)
                 stakeholders = await extract_stakeholders_adaptive(
-                    supabase, full_text, doc_id, filename
+                    supabase, text=full_text, doc_id=doc_id, filename=filename
                 )
                 all_stakeholders.extend(stakeholders)
         except Exception as e:
@@ -254,8 +256,10 @@ async def main():
         "stakeholders": all_stakeholders,
     }
     # print(f"OUTPUT:{output}")
-    output_file = f"stakeholders_output_{output['brain']}"
-    with open(output_file + ".json", "w", encoding="utf-8") as f:
+    output_dir = Path("output")
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_file = f"stakeholders_output_{output['brain']}.json"
+    with open(output_dir / output_file, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
     print(f"\n Full results saved to: {output_file}.json")
 

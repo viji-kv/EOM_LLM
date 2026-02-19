@@ -1,0 +1,362 @@
+{
+  "brain": "AP - TW - Technology",
+  "brain_id": "7b09dc96-f3f5-4989-876e-f1a0f8da9a6c",
+  "consolidation_stats": {
+    "original_count": 13,
+    "consolidated_count": 13,
+    "categories_processed": 4
+  },
+  "consolidated_stakeholders": [
+    {
+      "Stakeholder Name": "Taiwanese Government",
+      "Canonical Name": "Taiwan Government",
+      "Category": "Regulator",
+      "Role": "Recognizes the challenges and opportunities presented by its ageing population.",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "httpsmesh-strategycomtaiwans-aging-population-challenges-opportunities-and-startup-solutions-d6e941ea823a.txt",
+        "document_id": "b9fbfd01-6909-44d6-95a6-54ef28d1e393",
+        "chunk_index": 0,
+        "extraction_context": "The Taiwanese government recognizes the challenges and opportunities presented by its ageing population. The key initiatives of government aimed at supporting both elderly citizens and startups in this sector."
+      },
+      "consolidation_info": {
+        "cluster_size": 1,
+        "member_indices": [
+          0
+        ],
+        "all_sources": [
+          {
+            "index": 0,
+            "original_name": "Taiwanese Government",
+            "filename": "httpsmesh-strategycomtaiwans-aging-population-challenges-opportunities-and-startup-solutions-d6e941ea823a.txt",
+            "confidence": "90%"
+          }
+        ]
+      }
+    },
+    {
+      "Stakeholder Name": "MODA",
+      "Canonical Name": "MODA",
+      "Category": "Regulator",
+      "Role": "Oversees the Smart City Taiwan Program and collaborates with local governments in healthcare innovations",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "httpswwwhealthcaredivecompress-release20221106-taiwan-realizes-better-health-care-of-the-elderly-with-new-medical-iot-and.txt",
+        "document_id": "109df9e2-13b1-4bc6-9158-a5f2d7b33f52",
+        "chunk_index": 0,
+        "extraction_context": "The MODA (Ministry of Digital Affairs) has taken over the Smart City Taiwan Program this year. With the program, the newly-established ministry aims to collaborate with local governments, leveraging Taiwan's high-tech strengths to help IT companies obtain local opportunities for field trials, jointly develop innovative applications, and solve local problems..."
+      },
+      "consolidation_info": {
+        "cluster_size": 1,
+        "member_indices": [
+          10
+        ],
+        "all_sources": [
+          {
+            "index": 10,
+            "original_name": "MODA",
+            "filename": "httpswwwhealthcaredivecompress-release20221106-taiwan-realizes-better-health-care-of-the-elderly-with-new-medical-iot-and.txt",
+            "confidence": "90%"
+          }
+        ]
+      }
+    },
+    {
+      "Stakeholder Name": "Chalmers Tekniska Högskola",
+      "Canonical Name": "Chalmers University of Technology",
+      "Category": "Partner",
+      "Role": "Collaborates in conducting research",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "2020_A social robot intervention on depression, loneliness, and quality of life for Taiwanese older adults in long-term care.pdf",
+        "document_id": "b28b2356-43fe-4ac3-bc6c-5127e74db86a",
+        "chunk_index": 0,
+        "extraction_context": "Downloaded from https://www.cambridge.org/core. Chalmers Tekniska Högskola, on 20 Apr 2020 at 07:56:33, subject to the Cambridge Core terms of use, available at https://www.cambridge.org/core/terms."
+      },
+      "consolidation_info": {
+        "cluster_size": 1,
+        "member_indices": [
+          7
+        ],
+        "all_sources": [
+          {
+            "index": 7,
+            "original_name": "Chalmers Tekniska Högskola",
+            "filename": "2020_A social robot intervention on depression, loneliness, and quality of life for Taiwanese older adults in long-term care.pdf",
+            "confidence": "90%"
+          }
+        ]
+      }
+    },
+    {
+      "Stakeholder Name": "Grifﬁth University",
+      "Canonical Name": "Griffith University",
+      "Category": "Partner",
+      "Role": "Conducts research on nursing and midwifery",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "2020_A social robot intervention on depression, loneliness, and quality of life for Taiwanese older adults in long-term care.pdf",
+        "document_id": "b28b2356-43fe-4ac3-bc6c-5127e74db86a",
+        "chunk_index": 0,
+        "extraction_context": "Shu-Chuan Chen,1,2 Wendy Moyle,3,4 1School of Nursing and Midwifery, Menzies Health Institute Queensland, Grifﬁth University, Nathan, Queensland, Australia"
+      },
+      "consolidation_info": {
+        "cluster_size": 1,
+        "member_indices": [
+          9
+        ],
+        "all_sources": [
+          {
+            "index": 9,
+            "original_name": "Grifﬁth University",
+            "filename": "2020_A social robot intervention on depression, loneliness, and quality of life for Taiwanese older adults in long-term care.pdf",
+            "confidence": "90%"
+          }
+        ]
+      }
+    },
+    {
+      "Stakeholder Name": "Chiline HomeCare",
+      "Canonical Name": "Chiline HomeCare",
+      "Category": "Supplier",
+      "Role": "Provides physiological measurement and health management services for the elderly",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "httpswwwhealthcaredivecompress-release20221106-taiwan-realizes-better-health-care-of-the-elderly-with-new-medical-iot-and.txt",
+        "document_id": "109df9e2-13b1-4bc6-9158-a5f2d7b33f52",
+        "chunk_index": 0,
+        "extraction_context": "Chiline HomeCare has comprised a set of devices that measure blood pressure, cholesterol, uric acid, electrocardiogram, and blood oxygen for people's daily health management. After collecting various physiological measurement parameters, the physiological signals can be automatically transmitted to the cloud..."
+      },
+      "consolidation_info": {
+        "cluster_size": 1,
+        "member_indices": [
+          12
+        ],
+        "all_sources": [
+          {
+            "index": 12,
+            "original_name": "Chiline HomeCare",
+            "filename": "httpswwwhealthcaredivecompress-release20221106-taiwan-realizes-better-health-care-of-the-elderly-with-new-medical-iot-and.txt",
+            "confidence": "90%"
+          }
+        ]
+      }
+    },
+    {
+      "Stakeholder Name": "World Health Organization",
+      "Canonical Name": "World Health Organization",
+      "Category": "Regulator",
+      "Role": "Provides guidelines on quality of life assessment for older adults",
+      "Confidence Score": "85%",
+      "Source metadata": {
+        "filename": "2020_A social robot intervention on depression, loneliness, and quality of life for Taiwanese older adults in long-term care.pdf",
+        "document_id": "b28b2356-43fe-4ac3-bc6c-5127e74db86a",
+        "chunk_index": 0,
+        "extraction_context": "The World Health Organization estimated that the overall prevalence of depressive disorders among older populations generally varies between 10% and 20% (Barua et al., 2011)."
+      },
+      "consolidation_info": {
+        "cluster_size": 1,
+        "member_indices": [
+          8
+        ],
+        "all_sources": [
+          {
+            "index": 8,
+            "original_name": "World Health Organization",
+            "filename": "2020_A social robot intervention on depression, loneliness, and quality of life for Taiwanese older adults in long-term care.pdf",
+            "confidence": "85%"
+          }
+        ]
+      }
+    },
+    {
+      "Stakeholder Name": "EverYoung",
+      "Canonical Name": "EverYoung",
+      "Category": "Startup",
+      "Role": "Offers a mobile platform connecting seniors with on-demand caregiving services, transportation, and social activities.",
+      "Confidence Score": "85%",
+      "Source metadata": {
+        "filename": "httpsmesh-strategycomtaiwans-aging-population-challenges-opportunities-and-startup-solutions-d6e941ea823a.txt",
+        "document_id": "b9fbfd01-6909-44d6-95a6-54ef28d1e393",
+        "chunk_index": 0,
+        "extraction_context": "EverYoung: A Taiwanese startup offering a mobile platform connecting seniors with on-demand caregiving services, transportation, and social activities."
+      },
+      "consolidation_info": {
+        "cluster_size": 1,
+        "member_indices": [
+          1
+        ],
+        "all_sources": [
+          {
+            "index": 1,
+            "original_name": "EverYoung",
+            "filename": "httpsmesh-strategycomtaiwans-aging-population-challenges-opportunities-and-startup-solutions-d6e941ea823a.txt",
+            "confidence": "85%"
+          }
+        ]
+      }
+    },
+    {
+      "Stakeholder Name": "icare",
+      "Canonical Name": "icare",
+      "Category": "Startup",
+      "Role": "Provides a cloud-based platform for long-term care institutions to manage resident information, care plans, and communication with families.",
+      "Confidence Score": "85%",
+      "Source metadata": {
+        "filename": "httpsmesh-strategycomtaiwans-aging-population-challenges-opportunities-and-startup-solutions-d6e941ea823a.txt",
+        "document_id": "b9fbfd01-6909-44d6-95a6-54ef28d1e393",
+        "chunk_index": 0,
+        "extraction_context": "icare : Provides a cloud-based platform for long-term care institutions to manage resident information, care plans, and communication with families."
+      },
+      "consolidation_info": {
+        "cluster_size": 1,
+        "member_indices": [
+          2
+        ],
+        "all_sources": [
+          {
+            "index": 2,
+            "original_name": "icare",
+            "filename": "httpsmesh-strategycomtaiwans-aging-population-challenges-opportunities-and-startup-solutions-d6e941ea823a.txt",
+            "confidence": "85%"
+          }
+        ]
+      }
+    },
+    {
+      "Stakeholder Name": "Beseye",
+      "Canonical Name": "Beseye",
+      "Category": "Startup",
+      "Role": "Provides a remote patient monitoring system with AI-powered fall detection and vital sign tracking through smart cameras.",
+      "Confidence Score": "85%",
+      "Source metadata": {
+        "filename": "httpsmesh-strategycomtaiwans-aging-population-challenges-opportunities-and-startup-solutions-d6e941ea823a.txt",
+        "document_id": "b9fbfd01-6909-44d6-95a6-54ef28d1e393",
+        "chunk_index": 0,
+        "extraction_context": "Beseye : Provides a remote patient monitoring system with AI-powered fall detection and vital sign tracking through smart cameras."
+      },
+      "consolidation_info": {
+        "cluster_size": 1,
+        "member_indices": [
+          3
+        ],
+        "all_sources": [
+          {
+            "index": 3,
+            "original_name": "Beseye",
+            "filename": "httpsmesh-strategycomtaiwans-aging-population-challenges-opportunities-and-startup-solutions-d6e941ea823a.txt",
+            "confidence": "85%"
+          }
+        ]
+      }
+    },
+    {
+      "Stakeholder Name": "Gogolook",
+      "Canonical Name": "Gogolook",
+      "Category": "Startup",
+      "Role": "Offers a senior enabled mobile phone with a simplified interface, large buttons, and emergency call functions.",
+      "Confidence Score": "85%",
+      "Source metadata": {
+        "filename": "httpsmesh-strategycomtaiwans-aging-population-challenges-opportunities-and-startup-solutions-d6e941ea823a.txt",
+        "document_id": "b9fbfd01-6909-44d6-95a6-54ef28d1e393",
+        "chunk_index": 0,
+        "extraction_context": "Gogolook : Offers a senior enabled mobile phone with a simplified interface, large buttons, and emergency call functions."
+      },
+      "consolidation_info": {
+        "cluster_size": 1,
+        "member_indices": [
+          4
+        ],
+        "all_sources": [
+          {
+            "index": 4,
+            "original_name": "Gogolook",
+            "filename": "httpsmesh-strategycomtaiwans-aging-population-challenges-opportunities-and-startup-solutions-d6e941ea823a.txt",
+            "confidence": "85%"
+          }
+        ]
+      }
+    },
+    {
+      "Stakeholder Name": "eLong Technology",
+      "Canonical Name": "eLong Technology",
+      "Category": "Startup",
+      "Role": "Offers voice-activated smart speakers designed specifically for seniors, enabling hands-free access to information, smart home devices, and calls.",
+      "Confidence Score": "85%",
+      "Source metadata": {
+        "filename": "httpsmesh-strategycomtaiwans-aging-population-challenges-opportunities-and-startup-solutions-d6e941ea823a.txt",
+        "document_id": "b9fbfd01-6909-44d6-95a6-54ef28d1e393",
+        "chunk_index": 0,
+        "extraction_context": "eLong Technology: Offers voice-activated smart speakers designed specifically for seniors, enabling hands-free access to information, smart home devices, and calls."
+      },
+      "consolidation_info": {
+        "cluster_size": 1,
+        "member_indices": [
+          5
+        ],
+        "all_sources": [
+          {
+            "index": 5,
+            "original_name": "eLong Technology",
+            "filename": "httpsmesh-strategycomtaiwans-aging-population-challenges-opportunities-and-startup-solutions-d6e941ea823a.txt",
+            "confidence": "85%"
+          }
+        ]
+      }
+    },
+    {
+      "Stakeholder Name": "DayDayUp",
+      "Canonical Name": "DayDayUp",
+      "Category": "Startup",
+      "Role": "Develops AI-powered companion robots for social interaction and emotional support for seniors.",
+      "Confidence Score": "85%",
+      "Source metadata": {
+        "filename": "httpsmesh-strategycomtaiwans-aging-population-challenges-opportunities-and-startup-solutions-d6e941ea823a.txt",
+        "document_id": "b9fbfd01-6909-44d6-95a6-54ef28d1e393",
+        "chunk_index": 0,
+        "extraction_context": "DayDayUp : Develops AI-powered companion robots for social interaction and emotional support for seniors."
+      },
+      "consolidation_info": {
+        "cluster_size": 1,
+        "member_indices": [
+          6
+        ],
+        "all_sources": [
+          {
+            "index": 6,
+            "original_name": "DayDayUp",
+            "filename": "httpsmesh-strategycomtaiwans-aging-population-challenges-opportunities-and-startup-solutions-d6e941ea823a.txt",
+            "confidence": "85%"
+          }
+        ]
+      }
+    },
+    {
+      "Stakeholder Name": "Compal Electronics",
+      "Canonical Name": "Compal Electronics",
+      "Category": "Supplier",
+      "Role": "Developed the iDiabCare® system for remote diabetic care for the elderly",
+      "Confidence Score": "85%",
+      "Source metadata": {
+        "filename": "httpswwwhealthcaredivecompress-release20221106-taiwan-realizes-better-health-care-of-the-elderly-with-new-medical-iot-and.txt",
+        "document_id": "109df9e2-13b1-4bc6-9158-a5f2d7b33f52",
+        "chunk_index": 0,
+        "extraction_context": "In terms of healthcare for the elderly, the Program has assisted Compal Electronics in developing a diabetic remote care system called iDiabCare® to help the elderly control blood sugar after discharge. iDiabCare® provides APP for diabetic patients to record physiological data..."
+      },
+      "consolidation_info": {
+        "cluster_size": 1,
+        "member_indices": [
+          11
+        ],
+        "all_sources": [
+          {
+            "index": 11,
+            "original_name": "Compal Electronics",
+            "filename": "httpswwwhealthcaredivecompress-release20221106-taiwan-realizes-better-health-care-of-the-elderly-with-new-medical-iot-and.txt",
+            "confidence": "85%"
+          }
+        ]
+      }
+    }
+  ]
+}
