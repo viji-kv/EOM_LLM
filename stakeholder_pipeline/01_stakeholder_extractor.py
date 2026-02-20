@@ -101,7 +101,7 @@ def parse_json_response(raw_info: str) -> List[Dict]:
 
 
 async def extract_stakeholders_from_text(
-    supabase, text: str, doc_id: str, filename: str, chunk_index: int = 0
+    text: str, doc_id: str, filename: str, chunk_index: int = 0
 ) -> List[Dict[str, Any]]:
     """Extract stakeholders using enrichment pipeline."""
     # Create InputState and run the graph
@@ -128,7 +128,10 @@ async def extract_stakeholders_from_text(
             "Schema:\n{schema}\n\n"
             "Text:\n{topic}\n\n"
             "Please provide your answer directly in clear text, filling in the schema (In English)."
-            "For each stakeholder, copy 200-300 chars around the mention → extraction_context in Source metadata.\n"
+            "extraction_context in Source metadata: For each stakeholder, copy 200-300 chars around the mention from the document.\n"
+            "Rules: "
+            "Use only the information explicitly provided in the input text."
+            "Do not add assumptions, external knowledge, or inferred entities not present in the text."
         ),
         max_loops=2,
     ).__dict__
@@ -151,16 +154,14 @@ def calculate_splitter_params(model_context=128000) -> tuple:
     return chunk_size, overlap
 
 
-async def extract_stakeholders_adaptive(
-    supabase, text, doc_id, filename, threshold=100000
-):
+async def extract_stakeholders_adaptive(text, doc_id, filename, threshold=100000):
     """Extract: Whole if small, chunk if large"""
     print(f"   {filename}: Text: {len(text) / 1000:.0f}k chars")
 
     if len(text) <= threshold:
         print("    → Whole doc extraction")
         return await extract_stakeholders_from_text(
-            supabase, text=text, doc_id=doc_id, filename=filename, chunk_index=0
+            text=text, doc_id=doc_id, filename=filename, chunk_index=0
         )
 
     chunk_size, chunk_overlap = calculate_splitter_params()
@@ -176,27 +177,135 @@ async def extract_stakeholders_adaptive(
     )
 
     all_stakeholders = []
+    tasks = []  # CHANGE: Parallelize chunks
 
     for i, chunk in enumerate(chunks, 1):
-        print(f"    Chunk {i}/{len(chunks)}")
-        try:
-            stakeholders = await extract_stakeholders_from_text(
-                supabase, text=chunk, doc_id=doc_id, filename=filename, chunk_index=i
-            )
-            all_stakeholders.extend(stakeholders)
-        except Exception as e:
-            print(f"    Chunk {i} error: {e}")
-            continue
+        task = asyncio.create_task(
+            extract_stakeholders_from_text(chunk, doc_id, filename, i)
+        )
+        tasks.append(task)
+
+    try:
+        results = await asyncio.gather(
+            *tasks, return_exceptions=True
+        )  # Gather with exceptions
+        for result in results:
+            if isinstance(result, Exception):
+                print(f"    Chunk error: {type(result).__name__}: {result}")
+            elif isinstance(result, list):
+                all_stakeholders.extend(result)
+    except Exception as e:
+        print(f"    Error gathering chunk results: {type(e).__name__}: {e}")
 
     return all_stakeholders
 
 
-FILTER_DOC_NUM = True
+async def extract_all_stakeholders_from_brain(brain_name: str, brain_id: str):
+    """Extract ALL stakeholders from ALL documents"""
+
+    print(f"Processing ALL documents from brain: {brain_id}")
+
+    supabase = initialize_supabase()
+
+    # Get all documents for this brain
+    documents = get_documents_per_brain(supabase, brain_id)
+    if not documents:
+        print("No documents found in this brain.")
+        return
+
+    print(f"Found {len(documents)} documents. Fetching content...")
+
+    ##################### REMOVE AFTER TESTING #####################
+    FILTER_DOC_NUM = True
+    if FILTER_DOC_NUM:
+        print(f"Limiting to first 3 documents for testing.")
+        documents = documents[:3]
+
+    ###############################################################
+
+    # Fetch full text for each document
+    all_stakeholders = []
+    for i, doc in enumerate(documents, 1):
+        doc_id = doc["id"]
+        filename = doc.get("file_name", "Unknown")
+        print(f"  {i}/{len(documents)}: {filename} ({doc_id[:8]}...)")
+
+        try:
+            full_text = get_document_data(supabase, doc_id)
+            full_text = full_text.encode("utf-8").decode("unicode_escape")
+            if full_text:
+                stakeholders = await extract_stakeholders_adaptive(
+                    text=full_text, doc_id=doc_id, filename=filename
+                )
+                all_stakeholders.extend(stakeholders)
+        except Exception as e:
+            print(f"    Error processing {filename}: {e}")
+
+    all_stakeholders = await normalize_stakeholder_names(all_stakeholders)
+    print(f"Normalized: {len(all_stakeholders)} stakeholders with canonical names.")
+
+    # Save JSON
+    output = {
+        "brain": brain_name,
+        "brain_id": brain_id,
+        "total_stakeholders": len(all_stakeholders),
+        "stakeholders": all_stakeholders,
+    }
+    return output
 
 
 async def main():
-    supabase = initialize_supabase()
+    #  TEST MODE - Load from real TXT file
+    test_file_path = Path("stakeholder_pipeline/test_policy_text.txt")
+    if test_file_path.exists():
+        print(" TEST MODE: Loading from test_policy_text.txt")
 
+        try:
+            with open(test_file_path, "r", encoding="utf-8") as f:
+                test_text = f.read()
+
+            mock_doc_id = "test_doc_001"
+            mock_filename = test_file_path.name
+
+            # Extract → exactly like real documents!
+            stakeholders = await extract_stakeholders_adaptive(
+                text=test_text, doc_id=mock_doc_id, filename=mock_filename
+            )
+
+            # Normalize
+            stakeholders = await normalize_stakeholder_names(stakeholders)
+
+            # Results
+            output = {
+                "brain": "Test Elderly Policy",
+                "brain_id": "test_123",
+                "test_file": str(test_file_path),
+                "total_stakeholders": len(stakeholders),
+                "stakeholders": stakeholders,
+            }
+
+            print(
+                f"\n SUCCESS: Extracted {len(stakeholders)} stakeholders from {len(test_text) / 1000:.0f}k chars!"
+            )
+            print(json.dumps(output, indent=2, ensure_ascii=False)[:1000] + "...")
+
+            # Save
+            output_dir = Path("output")
+            output_dir.mkdir(parents=True, exist_ok=True)
+            with open(
+                output_dir / "test_policy_output.json", "w", encoding="utf-8"
+            ) as f:
+                json.dump(output, f, indent=2, ensure_ascii=False)
+            print(" Results → output/test_policy_output.json")
+
+            return
+
+        except Exception as e:
+            print(f" Test file error: {e}")
+
+    print("ℹ  No test_data/elderly_policy_2026.txt → Running real brain extraction...")
+
+    ################### Brain Stakeholder Extractor#############################
     print("Brain Stakeholder Extractor")
     print("=" * 50)
 
@@ -214,48 +323,8 @@ async def main():
     brain_name = selected_brain.get("name", "Unknown")
 
     print(f"\nSelected Brain: {brain_name} (ID: {brain_id})")
+    output = await extract_all_stakeholders_from_brain(brain_name, brain_id)
 
-    # Get all documents for this brain
-    documents = get_documents_per_brain(supabase, brain_id)
-    if not documents:
-        print("No documents found in this brain.")
-        return
-
-    print(f"Found {len(documents)} documents. Fetching content...")
-
-    if FILTER_DOC_NUM:
-        print(f"Limiting to first 3 documents for testing.")
-        documents = documents[:3]
-
-    # Fetch full text for each document
-    all_stakeholders = []
-    for i, doc in enumerate(documents, 1):
-        doc_id = doc["id"]
-        filename = doc.get("file_name", "Unknown")
-        print(f"  {i}/{len(documents)}: {filename} ({doc_id[:8]}...)")
-
-        try:
-            full_text = get_document_data(supabase, doc_id)
-            full_text = full_text.encode("utf-8").decode("unicode_escape")
-            if full_text:
-                # stakeholders = await extract_stakeholders_from_text(supabase, full_text)
-                stakeholders = await extract_stakeholders_adaptive(
-                    supabase, text=full_text, doc_id=doc_id, filename=filename
-                )
-                all_stakeholders.extend(stakeholders)
-        except Exception as e:
-            print(f"    Error processing {filename}: {e}")
-
-    all_stakeholders = await normalize_stakeholder_names(all_stakeholders)
-    print(f"Normalized: {len(all_stakeholders)} stakeholders with canonical names.")
-
-    # Save JSON
-    output = {
-        "brain": brain_name,
-        "brain_id": brain_id,
-        "stakeholders": all_stakeholders,
-    }
-    # print(f"OUTPUT:{output}")
     output_dir = Path("output")
     output_dir.mkdir(parents=True, exist_ok=True)
     output_file = f"stakeholders_output_{output['brain']}.json"
@@ -266,65 +335,3 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-
-
-# # # #######################################
-
-# from enrichment.state import InputState
-# from enrichment.configuration import Configuration
-# from enrichment import graph
-
-
-# # initial_state = InputState(topic=text, extraction_schema=STAKEHOLDER_SCHEMA)
-
-# config = Configuration(
-#     model="openai/gpt-4o-mini",
-#     prompt=(
-#         "You are an assistant tasked with extracting specific information from the provided text using the extraction schema.\n\n"
-#         "Schema:\n{schema}\n\n"
-#         "Text:\n{topic}\n\n"
-#         "Please provide your answer directly in clear text, filling in the schema (In English)."
-#         "CRITICAL: Multiple stakeholders expected. Return **COMPLETE ARRAY**.\n"
-#         "Even if only 1 stakeholder found, use array format: [{}]\n\n"
-#         # "RAW JSON ARRAY ONLY. NO TEXT. NO EXPLANATION. NO MARKDOWN.\n\n"
-#     ),
-#     max_loops=2,
-# ).__dict__
-
-# supabase = initialize_supabase()
-# # selections = select_brain_from_workspace()
-# brain_id = "0007f8b8-72d9-4952-b0a3-0fd2ff1cc2ed"
-# # selected_brain = selections["brains"]
-# documents = get_documents_per_brain(supabase, brain_id)
-# print(f"Found {len(documents)} documents")
-# documents[0]
-# full_text = get_document_data(supabase, '0e677b8e-f337-427c-83b8-9e06ac991bd2')
-# # stakeholders = await extract_stakeholders_adaptive(supabase, full_text)
-
-# # Fetch full text for each document
-# all_stakeholders = []
-# for i, doc in enumerate(documents, 1):
-#     doc_id = doc["id"]
-#     filename = doc.get("file_name", "Unknown")
-#     print(f"  {i}/{len(documents)}: {filename} ({doc_id[:8]}...)")
-
-#     try:
-#         full_text = get_document_data(supabase, doc_id)
-#         full_text = full_text.encode("utf-8").decode("unicode_escape")
-#         if full_text:
-#             # stakeholders = await extract_stakeholders_from_text(supabase, full_text)
-#             stakeholders = await extract_stakeholders_adaptive(supabase, full_text)
-#             all_stakeholders.extend(stakeholders)
-#     except Exception as e:
-#         print(f"    Error processing {filename}: {e}")
-
-# all_stakeholders = await normalize_stakeholder_names(all_stakeholders)
-# print(f"Normalized: {len(all_stakeholders)} stakeholders with canonical names.")
-
-# # Save JSON
-# output = {
-#     "brain": brain_name,
-#     "brain_id": brain_id,
-#     "stakeholders": all_stakeholders,
-# }
-# # print(f"OUTPUT:{output}")

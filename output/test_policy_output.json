@@ -1,0 +1,86 @@
+{
+  "brain": "Test Elderly Policy",
+  "brain_id": "test_123",
+  "test_file": "stakeholder_pipeline\\test_policy_text.txt",
+  "total_stakeholders": 6,
+  "stakeholders": [
+    {
+      "Stakeholder Name": "Social Welfare Department",
+      "Canonical Name": "Social Welfare Department",
+      "Category": "Regulator",
+      "Role": "Leads the implementation of elderly care reforms, regulating all public and subsidized residential care homes.",
+      "Confidence Score": "95%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "extraction_context": "The Social Welfare Department (SWD) leads the implementation of elderly care reforms, regulating all public and subsidized residential care homes. SWD oversees licensing and compliance for 450+ facilities serving 30,000+ seniors."
+      }
+    },
+    {
+      "Stakeholder Name": "Hospital Authority",
+      "Canonical Name": "Hospital Authority",
+      "Category": "Partner",
+      "Role": "Provides acute medical support but faces capacity shortages, often transferring stable elderly patients to NGO-run homes.",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "extraction_context": "Hospital Authority (HA): Manages public hospitals, partners with private operators for step-down care. HA competes with private hospitals for specialist geriatric beds."
+      }
+    },
+    {
+      "Stakeholder Name": "Hong Kong Council of Social Service",
+      "Canonical Name": "Hong Kong Council of Social Service",
+      "Category": "NGO",
+      "Role": "Umbrella body coordinating 180+ member agencies, advocates for increased SWD funding and trains staff for elderly centers.",
+      "Confidence Score": "95%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "extraction_context": "Hong Kong Council of Social Service (HKCSS): Umbrella body coordinating 180+ member agencies. HKCSS advocates for increased SWD funding and trains staff for elderly centers."
+      }
+    },
+    {
+      "Stakeholder Name": "Caritas Hong Kong",
+      "Canonical Name": "Caritas Hong Kong",
+      "Category": "NGO",
+      "Role": "Operates 25 residential homes (1,200 beds), receives SWD subsidies but supplements with private donations.",
+      "Confidence Score": "95%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "extraction_context": "Caritas Hong Kong: Operates 25 residential homes (1,200 beds). Receives SWD subsidies but supplements with private donations. Partners with SWD on community outreach programs."
+      }
+    },
+    {
+      "Stakeholder Name": "Baptist Oi Kwan Social Service",
+      "Canonical Name": "Baptist Oi Kwan Social Service",
+      "Category": "NGO",
+      "Role": "Runs day care centers for 500 seniors daily; competes with other NGOs for SWD tenders.",
+      "Confidence Score": "85%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "extraction_context": "Baptist Oi Kwan Social Service: Runs day care centers for 500 seniors daily. Competes with other NGOs for SWD tenders; reports staffing shortages as major pain point."
+      }
+    },
+    {
+      "Stakeholder Name": "Private Residential Care Homes",
+      "Canonical Name": "Private Residential Care Homes",
+      "Category": "Private Sector",
+      "Role": "300+ facilities (15,000 beds), fully self-funded; regulated by SWD but criticize over-regulation.",
+      "Confidence Score": "85%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "extraction_context": "Private Residential Care Homes (PRCHs): 300+ facilities (15,000 beds), fully self-funded. Regulated by SWD but criticize over-regulation. Compete directly with subvented NGO homes on pricing."
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+TEST_ELDERLY_POLICY = """
+Elderly Care Services Enhancement Policy 2026 - Hong Kong
+
+1. Policy Background
+The Social Welfare Department (SWD) leads the implementation of elderly care reforms, regulating all public and subsidized residential care homes. SWD oversees licensing and compliance for 450+ facilities serving 30,000+ seniors. The Hospital Authority (HA) provides acute medical support but faces capacity shortages, often transferring stable elderly patients to NGO-run homes.
+
+2. Key Stakeholders and Roles
+
+2.1 Government Bodies
+- Social Welfare Department (SWD): Primary regulator, funds 70% of subvented homes via Lump Sum Grant. SWD audits NGOs like Hong Kong Council of Social Service (HKCSS) and Caritas Hong Kong.
+- Hospital Authority (HA): Manages public hospitals, partners with private operators for step-down care. HA competes with private hospitals for specialist geriatric beds.
+- Labour and Welfare Bureau: Policy oversight, approves SWD budgets.
+
+2.2 NGOs and Non-Profits
+- Hong Kong Council of Social Service (HKCSS): Umbrella body coordinating 180+ member agencies. HKCSS advocates for increased SWD funding and trains staff for elderly centers.
+- Caritas Hong Kong: Operates 25 residential homes (1,200 beds). Receives SWD subsidies but supplements with private donations. Partners with SWD on community outreach programs.
+- Baptist Oi Kwan Social Service: Runs day care centers for 500 seniors daily. Competes with other NGOs for SWD tenders; reports staffing shortages as major pain point.
+
+2.3 Private Sector
+- Private Residential Care Homes (PRCHs): 300+ facilities (15,000 beds), fully self-funded. Regulated by SWD but criticize over-regulation. Compete directly with subvented NGO homes on pricing.
+- For-Profit Hospital Groups (e.g., Hong Kong Sanatorium): Provide premium elderly rehab services to affluent seniors, bypassing public queues.
+
+2.4 Community and End-Users
+- Elderly Citizens (65+): Primary consumers, 80% prefer aging-in-place over institutional care. Demand better home care subsidies from SWD.
+- Family Caregivers: Informal support network, overburdened; seek respite services from HKCSS and Baptist Oi Kwan.
+- District Elderly Community Centres (DECCs): 120+ centers run by NGOs, funded 50/50 by SWD and community donations.
+
+3. Relationships and Challenges
+SWD funds and regulates HKCSS, Caritas, and Baptist Oi Kwan (confidence: 95%). HKCSS coordinates advocacy against HA bed shortages (partners, 90%). Private homes compete with NGO subvented facilities on cost but lag in quality audits (competes, 85%). Family caregivers rely on DECCs for training (supplies services, 92%). Major pain points: SWD underfunding (NGOs), HA discharge delays (all providers), caregiver burnout (families).
+
+4. Implementation Roadmap
+- Q1 2026: SWD + HKCSS joint tender for 5,000 new home care vouchers.
+- Q2: HA-Caritas pilot for 200 transitional beds.
+- Ongoing: Private sector tax incentives for elderly upgrades.
+
+5. Risks
+NGO staffing crisis (Baptist Oi Kwan reports 20% vacancies). SWD regulatory delays frustrate PRCH expansions. Elderly prefer home care but lack affordable options from current providers.
+
+Sources: SWD Annual Report 2025, HKCSS Policy Brief, HA Statistics.
+"""
