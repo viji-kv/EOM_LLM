@@ -23,9 +23,15 @@ load_dotenv()
 class LLMClusterConfig:
     """Configuration for LLM-only clustering."""
 
-    model: str = "openai/gpt-4o-mini"
-    output_dir: str = "output"
-    max_stakeholders_per_prompt: int = 50  # Avoid context overflow
+    def __init__(
+        self,
+        model: str = "openai/gpt-4o-mini",
+        output_dir: str = "output",
+    ):
+        self.model = model
+        self.output_dir = output_dir
+        self.max_stakeholders_per_prompt = 100  # Limit to 100 stakeholders
+        self.max_loops = 2  # Limit to 2 loops for testing (initial + 1 retry if needed)
 
 
 # ===== LLM CLUSTERING SCHEMA =====
@@ -45,15 +51,6 @@ CLUSTERING_SCHEMA = {
                 "items": {"type": "integer"},
                 "description": "List of stakeholder indices that belong together",
             },
-            # "confidence": {
-            #     "type": "string",
-            #     "enum": ["High", "Medium", "Low"],
-            #     "description": "Confidence in this clustering decision",
-            # },
-            # "reasoning": {
-            #     "type": "string",
-            #     "description": "Why these were clustered together",
-            # },
         },
         "required": ["cluster_id", "canonical_name", "member_indices"],
     },
@@ -145,7 +142,8 @@ STAKEHOLDERS (by index):
         name = s.get("Canonical Name", s.get("Stakeholder Name", "Unknown"))
         role = s.get("Role", "")[:100]  # Truncate long roles
         conf = s.get("Confidence Score", "N/A")
-        prompt_text += f"{i}. {name} - {role} (conf: {conf})\n"
+        # prompt_text += f"{i}. {name} - {role} (conf: {conf})\n"
+        prompt_text += f"{i}. {name}\n"
 
     prompt_text += f"""
 
@@ -166,7 +164,7 @@ OUTPUT: JSON array of clusters with canonical names.
     llm_config = Configuration(
         model=config.model,
         prompt="Cluster stakeholders:\n{topic}\nSchema: {schema}\nOutput valid JSON only.",
-        max_loops=2,
+        max_loops=config.max_loops,
     ).__dict__
 
     print(f"       LLM clustering {len(stakeholders)} {category} stakeholders...")
@@ -174,7 +172,7 @@ OUTPUT: JSON array of clusters with canonical names.
     final_state = await graph.ainvoke(initial_state, llm_config)
     # print(f"Final state: {final_state}")
 
-    # 🔴 CHANGE: Use the dedicated parser function for better extraction
+    # Use the dedicated parser function for better extraction
     result = parse_json_response(final_state.get("answer", ""))
     # print(f"Parsed clusters: {result}")
     return result
@@ -272,10 +270,7 @@ def merge_llm_clusters(
 
         master["consolidation_info"] = {
             "cluster_size": len(real_indices),
-            # "method": "llm_only_clustering",
             "member_indices": real_indices,
-            # "llm_reasoning": cluster_info.get("reasoning", ""),
-            # "llm_confidence": cluster_info.get("confidence", "Unknown"),
             "all_sources": all_sources,
         }
 
@@ -287,7 +282,6 @@ def merge_llm_clusters(
             singleton = stakeholders[real_idx].copy()
             singleton["consolidation_info"] = {
                 "cluster_size": 1,
-                # "method": "llm_singleton",
                 "member_indices": [real_idx],
             }
             consolidated.append(singleton)
@@ -304,7 +298,7 @@ def merge_llm_clusters(
 
 
 async def consolidate_with_llm_only(
-    stakeholders: List[Dict], config: Optional[LLMClusterConfig] = None
+    stakeholders: List[Dict], config: LLMClusterConfig
 ) -> Dict:
     """
     Pure LLM clustering pipeline (for comparison testing).
@@ -335,7 +329,6 @@ async def consolidate_with_llm_only(
             single = cat_stakeholders[0].copy()
             single["consolidation_info"] = {
                 "cluster_size": 1,
-                # "method": "category_singleton",
                 "member_indices": indices,
             }
             all_consolidated.append(single)
@@ -389,10 +382,6 @@ async def consolidate_with_llm_only(
         "stats": {
             "original_count": len(stakeholders),
             "consolidated_count": len(all_consolidated),
-            # "reduction_pct": round(
-            #     (1 - len(all_consolidated) / len(stakeholders)) * 100, 1
-            # ),
-            # "method": "llm_only_clustering",
             "categories_processed": len(category_blocks),
         },
     }
@@ -401,9 +390,7 @@ async def consolidate_with_llm_only(
 # ===== FILE I/O =====
 
 
-async def consolidate_from_file(
-    input_file: str, config: Optional[LLMClusterConfig] = None
-) -> Dict:
+async def consolidate_from_file(input_file: str, config: LLMClusterConfig) -> Dict:
     """Load JSON, cluster with LLM, return result."""
     with open(input_file, "r", encoding="utf-8") as f:
         data = json.load(f)
@@ -418,7 +405,7 @@ async def consolidate_from_file(
     }
 
 
-def save_output(result: Dict, output_filename: str, output_dir: str = "output") -> str:
+def save_output(result: Dict, output_filename: str, output_dir) -> str:
     """Save result to file."""
     output_path = Path(output_dir)
     output_path.mkdir(exist_ok=True)
@@ -445,21 +432,20 @@ def main():
 
     start = time.time()
 
-    # config = LLMClusterConfig(
-    #     model="gpt-4o",                    # Better quality
-    #     max_stakeholders_per_prompt=100,   # Bigger batches
-    #     output_dir="gpt4o_results"         # Separate outputs
-    # )
+    config = LLMClusterConfig(
+        model="openai/gpt-4o-mini",
+        output_dir="output",
+    )
 
     # Run LLM-only clustering
-    result = asyncio.run(consolidate_from_file(input_file))
+    result = asyncio.run(consolidate_from_file(input_file, config))
 
     elapsed = time.time() - start
 
     # Save output
     input_filename = Path(input_file).name
     output_filename = input_filename.replace(".json", "_llm_only_consolidated.json")
-    output_path = save_output(result, output_filename)
+    output_path = save_output(result, output_filename, config.output_dir)
 
     # Print summary
     stats = result["consolidation_stats"]

@@ -2,7 +2,7 @@
   "brain": "Test Elderly Policy",
   "brain_id": "test_123",
   "test_file": "stakeholder_pipeline\\test_policy_text.txt",
-  "total_stakeholders": 6,
+  "total_stakeholders": 10,
   "stakeholders": [
     {
       "Stakeholder Name": "Social Welfare Department",
@@ -27,15 +27,15 @@
         "filename": "test_policy_text.txt",
         "document_id": "test_doc_001",
         "chunk_index": 0,
-        "extraction_context": "Hospital Authority (HA): Manages public hospitals, partners with private operators for step-down care. HA competes with private hospitals for specialist geriatric beds."
+        "extraction_context": "The Hospital Authority (HA) provides acute medical support but faces capacity shortages, often transferring stable elderly patients to NGO-run homes."
       }
     },
     {
       "Stakeholder Name": "Hong Kong Council of Social Service",
       "Canonical Name": "Hong Kong Council of Social Service",
       "Category": "NGO",
-      "Role": "Umbrella body coordinating 180+ member agencies, advocates for increased SWD funding and trains staff for elderly centers.",
-      "Confidence Score": "95%",
+      "Role": "Umbrella body coordinating 180+ member agencies; advocates for increased SWD funding.",
+      "Confidence Score": "90%",
       "Source metadata": {
         "filename": "test_policy_text.txt",
         "document_id": "test_doc_001",
@@ -47,8 +47,8 @@
       "Stakeholder Name": "Caritas Hong Kong",
       "Canonical Name": "Caritas Hong Kong",
       "Category": "NGO",
-      "Role": "Operates 25 residential homes (1,200 beds), receives SWD subsidies but supplements with private donations.",
-      "Confidence Score": "95%",
+      "Role": "Operates 25 residential homes (1,200 beds); receives SWD subsidies and partners with SWD on community outreach programs.",
+      "Confidence Score": "90%",
       "Source metadata": {
         "filename": "test_policy_text.txt",
         "document_id": "test_doc_001",
@@ -70,16 +70,68 @@
       }
     },
     {
+      "Stakeholder Name": "Labour and Welfare Bureau",
+      "Canonical Name": "Labour and Welfare Bureau",
+      "Category": "Government Body",
+      "Role": "Provides policy oversight and approves SWD budgets.",
+      "Confidence Score": "95%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "extraction_context": "Labour and Welfare Bureau: Policy oversight, approves SWD budgets."
+      }
+    },
+    {
       "Stakeholder Name": "Private Residential Care Homes",
       "Canonical Name": "Private Residential Care Homes",
       "Category": "Private Sector",
-      "Role": "300+ facilities (15,000 beds), fully self-funded; regulated by SWD but criticize over-regulation.",
+      "Role": "300+ facilities (15,000 beds), fully self-funded; regulated by SWD.",
       "Confidence Score": "85%",
       "Source metadata": {
         "filename": "test_policy_text.txt",
         "document_id": "test_doc_001",
         "chunk_index": 0,
-        "extraction_context": "Private Residential Care Homes (PRCHs): 300+ facilities (15,000 beds), fully self-funded. Regulated by SWD but criticize over-regulation. Compete directly with subvented NGO homes on pricing."
+        "extraction_context": "Private Residential Care Homes (PRCHs): 300+ facilities (15,000 beds), fully self-funded. Regulated by SWD but criticize over-regulation."
+      }
+    },
+    {
+      "Stakeholder Name": "Elderly Citizens",
+      "Canonical Name": "Elderly Citizens",
+      "Category": "End-Users",
+      "Role": "Primary consumers, demand better home care subsidies from SWD.",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "extraction_context": "Elderly Citizens (65+): Primary consumers, 80% prefer aging-in-place over institutional care. Demand better home care subsidies from SWD."
+      }
+    },
+    {
+      "Stakeholder Name": "Family Caregivers",
+      "Canonical Name": "Family Caregivers",
+      "Category": "End-Users",
+      "Role": "Informal support network seeking respite services from HKCSS and Baptist Oi Kwan.",
+      "Confidence Score": "92%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "extraction_context": "Family Caregivers: Informal support network, overburdened; seek respite services from HKCSS and Baptist Oi Kwan."
+      }
+    },
+    {
+      "Stakeholder Name": "District Elderly Community Centres",
+      "Canonical Name": "District Elderly Community Centres",
+      "Category": "Community Organization",
+      "Role": "120+ centers run by NGOs, funded 50/50 by SWD and community donations.",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "extraction_context": "District Elderly Community Centres (DECCs): 120+ centers run by NGOs, funded 50/50 by SWD and community donations."
       }
     }
   ]

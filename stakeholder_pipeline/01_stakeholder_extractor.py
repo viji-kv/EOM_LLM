@@ -8,6 +8,7 @@ Brain Stakeholder Extractor
 
 import asyncio
 import json
+from multiprocessing.pool import RUN
 import sys
 from typing import List, Dict, Any
 from dotenv import load_dotenv
@@ -27,6 +28,7 @@ from select_data import (
 )
 from supabase_db import get_document_data, decode_string
 # getdocumentdata reconstructs full doc text
+
 
 # Stakeholder extraction schema
 STAKEHOLDER_SCHEMA = {
@@ -72,6 +74,7 @@ STAKEHOLDER_SCHEMA = {
             },
             "required": [
                 "Stakeholder Name",
+                "Canonical Name",
                 "Category",
                 "Role",
                 "Confidence Score",
@@ -82,179 +85,194 @@ STAKEHOLDER_SCHEMA = {
 }
 
 
-def parse_json_response(raw_info: str) -> List[Dict]:
-    """JSON parser"""
-    if not raw_info:
-        return []
+class StakeholderExtractor:
+    MODEL_CONTEXTS = {
+        "openai/gpt-4o-mini": 128000,
+        "openai/gpt-4o": 128000,
+    }
 
-    json_str = re.sub(r"```json?|\n*```", "", raw_info.strip())
-    json_str = re.sub(r"^json\s*:?\s*", "", json_str, flags=re.IGNORECASE)
+    def __init__(
+        self,
+        model: str = "openai/gpt-4o-mini",
+        threshold: int = 100000,
+        max_docs: int = None,
+    ):
+        self.model = model
+        self.threshold = threshold
+        self.max_docs = max_docs
+        self.max_loops = 2  # Limit loops
+        self.supabase = initialize_supabase()
+        self.model_context = self.MODEL_CONTEXTS.get(model, 128000)
 
-    try:
-        parsed = json.loads(json_str)
-        return [parsed] if isinstance(parsed, dict) else parsed
-    # except:
-    #     return []
-    except Exception as e:
-        print(f" Parse error: {type(e).__name__}: {e}")
-        return []
+    def parse_json_response(self, raw_info: str) -> List[Dict]:
+        """JSON parser"""
+        if not raw_info:
+            return []
 
-
-async def extract_stakeholders_from_text(
-    text: str, doc_id: str, filename: str, chunk_index: int = 0
-) -> List[Dict[str, Any]]:
-    """Extract stakeholders using enrichment pipeline."""
-    # Create InputState and run the graph
-    from enrichment.state import InputState
-    from enrichment.configuration import Configuration
-    from enrichment import graph
-
-    source_header = (
-        f"\n\n=== SOURCE METADATA ===\n"
-        f"Document ID: {doc_id}\n"
-        f"Filename: {filename}\n"
-        f"Chunk Index: {chunk_index}\n"
-        f"=== END METADATA ===\n\n"
-    )
-
-    full_input = source_header + text
-
-    initial_state = InputState(topic=full_input, extraction_schema=STAKEHOLDER_SCHEMA)
-
-    config = Configuration(
-        model="openai/gpt-4o-mini",
-        prompt=(
-            "You are an assistant tasked with extracting specific information from the provided text using the extraction schema.\n\n"
-            "Schema:\n{schema}\n\n"
-            "Text:\n{topic}\n\n"
-            "Please provide your answer directly in clear text, filling in the schema (In English)."
-            "extraction_context in Source metadata: For each stakeholder, copy 200-300 chars around the mention from the document.\n"
-            "Rules: "
-            "Use only the information explicitly provided in the input text."
-            "Do not add assumptions, external knowledge, or inferred entities not present in the text."
-        ),
-        max_loops=2,
-    ).__dict__
-
-    final_state = await graph.ainvoke(initial_state, config)
-
-    # print(final_state.get("answer", ""))
-    return parse_json_response(final_state.get("answer", ""))
-
-
-def calculate_splitter_params(model_context=128000) -> tuple:
-    # Use ~40-50% of context for chunk payload
-    base_chunk = int(model_context * 0.50)
-    CHARS_PER_TOKEN = 4  # English avg: 3.5-4.5 chars/token
-    chunk_size = base_chunk * CHARS_PER_TOKEN
-
-    # Overlap: 10-20% of chunk_size for semantic continuity
-    overlap = int(chunk_size * 0.15)
-    overlap = max(100, overlap)
-    return chunk_size, overlap
-
-
-async def extract_stakeholders_adaptive(text, doc_id, filename, threshold=100000):
-    """Extract: Whole if small, chunk if large"""
-    print(f"   {filename}: Text: {len(text) / 1000:.0f}k chars")
-
-    if len(text) <= threshold:
-        print("    → Whole doc extraction")
-        return await extract_stakeholders_from_text(
-            text=text, doc_id=doc_id, filename=filename, chunk_index=0
-        )
-
-    chunk_size, chunk_overlap = calculate_splitter_params()
-
-    splitter = RecursiveCharacterTextSplitter(
-        chunk_size=chunk_size,  # ~256k chars
-        chunk_overlap=chunk_overlap,  # ~38k chars
-        separators=["\n\n", "\n", ". ", " ", ""],
-    )
-    chunks = splitter.split_text(text)
-    print(
-        f"    → {len(chunks)} chunks ({chunk_size // 1000}k/{chunk_overlap // 1000}k)"
-    )
-
-    all_stakeholders = []
-    tasks = []  # CHANGE: Parallelize chunks
-
-    for i, chunk in enumerate(chunks, 1):
-        task = asyncio.create_task(
-            extract_stakeholders_from_text(chunk, doc_id, filename, i)
-        )
-        tasks.append(task)
-
-    try:
-        results = await asyncio.gather(
-            *tasks, return_exceptions=True
-        )  # Gather with exceptions
-        for result in results:
-            if isinstance(result, Exception):
-                print(f"    Chunk error: {type(result).__name__}: {result}")
-            elif isinstance(result, list):
-                all_stakeholders.extend(result)
-    except Exception as e:
-        print(f"    Error gathering chunk results: {type(e).__name__}: {e}")
-
-    return all_stakeholders
-
-
-async def extract_all_stakeholders_from_brain(brain_name: str, brain_id: str):
-    """Extract ALL stakeholders from ALL documents"""
-
-    print(f"Processing ALL documents from brain: {brain_id}")
-
-    supabase = initialize_supabase()
-
-    # Get all documents for this brain
-    documents = get_documents_per_brain(supabase, brain_id)
-    if not documents:
-        print("No documents found in this brain.")
-        return
-
-    print(f"Found {len(documents)} documents. Fetching content...")
-
-    ##################### REMOVE AFTER TESTING #####################
-    FILTER_DOC_NUM = True
-    if FILTER_DOC_NUM:
-        print(f"Limiting to first 3 documents for testing.")
-        documents = documents[:3]
-
-    ###############################################################
-
-    # Fetch full text for each document
-    all_stakeholders = []
-    for i, doc in enumerate(documents, 1):
-        doc_id = doc["id"]
-        filename = doc.get("file_name", "Unknown")
-        print(f"  {i}/{len(documents)}: {filename} ({doc_id[:8]}...)")
+        json_str = re.sub(r"```json?|\n*```", "", raw_info.strip())
+        json_str = re.sub(r"^json\s*:?\s*", "", json_str, flags=re.IGNORECASE)
 
         try:
-            full_text = get_document_data(supabase, doc_id)
-            full_text = full_text.encode("utf-8").decode("unicode_escape")
-            if full_text:
-                stakeholders = await extract_stakeholders_adaptive(
-                    text=full_text, doc_id=doc_id, filename=filename
-                )
-                all_stakeholders.extend(stakeholders)
+            parsed = json.loads(json_str)
+            return [parsed] if isinstance(parsed, dict) else parsed
+        # except:
+        #     return []
         except Exception as e:
-            print(f"    Error processing {filename}: {e}")
+            print(f" Parse error: {type(e).__name__}: {e}")
+            return []
 
-    all_stakeholders = await normalize_stakeholder_names(all_stakeholders)
-    print(f"Normalized: {len(all_stakeholders)} stakeholders with canonical names.")
+    async def extract_stakeholders_from_text(
+        self, text: str, doc_id: str, filename: str, chunk_index: int = 0
+    ) -> List[Dict[str, Any]]:
+        """Extract stakeholders using enrichment pipeline."""
+        # Create InputState and run the graph
+        from enrichment.state import InputState
+        from enrichment.configuration import Configuration
+        from enrichment import graph
 
-    # Save JSON
-    output = {
-        "brain": brain_name,
-        "brain_id": brain_id,
-        "total_stakeholders": len(all_stakeholders),
-        "stakeholders": all_stakeholders,
-    }
-    return output
+        source_header = (
+            f"\n\n=== SOURCE METADATA ===\n"
+            f"Document ID: {doc_id}\n"
+            f"Filename: {filename}\n"
+            f"Chunk Index: {chunk_index}\n"
+            f"=== END METADATA ===\n\n"
+        )
+
+        full_input = source_header + text
+
+        initial_state = InputState(
+            topic=full_input, extraction_schema=STAKEHOLDER_SCHEMA
+        )
+
+        config = Configuration(
+            model=self.model,
+            prompt=(
+                "You are an assistant tasked with extracting specific information from the provided text using the extraction schema.\n\n"
+                "Schema:\n{schema}\n\n"
+                "Text:\n{topic}\n\n"
+                "Please provide your answer directly in clear text, filling in the schema (In English)."
+                "extraction_context in Source metadata: For each stakeholder, copy 200-300 chars around the mention from the document.\n"
+                "Rules: "
+                "Use only the information explicitly provided in the input text."
+                "Do not add assumptions, external knowledge, or inferred entities not present in the text."
+            ),
+            max_loops=self.max_loops,
+        ).__dict__
+
+        final_state = await graph.ainvoke(initial_state, config)
+
+        # print(final_state.get("answer", ""))
+        return self.parse_json_response(final_state.get("answer", ""))
+
+    def calculate_splitter_params(self) -> tuple:
+        # Use ~40-50% of context for chunk payload
+        base_chunk = int(self.model_context * 0.50)
+        CHARS_PER_TOKEN = 4  # English avg: 3.5-4.5 chars/token
+        chunk_size = base_chunk * CHARS_PER_TOKEN
+
+        # Overlap: 10-20% of chunk_size for semantic continuity
+        overlap = int(chunk_size * 0.15)
+        overlap = max(100, overlap)
+        return chunk_size, overlap
+
+    async def extract_stakeholders_adaptive(self, text, doc_id, filename):
+        """Extract: Whole if small, chunk if large"""
+        print(f"   {filename}: Text: {len(text) / 1000:.0f}k chars")
+
+        if len(text) <= self.threshold:
+            print("    → Whole doc extraction")
+            return await self.extract_stakeholders_from_text(
+                text=text, doc_id=doc_id, filename=filename, chunk_index=0
+            )
+
+        chunk_size, chunk_overlap = self.calculate_splitter_params()
+
+        splitter = RecursiveCharacterTextSplitter(
+            chunk_size=chunk_size,  # ~256k chars
+            chunk_overlap=chunk_overlap,  # ~38k chars
+            separators=["\n\n", "\n", ". ", " ", ""],
+        )
+        chunks = splitter.split_text(text)
+        print(
+            f"    → {len(chunks)} chunks ({chunk_size // 1000}k/{chunk_overlap // 1000}k)"
+        )
+
+        all_stakeholders = []
+        tasks = []  # CHANGE: Parallelize chunks
+
+        for i, chunk in enumerate(chunks, 1):
+            task = asyncio.create_task(
+                self.extract_stakeholders_from_text(chunk, doc_id, filename, i)
+            )
+            tasks.append(task)
+
+        try:
+            results = await asyncio.gather(
+                *tasks, return_exceptions=True
+            )  # Gather with exceptions
+            for result in results:
+                if isinstance(result, Exception):
+                    print(f"    Chunk error: {type(result).__name__}: {result}")
+                elif isinstance(result, list):
+                    all_stakeholders.extend(result)
+        except Exception as e:
+            print(f"    Error gathering chunk results: {type(e).__name__}: {e}")
+
+        return all_stakeholders
+
+    async def extract_all_stakeholders_from_brain(self, brain_name: str, brain_id: str):
+        """Extract ALL stakeholders from ALL documents"""
+
+        print(f"Processing ALL documents from brain: {brain_id}")
+
+        supabase = self.supabase
+
+        # Get all documents for this brain
+        documents = get_documents_per_brain(supabase, brain_id)
+        if not documents:
+            print("No documents found in this brain.")
+            return
+
+        print(f"Found {len(documents)} documents. Fetching content...")
+
+        if self.max_docs:
+            documents = documents[: self.max_docs]
+            print(
+                f"Extracting from {self.max_docs} documents out of {len(documents)} total (for testing)"
+            )
+
+        # Fetch full text for each document
+        all_stakeholders = []
+        for i, doc in enumerate(documents, 1):
+            doc_id = doc["id"]
+            filename = doc.get("file_name", "Unknown")
+            print(f"  {i}/{len(documents)}: {filename} ({doc_id[:8]}...)")
+
+            try:
+                full_text = get_document_data(supabase, doc_id)
+                full_text = full_text.encode("utf-8").decode("unicode_escape")
+                if full_text:
+                    stakeholders = await self.extract_stakeholders_adaptive(
+                        text=full_text, doc_id=doc_id, filename=filename
+                    )
+                    all_stakeholders.extend(stakeholders)
+            except Exception as e:
+                print(f"    Error processing {filename}: {e}")
+
+        all_stakeholders = await normalize_stakeholder_names(all_stakeholders)
+        print(f"Normalized: {len(all_stakeholders)} stakeholders with canonical names.")
+
+        # Save JSON
+        output = {
+            "brain": brain_name,
+            "brain_id": brain_id,
+            "total_stakeholders": len(all_stakeholders),
+            "stakeholders": all_stakeholders,
+        }
+        return output
 
 
-async def main():
+async def run_test_mode():
     #  TEST MODE - Load from real TXT file
     test_file_path = Path("stakeholder_pipeline/test_policy_text.txt")
     if test_file_path.exists():
@@ -268,7 +286,8 @@ async def main():
             mock_filename = test_file_path.name
 
             # Extract → exactly like real documents!
-            stakeholders = await extract_stakeholders_adaptive(
+            extractor = StakeholderExtractor(model="openai/gpt-4o-mini")
+            stakeholders = await extractor.extract_stakeholders_adaptive(
                 text=test_text, doc_id=mock_doc_id, filename=mock_filename
             )
 
@@ -305,7 +324,14 @@ async def main():
 
     print("ℹ  No test_data/elderly_policy_2026.txt → Running real brain extraction...")
 
-    ################### Brain Stakeholder Extractor#############################
+
+async def main():
+    RUNNING_TEST_MODE = False  # CHANGE: Set to False to run real extraction
+    if RUNNING_TEST_MODE:
+        await run_test_mode()
+        return
+
+    #### Brain Stakeholder Extractor###
     print("Brain Stakeholder Extractor")
     print("=" * 50)
 
@@ -323,7 +349,11 @@ async def main():
     brain_name = selected_brain.get("name", "Unknown")
 
     print(f"\nSelected Brain: {brain_name} (ID: {brain_id})")
-    output = await extract_all_stakeholders_from_brain(brain_name, brain_id)
+    extractor = StakeholderExtractor(
+        model="openai/gpt-4o-mini", max_docs=3
+    )  # CHANGE: Limit to 3 docs for testing
+
+    output = await extractor.extract_all_stakeholders_from_brain(brain_name, brain_id)
 
     output_dir = Path("output")
     output_dir.mkdir(parents=True, exist_ok=True)
