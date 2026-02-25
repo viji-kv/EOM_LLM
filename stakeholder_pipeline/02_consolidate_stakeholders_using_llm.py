@@ -13,7 +13,7 @@ from typing import List, Dict, Optional
 from dataclasses import dataclass
 from dotenv import load_dotenv
 from collections import defaultdict
-from utils.extraction_utils import parse_json_response, save_output
+from stakeholder_pipeline.utils import parse_json_response, save_output
 
 
 load_dotenv()

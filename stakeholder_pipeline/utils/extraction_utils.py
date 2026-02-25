@@ -78,19 +78,6 @@ def calculate_splitter_params(model_context) -> tuple:
     return chunk_size, overlap
 
 
-# def save_output(result: Dict, output_filename: str, output_dir) -> str:
-#     """Save result to file."""
-#     output_path = Path(output_dir)
-#     output_path.mkdir(exist_ok=True)
-
-#     out_file = output_path / output_filename
-
-#     with open(out_file, "w", encoding="utf-8") as f:
-#         json.dump(result, f, indent=2, ensure_ascii=False)
-
-#     return str(out_file)
-
-
 # def save_output(result: Dict, output_filename: str, output_dir: str = "output") -> Path:
 #     output_path = Path(output_dir)
 #     output_path.mkdir(parents=True, exist_ok=True)
@@ -107,20 +94,53 @@ def calculate_splitter_params(model_context) -> tuple:
 # import json
 
 
-def save_output(result: Dict, output_filename: str, output_dir: str = "output") -> Path:
-    """
-    Saves results using absolute path resolution to avoid PermissionErrors.
-    """
-    # Force absolute path resolution
-    output_path = Path(output_dir).resolve()
+# def save_output(result: Dict, output_filename: str, output_dir: str = "output") -> Path:
+#     """
+#     Saves results using absolute path resolution to avoid PermissionErrors.
+#     """
+#     # Force absolute path resolution
+#     output_path = Path(output_dir).resolve()
 
-    # Create directory if it doesn't exist (exist_ok prevents errors)
+#     # Create directory if it doesn't exist (exist_ok prevents errors)
+#     output_path.mkdir(parents=True, exist_ok=True)
+
+#     final_path = output_path / output_filename
+
+#     # Use utf-8 and ensure_ascii=False for Chinese/Special characters
+#     with open(final_path, "w", encoding="utf-8") as f:
+#         json.dump(result, f, indent=2, ensure_ascii=False)
+
+#     return final_path
+
+
+from pathlib import Path
+from typing import Dict, Any
+import json
+import re
+
+
+def save_output(result: Dict[str, Any], output_filename: str, output_dir) -> Path:
+    """
+    Save results to disk in a production-safe way.
+
+    - Accepts output_dir as str or Path
+    - Does not rely on the current working directory
+    - Ensures directory exists
+    """
+
+    # Normalize output_dir to Path without forcing resolve()
+    output_path = output_dir if isinstance(output_dir, Path) else Path(output_dir)
+
+    # Create directory if it doesn't exist
     output_path.mkdir(parents=True, exist_ok=True)
 
-    final_path = output_path / output_filename
+    # Sanitize filename to be safe on Windows/macOS
+    safe_filename = re.sub(r'[<>:"/\\|?*]', "_", output_filename)
+    final_path = output_path / safe_filename
 
-    # Use utf-8 and ensure_ascii=False for Chinese/Special characters
+    # Write JSON (UTF-8, keep non-ASCII chars)
     with open(final_path, "w", encoding="utf-8") as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 
+    print(f"💾 Saved: {final_path}")
     return final_path

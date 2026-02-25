@@ -1,0 +1,80 @@
+{
+  "brain_id": "87c6d2ac-7e1f-4a2f-8d6e-e00e2b14d90f",
+  "total_relationships": 0,
+  "total_pain_points": 6,
+  "relationships": [],
+  "pain_points": [
+    {
+      "stakeholder": "Elderly Commission",
+      "pain_point": "The aging population poses increasing pressure on public finances due to rising public expenditure linked to the elderly.",
+      "pain_type": "cost",
+      "evidence": "Due to the continued increase in public expenditure related to the elderly, the sustainability of public finances is at severe risk.",
+      "confidence": "90",
+      "source_metadata": {
+        "file_name": "2023_Failure to Address Population Aging Issue Puts Hong Kong's Public Finance at Risk.pdf",
+        "document_id": "f5396450-4061-40c4-8df7-e600489054b3",
+        "chunk_index": 0
+      }
+    },
+    {
+      "stakeholder": "Government of Japan",
+      "pain_point": "Japan's experience with aging has implications for Hong Kong's public finance sustainability due to increasing costs.",
+      "pain_type": "cost",
+      "evidence": "In Japan, the rising costs associated with an aging population have led to significant fiscal challenges, a cautionary tale for Hong Kong.",
+      "confidence": "85",
+      "source_metadata": {
+        "file_name": "2023_Failure to Address Population Aging Issue Puts Hong Kong's Public Finance at Risk.pdf",
+        "document_id": "f5396450-4061-40c4-8df7-e600489054b3",
+        "chunk_index": 0
+      }
+    },
+    {
+      "stakeholder": "Social Welfare Department",
+      "pain_point": "High costs associated with elderly care services lead to overcrowded facilities and poor service quality, negatively impacting mental health.",
+      "pain_type": "cost",
+      "evidence": "High costs for elderly care services lead to overcrowding and poor service quality, which negatively affects mental health.",
+      "confidence": "90",
+      "source_metadata": {
+        "file_name": "2023_Transferring elderly public housing residents to the Greater Bay Area to free up units for young workers.pdf",
+        "document_id": "75c1edcc-a8a3-489d-92ca-f8796cd705f8",
+        "chunk_index": 0
+      }
+    },
+    {
+      "stakeholder": "Social Welfare Department",
+      "pain_point": "Shortage of nursing staff for elderly care in Hong Kong.",
+      "pain_type": "staffing",
+      "evidence": "Currently facing a shortage of nursing staff for elderly care.",
+      "confidence": "85",
+      "source_metadata": {
+        "file_name": "2023_Transferring elderly public housing residents to the Greater Bay Area to free up units for young workers.pdf",
+        "document_id": "75c1edcc-a8a3-489d-92ca-f8796cd705f8",
+        "chunk_index": 0
+      }
+    },
+    {
+      "stakeholder": "Hong Kong Polytechnic University",
+      "pain_point": "The procedures for operating elderly care homes are overly complex and require frequent interactions with local government departments.",
+      "pain_type": "compliance",
+      "evidence": "The procedures for operating elderly care homes are very numerous and complicated, requiring frequent interactions with local government departments.",
+      "confidence": "90",
+      "source_metadata": {
+        "file_name": "2024_Bay Area Development Promotes Industrial Opportunities for Hong Kong-Style Elderly Care.pdf",
+        "document_id": "17a0f1c9-d803-42a8-8df0-63c22dd66f1c",
+        "chunk_index": 0
+      }
+    },
+    {
+      "stakeholder": "Hospital Authority",
+      "pain_point": "Due to the lack of seamless integration between medical resources of both regions, returning to Hong Kong for diagnosis and treatment is not convenient, raising concerns among Hong Kong residents regarding aging in the mainland.",
+      "pain_type": "access",
+      "evidence": "Due to the fact that the medical resources of the two regions are still not linked, returning to Hong Kong for diagnosis and treatment is not convenient, so many elderly Hong Kong residents have concerns about aging in the mainland.",
+      "confidence": "90",
+      "source_metadata": {
+        "file_name": "2024_Bay Area Development Promotes Industrial Opportunities for Hong Kong-Style Elderly Care.pdf",
+        "document_id": "17a0f1c9-d803-42a8-8df0-63c22dd66f1c",
+        "chunk_index": 0
+      }
+    }
+  ]
+}

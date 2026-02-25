@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from typing import List, Dict, Any, Set
 from pathlib import Path
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from utils.extraction_utils import (
+from stakeholder_pipeline.utils import (
     parse_json_response,
     calculate_splitter_params,
     save_output,
@@ -17,12 +17,12 @@ load_dotenv()
 
 # Import from files
 sys.path.insert(0, "supabase")  # Add supabase folder to Python path
-from select_data import (
+from supabase_utils.select_data import (
     select_brain_from_workspace,
     initialize_supabase,
     get_documents_per_brain,
 )
-from supabase_db import get_document_data, decode_string
+from supabase_utils.supabase_db import get_document_data, decode_string
 
 RELATIONSHIP_SCHEMA = {
     "type": "object",

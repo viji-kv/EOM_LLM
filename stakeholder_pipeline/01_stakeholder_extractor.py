@@ -15,26 +15,11 @@ from dotenv import load_dotenv
 from pathlib import Path
 import re
 
-# from stakeholder_pipeline.normalize_stakeholder import (
-#     normalize_stakeholder_names,
-# )  # stakeholder_pipeline
+
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-# from stakeholder_pipeline.utils import (
-#     parse_json_response,
-#     calculate_splitter_params,
-#     save_output,
-# )
+
 
 load_dotenv()
-
-# # Import from files
-# sys.path.insert(0, "supabase")  # Add supabase folder to Python path
-# from select_data import (
-#     select_brain_from_workspace,
-#     initialize_supabase,
-#     get_documents_per_brain,
-# )
-# from supabase_db import get_document_data, decode_string
 
 
 # Use absolute package imports
@@ -54,7 +39,7 @@ from supabase_utils.supabase_db import (
 )  # getdocumentdata reconstructs full doc text
 
 # Define Project Root (Up one level from stakeholder_pipeline)
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+# PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 # Stakeholder extraction schema
 STAKEHOLDER_SCHEMA = {
@@ -387,7 +372,8 @@ async def main():
     # output_folder_name = Path(extractor.output_dir).name
     # output_dir = PROJECT_ROOT / output_folder_name
 
-    output_dir = PROJECT_ROOT / extractor.output_dir
+    # output_dir = PROJECT_ROOT / extractor.output_dir
+    output_dir = extractor.output_dir
 
     output_file = f"stakeholders_output_{result['brain']}.json"
     # with open(output_dir / output_file, "w", encoding="utf-8") as f:

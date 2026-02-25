@@ -1,0 +1,280 @@
+{
+  "brain": "AP HK - NGO",
+  "brain_id": "fc93cc9c-1227-4290-a4d5-fce2c5e3fa29",
+  "total_stakeholders": 21,
+  "stakeholders": [
+    {
+      "Stakeholder Name": "Department of Health",
+      "Canonical Name": "Department of Health",
+      "Category": "Regulator",
+      "Role": "Manages Elderly Health Centres and local District Elderly Community Centres",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "2016_An Investment for the Celebration of Aging.pdf",
+        "document_id": "03e8facd-06e4-4d61-bd60-3e359b4fba85",
+        "chunk_index": 0,
+        "extraction_context": "Under the proposed Network, Elderly Health Centres managed by the Department of Health and the Community Health Centers of Hospital Authority, can serve as major health hubs, while local District Elderly Community Centres..."
+      }
+    },
+    {
+      "Stakeholder Name": "Hospital Authority",
+      "Canonical Name": "Hospital Authority",
+      "Category": "Regulator",
+      "Role": "Oversees Community Health Centers for integrated elderly care",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "2016_An Investment for the Celebration of Aging.pdf",
+        "document_id": "03e8facd-06e4-4d61-bd60-3e359b4fba85",
+        "chunk_index": 0,
+        "extraction_context": "...managed by the Department of Health and the Community Health Centers of Hospital Authority, can serve as major health hubs, while local District Elderly Community Centres..."
+      }
+    },
+    {
+      "Stakeholder Name": "Social Welfare Department",
+      "Canonical Name": "Social Welfare Department",
+      "Category": "Regulator",
+      "Role": "Involved in building an integrated person-centered care system",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "2016_An Investment for the Celebration of Aging.pdf",
+        "document_id": "03e8facd-06e4-4d61-bd60-3e359b4fba85",
+        "chunk_index": 0,
+        "extraction_context": "...a Health-Enabling Network, which features partnerships among the Department of Health, the Hospital Authority and the Social Welfare Department to build an integrated person-centered care system..."
+      }
+    },
+    {
+      "Stakeholder Name": "Our Hong Kong Foundation",
+      "Canonical Name": "Our Hong Kong Foundation",
+      "Category": "Research Organization",
+      "Role": "Conducts policy research on aging issues",
+      "Confidence Score": "85%",
+      "Source metadata": {
+        "filename": "2016_An Investment for the Celebration of Aging.pdf",
+        "document_id": "03e8facd-06e4-4d61-bd60-3e359b4fba85",
+        "chunk_index": 0,
+        "extraction_context": "Our Hong Kong Foundation, together with Professor Yeoh Eng-Kiong, Director of The Jockey Club School of Public Health and Primary Care at the Chinese University of Hong Kong, conducted..."
+      }
+    },
+    {
+      "Stakeholder Name": "Jockey Club School of Public Health and Primary Care",
+      "Canonical Name": "Jockey Club School of Public Health and Primary Care",
+      "Category": "Educational Institution",
+      "Role": "Engages in policy research related to aging",
+      "Confidence Score": "80%",
+      "Source metadata": {
+        "filename": "2016_An Investment for the Celebration of Aging.pdf",
+        "document_id": "03e8facd-06e4-4d61-bd60-3e359b4fba85",
+        "chunk_index": 0,
+        "extraction_context": "...the Jockey Club School of Public Health and Primary Care at the Chinese University of Hong Kong, conducted relevant research on the topics associated with an aging society..."
+      }
+    },
+    {
+      "Stakeholder Name": "Social Welfare Department",
+      "Canonical Name": "Social Welfare Department",
+      "Category": "Regulator",
+      "Role": "Oversees social security schemes for older people in Hong Kong and funding for elderly services",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "2016_An Investment for the Celebration of Aging.pdf",
+        "document_id": "03e8facd-06e4-4d61-bd60-3e359b4fba85",
+        "chunk_index": 1,
+        "extraction_context": "In addition to providing older people with direct cash allowances, the government can also strengthen labor policies to make older people stay economically active for as long as possible. Reverse mortgage and silver bonds are existing policy measures enacted to help middle-class older people to be self-sustainable after retirement."
+      }
+    },
+    {
+      "Stakeholder Name": "Department of Health",
+      "Canonical Name": "Department of Health",
+      "Category": "Regulator",
+      "Role": "Manages community health services and initiatives focused on aging in place",
+      "Confidence Score": "85%",
+      "Source metadata": {
+        "filename": "2016_An Investment for the Celebration of Aging.pdf",
+        "document_id": "03e8facd-06e4-4d61-bd60-3e359b4fba85",
+        "chunk_index": 1,
+        "extraction_context": "Elderly Health Centres managed by the DoH can serve as the backbone and provide training and health promotion materials to the local elderly social centers (i.e., DECCs/NECs or even private service providers). The purpose of this Network is to deliver health promotion workshops and seminars for older people living in public housing estates."
+      }
+    },
+    {
+      "Stakeholder Name": "Food and Health Bureau",
+      "Canonical Name": "Food and Health Bureau",
+      "Category": "Regulator",
+      "Role": "Implements health policies and oversees healthcare reforms related to elderly services",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "2016_An Investment for the Celebration of Aging.pdf",
+        "document_id": "03e8facd-06e4-4d61-bd60-3e359b4fba85",
+        "chunk_index": 1,
+        "extraction_context": "The recent proposed Health-Enabling Network can serve as major health and social care hubs in all 18 districts, demonstrating the Food and Health Bureau's initiative to collaborate with local community health centers."
+      }
+    },
+    {
+      "Stakeholder Name": "Hospital Authority",
+      "Canonical Name": "Hospital Authority",
+      "Category": "Provider",
+      "Role": "Provides public healthcare services and oversees the integration of health care for older adults",
+      "Confidence Score": "85%",
+      "Source metadata": {
+        "filename": "2016_An Investment for the Celebration of Aging.pdf",
+        "document_id": "03e8facd-06e4-4d61-bd60-3e359b4fba85",
+        "chunk_index": 1,
+        "extraction_context": "The Hospital Authority (HA) will provide enhanced community care through establishing standards for elderly care and improving interaction between healthcare providers and social services."
+      }
+    },
+    {
+      "Stakeholder Name": "Government of Singapore",
+      "Canonical Name": "Government of Singapore",
+      "Category": "Regulator",
+      "Role": "Regulates healthcare systems and implements ElderShield for elderly care",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "2016_An Investment for the Celebration of Aging.pdf",
+        "document_id": "03e8facd-06e4-4d61-bd60-3e359b4fba85",
+        "chunk_index": 1,
+        "extraction_context": "The ElderShield program managed by the Government of Singapore offers support for severe disabilities, allowing older adults and their families to choose suitable care, exemplifying an integrated approach to healthcare in an aging society."
+      }
+    },
+    {
+      "Stakeholder Name": "Social Welfare Department",
+      "Canonical Name": "Social Welfare Department",
+      "Category": "Regulator",
+      "Role": "Regulates elderly services",
+      "Confidence Score": "95%",
+      "Source metadata": {
+        "filename": "2016_An Investment for the Celebration of Aging.pdf",
+        "document_id": "03e8facd-06e4-4d61-bd60-3e359b4fba85",
+        "chunk_index": 2,
+        "extraction_context": "Spatial analysis using ArcGIS were conducted to visualize the locations of various health and social care public elderly services subvented by the SWD and the Elderly Health Centres of the DoH and CHCs of the HA are Sin and Tuen Mun Districts..."
+      }
+    },
+    {
+      "Stakeholder Name": "Ministry of Health",
+      "Canonical Name": "Ministry of Health",
+      "Category": "Government",
+      "Role": "Coordinates efforts to meet the challenges of aging",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "2016_An Investment for the Celebration of Aging.pdf",
+        "document_id": "03e8facd-06e4-4d61-bd60-3e359b4fba85",
+        "chunk_index": 2,
+        "extraction_context": "The Inter-Ministerial Committee on the Aging Population (IMC) was set up in 1999 under the Ministry of Health to coordinate efforts of multiple government departments in order to meet the challenges of aging..."
+      }
+    },
+    {
+      "Stakeholder Name": "Elderly Service Program Plan",
+      "Canonical Name": "Elderly Service Program Plan",
+      "Category": "Program",
+      "Role": "Promotes intergenerational cohesiveness",
+      "Confidence Score": "85%",
+      "Source metadata": {
+        "filename": "2016_An Investment for the Celebration of Aging.pdf",
+        "document_id": "03e8facd-06e4-4d61-bd60-3e359b4fba85",
+        "chunk_index": 2,
+        "extraction_context": "previous years, the Hong Kong Government, academic institutions and third sector organizations have been promoting intergenerational cohesiveness, with the Elderly Service Program Plan being one example..."
+      }
+    },
+    {
+      "Stakeholder Name": "Senior Citizen Home Safety Association",
+      "Canonical Name": "Senior Citizen Home Safety Association",
+      "Category": "Non-Profit Organization",
+      "Role": "Provides emergency assistance service and support for elderly in Hong Kong",
+      "Confidence Score": "95%",
+      "Source metadata": {
+        "filename": "2020_Application of Digital Health in community centres- the first step in a stepped care approach to primary care of older peopler.pdf",
+        "document_id": "21666258-b96f-4a8e-92ca-8f18bfdc7ea0",
+        "chunk_index": 0,
+        "extraction_context": "In the early 1990s, the use of technology to support elderly living was still uncommon in Hong Kong. In 1996, Senior Citizen Home Safety Association launched a 24/7 emergency assistance service supported by a dedicated SOS device and call center - a development that was in many ways ground breaking."
+      }
+    },
+    {
+      "Stakeholder Name": "The Hong Kong Jockey Club Charities Trust",
+      "Canonical Name": "The Hong Kong Jockey Club Charities Trust",
+      "Category": "Charity Organization",
+      "Role": "Promotes active and healthy ageing through various initiatives and funding",
+      "Confidence Score": "95%",
+      "Source metadata": {
+        "filename": "2020_Application of Digital Health in community centres- the first step in a stepped care approach to primary care of older peopler.pdf",
+        "document_id": "21666258-b96f-4a8e-92ca-8f18bfdc7ea0",
+        "chunk_index": 0,
+        "extraction_context": "As an organisation whose sole purpose is the betterment of our society, The Hong Kong Jockey Club is proactively working to enhance the quality of life of Hong Kong’s senior citizens."
+      }
+    },
+    {
+      "Stakeholder Name": "CUHK Jockey Club Institute of Ageing",
+      "Canonical Name": "CUHK Jockey Club Institute of Ageing",
+      "Category": "Research Institute",
+      "Role": "Conducts research and implements projects in response to aging population challenges",
+      "Confidence Score": "95%",
+      "Source metadata": {
+        "filename": "2020_Application of Digital Health in community centres- the first step in a stepped care approach to primary care of older peopler.pdf",
+        "document_id": "21666258-b96f-4a8e-92ca-8f18bfdc7ea0",
+        "chunk_index": 0,
+        "extraction_context": "In support of the Chinese University of Hong Kong’s aspiration to overcome the challenges brought by the ageing population to society, CUHK has established the CUHK Jockey Club Institute of Ageing in 2014 with the generous support from the Hong Kong Jockey Club Charities Trust."
+      }
+    },
+    {
+      "Stakeholder Name": "Social Welfare Department",
+      "Canonical Name": "Social Welfare Department",
+      "Category": "Regulator",
+      "Role": "Implements policies related to elderly services",
+      "Confidence Score": "95%",
+      "Source metadata": {
+        "filename": "2017_Promoting Gerontechnology & innovation in Hong Kong.pdf",
+        "document_id": "a3aa1857-cda5-483b-b2e7-d435512cabd8",
+        "chunk_index": 0,
+        "extraction_context": "For the insufficient human resources in the technology sector, the government should make an effort to play an active role in grooming talents in this area. Effort should be made to work on primary and secondary school curriculum to build up problem-solving skill and creative mindset..."
+      }
+    },
+    {
+      "Stakeholder Name": "Elderly Commission",
+      "Canonical Name": "Elderly Commission",
+      "Category": "Regulator",
+      "Role": "Formulates the Elderly Services Programme Plan",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "2017_Promoting Gerontechnology & innovation in Hong Kong.pdf",
+        "document_id": "a3aa1857-cda5-483b-b2e7-d435512cabd8",
+        "chunk_index": 0,
+        "extraction_context": "Specifically, consideration should be given to arranging more inter-generational programs in schools, youth organizations, business sector, etc. Topics on elements of ageing and intergenerational..."
+      }
+    },
+    {
+      "Stakeholder Name": "Hong Kong Council of Social Service",
+      "Canonical Name": "Hong Kong Council of Social Service",
+      "Category": "NGO",
+      "Role": "Promotes social services and host innovation programs",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "2017_Promoting Gerontechnology & innovation in Hong Kong.pdf",
+        "document_id": "a3aa1857-cda5-483b-b2e7-d435512cabd8",
+        "chunk_index": 0,
+        "extraction_context": "Group C: Collaboration between the parties, e.g., universities, research institutes, NGOs, government departments and other stakeholders. Gap 21: Insufficient cooperation between universities and research institutions..."
+      }
+    },
+    {
+      "Stakeholder Name": "Our Hong Kong Foundation",
+      "Canonical Name": "Our Hong Kong Foundation",
+      "Category": "Think Tank",
+      "Role": "Conducts research and collaborates on gerontechnology initiatives",
+      "Confidence Score": "85%",
+      "Source metadata": {
+        "filename": "2017_Promoting Gerontechnology & innovation in Hong Kong.pdf",
+        "document_id": "a3aa1857-cda5-483b-b2e7-d435512cabd8",
+        "chunk_index": 0,
+        "extraction_context": "Conducted by OHKF in partnership with HKCSS, the study focused on four areas, namely Living, Healthcare, Diet, and Transport and looked into 72 products and services with the potential of widespread use in Hong Kong..."
+      }
+    },
+    {
+      "Stakeholder Name": "Caritas Hong Kong",
+      "Canonical Name": "Caritas Hong Kong",
+      "Category": "NGO",
+      "Role": "Provides services for the elderly",
+      "Confidence Score": "85%",
+      "Source metadata": {
+        "filename": "2017_Promoting Gerontechnology & innovation in Hong Kong.pdf",
+        "document_id": "a3aa1857-cda5-483b-b2e7-d435512cabd8",
+        "chunk_index": 0,
+        "extraction_context": "Mr. Marco Chu Service Head of Caritas Hong Kong - Services for the Elderly Programme Director [Elderly Care – Home & Community Care. Executive Director..."
+      }
+    }
+  ]
+}
