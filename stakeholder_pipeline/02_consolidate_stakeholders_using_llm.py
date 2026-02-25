@@ -5,6 +5,7 @@ LLM-Only Stakeholder Clustering
 
 import asyncio
 import json
+import os
 import sys
 import re
 from pathlib import Path
@@ -12,6 +13,7 @@ from typing import List, Dict, Optional
 from dataclasses import dataclass
 from dotenv import load_dotenv
 from collections import defaultdict
+from utils.extraction_utils import parse_json_response, save_output
 
 
 load_dotenv()
@@ -56,67 +58,67 @@ CLUSTERING_SCHEMA = {
     },
 }
 
-# ===== IMPROVED JSON PARSER =====
+# # ===== IMPROVED JSON PARSER =====
 
 
-def parse_json_response(raw_info: str) -> List[Dict]:
-    """Robust JSON parser for LLM responses with multiple extraction strategies."""
-    if not raw_info:
-        print("        Empty raw response")
-        return []
+# def parse_json_response(raw_info: str) -> List[Dict]:
+#     """Robust JSON parser for LLM responses with multiple extraction strategies."""
+#     if not raw_info:
+#         print("        Empty raw response")
+#         return []
 
-    # print(f"       Raw response preview: {repr(raw_info[:300])}...")
+#     # print(f"       Raw response preview: {repr(raw_info[:300])}...")
 
-    # Strategy 1: Extract between ```json ... ```
-    json_match = re.search(
-        r"```json?\s*(\[.*?\])\s*```", raw_info, re.DOTALL | re.IGNORECASE
-    )
-    if json_match:
-        json_str = json_match.group(1)
-        # print("       Strategy 1: Found ```json block")
-    else:
-        # Strategy 2: Extract largest JSON array candidate
-        array_match = re.search(
-            r"\[\s*(?:\{[^}]*\}|\d+|\[[^\]]*\]|\s*,\s*)*\s*\]", raw_info, re.DOTALL
-        )
-        if array_match:
-            json_str = array_match.group(0)
-            # print("       Strategy 2: Found array candidate")
-        else:
-            print("       No JSON block or array found")
-            return []
+#     # Strategy 1: Extract between ```json ... ```
+#     json_match = re.search(
+#         r"```json?\s*(\[.*?\])\s*```", raw_info, re.DOTALL | re.IGNORECASE
+#     )
+#     if json_match:
+#         json_str = json_match.group(1)
+#         # print("       Strategy 1: Found ```json block")
+#     else:
+#         # Strategy 2: Extract largest JSON array candidate
+#         array_match = re.search(
+#             r"\[\s*(?:\{[^}]*\}|\d+|\[[^\]]*\]|\s*,\s*)*\s*\]", raw_info, re.DOTALL
+#         )
+#         if array_match:
+#             json_str = array_match.group(0)
+#             # print("       Strategy 2: Found array candidate")
+#         else:
+#             print("       No JSON block or array found")
+#             return []
 
-    # Clean the extracted JSON
-    json_str = re.sub(r"\\n", "", json_str)  # Remove escaped newlines
-    json_str = re.sub(r"\\", "", json_str)  # Remove backslashes
-    json_str = json_str.strip()
+#     # Clean the extracted JSON
+#     json_str = re.sub(r"\\n", "", json_str)  # Remove escaped newlines
+#     json_str = re.sub(r"\\", "", json_str)  # Remove backslashes
+#     json_str = json_str.strip()
 
-    if len(json_str) < 10:
-        print("        Extracted JSON too short")
-        return []
+#     if len(json_str) < 10:
+#         print("        Extracted JSON too short")
+#         return []
 
-    # print(f"       Cleaned JSON preview: {repr(json_str[:200])}...")
+#     # print(f"       Cleaned JSON preview: {repr(json_str[:200])}...")
 
-    try:
-        parsed = json.loads(json_str)
-        if isinstance(parsed, list):
-            print(f"       Successfully parsed {len(parsed)} clusters")
-            return parsed
-        elif isinstance(parsed, dict):
-            print("        Parsed single dict, wrapping in list")
-            return [parsed]
-        else:
-            print(f"        Unexpected type: {type(parsed)}")
-            return []
-    except json.JSONDecodeError as e:
-        print(f"       JSONDecodeError: {e}")
-        print(
-            f"       Error position preview: {repr(json_str[max(0, e.pos - 50) : e.pos + 50])}"
-        )
-        return []
-    except Exception as e:
-        print(f"       Unexpected error: {type(e).__name__}: {e}")
-        return []
+#     try:
+#         parsed = json.loads(json_str)
+#         if isinstance(parsed, list):
+#             print(f"       Successfully parsed {len(parsed)} clusters")
+#             return parsed
+#         elif isinstance(parsed, dict):
+#             print("        Parsed single dict, wrapping in list")
+#             return [parsed]
+#         else:
+#             print(f"        Unexpected type: {type(parsed)}")
+#             return []
+#     except json.JSONDecodeError as e:
+#         print(f"       JSONDecodeError: {e}")
+#         print(
+#             f"       Error position preview: {repr(json_str[max(0, e.pos - 50) : e.pos + 50])}"
+#         )
+#         return []
+#     except Exception as e:
+#         print(f"       Unexpected error: {type(e).__name__}: {e}")
+#         return []
 
 
 # ===== PURE LLM CLUSTERING =====
@@ -160,7 +162,7 @@ OUTPUT: JSON array of clusters with canonical names.
     # 2. Similar roles/descriptions → likely same entity
     # 3. Different entities → separate clusters (even if similar names)
     initial_state = InputState(topic=prompt_text, extraction_schema=CLUSTERING_SCHEMA)
-
+    # print(f"prompt_text: {prompt_text}")
     llm_config = Configuration(
         model=config.model,
         prompt="Cluster stakeholders:\n{topic}\nSchema: {schema}\nOutput valid JSON only.",
@@ -405,17 +407,17 @@ async def consolidate_from_file(input_file: str, config: LLMClusterConfig) -> Di
     }
 
 
-def save_output(result: Dict, output_filename: str, output_dir) -> str:
-    """Save result to file."""
-    output_path = Path(output_dir)
-    output_path.mkdir(exist_ok=True)
+# def save_output(result: Dict, output_filename: str, output_dir) -> str:
+#     """Save result to file."""
+#     output_path = Path(output_dir)
+#     output_path.mkdir(exist_ok=True)
 
-    out_file = output_path / output_filename
+#     out_file = output_path / output_filename
 
-    with open(out_file, "w", encoding="utf-8") as f:
-        json.dump(result, f, indent=2, ensure_ascii=False)
+#     with open(out_file, "w", encoding="utf-8") as f:
+#         json.dump(result, f, indent=2, ensure_ascii=False)
 
-    return str(out_file)
+#     return str(out_file)
 
 
 # ===== CLI =====
@@ -444,7 +446,7 @@ def main():
 
     # Save output
     input_filename = Path(input_file).name
-    output_filename = input_filename.replace(".json", "_llm_only_consolidated.json")
+    output_filename = input_filename.replace(".json", "_consolidated.json")
     output_path = save_output(result, output_filename, config.output_dir)
 
     # Print summary

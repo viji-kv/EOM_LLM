@@ -14,21 +14,47 @@ from typing import List, Dict, Any
 from dotenv import load_dotenv
 from pathlib import Path
 import re
-from normalize_stakeholder import normalize_stakeholder_names
+
+# from stakeholder_pipeline.normalize_stakeholder import (
+#     normalize_stakeholder_names,
+# )  # stakeholder_pipeline
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+# from stakeholder_pipeline.utils import (
+#     parse_json_response,
+#     calculate_splitter_params,
+#     save_output,
+# )
 
 load_dotenv()
 
-# Import from files
-sys.path.insert(0, "supabase")  # Add supabase folder to Python path
-from select_data import (
+# # Import from files
+# sys.path.insert(0, "supabase")  # Add supabase folder to Python path
+# from select_data import (
+#     select_brain_from_workspace,
+#     initialize_supabase,
+#     get_documents_per_brain,
+# )
+# from supabase_db import get_document_data, decode_string
+
+
+# Use absolute package imports
+from stakeholder_pipeline.normalize_stakeholder import normalize_stakeholder_names
+from stakeholder_pipeline.utils import (
+    save_output,
+    calculate_splitter_params,
+    parse_json_response,
+)
+from supabase_utils.select_data import (
     select_brain_from_workspace,
     initialize_supabase,
     get_documents_per_brain,
 )
-from supabase_db import get_document_data, decode_string
-# getdocumentdata reconstructs full doc text
+from supabase_utils.supabase_db import (
+    get_document_data,
+)  # getdocumentdata reconstructs full doc text
 
+# Define Project Root (Up one level from stakeholder_pipeline)
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 # Stakeholder extraction schema
 STAKEHOLDER_SCHEMA = {
@@ -96,6 +122,7 @@ class StakeholderExtractor:
         model: str = "openai/gpt-4o-mini",
         threshold: int = 100000,
         max_docs: int = None,
+        output_dir: str = "output",
     ):
         self.model = model
         self.threshold = threshold
@@ -103,23 +130,24 @@ class StakeholderExtractor:
         self.max_loops = 2  # Limit loops
         self.supabase = initialize_supabase()
         self.model_context = self.MODEL_CONTEXTS.get(model, 128000)
+        self.output_dir = output_dir
 
-    def parse_json_response(self, raw_info: str) -> List[Dict]:
-        """JSON parser"""
-        if not raw_info:
-            return []
+    # def parse_json_response(self, raw_info: str) -> List[Dict]:
+    #     """JSON parser"""
+    #     if not raw_info:
+    #         return []
 
-        json_str = re.sub(r"```json?|\n*```", "", raw_info.strip())
-        json_str = re.sub(r"^json\s*:?\s*", "", json_str, flags=re.IGNORECASE)
+    #     json_str = re.sub(r"```json?|\n*```", "", raw_info.strip())
+    #     json_str = re.sub(r"^json\s*:?\s*", "", json_str, flags=re.IGNORECASE)
 
-        try:
-            parsed = json.loads(json_str)
-            return [parsed] if isinstance(parsed, dict) else parsed
-        # except:
-        #     return []
-        except Exception as e:
-            print(f" Parse error: {type(e).__name__}: {e}")
-            return []
+    #     try:
+    #         parsed = json.loads(json_str)
+    #         return [parsed] if isinstance(parsed, dict) else parsed
+    #     # except:
+    #     #     return []
+    #     except Exception as e:
+    #         print(f" Parse error: {type(e).__name__}: {e}")
+    #         return []
 
     async def extract_stakeholders_from_text(
         self, text: str, doc_id: str, filename: str, chunk_index: int = 0
@@ -162,18 +190,18 @@ class StakeholderExtractor:
         final_state = await graph.ainvoke(initial_state, config)
 
         # print(final_state.get("answer", ""))
-        return self.parse_json_response(final_state.get("answer", ""))
+        return parse_json_response(final_state.get("answer", ""))
 
-    def calculate_splitter_params(self) -> tuple:
-        # Use ~40-50% of context for chunk payload
-        base_chunk = int(self.model_context * 0.50)
-        CHARS_PER_TOKEN = 4  # English avg: 3.5-4.5 chars/token
-        chunk_size = base_chunk * CHARS_PER_TOKEN
+    # def calculate_splitter_params(self) -> tuple:
+    #     # Use ~40-50% of context for chunk payload
+    #     base_chunk = int(self.model_context * 0.50)
+    #     CHARS_PER_TOKEN = 4  # English avg: 3.5-4.5 chars/token
+    #     chunk_size = base_chunk * CHARS_PER_TOKEN
 
-        # Overlap: 10-20% of chunk_size for semantic continuity
-        overlap = int(chunk_size * 0.15)
-        overlap = max(100, overlap)
-        return chunk_size, overlap
+    #     # Overlap: 10-20% of chunk_size for semantic continuity
+    #     overlap = int(chunk_size * 0.15)
+    #     overlap = max(100, overlap)
+    #     return chunk_size, overlap
 
     async def extract_stakeholders_adaptive(self, text, doc_id, filename):
         """Extract: Whole if small, chunk if large"""
@@ -185,7 +213,7 @@ class StakeholderExtractor:
                 text=text, doc_id=doc_id, filename=filename, chunk_index=0
             )
 
-        chunk_size, chunk_overlap = self.calculate_splitter_params()
+        chunk_size, chunk_overlap = calculate_splitter_params(self.model_context)
 
         splitter = RecursiveCharacterTextSplitter(
             chunk_size=chunk_size,  # ~256k chars
@@ -200,7 +228,7 @@ class StakeholderExtractor:
         all_stakeholders = []
         tasks = []  # CHANGE: Parallelize chunks
 
-        for i, chunk in enumerate(chunks, 1):
+        for i, chunk in enumerate(chunks):
             task = asyncio.create_task(
                 self.extract_stakeholders_from_text(chunk, doc_id, filename, i)
             )
@@ -237,9 +265,7 @@ class StakeholderExtractor:
 
         if self.max_docs:
             documents = documents[: self.max_docs]
-            print(
-                f"Extracting from {self.max_docs} documents out of {len(documents)} total (for testing)"
-            )
+            print(f"Extracting from {self.max_docs} documents (for testing)")
 
         # Fetch full text for each document
         all_stakeholders = []
@@ -353,15 +379,28 @@ async def main():
         model="openai/gpt-4o-mini", max_docs=3
     )  # CHANGE: Limit to 3 docs for testing
 
-    output = await extractor.extract_all_stakeholders_from_brain(brain_name, brain_id)
+    result = await extractor.extract_all_stakeholders_from_brain(brain_name, brain_id)
 
-    output_dir = Path("output")
-    output_dir.mkdir(parents=True, exist_ok=True)
-    output_file = f"stakeholders_output_{output['brain']}.json"
-    with open(output_dir / output_file, "w", encoding="utf-8") as f:
-        json.dump(output, f, indent=2, ensure_ascii=False)
-    print(f"\n Full results saved to: {output_file}.json")
+    # output_dir = Path(extractor.output_dir).name
+
+    # Define your output folder here
+    # output_folder_name = Path(extractor.output_dir).name
+    # output_dir = PROJECT_ROOT / output_folder_name
+
+    output_dir = PROJECT_ROOT / extractor.output_dir
+
+    output_file = f"stakeholders_output_{result['brain']}.json"
+    # with open(output_dir / output_file, "w", encoding="utf-8") as f:
+    #     json.dump(output, f, indent=2, ensure_ascii=False)
+
+    output_path = save_output(result, output_file, output_dir)
+    print(f"\n Full results saved to: {output_path}")
 
 
 if __name__ == "__main__":
     asyncio.run(main())
+
+
+# extractor = StakeholderExtractor(model="openai/gpt-4o-mini", max_docs=3)
+# output_dir = Path(extractor.output_dir).name
+# input_filename = Path("Dir/input_file.json")

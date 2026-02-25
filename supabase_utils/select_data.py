@@ -7,7 +7,7 @@ from supabase.client import Client, create_client
 from supabase.lib.client_options import ClientOptions
 
 # from ai_assistant.vector_store.supabase_db import CustomSupabaseVectorStore
-from supabase_db import CustomSupabaseVectorStore
+from supabase_utils.supabase_db import CustomSupabaseVectorStore
 
 
 def initialize_supabase() -> Client:
