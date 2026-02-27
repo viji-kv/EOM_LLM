@@ -1,115 +1,137 @@
 {
-  "relationships": [
+  "brain": "Test Elderly Policy",
+  "brain_id": "test_123",
+  "test_file": "stakeholder_pipeline\\test_policy_text.txt",
+  "total_stakeholders": 10,
+  "stakeholders": [
     {
-      "source": "SWD",
-      "target": "HKCSS",
-      "relationship_type": "funds",
-      "evidence": "SWD funds 70% of subvented homes via Lump Sum Grant. SWD audits NGOs like Hong Kong Council of Social Service (HKCSS)...",
-      "confidence": "95%",
-      "source_metadata": {
-        "file_name": "test_policy_text.txt",
-        "document_id": "test_doc_001"
+      "Stakeholder Name": "Social Welfare Department",
+      "Canonical Name": "Social Welfare Department",
+      "Category": "Regulator",
+      "Role": "Leads the implementation of elderly care reforms, regulating all public and subsidized residential care homes.",
+      "Confidence Score": "95%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "extraction_context": "The Social Welfare Department (SWD) leads the implementation of elderly care reforms, regulating all public and subsidized residential care homes. SWD oversees licensing and compliance for 450+ facilities serving 30,000+ seniors."
       }
     },
     {
-      "source": "SWD",
-      "target": "Caritas Hong Kong",
-      "relationship_type": "funds",
-      "evidence": "SWD funds and regulates HKCSS, Caritas, and Baptist Oi Kwan...",
-      "confidence": "95%",
-      "source_metadata": {
-        "file_name": "test_policy_text.txt",
-        "document_id": "test_doc_001"
+      "Stakeholder Name": "Hospital Authority",
+      "Canonical Name": "Hospital Authority",
+      "Category": "Regulator",
+      "Role": "Provides acute medical support but faces capacity shortages, often transferring stable elderly patients to NGO-run homes.",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "extraction_context": "The Hospital Authority (HA) provides acute medical support but faces capacity shortages, often transferring stable elderly patients to NGO-run homes."
       }
     },
     {
-      "source": "SWD",
-      "target": "Baptist Oi Kwan Social Service",
-      "relationship_type": "funds",
-      "evidence": "SWD funds and regulates HKCSS, Caritas, and Baptist Oi Kwan...",
-      "confidence": "95%",
-      "source_metadata": {
-        "file_name": "test_policy_text.txt",
-        "document_id": "test_doc_001"
+      "Stakeholder Name": "Labour and Welfare Bureau",
+      "Canonical Name": "Labour and Welfare Bureau",
+      "Category": "Government",
+      "Role": "Policy oversight, approves SWD budgets.",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "extraction_context": "- Labour and Welfare Bureau: Policy oversight, approves SWD budgets."
       }
     },
     {
-      "source": "HKCSS",
-      "target": "HA",
-      "relationship_type": "partners",
-      "evidence": "HKCSS coordinates advocacy against HA bed shortages...",
-      "confidence": "90%",
-      "source_metadata": {
-        "file_name": "test_policy_text.txt",
-        "document_id": "test_doc_001"
+      "Stakeholder Name": "Hong Kong Council of Social Service",
+      "Canonical Name": "Hong Kong Council of Social Service",
+      "Category": "NGO",
+      "Role": "Umbrella body coordinating 180+ member agencies, advocates for increased SWD funding and trains staff for elderly centers.",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "extraction_context": "- Hong Kong Council of Social Service (HKCSS): Umbrella body coordinating 180+ member agencies. HKCSS advocates for increased SWD funding..."
       }
     },
     {
-      "source": "PRCHs",
-      "target": "NGOs",
-      "relationship_type": "competes",
-      "evidence": "Private homes compete with NGO subvented facilities on cost...",
-      "confidence": "85%",
-      "source_metadata": {
-        "file_name": "test_policy_text.txt",
-        "document_id": "test_doc_001"
+      "Stakeholder Name": "Caritas Hong Kong",
+      "Canonical Name": "Caritas Hong Kong",
+      "Category": "NGO",
+      "Role": "Operates 25 residential homes (1,200 beds), receives SWD subsidies but supplements with private donations.",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "extraction_context": "- Caritas Hong Kong: Operates 25 residential homes (1,200 beds). Receives SWD subsidies but supplements with private donations..."
       }
     },
     {
-      "source": "Family Caregivers",
-      "target": "District Elderly Community Centres",
-      "relationship_type": "supplies",
-      "evidence": "Family caregivers rely on DECCs for training...",
-      "confidence": "92%",
-      "source_metadata": {
-        "file_name": "test_policy_text.txt",
-        "document_id": "test_doc_001"
-      }
-    }
-  ],
-  "pain_points": [
-    {
-      "stakeholder": "Baptist Oi Kwan Social Service",
-      "pain_point": "staffing shortages",
-      "pain_type": "staffing",
-      "evidence": "Baptist Oi Kwan reports staffing shortages as major pain point.",
-      "confidence": "90",
-      "source_metadata": {
-        "file_name": "test_policy_text.txt",
-        "document_id": "test_doc_001"
+      "Stakeholder Name": "Baptist Oi Kwan Social Service",
+      "Canonical Name": "Baptist Oi Kwan Social Service",
+      "Category": "NGO",
+      "Role": "Runs day care centers for 500 seniors daily, competes with other NGOs for SWD tenders.",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "extraction_context": "- Baptist Oi Kwan Social Service: Runs day care centers for 500 seniors daily. Competes with other NGOs for SWD tenders; reports staffing shortages as major pain point."
       }
     },
     {
-      "stakeholder": "NGOs",
-      "pain_point": "underfunding",
-      "pain_type": "cost",
-      "evidence": "Major pain points: SWD underfunding (NGOs)...",
-      "confidence": "90",
-      "source_metadata": {
-        "file_name": "test_policy_text.txt",
-        "document_id": "test_doc_001"
+      "Stakeholder Name": "Private Residential Care Homes",
+      "Canonical Name": "Private Residential Care Homes",
+      "Category": "Private Sector",
+      "Role": "300+ facilities (15,000 beds), fully self-funded, regulated by SWD but criticize over-regulation.",
+      "Confidence Score": "85%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "extraction_context": "- Private Residential Care Homes (PRCHs): 300+ facilities (15,000 beds), fully self-funded. Regulated by SWD but criticize over-regulation."
       }
     },
     {
-      "stakeholder": "all providers",
-      "pain_point": "discharge delays",
-      "pain_type": "access",
-      "evidence": "Major pain points: HA discharge delays (all providers)...",
-      "confidence": "90",
-      "source_metadata": {
-        "file_name": "test_policy_text.txt",
-        "document_id": "test_doc_001"
+      "Stakeholder Name": "Elderly Citizens",
+      "Canonical Name": "Elderly Citizens",
+      "Category": "Consumer",
+      "Role": "Primary consumers, 80% prefer aging-in-place over institutional care, demand better home care subsidies.",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "extraction_context": "- Elderly Citizens (65+): Primary consumers, 80% prefer aging-in-place over institutional care. Demand better home care subsidies from SWD."
       }
     },
     {
-      "stakeholder": "Family Caregivers",
-      "pain_point": "burnout",
-      "pain_type": "other",
-      "evidence": "Major pain points: caregiver burnout (families)...",
-      "confidence": "90",
-      "source_metadata": {
-        "file_name": "test_policy_text.txt",
-        "document_id": "test_doc_001"
+      "Stakeholder Name": "Family Caregivers",
+      "Canonical Name": "Family Caregivers",
+      "Category": "Consumer",
+      "Role": "Informal support network, overburdened; seek respite services from HKCSS and Baptist Oi Kwan.",
+      "Confidence Score": "92%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "extraction_context": "- Family Caregivers: Informal support network, overburdened; seek respite services from HKCSS and Baptist Oi Kwan."
+      }
+    },
+    {
+      "Stakeholder Name": "District Elderly Community Centres",
+      "Canonical Name": "District Elderly Community Centres",
+      "Category": "Community",
+      "Role": "120+ centers run by NGOs, funded 50/50 by SWD and community donations.",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "extraction_context": "- District Elderly Community Centres (DECCs): 120+ centers run by NGOs, funded 50/50 by SWD and community donations."
       }
     }
   ]

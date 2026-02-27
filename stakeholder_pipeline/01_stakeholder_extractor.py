@@ -8,20 +8,11 @@ Brain Stakeholder Extractor
 
 import asyncio
 import json
-
-# from multiprocessing.pool import RUN
-# import sys
 from typing import List, Dict, Any
 from dotenv import load_dotenv
 from pathlib import Path
-# import re
-
-
+from tenacity import retry, stop_after_attempt, wait_exponential
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-
-
-load_dotenv()
-
 
 # Use absolute package imports
 from stakeholder_pipeline.normalize_stakeholder import normalize_stakeholder_names
@@ -29,6 +20,7 @@ from stakeholder_pipeline.utils import (
     save_output,
     calculate_splitter_params,
     parse_json_response,
+    calculate_threshold,
 )
 from supabase_utils.select_data import (
     select_brain_from_workspace,
@@ -37,7 +29,12 @@ from supabase_utils.select_data import (
 )
 from supabase_utils.supabase_db import (
     get_document_data,
+    decode_string,
 )  # getdocumentdata reconstructs full doc text
+
+
+load_dotenv()
+
 
 # Define Project Root (Up one level from stakeholder_pipeline)
 # PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -106,18 +103,25 @@ class StakeholderExtractor:
     def __init__(
         self,
         model: str = "openai/gpt-4o-mini",
-        threshold: int = 100000,
         max_docs: int = None,
         output_dir: str = "output",
+        concurrency_limit: int = 5,
     ):
         self.model = model
-        self.threshold = threshold
         self.max_docs = max_docs
-        self.max_loops = 2  # Limit loops
-        self.supabase = initialize_supabase()
-        self.model_context = self.MODEL_CONTEXTS.get(model, 128000)
         self.output_dir = output_dir
+        self.concurrency_limit = concurrency_limit
+        self.model_context = self.MODEL_CONTEXTS.get(model, 128000)
+        self.threshold = calculate_threshold(self.model_context)
+        self.supabase = initialize_supabase()
+        self.max_loops = 2  # Limit loops
+        self.semaphore = asyncio.Semaphore(self.concurrency_limit)
 
+    @retry(
+        stop=stop_after_attempt(3),
+        wait=wait_exponential(multiplier=1, min=2, max=10),  # 2s, 4s, 8s
+        reraise=True,  # Re-raise final failure
+    )
     async def extract_stakeholders_from_text(
         self, text: str, doc_id: str, filename: str, chunk_index: int = 0
     ) -> List[Dict[str, Any]]:
@@ -156,7 +160,14 @@ class StakeholderExtractor:
             max_loops=self.max_loops,
         ).__dict__
 
-        final_state = await graph.ainvoke(initial_state, config)
+        # final_state = await graph.ainvoke(initial_state, config)
+
+        # Use semaphore to prevent hitting rate limits during gather
+        async with self.semaphore:
+            print(f"    Processing {filename}...")
+            final_state = await asyncio.wait_for(
+                graph.ainvoke(initial_state, config), timeout=300
+            )
 
         # print(final_state.get("answer", ""))
         return parse_json_response(final_state.get("answer", ""))
@@ -183,7 +194,6 @@ class StakeholderExtractor:
             f"    → {len(chunks)} chunks ({chunk_size // 1000}k/{chunk_overlap // 1000}k)"
         )
 
-        all_stakeholders = []
         tasks = []  # CHANGE: Parallelize chunks
 
         for i, chunk in enumerate(chunks):
@@ -196,13 +206,18 @@ class StakeholderExtractor:
             results = await asyncio.gather(
                 *tasks, return_exceptions=True
             )  # Gather with exceptions
-            for result in results:
-                if isinstance(result, Exception):
-                    print(f"    Chunk error: {type(result).__name__}: {result}")
-                elif isinstance(result, list):
-                    all_stakeholders.extend(result)
         except Exception as e:
             print(f"    Error gathering chunk results: {type(e).__name__}: {e}")
+
+        all_stakeholders = []
+        successful = 0
+        for result in results:
+            if isinstance(result, Exception):
+                print(f"    Chunk error: {type(result).__name__}: {result}")
+            elif isinstance(result, list):
+                all_stakeholders.extend(result)
+                successful += 1
+        print(f"   {successful}/{len(tasks)} chunks successful")
 
         return all_stakeholders
 
@@ -226,22 +241,46 @@ class StakeholderExtractor:
             print(f"Extracting from {self.max_docs} documents (for testing)")
 
         # Fetch full text for each document
-        all_stakeholders = []
+        doc_tasks = []
         for i, doc in enumerate(documents, 1):
             doc_id = doc["id"]
             filename = doc.get("file_name", "Unknown")
             print(f"  {i}/{len(documents)}: {filename} ({doc_id[:8]}...)")
 
+            # try:
+            #     full_text = get_document_data(supabase, doc_id)
+            #     full_text = full_text.encode("utf-8").decode("unicode_escape")
+            #     if full_text:
+            #         stakeholders = await self.extract_stakeholders_adaptive(
+            #             text=full_text, doc_id=doc_id, filename=filename
+            #         )
+            #         all_stakeholders.extend(stakeholders)
+            # except Exception as e:
+            #     print(f"    Error processing {filename}: {e}")
+
             try:
-                full_text = get_document_data(supabase, doc_id)
-                full_text = full_text.encode("utf-8").decode("unicode_escape")
-                if full_text:
-                    stakeholders = await self.extract_stakeholders_adaptive(
-                        text=full_text, doc_id=doc_id, filename=filename
-                    )
-                    all_stakeholders.extend(stakeholders)
+                raw_text = get_document_data(self.supabase, doc_id)
+                full_text = decode_string(raw_text)
+                # full_text = raw_text.encode("utf-8").decode("unicode_escape")
+                task = self.extract_stakeholders_adaptive(
+                    text=full_text, doc_id=doc_id, filename=filename
+                )  # coroutine object of extract_adaptive for each doc
+                doc_tasks.append(task)
             except Exception as e:
-                print(f"    Error processing {filename}: {e}")
+                print(f" Prep failed {filename}: {e}")
+                doc_tasks.append(None)  # Skip bad doc
+
+        results = await asyncio.gather(*doc_tasks, return_exceptions=True)
+        all_stakeholders = []
+        successful = 0
+        for result in results:
+            if isinstance(result, Exception):
+                print(f" Doc failed: {result}")
+            elif isinstance(result, list):
+                all_stakeholders.extend(result)
+                successful += 1
+
+        print(f" {successful}/{len(doc_tasks)} docs complete")
 
         all_stakeholders = await normalize_stakeholder_names(all_stakeholders)
         print(f"Normalized: {len(all_stakeholders)} stakeholders with canonical names.")

@@ -1,7 +1,10 @@
 import json
 import re
-from typing import List, Dict
-from zipfile import Path
+from typing import List, Dict, Any
+# from zipfile import Path
+
+from pathlib import Path
+
 
 # ===== IMPROVED JSON PARSER =====
 
@@ -72,10 +75,10 @@ def calculate_splitter_params(model_context) -> tuple:
     return chunk_size, overlap
 
 
-from pathlib import Path
-from typing import Dict, Any
-import json
-import re
+def calculate_threshold(model_context):
+    """45-50% of context for text (rest = prompt/schema overhead)"""
+    chars_per_token = 4  # English avg
+    return int(model_context * 0.5 * chars_per_token)  # ~230k for gpt-4o-mini
 
 
 def save_output(result: Dict[str, Any], output_filename: str, output_dir) -> Path:

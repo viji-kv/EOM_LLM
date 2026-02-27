@@ -1,40 +1,27 @@
 {
   "brain": "AP HK - Financial industry",
   "brain_id": "ce88cb71-2528-4598-a585-5fa2dfd03319",
-  "total_stakeholders": 20,
+  "total_stakeholders": 22,
   "stakeholders": [
     {
-      "Stakeholder Name": "HSBC",
-      "Canonical Name": "HSBC",
-      "Category": "Bank",
-      "Role": "Provides banking services, including support for customers living with dementia",
+      "Stakeholder Name": "Social Welfare Department",
+      "Canonical Name": "Social Welfare Department",
+      "Category": "Regulator",
+      "Role": "Provides guardianship orders and elderly services",
       "Confidence Score": "95%",
       "Source metadata": {
         "filename": "2018_HSBC_managing-money-with-dementia.pdf",
         "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa",
         "chunk_index": 0,
-        "extraction_context": "HSBC we are committed to helping everyone bank safely, independently and receive the correct support when needed. Contents Helpful ways to manage your finances Cards and PINs Enabling others to support you with your finances Fraud protection Places you can find support..."
-      }
-    },
-    {
-      "Stakeholder Name": "Social Welfare Department",
-      "Canonical Name": "Social Welfare Department",
-      "Category": "Government Agency",
-      "Role": "Offers guardianship orders and relevant services",
-      "Confidence Score": "90%",
-      "Source metadata": {
-        "filename": "2018_HSBC_managing-money-with-dementia.pdf",
-        "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa",
-        "chunk_index": 0,
-        "extraction_context": "Social Welfare Department (Guardianship Order) www.swd.gov.hk/en/index/site_pubsvc/page_medical/sub_guardiansh. Hong Kong Judiciary (Court appointed Committee of Estate of a Mentally Incapacitated Person) www.judiciary.hk/en/court_services_facilities/guidance_note.html"
+        "extraction_context": "You can access our Security Centre at www.hsbc.com.hk/help/security-centre/threats. ^ For more information about Guardianship Orders, you can visit the Social Welfare Department website: www.swd.gov.hk/en/index/site_pubsvc/page_medical/sub_guardiansh"
       }
     },
     {
       "Stakeholder Name": "Hong Kong Alzheimer’s Disease Association",
-      "Canonical Name": "Hong Kong Alzheimer's Disease Association",
-      "Category": "Non-Profit Organization",
-      "Role": "Provides support and information for people living with dementia",
-      "Confidence Score": "85%",
+      "Canonical Name": "Hong Kong Alzheimer’s Disease Association",
+      "Category": "Partner",
+      "Role": "Works in partnership to support those living with dementia",
+      "Confidence Score": "90%",
       "Source metadata": {
         "filename": "2018_HSBC_managing-money-with-dementia.pdf",
         "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa",
@@ -43,166 +30,192 @@
       }
     },
     {
+      "Stakeholder Name": "Hong Kong Judiciary",
+      "Canonical Name": "Hong Kong Judiciary",
+      "Category": "Regulator",
+      "Role": "Handles court appointed committee matters for mentally incapacitated persons",
+      "Confidence Score": "85%",
+      "Source metadata": {
+        "filename": "2018_HSBC_managing-money-with-dementia.pdf",
+        "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa",
+        "chunk_index": 0,
+        "extraction_context": "For more information about Committee of Estate of a Mentally Incapacitated Person appointed by the Court, you can visit the Hong Kong Judiciary website: www.judiciary.hk/en/court_services_facilities/guidance_note.html"
+      }
+    },
+    {
       "Stakeholder Name": "DBS Group Holdings Ltd",
       "Canonical Name": "DBS Group Holdings",
-      "Category": "Partner",
-      "Role": "Leading financial services group committed to sustainability and responsible banking.",
+      "Category": "Supplier/Partner",
+      "Role": "Leading financial services group in Asia, focused on sustainable banking",
       "Confidence Score": "95%",
       "Source metadata": {
         "filename": "2023_DBS_SR2023.pdf",
         "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
         "chunk_index": 0,
-        "extraction_context": "At DBS, we believe that every individual has human rights as enshrined in the United Nations’ Universal Declaration on Human Rights. We also recognise that today the world faces considerable social and human rights challenges that require collaboration between all members of society to overcome."
+        "extraction_context": "At DBS, we believe that every individual has human rights as enshrined in the United Nations’ Universal Declaration on Human Rights. We also recognise that today the world faces considerable social and human rights challenges that require collaboration between all"
+      }
+    },
+    {
+      "Stakeholder Name": "DBS Foundation",
+      "Canonical Name": "DBS Foundation",
+      "Category": "Partner",
+      "Role": "Supports social enterprises and community causes",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "chunk_index": 0,
+        "extraction_context": "We awarded SGD 3.7 million in grant funding to 24 awardees across the region through the 2023 DBS Foundation Business for Impact Grant Award. This programme is to recognise, reward and support both SMEs and SEs to scale their business model"
       }
     },
     {
       "Stakeholder Name": "Singapore Centre for Social Enterprise",
       "Canonical Name": "Singapore Centre for Social Enterprise",
-      "Category": "Partner",
-      "Role": "Community partner working with DBS to create social impact.",
-      "Confidence Score": "90%",
+      "Category": "Regulator/Partner",
+      "Role": "Connection with government bodies and associations to foster social enterprises",
+      "Confidence Score": "85%",
       "Source metadata": {
         "filename": "2023_DBS_SR2023.pdf",
         "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
         "chunk_index": 0,
-        "extraction_context": "Regular events and conversations with Businesses for Impact, community partners and social service agencies to understand the social landscape and how DBS can partner to create impact."
+        "extraction_context": "Regular events and conversations with Businesses for Impact, community partners and social service agencies to understand the social landscape and how DBS can partner to create impact. Connection with government bodies and associations, including Singapore Centre for"
       }
     },
     {
-      "Stakeholder Name": "DBS Foundation",
-      "Canonical Name": "DBS Group Holdings",
-      "Category": "Partner",
-      "Role": "Supports social enterprises and community causes alongside employee volunteerism.",
+      "Stakeholder Name": "Chief Sustainability Officer",
+      "Canonical Name": "Chief Sustainability Officer",
+      "Category": "Employee",
+      "Role": "Oversees sustainability policy and practices",
       "Confidence Score": "90%",
       "Source metadata": {
         "filename": "2023_DBS_SR2023.pdf",
         "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
         "chunk_index": 0,
-        "extraction_context": "We awarded SGD 3.7 million in grant funding to 24 awardees across the region through the 2023 DBS Foundation Business for Impact Grant Award."
+        "extraction_context": "Our Chief Sustainability Officer has oversight of our policy and approach to respect human rights, and works closely with other members of our management team to embed human rights due diligence across our business."
       }
     },
     {
       "Stakeholder Name": "DBS Group Holdings Ltd",
       "Canonical Name": "DBS Group Holdings",
       "Category": "Regulator",
-      "Role": "Sustainability Report and Governance",
+      "Role": "Conducts various initiatives for community impact and sustainability",
       "Confidence Score": "95%",
       "Source metadata": {
         "filename": "2023_DBS_SR2023.pdf",
         "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
         "chunk_index": 1,
-        "extraction_context": "As part of the master plan, we have introduced a robust set of initiatives for leadership capability development. To drive leadership effectiveness, we have..."
+        "extraction_context": "As part of the master plan, we have introduced a robust set of initiatives for leadership capability development. To drive leadership effectiveness, we have embedded the six transformational leadership tenets - growth mindset, psychological safety, feedback culture, courageous conversations"
       }
     },
     {
       "Stakeholder Name": "Financial Women's Association of Singapore",
       "Canonical Name": "Financial Women's Association of Singapore",
       "Category": "Partner",
-      "Role": "Facilitates networking opportunities for Circle leaders and members",
-      "Confidence Score": "85%",
+      "Role": "Facilitates networking opportunities for women leaders",
+      "Confidence Score": "90%",
       "Source metadata": {
         "filename": "2023_DBS_SR2023.pdf",
         "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
         "chunk_index": 1,
-        "extraction_context": "This year, our Circle participants also volunteered their time to share their diverse career experiences with underprivileged girls through events like DBS x SHE Sneak Peek Human Library..."
+        "extraction_context": "Many also appreciate the opportunity to connect with colleagues from different departments and learn from the diversity of experiences. Acknowledging the value of building networks, we also facilitated networking opportunities for our Circle leaders and members to meet professionals from external organisations via our corporate membership in the Financial Women's Association of Singapore"
       }
     },
     {
       "Stakeholder Name": "Temasek Women's Network",
       "Canonical Name": "Temasek Women's Network",
       "Category": "Partner",
-      "Role": "Partnering with DBS for professional networking",
+      "Role": "Partnering organization for initiatives supporting women",
       "Confidence Score": "85%",
       "Source metadata": {
         "filename": "2023_DBS_SR2023.pdf",
         "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
         "chunk_index": 1,
-        "extraction_context": "We also facilitated networking opportunities for our Circle leaders and members to meet professionals from external organisations via our corporate membership in the Financial Women's Association of Singapore..."
+        "extraction_context": "as well as being an employer of choice. we also facilitated networking opportunities for our Circle leaders and members to meet professionals from external organisations via our corporate membership in the Financial Women's Association of Singapore and partnering with the Temasek Women's Network."
       }
     },
     {
       "Stakeholder Name": "Daughters of Tomorrow",
       "Canonical Name": "Daughters of Tomorrow",
       "Category": "Community Partner",
-      "Role": "Community partner for STEM education initiatives",
-      "Confidence Score": "90%",
+      "Role": "Community partner for education and skill-building initiatives",
+      "Confidence Score": "80%",
       "Source metadata": {
         "filename": "2023_DBS_SR2023.pdf",
         "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
         "chunk_index": 1,
-        "extraction_context": "Our technology colleagues actively volunteered their skills and time to nurture young girls’ interest in STEM through volunteering programmes with schools and community partners like Daughters of Tomorrow..."
+        "extraction_context": "Our technology colleagues actively volunteered their skills and time to nurture young girls’ interest in STEM through volunteering programmes with schools and community partners like Daughters of Tomorrow and launching DBS Tech For Girls."
       }
     },
     {
       "Stakeholder Name": "DBS Group Holdings Ltd",
       "Canonical Name": "DBS Group Holdings",
-      "Category": "Partner",
-      "Role": "Conducts limited assurance engagement on sustainability information",
+      "Category": "Regulator",
+      "Role": "Conducts limited assurance engagement regarding sustainability information",
       "Confidence Score": "90%",
       "Source metadata": {
         "filename": "2023_DBS_SR2023.pdf",
         "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
         "chunk_index": 2,
-        "extraction_context": "to undertake a limited assurance engagement in respect of the selected sustainability information from the 2023 Sustainability Report of the Company described below for the year ended 31 December 2023 (‘the Identified Sustainability Information’)."
-      }
-    },
-    {
-      "Stakeholder Name": "Accounting and Corporate Regulatory Authority (ACRA)",
-      "Canonical Name": "Accounting and Corporate Regulatory Authority",
-      "Category": "Regulator",
-      "Role": "Establishes ethical requirements for public accountants",
-      "Confidence Score": "85%",
-      "Source metadata": {
-        "filename": "2023_DBS_SR2023.pdf",
-        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
-        "chunk_index": 2,
-        "extraction_context": "independence and other ethical requirements of the Accounting and Corporate Regulatory Authority (ACRA) Code of Professional Conduct and Ethics for Public Accountants and Accounting Entities (ACRA Code), which is founded on fundamental principles of integrity..."
+        "extraction_context": "Our responsibility is to express a limited assurance conclusion on the Identified Sustainability Information based on the procedures we have performed and the evidence we have obtained. We performed our limited assurance engagement in accordance with..."
       }
     },
     {
       "Stakeholder Name": "Monetary Authority of Singapore (MAS)",
       "Canonical Name": "Monetary Authority of Singapore",
       "Category": "Regulator",
-      "Role": "Enhances ESG data ecosystem within Singapore",
-      "Confidence Score": "90%",
-      "Source metadata": {
-        "filename": "2023_DBS_SR2023.pdf",
-        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
-        "chunk_index": 2,
-        "extraction_context": "DBS is an active participant in the MAS-led initiative to enhance the ESG data ecosystem within Singapore with the aim of creating a national ESG data utility for SMEs."
-      }
-    },
-    {
-      "Stakeholder Name": "National Confederation of Bank Employees (NCBE)",
-      "Canonical Name": "National Confederation of Bank Employees",
-      "Category": "Partner",
-      "Role": "Affiliated union representing bank employees",
+      "Role": "Convenes the Green Finance Industry Taskforce",
       "Confidence Score": "85%",
       "Source metadata": {
         "filename": "2023_DBS_SR2023.pdf",
         "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
         "chunk_index": 2,
-        "extraction_context": "is affiliated to NCBE (National Confederation of Bank Employees). As of 31 December 2023 a total of 1,004 employees are members of this Union."
+        "extraction_context": "DBS was co-chair in the disclosure workstream of the MAS-convened GFIT. The taskforce comprises representatives from financial institutions, corporates, non-governmental organisations..."
+      }
+    },
+    {
+      "Stakeholder Name": "Singapore Accounting and Corporate Regulatory Authority (ACRA)",
+      "Canonical Name": "Singapore Accounting and Corporate Regulatory Authority",
+      "Category": "Regulator",
+      "Role": "Shares responsibilities for developing sustainability reporting roadmaps",
+      "Confidence Score": "85%",
+      "Source metadata": {
+        "filename": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "chunk_index": 2,
+        "extraction_context": "DBS is a member of the SRAC, which was jointly set up by Singapore's Accounting and Corporate Regulatory Authority (ACRA) and the Singapore Exchange Regulation (SGX RegCo)."
       }
     },
     {
       "Stakeholder Name": "The Conservancy Association",
       "Canonical Name": "The Conservancy Association",
       "Category": "Partner",
-      "Role": "Supported the Country Parks Plantation Enrichment Programme",
+      "Role": "Supported in the Country Parks Plantation Enrichment Programme",
       "Confidence Score": "90%",
       "Source metadata": {
         "filename": "2022_Hang Seng Bank ESG report.pdf",
         "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
         "chunk_index": 0,
-        "extraction_context": "We supported The Conservancy Association (‘CA’) in the Country Parks Plantation Enrichment Programme (‘PEP’), which was launched by the Agriculture, Fisheries and Conservation Department."
+        "extraction_context": "We supported The Conservancy Association (‘CA’) in the Country Parks Plantation Enrichment Programme (‘PEP’), which was launched by the Agriculture, Fisheries and Conservation Department. In June 2022, Bank volunteers helped plant 800 seedlings of native tree species in Tai Lam Country Park."
+      }
+    },
+    {
+      "Stakeholder Name": "Agriculture, Fisheries and Conservation Department",
+      "Canonical Name": "Agriculture, Fisheries and Conservation Department",
+      "Category": "Regulator",
+      "Role": "Launched the Country Parks Plantation Enrichment Programme",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "2022_Hang Seng Bank ESG report.pdf",
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
+        "chunk_index": 0,
+        "extraction_context": "supported The Conservancy Association (‘CA’) in the Country Parks Plantation Enrichment Programme (‘PEP’), which was launched by the Agriculture, Fisheries and Conservation Department."
       }
     },
     {
       "Stakeholder Name": "World Wide Fund for Nature Hong Kong",
       "Canonical Name": "World Wide Fund for Nature Hong Kong",
       "Category": "Partner",
-      "Role": "Participated in corporate membership programmes",
+      "Role": "Supported corporate membership programmes",
       "Confidence Score": "85%",
       "Source metadata": {
         "filename": "2022_Hang Seng Bank ESG report.pdf",
@@ -215,7 +228,7 @@
       "Stakeholder Name": "Business Environment Council",
       "Canonical Name": "Business Environment Council",
       "Category": "Partner",
-      "Role": "Participated in corporate membership programmes",
+      "Role": "Supported corporate membership programmes",
       "Confidence Score": "85%",
       "Source metadata": {
         "filename": "2022_Hang Seng Bank ESG report.pdf",
@@ -228,20 +241,20 @@
       "Stakeholder Name": "CarbonCare InnoLab",
       "Canonical Name": "CarbonCare InnoLab",
       "Category": "Partner",
-      "Role": "Collaborated on the Low Carbon Future – SolarCare Programme",
+      "Role": "Collaborated on the Hang Seng Low Carbon Future – SolarCare Programme",
       "Confidence Score": "85%",
       "Source metadata": {
         "filename": "2022_Hang Seng Bank ESG report.pdf",
         "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
         "chunk_index": 0,
-        "extraction_context": "In collaboration with CarbonCare InnoLab (‘CCIL’), we funded the Hang Seng Low Carbon Future – SolarCare Programme."
+        "extraction_context": "In collaboration with CarbonCare InnoLab (‘CCIL’), we funded the Hang Seng Low Carbon Future – SolarCare Programme, a project which involved the installation of over 268 solar panels at the Breakthrough Youth Village."
       }
     },
     {
       "Stakeholder Name": "The Community Chest of Hong Kong",
       "Canonical Name": "The Community Chest of Hong Kong",
       "Category": "Partner",
-      "Role": "Supported various charitable programmes and events",
+      "Role": "Supported various fundraising and charitable events",
       "Confidence Score": "90%",
       "Source metadata": {
         "filename": "2022_Hang Seng Bank ESG report.pdf",
@@ -254,13 +267,26 @@
       "Stakeholder Name": "Hong Kong Table Tennis Association",
       "Canonical Name": "Hong Kong Table Tennis Association",
       "Category": "Partner",
-      "Role": "Co-organised the Hang Seng Table Tennis Academy",
+      "Role": "Co-organized the Hang Seng Table Tennis Academy",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "2022_Hang Seng Bank ESG report.pdf",
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
+        "chunk_index": 0,
+        "extraction_context": "Co-organised with the Hong Kong Table Tennis Association, the Hang Seng Table Tennis Academy (‘HSTTA’) identifies and nurtures home-grown table tennis talents through high-quality, structured training sessions."
+      }
+    },
+    {
+      "Stakeholder Name": "Hang Seng University of Hong Kong",
+      "Canonical Name": "Hang Seng University of Hong Kong",
+      "Category": "Educational Institution",
+      "Role": "Board of Governors Chairman is a senior management member",
       "Confidence Score": "85%",
       "Source metadata": {
         "filename": "2022_Hang Seng Bank ESG report.pdf",
         "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
         "chunk_index": 0,
-        "extraction_context": "Co-organised with the Hong Kong Table Tennis Association, the Hang Seng Table Tennis Academy (‘HSTTA’) identifies and nurtures home-grown table tennis talents."
+        "extraction_context": "the Bank’s Executive Director and Chief Executive, Diana Cesar, is the Chairman of the Board of Governors at the Hang Seng University of Hong Kong."
       }
     }
   ]

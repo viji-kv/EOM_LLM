@@ -10,6 +10,7 @@ from stakeholder_pipeline.utils import (
     # parse_json_response,
     calculate_splitter_params,
     save_output,
+    calculate_threshold,
 )
 from tenacity import retry, stop_after_attempt, wait_exponential
 
@@ -131,15 +132,15 @@ class RelationshipExtractor:
         self.output_dir = output_dir
         self.concurrency_limit = concurrency_limit
         self.model_context = self.MODEL_CONTEXTS.get(model, 128000)
-        self.threshold = self.calculate_threshold()
+        self.threshold = calculate_threshold(self.model_context)
         self.supabase = initialize_supabase()
         self.max_loops = 2
         self.semaphore = asyncio.Semaphore(self.concurrency_limit)
 
-    def calculate_threshold(self):
-        """45-50% of context for text (rest = prompt/schema overhead)"""
-        chars_per_token = 4  # English avg
-        return int(self.model_context * 0.5 * chars_per_token)  # ~230k for gpt-4o-mini
+    # def calculate_threshold(self):
+    #     """45-50% of context for text (rest = prompt/schema overhead)"""
+    #     chars_per_token = 4  # English avg
+    #     return int(self.model_context * 0.5 * chars_per_token)  # ~230k for gpt-4o-mini
 
     # Added helper to chunk the stakeholder list into batches
     def get_stakeholder_batches(self, entities: List[str]):
