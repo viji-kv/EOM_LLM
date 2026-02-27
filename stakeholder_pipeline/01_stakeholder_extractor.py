@@ -8,12 +8,13 @@ Brain Stakeholder Extractor
 
 import asyncio
 import json
-from multiprocessing.pool import RUN
-import sys
+
+# from multiprocessing.pool import RUN
+# import sys
 from typing import List, Dict, Any
 from dotenv import load_dotenv
 from pathlib import Path
-import re
+# import re
 
 
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -117,23 +118,6 @@ class StakeholderExtractor:
         self.model_context = self.MODEL_CONTEXTS.get(model, 128000)
         self.output_dir = output_dir
 
-    # def parse_json_response(self, raw_info: str) -> List[Dict]:
-    #     """JSON parser"""
-    #     if not raw_info:
-    #         return []
-
-    #     json_str = re.sub(r"```json?|\n*```", "", raw_info.strip())
-    #     json_str = re.sub(r"^json\s*:?\s*", "", json_str, flags=re.IGNORECASE)
-
-    #     try:
-    #         parsed = json.loads(json_str)
-    #         return [parsed] if isinstance(parsed, dict) else parsed
-    #     # except:
-    #     #     return []
-    #     except Exception as e:
-    #         print(f" Parse error: {type(e).__name__}: {e}")
-    #         return []
-
     async def extract_stakeholders_from_text(
         self, text: str, doc_id: str, filename: str, chunk_index: int = 0
     ) -> List[Dict[str, Any]]:
@@ -176,17 +160,6 @@ class StakeholderExtractor:
 
         # print(final_state.get("answer", ""))
         return parse_json_response(final_state.get("answer", ""))
-
-    # def calculate_splitter_params(self) -> tuple:
-    #     # Use ~40-50% of context for chunk payload
-    #     base_chunk = int(self.model_context * 0.50)
-    #     CHARS_PER_TOKEN = 4  # English avg: 3.5-4.5 chars/token
-    #     chunk_size = base_chunk * CHARS_PER_TOKEN
-
-    #     # Overlap: 10-20% of chunk_size for semantic continuity
-    #     overlap = int(chunk_size * 0.15)
-    #     overlap = max(100, overlap)
-    #     return chunk_size, overlap
 
     async def extract_stakeholders_adaptive(self, text, doc_id, filename):
         """Extract: Whole if small, chunk if large"""
@@ -366,18 +339,9 @@ async def main():
 
     result = await extractor.extract_all_stakeholders_from_brain(brain_name, brain_id)
 
-    # output_dir = Path(extractor.output_dir).name
-
-    # Define your output folder here
-    # output_folder_name = Path(extractor.output_dir).name
-    # output_dir = PROJECT_ROOT / output_folder_name
-
-    # output_dir = PROJECT_ROOT / extractor.output_dir
     output_dir = extractor.output_dir
 
     output_file = f"stakeholders_output_{result['brain']}.json"
-    # with open(output_dir / output_file, "w", encoding="utf-8") as f:
-    #     json.dump(output, f, indent=2, ensure_ascii=False)
 
     output_path = save_output(result, output_file, output_dir)
     print(f"\n Full results saved to: {output_path}")
@@ -385,8 +349,3 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-
-
-# extractor = StakeholderExtractor(model="openai/gpt-4o-mini", max_docs=3)
-# output_dir = Path(extractor.output_dir).name
-# input_filename = Path("Dir/input_file.json")

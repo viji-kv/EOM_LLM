@@ -1,0 +1,240 @@
+{
+  "brain_id": "ce88cb71-2528-4598-a585-5fa2dfd03319",
+  "total_relationships": 12,
+  "total_pain_points": 9,
+  "relationships": [
+    {
+      "source": "DBS Group Holdings",
+      "target": "SkillsFuture Singapore",
+      "relationship_type": "partners",
+      "evidence": "We partnered with SkillsFuture Singapore, a Singapore government agency, to upskill SMEs and help strengthen their sustainability skills through the DBS SME Skills Booster programme.",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2"
+      }
+    },
+    {
+      "source": "DBS Group Holdings",
+      "target": "The Community Chest of Hong Kong",
+      "relationship_type": "collaborates",
+      "evidence": "Regular events and conversations with Businesses for Impact, community partners and social service agencies to understand the social landscape and how DBS can partner to create impact.",
+      "confidence": "85%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2"
+      }
+    },
+    {
+      "source": "DBS Group Holdings",
+      "target": "Singapore Centre for Social Enterprise",
+      "relationship_type": "collaborates",
+      "evidence": "Connection with government bodies and associations, including Singapore Centre for Social Enterprise and Community Chest.",
+      "confidence": "85%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2"
+      }
+    },
+    {
+      "source": "DBS Group Holdings",
+      "target": "Daughters of Tomorrow",
+      "relationship_type": "partners",
+      "evidence": "Our technology colleagues actively volunteered their skills and time to nurture young girls’ interest in STEM through volunteering programmes with schools and community partners like Daughters of Tomorrow and launching DBS Tech For Girls.",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2"
+      }
+    },
+    {
+      "source": "DBS Group Holdings",
+      "target": "Financial Institutions",
+      "relationship_type": "collaborates",
+      "evidence": "This movement has attracted over 1,300 participants and generated approximately 3 tonnes of food impact and various collaborations between DBSF and financial institutions.",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2"
+      }
+    },
+    {
+      "source": "DBS Group Holdings",
+      "target": "Hong Kong Judiciary",
+      "relationship_type": "other",
+      "evidence": "We strive to actively collaborate with various sectors including the Hong Kong Judiciary to address community challenges effectively.",
+      "confidence": "85%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2"
+      }
+    },
+    {
+      "source": "DBS Group Holdings",
+      "target": "Accounting and Corporate Regulatory Authority",
+      "relationship_type": "collaborates",
+      "evidence": "Our firm applies Singapore Standard on Quality Management 1 which requires the firm to design, implement and operate a system of quality management including policies or procedures regarding compliance with ethical requirements, professional standards and applicable legal and regulatory requirements.",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2"
+      }
+    },
+    {
+      "source": "DBS Group Holdings",
+      "target": "Monetary Authority of Singapore",
+      "relationship_type": "partners",
+      "evidence": "DBS is a member of the SRAC, which was jointly set up by Singapore's Accounting and Corporate Regulatory Authority (ACRA) and the Singapore Exchange Regulation (SGX RegCo).",
+      "confidence": "85%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2"
+      }
+    },
+    {
+      "source": "Hang Seng Bank",
+      "target": "The Conservancy Association",
+      "relationship_type": "collaborates",
+      "evidence": "We supported The Conservancy Association (‘CA’) in the Country Parks Plantation Enrichment Programme (‘PEP’), which was launched by the Agriculture, Fisheries and Conservation Department.",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2022_Hang Seng Bank ESG report.pdf",
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9"
+      }
+    },
+    {
+      "source": "Hang Seng Bank",
+      "target": "World Wide Fund for Nature Hong Kong",
+      "relationship_type": "funds",
+      "evidence": "We continued to provide support to the corporate membership programmes of the World Wide Fund for Nature Hong Kong.",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2022_Hang Seng Bank ESG report.pdf",
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9"
+      }
+    },
+    {
+      "source": "Hang Seng Bank",
+      "target": "Business Environment Council",
+      "relationship_type": "funds",
+      "evidence": "We continued to provide support to the corporate membership programmes of the Business Environment Council.",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2022_Hang Seng Bank ESG report.pdf",
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9"
+      }
+    },
+    {
+      "source": "Hang Seng Bank",
+      "target": "The Community Chest of Hong Kong",
+      "relationship_type": "partners",
+      "evidence": "We are the Diamond Sponsor of Dress Casual Day for the 25th consecutive year.",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2022_Hang Seng Bank ESG report.pdf",
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9"
+      }
+    }
+  ],
+  "pain_points": [
+    {
+      "stakeholder": "Social Welfare Department",
+      "pain_point": "Financial support for individuals living with dementia",
+      "pain_type": "cost",
+      "evidence": "There are various welfare benefits and financial support that a person living with dementia may be eligible to receive. Please contact the Social Service Welfare Department, elderly service units or organisations with dementia services for further information.",
+      "confidence": "90",
+      "source_metadata": {
+        "file_name": "2018_HSBC_managing-money-with-dementia.pdf",
+        "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa"
+      }
+    },
+    {
+      "stakeholder": "Hong Kong Alzheimer’s Disease Association",
+      "pain_point": "Support for understanding dementia and available services",
+      "pain_type": "access",
+      "evidence": "Speak to the Hong Kong Alzheimer’s Disease Association or other organisations offering dementia services, who can provide information to help you understand dementia and what to expect, including practical advice and support about living with the condition.",
+      "confidence": "90",
+      "source_metadata": {
+        "file_name": "2018_HSBC_managing-money-with-dementia.pdf",
+        "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa"
+      }
+    },
+    {
+      "stakeholder": "DBS Group Holdings",
+      "pain_point": "Employee wellness concerns related to work-related stress, and rewards and recognition.",
+      "pain_type": "staffing",
+      "evidence": "Through the annual employee engagement survey and quarterly employee experience survey, the key areas of concern raised by employees are around wellbeing (work-related stress), and rewards and recognition.",
+      "confidence": "90",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2"
+      }
+    },
+    {
+      "stakeholder": "SkillsFuture Singapore",
+      "pain_point": "Limited sustainability skills among SMEs.",
+      "pain_type": "staffing",
+      "evidence": "A growing number of SMEs and social enterprises are open to adopt more sustainable business models, but are often held back by operational matters and may lack the bandwidth or resources to kickstart their transition journey.",
+      "confidence": "85",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2"
+      }
+    },
+    {
+      "stakeholder": "DBS Group Holdings",
+      "pain_point": "Need for continuous improvement in data governance and management.",
+      "pain_type": "compliance",
+      "evidence": "To improve our data quality, we are continually enhancing our data governance, systems, and processes.",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2"
+      }
+    },
+    {
+      "stakeholder": "Daughters of Tomorrow",
+      "pain_point": "Underprivileged girls facing barriers to STEM education opportunities.",
+      "pain_type": "access",
+      "evidence": "Our technology colleagues actively volunteered their skills and time to nurture young girls’ interest in STEM through volunteering programmes.",
+      "confidence": "85%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2"
+      }
+    },
+    {
+      "stakeholder": "DBS Group Holdings",
+      "pain_point": "DBS has faced challenges incorporating material ESG factors into their reporting framework.",
+      "pain_type": "compliance",
+      "evidence": "Given the circumstances of the engagement, we also performed the following: interviewed management and personnel in Group Procurement Services, Group Human Resources, and Corporate Real Estate Strategy & Administration in relation to the Identified Sustainability Information.",
+      "confidence": "90",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2"
+      }
+    },
+    {
+      "stakeholder": "The Community Chest of Hong Kong",
+      "pain_point": "Need for continuous support and funding for their charitable programmes.",
+      "pain_type": "cost",
+      "evidence": "We are the Diamond Sponsor of Dress Casual Day for the 25th consecutive year.",
+      "confidence": "90",
+      "source_metadata": {
+        "file_name": "2022_Hang Seng Bank ESG report.pdf",
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9"
+      }
+    },
+    {
+      "stakeholder": "World Wide Fund for Nature Hong Kong",
+      "pain_point": "Funding and resources for environmental initiatives.",
+      "pain_type": "cost",
+      "evidence": "We continued to provide support to the corporate membership programmes of the World Wide Fund for Nature Hong Kong.",
+      "confidence": "90",
+      "source_metadata": {
+        "file_name": "2022_Hang Seng Bank ESG report.pdf",
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9"
+      }
+    }
+  ]
+}

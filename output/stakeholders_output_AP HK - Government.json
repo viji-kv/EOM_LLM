@@ -1,136 +1,162 @@
 {
   "brain": "AP HK - Government",
   "brain_id": "d03cb608-a2d0-4c80-ba37-d23ebf25cfeb",
-  "total_stakeholders": 14,
+  "total_stakeholders": 17,
   "stakeholders": [
     {
       "Stakeholder Name": "The Hong Kong Polytechnic University Consulting Team",
       "Canonical Name": "Hong Kong Polytechnic University",
-      "Category": "Partner",
-      "Role": "Conducted a consultancy study on the needs and support required of informal carers of elderly persons and persons with disabilities in Hong Kong.",
-      "Confidence Score": "95%",
+      "Category": "Provider",
+      "Role": "Conducted a consultancy study on the needs and support required of informal carers of elderly persons and persons with disabilities in Hong Kong",
+      "Confidence Score": "90%",
       "Source metadata": {
         "filename": "2022_Consultancy Study on Needs and Support Required of Carers of Elderly Persons and of Persons with Disabilities in Hong Kong.pdf",
         "document_id": "86893c54-9763-49fe-a932-b9226aa5af6a",
         "chunk_index": 0,
-        "extraction_context": "The Hong Kong Polytechnic University Consulting Team was commissioned in July 2020 to conduct a consultancy study on the needs and support required of informal carers of elderly persons and persons with disabilities in Hong Kong."
-      }
-    },
-    {
-      "Stakeholder Name": "PolyU Consultancy and Technology Co. Ltd.",
-      "Canonical Name": "Hong Kong Polytechnic University",
-      "Category": "Partner",
-      "Role": "Submitted the consultancy study report.",
-      "Confidence Score": "95%",
-      "Source metadata": {
-        "filename": "2022_Consultancy Study on Needs and Support Required of Carers of Elderly Persons and of Persons with Disabilities in Hong Kong.pdf",
-        "document_id": "86893c54-9763-49fe-a932-b9226aa5af6a",
-        "chunk_index": 0,
-        "extraction_context": "Submitted by PolyU Consultancy and Technology Co. Ltd."
+        "extraction_context": "Hong Kong Polytechnic University Consulting Team was commissioned by the Government to conduct a consultancy study on the needs and support required of informal carers of elderly persons and persons with disabilities in Hong Kong."
       }
     },
     {
       "Stakeholder Name": "Social Welfare Department (SWD)",
       "Canonical Name": "Social Welfare Department",
       "Category": "Regulator",
-      "Role": "Involved in the evaluation of support services and subsidies.",
+      "Role": "Provides community care services for elderly persons and persons with disabilities",
+      "Confidence Score": "85%",
+      "Source metadata": {
+        "filename": "2022_Consultancy Study on Needs and Support Required of Carers of Elderly Persons and of Persons with Disabilities in Hong Kong.pdf",
+        "document_id": "86893c54-9763-49fe-a932-b9226aa5af6a",
+        "chunk_index": 0,
+        "extraction_context": "The Social Welfare Department (SWD) is primarily responsible for managing and funding community care services for elderly persons and persons with disabilities."
+      }
+    },
+    {
+      "Stakeholder Name": "PolyU Consultancy and Technology Co. Ltd.",
+      "Canonical Name": "Hong Kong Polytechnic University",
+      "Category": "Provider",
+      "Role": "Submitted the consultancy report on behalf of the Hong Kong Polytechnic University",
       "Confidence Score": "90%",
       "Source metadata": {
         "filename": "2022_Consultancy Study on Needs and Support Required of Carers of Elderly Persons and of Persons with Disabilities in Hong Kong.pdf",
         "document_id": "86893c54-9763-49fe-a932-b9226aa5af6a",
         "chunk_index": 0,
-        "extraction_context": "a survey among 388 carers and 44 human services professionals and SWD administrative staff."
+        "extraction_context": "The consultancy report was prepared by the Hong Kong Polytechnic University Consulting Team and submitted by PolyU Consultancy and Technology Co. Ltd."
       }
     },
     {
-      "Stakeholder Name": "Elderly Commission",
-      "Canonical Name": "Elderly Commission",
-      "Category": "Regulator",
-      "Role": "Formulated the Elderly Service Programme Plan in 2017.",
-      "Confidence Score": "95%",
+      "Stakeholder Name": "Care recipients",
+      "Canonical Name": "Care Recipients",
+      "Category": "Consumers",
+      "Role": "Individuals receiving care and support from carers",
+      "Confidence Score": "85%",
       "Source metadata": {
         "filename": "2022_Consultancy Study on Needs and Support Required of Carers of Elderly Persons and of Persons with Disabilities in Hong Kong.pdf",
         "document_id": "86893c54-9763-49fe-a932-b9226aa5af6a",
         "chunk_index": 0,
-        "extraction_context": "The Elderly Commission formulated the Elderly Service Programme Plan in 2017."
+        "extraction_context": "The report discusses the needs of care recipients, who are elderly persons and persons with disabilities receiving assistance from informal carers."
       }
     },
     {
-      "Stakeholder Name": "Social Welfare Department",
-      "Canonical Name": "Social Welfare Department",
+      "Stakeholder Name": "Government representatives/advisory committee members",
+      "Canonical Name": "Government Representatives",
       "Category": "Regulator",
-      "Role": "Responsible for coordinating necessary services for elderly persons and their carers.",
+      "Role": "Provide insights on policies and support for carers of elderly persons and persons with disabilities",
+      "Confidence Score": "80%",
+      "Source metadata": {
+        "filename": "2022_Consultancy Study on Needs and Support Required of Carers of Elderly Persons and of Persons with Disabilities in Hong Kong.pdf",
+        "document_id": "86893c54-9763-49fe-a932-b9226aa5af6a",
+        "chunk_index": 0,
+        "extraction_context": "The focus groups included government representatives and advisory committee members who provided insights on support for carers during discussions."
+      }
+    },
+    {
+      "Stakeholder Name": "Government",
+      "Canonical Name": "Government Representatives",
+      "Category": "Regulator",
+      "Role": "Facilitates social enterprises or NGOs to help carers build up their own strengths; facilitates the development of carer-friendly neighbourhoods.",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "2022_Consultancy Study on Needs and Support Required of Carers of Elderly Persons and of Persons with Disabilities in Hong Kong.pdf",
+        "document_id": "86893c54-9763-49fe-a932-b9226aa5af6a",
+        "chunk_index": 1,
+        "extraction_context": "The Consulting Team suggests that the Government and the community should play different roles in each of these areas. The Government should facilitate social enterprises or NGOs to help carers build up their own strengths; facilitate the development of carer-friendly neighbourhoods..."
+      }
+    },
+    {
+      "Stakeholder Name": "social enterprises or NGOs",
+      "Canonical Name": "Social Enterprises or NGOs",
+      "Category": "Supplier",
+      "Role": "Help carers build up their own strengths; provide suitable services and support to carers.",
       "Confidence Score": "85%",
       "Source metadata": {
         "filename": "2022_Consultancy Study on Needs and Support Required of Carers of Elderly Persons and of Persons with Disabilities in Hong Kong.pdf",
         "document_id": "86893c54-9763-49fe-a932-b9226aa5af6a",
         "chunk_index": 1,
-        "extraction_context": "The responsible social workers of elderly services also coordinate necessary services for elderly persons and their carers to make timely and suitable service arrangement and referral."
+        "extraction_context": "The Government should facilitate social enterprises or NGOs to help carers build up their own strengths; facilitate the development of carer-friendly neighbourhoods in the community, and directly and actively provide suitable services and support to carers..."
       }
     },
     {
       "Stakeholder Name": "Carers",
-      "Canonical Name": "Elderly Commission",
+      "Canonical Name": "Care Recipients",
       "Category": "Consumer",
-      "Role": "Provide unpaid care for elderly persons and persons with disabilities.",
-      "Confidence Score": "90%",
+      "Role": "Provide care to elderly persons and persons with disabilities; express needs and preferences for financial assistance and support.",
+      "Confidence Score": "95%",
       "Source metadata": {
         "filename": "2022_Consultancy Study on Needs and Support Required of Carers of Elderly Persons and of Persons with Disabilities in Hong Kong.pdf",
         "document_id": "86893c54-9763-49fe-a932-b9226aa5af6a",
         "chunk_index": 1,
-        "extraction_context": "The caregiving journey may last for decades. Carers need to mobilise their resources and strengths, which can be leveraged in turn to strengthen their caregiving abilities and well-being."
+        "extraction_context": "The majority of the carers (61.1%) suggested that the best reference standard for the amount of allowance after the consolidation of the three schemes would be the severity of the disability of the person with disabilities..."
       }
     },
     {
-      "Stakeholder Name": "Caritas Jockey Club Resource and Support Centre for Carers",
-      "Canonical Name": "Elderly Commission",
-      "Category": "NGO",
-      "Role": "Operates a hotline to provide support for high-risk carers.",
+      "Stakeholder Name": "Hong Kong Federation of Women’s Centres",
+      "Canonical Name": "Hong Kong Federation of Women’s Centres",
+      "Category": "Supplier",
+      "Role": "Provides information on resources and support for carers.",
       "Confidence Score": "80%",
       "Source metadata": {
         "filename": "2022_Consultancy Study on Needs and Support Required of Carers of Elderly Persons and of Persons with Disabilities in Hong Kong.pdf",
         "document_id": "86893c54-9763-49fe-a932-b9226aa5af6a",
         "chunk_index": 1,
-        "extraction_context": "It is also necessary to explore ways to motivate and retain these devoted volunteers such as providing a certificate. In the longer term and when resources are available, the Government may explore the setting up of an emergency centre, similar to existing Caritas Family Crisis Support Centre."
+        "extraction_context": "Reference can also be made from exemplar information platform(s) in other economies such as the Caregiver Alliance Limited (CAL) in Singapore, which is very user-friendly and brings together relevant support and resources for carers..."
       }
     },
     {
       "Stakeholder Name": "Social Welfare Department",
       "Canonical Name": "Social Welfare Department",
       "Category": "Regulator",
-      "Role": "Responsible for the handling of elder abuse cases and providing guidelines and procedures for support services.",
+      "Role": "Responsible for addressing elder abuse cases and providing community support services.",
       "Confidence Score": "95%",
       "Source metadata": {
         "filename": "2021_Procedural_Guidelines_for_Handling_Elder_Abuse_Cases_(Revised_2021)_ch_20210331.pdf",
         "document_id": "13f548f8-49af-4957-b3f7-18470e200c3b",
         "chunk_index": 0,
-        "extraction_context": "由於社會服務的發註：根據社會福利署 (社署)於二零一五年在「虐老問題工作小組」（其後易名為「虐待長者問題工作小組」）之下成立了「檢視《處理虐老個案程序指引》工作小組」，進行指引的修訂工作。"
-      }
-    },
-    {
-      "Stakeholder Name": "Hong Kong Police Force",
-      "Canonical Name": "Hong Kong Police Force",
-      "Category": "Regulator",
-      "Role": "Responsible for investigating suspected elder abuse cases and providing protection to victims.",
-      "Confidence Score": "90%",
-      "Source metadata": {
-        "filename": "2021_Procedural_Guidelines_for_Handling_Elder_Abuse_Cases_(Revised_2021)_ch_20210331.pdf",
-        "document_id": "13f548f8-49af-4957-b3f7-18470e200c3b",
-        "chunk_index": 0,
-        "extraction_context": "第七章： 香港警務處處理虐待長者個案的程序 1. 處理虐待長者個案 1.1 聯絡醫生"
+        "extraction_context": "社會福利署於二零一八年底開始進行諮詢，收集各有關持份者的意見，並將最後的擬稿於二零一九年九月提交「虐待長者問題工作小組」通過。經修訂後的指引名為《處理虐待長者個案程序指引》（二零二一年修訂）。"
       }
     },
     {
       "Stakeholder Name": "Hospital Authority",
       "Canonical Name": "Hospital Authority",
-      "Category": "Healthcare Provider",
-      "Role": "Provides medical services and support in handling elder abuse cases, ensures medical evaluations and treatment.",
+      "Category": "Regulator",
+      "Role": "Involved in managing cases of elder abuse particularly in medical institutions.",
       "Confidence Score": "90%",
       "Source metadata": {
         "filename": "2021_Procedural_Guidelines_for_Handling_Elder_Abuse_Cases_(Revised_2021)_ch_20210331.pdf",
         "document_id": "13f548f8-49af-4957-b3f7-18470e200c3b",
         "chunk_index": 0,
-        "extraction_context": "第六章： 衞生署處理虐待長者個案的程序 1. 個案來源 1.1 當市民／部門／單位懷疑有長者受虐，便應協助長者求助，或主動聯絡合適的部門／單位"
+        "extraction_context": "醫院管理局的醫務社工需在受虐長者得到醫療後，聯絡負責醫生，以進一步處理個案。"
+      }
+    },
+    {
+      "Stakeholder Name": "Hong Kong Police Force",
+      "Canonical Name": "Hong Kong Police Force",
+      "Category": "Law Enforcement",
+      "Role": "Responsible for investigating reported elder abuse cases.",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "2021_Procedural_Guidelines_for_Handling_Elder_Abuse_Cases_(Revised_2021)_ch_20210331.pdf",
+        "document_id": "13f548f8-49af-4957-b3f7-18470e200c3b",
+        "chunk_index": 0,
+        "extraction_context": "警方處理虐待長者個案的程序包括記錄證據並確保長者安全，必要時報警求助。"
       }
     },
     {
@@ -143,20 +169,20 @@
         "filename": "2019_Elderly employment- latest developments in Hong Kong and policies in international perspective.pdf",
         "document_id": "f0a40bbf-3baf-405b-88cd-6d67f04fd441",
         "chunk_index": 0,
-        "extraction_context": "In Korea, where there are no statutory but only firm-specific retirement age limits which are normally low, the government has introduced measures to require companies to extend the retirement age limits to no lower than age 60. In 2005, the government pursued the “wage peak” system to tackle early retirement practices..."
+        "extraction_context": "In Korea, where there are no statutory but only firm-specific retirement age limits which are normally low, the government has introduced measures to require companies to extend the retirement age limits to no lower than age 60..."
       }
     },
     {
       "Stakeholder Name": "Government of Japan",
       "Canonical Name": "Government of Japan",
       "Category": "Regulator",
-      "Role": "Enacted the Employment Measure Act to prohibit age discrimination in recruitment and hiring",
+      "Role": "Enacted the Employment Measure Act to prohibit age discrimination by firms in recruitment and hiring",
       "Confidence Score": "90%",
       "Source metadata": {
         "filename": "2019_Elderly employment- latest developments in Hong Kong and policies in international perspective.pdf",
         "document_id": "f0a40bbf-3baf-405b-88cd-6d67f04fd441",
         "chunk_index": 0,
-        "extraction_context": "Similarly in Japan, the government enacted the Employment Measure Act in 2007 to prohibit age discrimination by firms in recruitment and hiring. Besides, the Law Concerning Stabilisation of Employment of Older Persons was amended in 2004 to require employers to take one of the following three measures..."
+        "extraction_context": "Similarly in Japan, the government enacted the Employment Measure Act in 2007 to prohibit age discrimination by firms in recruitment and hiring. Besides, the Law Concerning Stabilisation of Employment of Older Persons was amended..."
       }
     },
     {
@@ -169,20 +195,33 @@
         "filename": "2019_Elderly employment- latest developments in Hong Kong and policies in international perspective.pdf",
         "document_id": "f0a40bbf-3baf-405b-88cd-6d67f04fd441",
         "chunk_index": 0,
-        "extraction_context": "In Singapore, the minimum retirement age is statutorily set at age 62 under the Retirement and Re-employment Act (RRA), and the RRA stipulates that employers must offer re-employment to eligible employees who turn 62, up to age 67. Legislation aside, the Singaporean government also provides a Special Employment Credit to employers who re-employ older workers..."
+        "extraction_context": "In Singapore, the minimum retirement age is statutorily set at age 62 under the Retirement and Re-employment Act (RRA), and the RRA stipulates that employers must offer re-employment to eligible employees who turn 62, up to age 67..."
       }
     },
     {
-      "Stakeholder Name": "Office of the Government Economist",
-      "Canonical Name": "Office of the Government Economist",
+      "Stakeholder Name": "Government of the Hong Kong Special Administrative Region",
+      "Canonical Name": "Government of Hong Kong",
       "Category": "Regulator",
-      "Role": "Provides analysis on elderly employment trends and policies",
+      "Role": "Extended retirement age for new recruits joining the civil service from 60 to 65",
       "Confidence Score": "95%",
       "Source metadata": {
         "filename": "2019_Elderly employment- latest developments in Hong Kong and policies in international perspective.pdf",
         "document_id": "f0a40bbf-3baf-405b-88cd-6d67f04fd441",
         "chunk_index": 0,
-        "extraction_context": "This article examines the latest employment situation of elders aged 65 and above in Hong Kong in comparison to overseas economies. It also briefly reviews recent policies adopted in selected economies to promote elderly employment."
+        "extraction_context": "The Hong Kong Government has also been making efforts to promote elderly employment. While there is no statutory retirement age, the Government, being the largest employer in Hong Kong, has extended the retirement age of..."
+      }
+    },
+    {
+      "Stakeholder Name": "Office of the Government Economist",
+      "Canonical Name": "Office of the Government Economist",
+      "Category": "Government Agency",
+      "Role": "Published analysis on elderly employment and policies",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "2019_Elderly employment- latest developments in Hong Kong and policies in international perspective.pdf",
+        "document_id": "f0a40bbf-3baf-405b-88cd-6d67f04fd441",
+        "chunk_index": 0,
+        "extraction_context": "Office of the Government Economist – Economic Letter 2019/10. This article examines the latest employment situation of elders aged 65 and above in Hong Kong in comparison to overseas economies..."
       }
     }
   ]

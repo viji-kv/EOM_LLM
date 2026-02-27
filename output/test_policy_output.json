@@ -1,0 +1,116 @@
+{
+  "relationships": [
+    {
+      "source": "SWD",
+      "target": "HKCSS",
+      "relationship_type": "funds",
+      "evidence": "SWD funds 70% of subvented homes via Lump Sum Grant. SWD audits NGOs like Hong Kong Council of Social Service (HKCSS)...",
+      "confidence": "95%",
+      "source_metadata": {
+        "file_name": "test_policy_text.txt",
+        "document_id": "test_doc_001"
+      }
+    },
+    {
+      "source": "SWD",
+      "target": "Caritas Hong Kong",
+      "relationship_type": "funds",
+      "evidence": "SWD funds and regulates HKCSS, Caritas, and Baptist Oi Kwan...",
+      "confidence": "95%",
+      "source_metadata": {
+        "file_name": "test_policy_text.txt",
+        "document_id": "test_doc_001"
+      }
+    },
+    {
+      "source": "SWD",
+      "target": "Baptist Oi Kwan Social Service",
+      "relationship_type": "funds",
+      "evidence": "SWD funds and regulates HKCSS, Caritas, and Baptist Oi Kwan...",
+      "confidence": "95%",
+      "source_metadata": {
+        "file_name": "test_policy_text.txt",
+        "document_id": "test_doc_001"
+      }
+    },
+    {
+      "source": "HKCSS",
+      "target": "HA",
+      "relationship_type": "partners",
+      "evidence": "HKCSS coordinates advocacy against HA bed shortages...",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "test_policy_text.txt",
+        "document_id": "test_doc_001"
+      }
+    },
+    {
+      "source": "PRCHs",
+      "target": "NGOs",
+      "relationship_type": "competes",
+      "evidence": "Private homes compete with NGO subvented facilities on cost...",
+      "confidence": "85%",
+      "source_metadata": {
+        "file_name": "test_policy_text.txt",
+        "document_id": "test_doc_001"
+      }
+    },
+    {
+      "source": "Family Caregivers",
+      "target": "District Elderly Community Centres",
+      "relationship_type": "supplies",
+      "evidence": "Family caregivers rely on DECCs for training...",
+      "confidence": "92%",
+      "source_metadata": {
+        "file_name": "test_policy_text.txt",
+        "document_id": "test_doc_001"
+      }
+    }
+  ],
+  "pain_points": [
+    {
+      "stakeholder": "Baptist Oi Kwan Social Service",
+      "pain_point": "staffing shortages",
+      "pain_type": "staffing",
+      "evidence": "Baptist Oi Kwan reports staffing shortages as major pain point.",
+      "confidence": "90",
+      "source_metadata": {
+        "file_name": "test_policy_text.txt",
+        "document_id": "test_doc_001"
+      }
+    },
+    {
+      "stakeholder": "NGOs",
+      "pain_point": "underfunding",
+      "pain_type": "cost",
+      "evidence": "Major pain points: SWD underfunding (NGOs)...",
+      "confidence": "90",
+      "source_metadata": {
+        "file_name": "test_policy_text.txt",
+        "document_id": "test_doc_001"
+      }
+    },
+    {
+      "stakeholder": "all providers",
+      "pain_point": "discharge delays",
+      "pain_type": "access",
+      "evidence": "Major pain points: HA discharge delays (all providers)...",
+      "confidence": "90",
+      "source_metadata": {
+        "file_name": "test_policy_text.txt",
+        "document_id": "test_doc_001"
+      }
+    },
+    {
+      "stakeholder": "Family Caregivers",
+      "pain_point": "burnout",
+      "pain_type": "other",
+      "evidence": "Major pain points: caregiver burnout (families)...",
+      "confidence": "90",
+      "source_metadata": {
+        "file_name": "test_policy_text.txt",
+        "document_id": "test_doc_001"
+      }
+    }
+  ]
+}
