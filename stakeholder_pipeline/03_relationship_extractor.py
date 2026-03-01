@@ -226,9 +226,7 @@ class RelationshipExtractor:
 
             # Use semaphore to prevent hitting rate limits during gather
             async with self.semaphore:
-                print(
-                    f"   [Batch] Processing {len(batch)} stakeholders for {filename}..."
-                )
+                print(f"   Processing {len(batch)} stakeholders for {filename}...")
                 final_state = await asyncio.wait_for(
                     graph.ainvoke(initial_state, config), timeout=300
                 )
@@ -250,14 +248,15 @@ class RelationshipExtractor:
         self, text: str, canonical_stakeholders: List[str], doc_id: str, filename: str
     ) -> Dict[str, Any]:
         """Adaptive chunking"""
-        print(f"  {filename}: {len(text) / 1000:.1f}k chars")
+        # print(f"  {filename}: {len(text) / 1000:.1f}k chars")
         if len(text) <= self.threshold:
+            print(f" -> File: {filename} - Whole document extraction.")
             result = await self.extract_from_chunk(
                 text, canonical_stakeholders, doc_id, filename
             )
-            print(
-                f"Relationship result from whole doc:{len(result['relationships'])}"
-            )  ############################
+            # print(
+            #     f"Relationship result from whole doc{filename}:{len(result['relationships'])}"
+            # )  ############################
             return result
 
         chunk_size, chunk_overlap = calculate_splitter_params(self.model_context)
@@ -267,6 +266,9 @@ class RelationshipExtractor:
             separators=["\n\n", "\n", ". ", " ", ""],
         )
         chunks = splitter.split_text(text)
+        print(
+            f"    → File:{filename} - {len(chunks)} chunks ({chunk_size // 1000}k/{chunk_overlap // 1000}k)."
+        )
 
         tasks = [
             self.extract_from_chunk(c, canonical_stakeholders, doc_id, filename)
@@ -274,12 +276,12 @@ class RelationshipExtractor:
         ]
 
         results = await asyncio.gather(*tasks, return_exceptions=True)
-        total_relationships = sum(
-            len(r["relationships"]) for r in results if isinstance(r, dict)
-        )  ############################
-        print(
-            f"Total relationships across all chunks: {total_relationships}"
-        )  ##############
+        # total_relationships = sum(
+        #     len(r["relationships"]) for r in results if isinstance(r, dict)
+        # )  ############################
+        # print(
+        #     f"Total relationships across all chunks of {filename}: {total_relationships}"
+        # )  ##############
         aggregated = {"relationships": [], "pain_points": []}
 
         successful = 0
@@ -301,9 +303,14 @@ class RelationshipExtractor:
         documents = get_documents_per_brain(self.supabase, brain_id)
 
         print(f"Processing {len(documents)} docs in parallel...")
-        doc_tasks = []
 
-        for i, doc in enumerate(documents[: self.max_docs or len(documents)]):
+        if self.max_docs:
+            documents = documents[: self.max_docs]
+            print(f"Extracting from {self.max_docs} documents (FOR TESTING)")
+
+        # Doc are sequential
+        doc_tasks = []
+        for i, doc in enumerate(documents, 1):
             doc_id = doc["id"]
             filename = doc.get("file_name", f"Doc_{i}")
 
@@ -318,6 +325,30 @@ class RelationshipExtractor:
                 print(f" Prep failed {filename}: {e}")
                 doc_tasks.append(None)  # Skip bad doc
 
+        # # Parallize docs
+        # doc_tasks = []
+        # for i, doc in enumerate(documents, 1):
+        #     doc_id = doc["id"]
+        #     filename = doc.get("file_name", f"Doc_{i}")
+        #     print(f"  {i}/{len(documents)}: {filename}")
+
+        #     async def process_doc(d=doc):
+        #         async with self.semaphore:
+        #             try:
+        #                 raw_text = get_document_data(self.supabase, d["id"])
+        #                 full_text = decode_string(raw_text)
+        #                 return await self.extract_adaptive(
+        #                     full_text,
+        #                     canonical_stakeholders,
+        #                     d["id"],
+        #                     d.get("file_name", "Unknown"),
+        #                 )  # coroutine object of extract_adaptive for each doc
+
+        #             except Exception as e:
+        #                 print(f" Prep failed {d['id']}: {e}")
+        #                 return []
+
+        #     doc_tasks.append(process_doc())
         results = await asyncio.gather(*doc_tasks, return_exceptions=True)
         all_rels, all_pps = [], []
         successful = 0
@@ -436,7 +467,7 @@ async def run_test_mode():
 
 # Usage example (matching your pipeline)
 async def main():
-    RUNNING_TEST_MODE = True  # CHANGE: Set to False to run real extraction
+    RUNNING_TEST_MODE = False  # CHANGE: Set to False to run real extraction
     if RUNNING_TEST_MODE:
         await run_test_mode()
         return
@@ -446,6 +477,10 @@ async def main():
         sys.exit(1)
 
     input_file = sys.argv[1]
+
+    import time
+
+    start = time.time()
 
     extractor = RelationshipExtractor(
         output_dir="output", concurrency_limit=3, max_docs=3
@@ -457,6 +492,8 @@ async def main():
         "ce88cb71-2528-4598-a585-5fa2dfd03319", canonicals
     )
 
+    elapsed = time.time() - start
+
     input_path = Path(input_file).name
     output_filename = input_path.replace(".json", "_relationships.json")
 
@@ -466,6 +503,7 @@ async def main():
     print(
         f"Extracted {result['total_relationships']} rels + {result['total_pain_points']} pain points"
     )
+    print(f"     Time: {elapsed:.1f}s")
 
 
 if __name__ == "__main__":

@@ -167,17 +167,17 @@ class StakeholderExtractor:
             print(f"    Processing {filename}...")
             final_state = await asyncio.wait_for(
                 graph.ainvoke(initial_state, config), timeout=300
-            )
+            )  # 5 mins
 
         # print(final_state.get("answer", ""))
         return parse_json_response(final_state.get("answer", ""))
 
     async def extract_stakeholders_adaptive(self, text, doc_id, filename):
         """Extract: Whole if small, chunk if large"""
-        print(f"   {filename}: Text: {len(text) / 1000:.0f}k chars")
+        # print(f"   {filename}: Text: {len(text) / 1000:.0f}k chars")
 
         if len(text) <= self.threshold:
-            print("    → Whole doc extraction")
+            print(f"    → File:{filename} - Whole doc extraction.")
             return await self.extract_stakeholders_from_text(
                 text=text, doc_id=doc_id, filename=filename, chunk_index=0
             )
@@ -191,7 +191,7 @@ class StakeholderExtractor:
         )
         chunks = splitter.split_text(text)
         print(
-            f"    → {len(chunks)} chunks ({chunk_size // 1000}k/{chunk_overlap // 1000}k)"
+            f"    → File:{filename} - {len(chunks)} chunks ({chunk_size // 1000}k/{chunk_overlap // 1000}k)."
         )
 
         tasks = []  # CHANGE: Parallelize chunks
@@ -238,7 +238,7 @@ class StakeholderExtractor:
 
         if self.max_docs:
             documents = documents[: self.max_docs]
-            print(f"Extracting from {self.max_docs} documents (for testing)")
+            print(f"Extracting from {self.max_docs} documents (FOR TESTING)")
 
         # Fetch full text for each document
         doc_tasks = []
@@ -247,30 +247,43 @@ class StakeholderExtractor:
             filename = doc.get("file_name", "Unknown")
             print(f"  {i}/{len(documents)}: {filename} ({doc_id[:8]}...)")
 
-            # try:
-            #     full_text = get_document_data(supabase, doc_id)
-            #     full_text = full_text.encode("utf-8").decode("unicode_escape")
-            #     if full_text:
-            #         stakeholders = await self.extract_stakeholders_adaptive(
-            #             text=full_text, doc_id=doc_id, filename=filename
-            #         )
-            #         all_stakeholders.extend(stakeholders)
-            # except Exception as e:
-            #     print(f"    Error processing {filename}: {e}")
-
             try:
                 raw_text = get_document_data(self.supabase, doc_id)
                 full_text = decode_string(raw_text)
                 # full_text = raw_text.encode("utf-8").decode("unicode_escape")
                 task = self.extract_stakeholders_adaptive(
                     text=full_text, doc_id=doc_id, filename=filename
-                )  # coroutine object of extract_adaptive for each doc
+                )  # coroutine object of extract_stakeholders_adaptive for each doc
                 doc_tasks.append(task)
             except Exception as e:
                 print(f" Prep failed {filename}: {e}")
                 doc_tasks.append(None)  # Skip bad doc
 
         results = await asyncio.gather(*doc_tasks, return_exceptions=True)
+
+        # # Parallelize docs
+        # doc_tasks = []
+        # for i, doc in enumerate(documents, 1):
+        #     doc_id = doc["id"]
+        #     filename = doc.get("file_name", "Unknown")
+        #     print(f"  {i}/{len(documents)}: {filename} ({doc_id[:8]}...)")
+
+        #     async def process_doc(d=doc):  # Capture doc
+        #         async with self.semaphore:
+        #             try:
+        #                 raw_text = get_document_data(self.supabase, d["id"])
+        #                 full_text = decode_string(raw_text)
+        #                 return await self.extract_stakeholders_adaptive(
+        #                     full_text, d["id"], d.get("file_name", "Unknown")
+        #                 )
+        #             except Exception as e:
+        #                 print(f"Failed {d['id']}: {e}")
+        #                 return []
+
+        #     doc_tasks.append(process_doc())
+
+        # results = await asyncio.gather(*doc_tasks, return_exceptions=True)
+
         all_stakeholders = []
         successful = 0
         for result in results:
@@ -372,11 +385,17 @@ async def main():
     brain_name = selected_brain.get("name", "Unknown")
 
     print(f"\nSelected Brain: {brain_name} (ID: {brain_id})")
+
+    import time
+
+    start = time.time()
     extractor = StakeholderExtractor(
         model="openai/gpt-4o-mini", max_docs=3
     )  # CHANGE: Limit to 3 docs for testing
 
     result = await extractor.extract_all_stakeholders_from_brain(brain_name, brain_id)
+
+    elapsed = time.time() - start
 
     output_dir = extractor.output_dir
 
@@ -384,6 +403,7 @@ async def main():
 
     output_path = save_output(result, output_file, output_dir)
     print(f"\n Full results saved to: {output_path}")
+    print(f"     Time: {elapsed:.1f}s")
 
 
 if __name__ == "__main__":
