@@ -1,250 +1,176 @@
 {
   "brain_id": "ce88cb71-2528-4598-a585-5fa2dfd03319",
-  "total_relationships": 16,
-  "total_pain_points": 6,
+  "total_relationships": 12,
+  "total_pain_points": 1,
   "relationships": [
     {
-      "source": "HSBC",
-      "target": "Hong Kong Alzheimer’s Disease Association",
-      "relationship_type": "partners",
-      "evidence": "We are proud to be working in partnership with Hong Kong Alzheimer’s Disease Association. Together we are building a more dementia- friendly community and are working towards HSBC becoming a dementia-friendly business.",
-      "confidence": "90%",
+      "source": "Hong Kong Alzheimer’s Disease Association",
+      "target": "Hong Kong Judiciary",
+      "relationship_description": "The Hong Kong Judiciary can appoint a Committee of Estate for mentally incapacitated persons upon request, which is a service that can be essential for people with dementia.",
+      "relationship_category": "regulates",
+      "confidence": "85%",
       "source_metadata": {
         "file_name": "2018_HSBC_managing-money-with-dementia.pdf",
-        "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa"
+        "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa",
+        "evidence_original": "Hong Kong Judiciary (Court appointed Committee of Estate of a Mentally Incapacitated Person)...Hong Kong Alzheimer’s Disease Association.",
+        "evidence_translated": "Hong Kong Judiciary (Court appointed Committee of Estate of a Mentally Incapacitated Person)...Hong Kong Alzheimer’s Disease Association."
       }
     },
     {
       "source": "Social Welfare Department",
-      "target": "HSBC",
-      "relationship_type": "regulates",
-      "evidence": "For more information about Guardianship Orders, you can visit the Social Welfare Department website.",
-      "confidence": "90%",
+      "target": "Hong Kong Judiciary",
+      "relationship_description": "The Social Welfare Department and the Hong Kong Judiciary provide information and services for establishing Guardianship and Committee appointments for mentally incapacitated individuals.",
+      "relationship_category": "collaborates",
+      "confidence": "85%",
       "source_metadata": {
         "file_name": "2018_HSBC_managing-money-with-dementia.pdf",
-        "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa"
+        "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa",
+        "evidence_original": "Social Welfare Department (Guardianship Order) www.swd.gov.hk/en/index/site_pubsvc/page_medical/sub_guardiansh...Hong Kong Judiciary (Court appointed Committee...)",
+        "evidence_translated": "Social Welfare Department (Guardianship Order)...Hong Kong Judiciary (Court appointed Committee...)"
       }
     },
     {
-      "source": "Hong Kong Judiciary",
+      "source": "Hong Kong Alzheimer’s Disease Association",
       "target": "HSBC",
-      "relationship_type": "regulates",
-      "evidence": "For more information about Committee of Estate of a Mentally Incapacitated Person appointed by the Court, you can visit the Hong Kong Judiciary website.",
+      "relationship_description": "The Hong Kong Alzheimer’s Disease Association partners with HSBC to build a dementia-friendly community.",
+      "relationship_category": "partners",
       "confidence": "90%",
       "source_metadata": {
         "file_name": "2018_HSBC_managing-money-with-dementia.pdf",
-        "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa"
-      }
-    },
-    {
-      "source": "DBS Group Holdings",
-      "target": "SkillsFuture Singapore",
-      "relationship_type": "partners",
-      "evidence": "For example, we partnered with SkillsFuture Singapore, a Singapore government agency, to upskill SMEs and help strengthen their sustainability skills through the DBS SME Skills Booster programme.",
-      "confidence": "90%",
-      "source_metadata": {
-        "file_name": "2023_DBS_SR2023.pdf",
-        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2"
+        "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa",
+        "evidence_original": "We are proud to be working in partnership with Hong Kong Alzheimer’s Disease Association. Together we are building a more dementia- friendly community...",
+        "evidence_translated": "We are proud to be working in partnership with Hong Kong Alzheimer’s Disease Association. Together we are building a more dementia- friendly community..."
       }
     },
     {
       "source": "DBS Group Holdings",
       "target": "Singapore Centre for Social Enterprise",
-      "relationship_type": "collaborates",
-      "evidence": "We conducted regular events and conversations with community partners and social service agencies to understand the social landscape and how DBS can partner to create impact. Connection with government bodies and associations, including Singapore Centre for Social Enterprise and Community Chest.",
+      "relationship_description": "DBS partnered with SkillsFuture Singapore to upskill SMEs and help strengthen their sustainability skills through the DBS SME Skills Booster programme.",
+      "relationship_category": "partners",
       "confidence": "90%",
       "source_metadata": {
         "file_name": "2023_DBS_SR2023.pdf",
-        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2"
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "evidence_original": "For example, we partnered with SkillsFuture Singapore, a Singapore government agency, to upskill SMEs and help strengthen their sustainability skills through the DBS SME Skills Booster programme.",
+        "evidence_translated": "For example, we partnered with SkillsFuture Singapore, a Singapore government agency, to upskill SMEs and help strengthen their sustainability skills through the DBS SME Skills Booster programme."
       }
     },
     {
       "source": "DBS Group Holdings",
       "target": "Daughters of Tomorrow",
-      "relationship_type": "partners",
-      "evidence": "Our technology colleagues actively volunteered their skills and time to nurture young girls’ interest in STEM through volunteering programmes with schools and community partners like Daughters of Tomorrow.",
+      "relationship_description": "DBS Group Holdings collaborates with Daughters of Tomorrow to launch DBS Tech For Girls, a volunteering programme.",
+      "relationship_category": "collaborates",
       "confidence": "90%",
       "source_metadata": {
         "file_name": "2023_DBS_SR2023.pdf",
-        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2"
-      }
-    },
-    {
-      "source": "DBS Group Holdings",
-      "target": "Financial Institutions",
-      "relationship_type": "regulates",
-      "evidence": "DBS is also committed to fostering a robust security awareness and culture among our employees. We established a Security Awareness Cybrfit Programme to reinforce adherence to the Bank's policies, standards, and cyber security best practices.",
-      "confidence": "85%",
-      "source_metadata": {
-        "file_name": "2023_DBS_SR2023.pdf",
-        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2"
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "evidence_original": "Our technology colleagues actively volunteered their skills and time to nurture young girls’ interest in STEM through volunteering programmes with schools and community partners like Daughters of Tomorrow and launching DBS Tech For Girls.",
+        "evidence_translated": "Our technology colleagues actively volunteered their skills and time to nurture young girls’ interest in STEM through volunteering programmes with schools and community partners like Daughters of Tomorrow and launching DBS Tech For Girls."
       }
     },
     {
       "source": "DBS Group Holdings",
       "target": "Accounting and Corporate Regulatory Authority",
-      "relationship_type": "collaborates",
-      "evidence": "We have complied with the independence and other ethical requirements of the Accounting and Corporate Regulatory Authority (ACRA) Code of Professional Conduct and Ethics for Public Accountants and Accounting Entities.",
+      "relationship_description": "DBS Group Holdings complies with the independence and other ethical requirements of the ACRA Code.",
+      "relationship_category": "regulates",
       "confidence": "90%",
       "source_metadata": {
         "file_name": "2023_DBS_SR2023.pdf",
-        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2"
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "evidence_original": "We have complied with the independence and other ethical requirements of the Accounting and Corporate Regulatory Authority (ACRA) Code of Professional Conduct and Ethics for Public Accountants and Accounting Entities (ACRA Code)...",
+        "evidence_translated": "We have complied with the independence and other ethical requirements of the Accounting and Corporate Regulatory Authority (ACRA) Code of Professional Conduct and Ethics for Public Accountants and Accounting Entities (ACRA Code)..."
       }
     },
     {
       "source": "DBS Group Holdings",
       "target": "Monetary Authority of Singapore",
-      "relationship_type": "partners",
-      "evidence": "DBS is a signatory of the industry-led, UN-convened NZBA. As part of our commitment, DBS conducts annual reporting on our performance against our decarbonisation targets in accordance with NZBA guidelines.",
-      "confidence": "90%",
-      "source_metadata": {
-        "file_name": "2023_DBS_SR2023.pdf",
-        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2"
-      }
-    },
-    {
-      "source": "DBS Group Holdings",
-      "target": "Singapore Centre for Social Enterprise",
-      "relationship_type": "supplies",
-      "evidence": "DBS is amember of the Green Skills Committee (GSC), which is convened by the Ministry of Trade and Industry (MTI).",
+      "relationship_description": "DBS Group Holdings is involved with MAS-led initiatives to enhance the ESG data ecosystem.",
+      "relationship_category": "collaborates",
       "confidence": "85%",
       "source_metadata": {
         "file_name": "2023_DBS_SR2023.pdf",
-        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2"
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "evidence_original": "DBS is an active participant in the MAS-led initiative to enhance the ESG data ecosystem within Singapore...",
+        "evidence_translated": "DBS is an active participant in the MAS-led initiative to enhance the ESG data ecosystem within Singapore..."
       }
     },
     {
       "source": "Hang Seng Bank",
       "target": "The Conservancy Association",
-      "relationship_type": "partners",
-      "evidence": "We supported The Conservancy Association ('CA') in the Country Parks Plantation Enrichment Programme ('PEP'), which was launched by the Agriculture, Fisheries and Conservation Department.",
-      "confidence": "90%",
+      "relationship_description": "Hang Seng Bank supported The Conservancy Association in the Country Parks Plantation Enrichment Programme, aiming to increase biodiversity and ecological value.",
+      "relationship_category": "partners",
+      "confidence": "95%",
       "source_metadata": {
         "file_name": "2022_Hang Seng Bank ESG report.pdf",
-        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9"
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
+        "evidence_original": "We supported The Conservancy Association (‘CA’) in the Country Parks Plantation Enrichment Programme (‘PEP’)... aim of the programme is to increase the biodiversity and...",
+        "evidence_translated": "We supported The Conservancy Association (‘CA’) in the Country Parks Plantation Enrichment Programme (‘PEP’)... aim of the programme is to increase the biodiversity and..."
       }
     },
     {
       "source": "Hang Seng Bank",
       "target": "World Wide Fund for Nature Hong Kong",
-      "relationship_type": "partners",
-      "evidence": "We also continued to provide support to the corporate membership programmes of the World Wide Fund for Nature Hong Kong.",
-      "confidence": "85%",
+      "relationship_description": "Hang Seng Bank continued to provide support to the corporate membership programmes of the World Wide Fund for Nature Hong Kong.",
+      "relationship_category": "partners",
+      "confidence": "90%",
       "source_metadata": {
         "file_name": "2022_Hang Seng Bank ESG report.pdf",
-        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9"
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
+        "evidence_original": "We also continued to provide support to the corporate membership programmes of the World Wide Fund for Nature Hong Kong...",
+        "evidence_translated": "We also continued to provide support to the corporate membership programmes of the World Wide Fund for Nature Hong Kong..."
       }
     },
     {
       "source": "Hang Seng Bank",
       "target": "Business Environment Council",
-      "relationship_type": "partners",
-      "evidence": "We also continued to provide support to the corporate membership programmes of the ... Business Environment Council.",
-      "confidence": "85%",
+      "relationship_description": "Hang Seng Bank continued support for the corporate membership programmes of Business Environment Council.",
+      "relationship_category": "partners",
+      "confidence": "90%",
       "source_metadata": {
         "file_name": "2022_Hang Seng Bank ESG report.pdf",
-        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9"
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
+        "evidence_original": "We also continued to provide support to the corporate membership programmes of the World Wide Fund for Nature Hong Kong and Business Environment Council...",
+        "evidence_translated": "We also continued to provide support to the corporate membership programmes of the World Wide Fund for Nature Hong Kong and Business Environment Council..."
+      }
+    },
+    {
+      "source": "Hang Seng Bank",
+      "target": "CarbonCare InnoLab",
+      "relationship_description": "Hang Seng Bank collaborated with CarbonCare InnoLab to fund the Hang Seng Low Carbon Future – SolarCare Programme.",
+      "relationship_category": "collaborates",
+      "confidence": "95%",
+      "source_metadata": {
+        "file_name": "2022_Hang Seng Bank ESG report.pdf",
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
+        "evidence_original": "In collaboration with CarbonCare InnoLab (‘CCIL’), we funded the Hang Seng Low Carbon Future – SolarCare Programme...",
+        "evidence_translated": "In collaboration with CarbonCare InnoLab (‘CCIL’), we funded the Hang Seng Low Carbon Future – SolarCare Programme..."
       }
     },
     {
       "source": "Hang Seng Bank",
       "target": "The Community Chest of Hong Kong",
-      "relationship_type": "partners",
-      "evidence": "Supporting the Charitable and Fundraising Event hosted by The Community Chest of Hong Kong.",
-      "confidence": "90%",
+      "relationship_description": "Hang Seng Bank continued to support The Community Chest of Hong Kong, being a Diamond Sponsor of Dress Casual Day for the 25th consecutive year.",
+      "relationship_category": "partners",
+      "confidence": "95%",
       "source_metadata": {
         "file_name": "2022_Hang Seng Bank ESG report.pdf",
-        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9"
-      }
-    },
-    {
-      "source": "Hang Seng Bank",
-      "target": "Hong Kong Table Tennis Association",
-      "relationship_type": "partners",
-      "evidence": "Hang Seng has worked hand-in-hand with the Hong Kong Table Tennis Association to nurture talented home grown youths into world-class players.",
-      "confidence": "90%",
-      "source_metadata": {
-        "file_name": "2022_Hang Seng Bank ESG report.pdf",
-        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9"
-      }
-    },
-    {
-      "source": "Hang Seng Bank",
-      "target": "Hong Kong Family Welfare Society",
-      "relationship_type": "partners",
-      "evidence": "The Bank partnered with the Hong Kong Family Welfare Society to donate HK$10 million worth of care packs.",
-      "confidence": "90%",
-      "source_metadata": {
-        "file_name": "2022_Hang Seng Bank ESG report.pdf",
-        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9"
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
+        "evidence_original": "Hang Seng has continued to provide support to The Community Chest of Hong Kong (‘the Chest’)... Diamond Sponsor of Dress Casual Day...",
+        "evidence_translated": "Hang Seng has continued to provide support to The Community Chest of Hong Kong (‘the Chest’)... Diamond Sponsor of Dress Casual Day..."
       }
     }
   ],
   "pain_points": [
     {
-      "stakeholder": "HSBC",
-      "pain_point": "Need for support in managing finances when living with dementia.",
-      "pain_type": "access",
-      "evidence": "If you do not have family or friends able to assist you with financial issues, please contact your nearest elderly service unit for assistance.",
-      "confidence": "90",
+      "stakeholder": "Hong Kong Alzheimer’s Disease Association",
+      "painpoint": "Unsure if financial issues will have family or friends to assist.",
+      "painpoint_category": "Financial Barriers",
+      "confidence": "85%",
       "source_metadata": {
         "file_name": "2018_HSBC_managing-money-with-dementia.pdf",
-        "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa"
-      }
-    },
-    {
-      "stakeholder": "DBS Group Holdings",
-      "pain_point": "Employee engagement and management.",
-      "pain_type": "staffing",
-      "evidence": "Through the annual employee engagement survey and quarterly employee experience survey, the key areas of concern raised by employees are around wellbeing (work-related stress), and rewards and recognition.",
-      "confidence": "90",
-      "source_metadata": {
-        "file_name": "2023_DBS_SR2023.pdf",
-        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2"
-      }
-    },
-    {
-      "stakeholder": "DBS Group Holdings",
-      "pain_point": "Market conditions affecting employee retention",
-      "pain_type": "staffing",
-      "evidence": "Our group-wide voluntary attrition rate decreased from 14.7% in 2022 to 8.8% in 2023. This decline can be attributed to external job market conditions and our initiatives focused on enhancing employee engagement and retention.",
-      "confidence": "90",
-      "source_metadata": {
-        "file_name": "2023_DBS_SR2023.pdf",
-        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2"
-      }
-    },
-    {
-      "stakeholder": "DBS Group Holdings",
-      "pain_point": "Compliance with environmental regulations",
-      "pain_type": "compliance",
-      "evidence": "DBS reports in line with the recommendations by the task force.",
-      "confidence": "90",
-      "source_metadata": {
-        "file_name": "2023_DBS_SR2023.pdf",
-        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2"
-      }
-    },
-    {
-      "stakeholder": "Accounting and Corporate Regulatory Authority",
-      "pain_point": "Ethical compliance requirements",
-      "pain_type": "compliance",
-      "evidence": "We have complied with the independence and other ethical requirements of the Accounting and Corporate Regulatory Authority (ACRA).",
-      "confidence": "85",
-      "source_metadata": {
-        "file_name": "2023_DBS_SR2023.pdf",
-        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2"
-      }
-    },
-    {
-      "stakeholder": "Hang Seng Bank",
-      "pain_point": "Supporting mental well-being amidst COVID-19 challenges.",
-      "pain_type": "staffing",
-      "evidence": "The funding also supported the setup and operation of the Emotional Well-being and General COVID Support Hotline from March to May 2022.",
-      "confidence": "90",
-      "source_metadata": {
-        "file_name": "2022_Hang Seng Bank ESG report.pdf",
-        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9"
+        "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa",
+        "evidence_original": "If you do not have family or friends able to assist you with financial issues, please contact your nearest elderly service unit...",
+        "evidence_translated": "If you do not have family or friends able to assist you with financial issues, please contact your nearest elderly service unit..."
       }
     }
   ]

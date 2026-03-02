@@ -33,13 +33,17 @@ RELATIONSHIP_SCHEMA = {
                 "properties": {
                     "source": {
                         "type": "string",
-                        "description": "Canonical stakeholder name",
+                        "description": "Canonical stakeholder name from the provided list",
                     },
                     "target": {
                         "type": "string",
-                        "description": "Canonical stakeholder name",
+                        "description": "Canonical stakeholder name from the provided list",
                     },
-                    "relationship_type": {
+                    "relationship_description": {
+                        "type": "string",
+                        "description": "A short description of the type of relationship\n",
+                    },
+                    "relationship_category": {
                         "type": "string",
                         "enum": [
                             "regulates",
@@ -50,10 +54,7 @@ RELATIONSHIP_SCHEMA = {
                             "collaborates",
                             "other",
                         ],
-                    },
-                    "evidence": {
-                        "type": "string",
-                        "description": "200-300 chars AROUND each stakeholder mention.",
+                        "description": "High-level category",
                     },
                     "confidence": {"type": "string", "description": "90%, 85%, etc."},
                     "source_metadata": {
@@ -61,8 +62,21 @@ RELATIONSHIP_SCHEMA = {
                         "properties": {
                             "file_name": {"type": "string"},
                             "document_id": {"type": "string"},
+                            "evidence_original": {
+                                "type": "string",
+                                "description": "Copy 200-300 chars AROUND each stakeholder mention in the original language.",
+                            },
+                            "evidence_translated": {
+                                "type": "string",
+                                "description": "evidence_original translated into English",
+                            },
                         },
-                        "required": ["file_name", "document_id"],
+                        "required": [
+                            "file_name",
+                            "document_id",
+                            "evidence_original",
+                            "evidence_translated",
+                        ],
                     },
                 },
                 "required": [
@@ -80,35 +94,53 @@ RELATIONSHIP_SCHEMA = {
                 "properties": {
                     "stakeholder": {
                         "type": "string",
-                        "description": "Canonical stakeholder",
+                        "description": "Canonical stakeholder name from the provided list",
                     },
-                    "pain_point": {"type": "string"},
-                    "pain_type": {
+                    "painpoint": {
                         "type": "string",
-                        "enum": [
-                            "staffing",
-                            "cost",
-                            "compliance",
-                            "access",
-                            "quality",
-                            "other",
-                        ],
+                        "description": "Specific problem/gaps/challenges ONLY, in one sentence.",
                     },
-                    "evidence": {
+                    "painpoint_category": {
                         "type": "string",
-                        "description": "200-300 chars evidence quote",
+                        "description": "A short category name (e.g.,Staff shortage, Cost, Healthcare Access, Financial Barriers)\n",
+                        # "enum": [
+                        #     "staffing",
+                        #     "cost",
+                        #     "compliance",
+                        #     "access",
+                        #     "quality",
+                        #     "other",
+                        # ],
                     },
-                    "confidence": {"type": "string", "description": "90, 85, etc."},
+                    "confidence": {"type": "string", "description": "90%, 85%, etc."},
                     "source_metadata": {  # Added for traceability
                         "type": "object",
                         "properties": {
                             "file_name": {"type": "string"},
                             "document_id": {"type": "string"},
+                            "evidence_original": {
+                                "type": "string",
+                                "description": "Copy 200-300 chars AROUND each painpoint mention in the original language.",
+                            },
+                            "evidence_translated": {
+                                "type": "string",
+                                "description": "evidence_original translated into English",
+                            },
                         },
-                        "required": ["file_name", "document_id"],
+                        "required": [
+                            "file_name",
+                            "document_id",
+                            "evidence_original",
+                            "evidence_translated",
+                        ],
                     },
                 },
-                "required": ["stakeholder", "pain_point", "source_metadata"],
+                "required": [
+                    "stakeholder",
+                    "painpoint",
+                    "painpoint_category",
+                    "source_metadata",
+                ],
             },
         },
     },
@@ -122,7 +154,7 @@ class RelationshipExtractor:
 
     def __init__(
         self,
-        model: str = "openai/gpt-4o-mini",
+        model: str = "openai/gpt-4o",
         max_docs: int = None,
         output_dir: str = "output",
         concurrency_limit: int = 5,
@@ -201,14 +233,30 @@ class RelationshipExtractor:
     {text}  
 
     RULES:
-    1. ONLY use stakeholders from ALLOWED list above.
-    2. Relationships: Extract interactions between members of the list. Extract all explicitly stated OR strongly implied relationships based on verbs and context and explain briefly.
-    3. Pain points: Extract issues explicitly tied to these stakeholders.
-    4. Evidence: Translate the relevant evidence quote into English. If entities are far apart, use 'snippet...snippet'.
-    5. Metadata: You MUST copy the Document ID and Filename into EVERY object.
+
+    ENTITY IDENTIFICATION:
+    - ONLY use stakeholders from ALLOWED STAKEHOLDERS list above.
+
+    RELATIONSHIP EXTRACTION:
+    - Relationships: Extract interactions between members of the ALLOWED LIST. 
+    - Extract all explicitly stated OR strongly implied relationships based on verbs and context
+    - RELATIONSHIP_DESCRIPTION: Provide a brief (1-sentence) explanation of the interaction1.
+
+    PAIN POINT EXTRACTION (FRICTION & ATTRIBUTION):
+    - Pain points: Extract issues explicitly tied to the stakeholders from ALLOWED LIST.
+    - Only extract if the text shows a current challenge, risk, grievance, or barrier. The evidence should show negative impact. 
+    - Do not infer potential future problems or "implied" dependency.
+    - If the evidence snippet describes a successful partnership, a donation, or a standard activity without using words of struggle (e.g., 'insufficient', 'failing', 'difficult', 'declining'), you MUST NOT extract it as a pain point.
+    - Ensure the 'Stakeholder' assigned to the pain point is the group actually experiencing the problem.
+    - General statements of "Following the rules" are NOT pain points. Only extract if the compliance is described as a "burden," "difficulty," or "limitation."
+    
+    SOURCE METADATA:
+    - evidence_original in Source metadata: For each stakeholder, copy 1 or 2 sentences around the mention from the document in its original language. If entities are far apart, use 'snippet...snippet'.\n"
+    - evidence_translated in Source metadata: English translation of evidence_original.\n"
+    - You MUST copy the Document ID and Filename into EVERY object.
 
 """
-
+            # Only extract pain points explicitly stated as a challenge, risk, or grievance. Do not infer potential future problems. Also ensure that the 'Stakeholder' assigned to a pain point is the group actually experiencing the problem, not just a group mentioned in the same paragraph.
             initial_state = InputState(
                 topic=full_prompt, extraction_schema=RELATIONSHIP_SCHEMA
             )

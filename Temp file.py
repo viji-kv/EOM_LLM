@@ -113,3 +113,11 @@ prompt=(
 chunks = ["hello", "hi", "how are you", "what is your name"]
 for i, chunk in enumerate(chunks):
         print(i, chunk)
+
+Text = "Hi hello , how are you"
+
+print(f"Contains 'Hi': {'you' in Text}")
+
+pain_point = {}
+pain_point.setdefault('affected_stakeholders', [])
+pain_point.setdefault('severity', 'Medium')

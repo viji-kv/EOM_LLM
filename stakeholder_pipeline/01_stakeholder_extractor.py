@@ -74,12 +74,16 @@ STAKEHOLDER_SCHEMA = {
                         "description": "Source document ID",
                     },
                     "chunk_index": {"type": "integer"},
-                    "extraction_context": {
+                    "evidence_original": {
                         "type": "string",
-                        "description": "Exact snippet containing stakeholder mention (max 300 chars)",
+                        "description": "Exact snippet containing stakeholder mention (max 300 chars) in original language.",
+                    },
+                    "evidence_translated": {
+                        "type": "string",
+                        "description": "Exact snippet containing stakeholder mention (max 300 chars), translated into English",
                     },
                 },
-                "required": ["filename", "extraction_context"],
+                "required": ["filename", "evidence_original", "evidence_translated"],
             },
             "required": [
                 "Stakeholder Name",
@@ -152,7 +156,8 @@ class StakeholderExtractor:
                 "Schema:\n{schema}\n\n"
                 "Text:\n{topic}\n\n"
                 "Please provide your answer directly in clear text, filling in the schema (In English)."
-                "extraction_context in Source metadata: For each stakeholder, copy 200-300 chars around the mention from the document.\n"
+                "evidence_original in Source metadata: For each stakeholder, copy 200-300 chars around the mention from the document in its original language.\n"
+                "evidence_translated in Source metadata: English translation of evidence_original.\n"
                 "Rules: "
                 "Use only the information explicitly provided in the input text."
                 "Do not add assumptions, external knowledge, or inferred entities not present in the text."
@@ -232,7 +237,7 @@ class StakeholderExtractor:
         documents = get_documents_per_brain(supabase, brain_id)
         if not documents:
             print("No documents found in this brain.")
-            return
+            return []
 
         print(f"Found {len(documents)} documents. Fetching content...")
 
@@ -394,6 +399,16 @@ async def main():
     )  # CHANGE: Limit to 3 docs for testing
 
     result = await extractor.extract_all_stakeholders_from_brain(brain_name, brain_id)
+
+    # Handle empty brain
+    if not result or not result.get("stakeholders"):
+        print(f"Brain '{brain_name}' has no documents or no stakeholders found.")
+        result = {
+            "brain": brain_name,
+            "brain_id": brain_id,
+            "stakeholders": [],
+            "total_stakeholders": 0,
+        }
 
     elapsed = time.time() - start
 

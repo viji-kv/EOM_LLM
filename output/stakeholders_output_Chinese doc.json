@@ -1,0 +1,77 @@
+{
+  "brain": "Chinese doc",
+  "brain_id": "5c3728f3-8655-4b4d-b83f-0380d636bc64",
+  "total_stakeholders": 5,
+  "stakeholders": [
+    {
+      "Stakeholder Name": "中華民國政府",
+      "Canonical Name": "Taiwan Government",
+      "Category": "Regulator",
+      "Role": "Regulates policies regarding senior citizens",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "2022TW_Report of the Senior Citizen Condition Survey.pdf",
+        "document_id": "f26420a0-f47b-46c1-8a9d-1c623a24991d",
+        "chunk_index": 0,
+        "evidence_original": "中華民國111年10月底",
+        "evidence_translated": "End of October 2022, Republic of China"
+      }
+    },
+    {
+      "Stakeholder Name": "老年人",
+      "Canonical Name": "Elderly",
+      "Category": "Consumer",
+      "Role": "Receives government assistance or welfare",
+      "Confidence Score": "85%",
+      "Source metadata": {
+        "filename": "2022TW_Report of the Senior Citizen Condition Survey.pdf",
+        "document_id": "f26420a0-f47b-46c1-8a9d-1c623a24991d",
+        "chunk_index": 0,
+        "evidence_original": "4,042,790",
+        "evidence_translated": "4,042,790"
+      }
+    },
+    {
+      "Stakeholder Name": "政府",
+      "Canonical Name": "Government",
+      "Category": "Regulator",
+      "Role": "Provides assistance to senior citizens",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "2022TW_Report of the Senior Citizen Condition Survey.pdf",
+        "document_id": "f26420a0-f47b-46c1-8a9d-1c623a24991d",
+        "chunk_index": 0,
+        "evidence_original": "政府救助或津貼",
+        "evidence_translated": "Government assistance or subsidies"
+      }
+    },
+    {
+      "Stakeholder Name": "中華民國111年10月底",
+      "Canonical Name": "Taiwan Government October 2022",
+      "Category": "Government",
+      "Role": "Conducts the Senior Citizen Condition Survey",
+      "Confidence Score": "95%",
+      "Source metadata": {
+        "filename": "2022TW_Report of the Senior Citizen Condition Survey.pdf",
+        "document_id": "f26420a0-f47b-46c1-8a9d-1c623a24991d",
+        "chunk_index": 1,
+        "evidence_original": "總計 4,042,790 100.00 6.63 10.51 6.09 97.84 1.01 0.77 0.39 89.51 5.84 2.30 1.45 0.89",
+        "evidence_translated": "Total 4,042,790 100.00 6.63 10.51 6.09 97.84 1.01 0.77 0.39 89.51 5.84 2.30 1.45 0.89"
+      }
+    },
+    {
+      "Stakeholder Name": "衛生福利部",
+      "Canonical Name": "Ministry of Health and Welfare",
+      "Category": "Regulator",
+      "Role": "Responsible for elder welfare policies and surveys",
+      "Confidence Score": "95%",
+      "Source metadata": {
+        "filename": "2022TW_Report of the Senior Citizen Condition Survey.pdf",
+        "document_id": "f26420a0-f47b-46c1-8a9d-1c623a24991d",
+        "chunk_index": 2,
+        "evidence_original": "本調查係依據老人福利法第10條規定辦理，主要為制定老人福利政策及相關福利措施，須瞭解55歲至64歲的生活狀況。",
+        "evidence_translated": "This survey is conducted in accordance with the provisions of the Elderly Welfare Act, primarily to formulate elderly welfare policies and related welfare measures, and to understand the living conditions of those aged 55 to 64."
+      }
+    }
+  ]
+}
