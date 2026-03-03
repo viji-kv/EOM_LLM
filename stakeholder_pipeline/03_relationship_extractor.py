@@ -64,7 +64,7 @@ RELATIONSHIP_SCHEMA = {
                             "document_id": {"type": "string"},
                             "evidence_original": {
                                 "type": "string",
-                                "description": "Copy 200-300 chars AROUND each stakeholder mention in the original language.",
+                                "description": "Copy 1 or 2 sentences AROUND each stakeholder mention in the original language.",
                             },
                             "evidence_translated": {
                                 "type": "string",
@@ -82,7 +82,8 @@ RELATIONSHIP_SCHEMA = {
                 "required": [
                     "source",
                     "target",
-                    "relationship_type",
+                    "relationship_description",
+                    "relationship_category",
                     "source_metadata",
                 ],
             },
@@ -120,7 +121,7 @@ RELATIONSHIP_SCHEMA = {
                             "document_id": {"type": "string"},
                             "evidence_original": {
                                 "type": "string",
-                                "description": "Copy 200-300 chars AROUND each painpoint mention in the original language.",
+                                "description": "Copy 1 or 2 sentences AROUND each painpoint mention in the original language.",
                             },
                             "evidence_translated": {
                                 "type": "string",
@@ -169,10 +170,41 @@ class RelationshipExtractor:
         self.max_loops = 2
         self.semaphore = asyncio.Semaphore(self.concurrency_limit)
 
-    # def calculate_threshold(self):
-    #     """45-50% of context for text (rest = prompt/schema overhead)"""
-    #     chars_per_token = 4  # English avg
-    #     return int(self.model_context * 0.5 * chars_per_token)  # ~230k for gpt-4o-mini
+    async def extract_alias(
+        self,
+        consolidated_data: dict,
+    ) -> dict[str, list[str]]:
+        """Extract all original names from all_sources to build alias mapping."""
+        alias_map = {}
+
+        for stakeholder in consolidated_data["consolidated_stakeholders"]:
+            canonical = stakeholder["Canonical Name"]
+            all_names = [stakeholder["Stakeholder Name"]]  # Start with main name
+
+            # Extract ALL original names from all_sources
+            if (
+                "consolidation_info" in stakeholder
+                and "all_sources" in stakeholder["consolidation_info"]
+            ):
+                for source in stakeholder["consolidation_info"]["all_sources"]:
+                    all_names.append(source["original_name"])
+
+            # Also extract common abbreviations from evidence (parentheses patterns)
+            evidence = stakeholder["Source metadata"]["evidence_original"]
+            abbrevs = re.findall(r"\b[A-Z]{2,5}\b\s*\([^)]{2,30}\)", evidence)
+            for match in abbrevs:
+                if canonical.lower() in match.lower():
+                    abbr = match.split()[0]
+                    if abbr != canonical.split()[0][0] and abbr not in all_names:
+                        all_names.append(abbr)
+
+            # Deduplicate and filter
+            unique_names = list(
+                set([name.strip() for name in all_names if name.strip()])
+            )
+            alias_map[canonical] = unique_names
+        print(alias_map)
+        return alias_map
 
     # Added helper to chunk the stakeholder list into batches
     def get_stakeholder_batches(self, entities: List[str]):
@@ -180,10 +212,21 @@ class RelationshipExtractor:
         for i in range(0, len(entities), self.MAX_ENTITIES_PER_PROMPT):
             yield entities[i : i + self.MAX_ENTITIES_PER_PROMPT]
 
-    def format_entities_prompt(self, canonical_stakeholders: List[str]) -> str:
-        """Truncate + format canonical list."""
-        entities = canonical_stakeholders[: self.MAX_ENTITIES_PER_PROMPT]
-        return "ALLOWED STAKEHOLDERS:\n" + "\n".join(f"- {e}" for e in entities)
+    # def format_entities_prompt(self, canonical_stakeholders: List[str]) -> str:
+    #     """Truncate + format canonical list."""
+    #     entities = canonical_stakeholders[: self.MAX_ENTITIES_PER_PROMPT]
+    #     return "ALLOWED STAKEHOLDERS:\n" + "\n".join(f"- {e}" for e in entities)
+
+    def format_entities_prompt(self, alias_map: dict[str, list[str]]) -> str:
+        """Format canonical→aliases for LLM matching."""
+        lines = ["ALLOWED STAKEHOLDERS (CANONICAL → ALIASES):"]
+        for canonical, aliases in alias_map.items():
+            # Show canonical | all surface forms found in docs
+            display_names = [canonical] + aliases[1:]  # Skip duplicate canonical
+            lines.append(
+                f"CANONICAL NAME: {canonical} -> ALIAS: {' | '.join(display_names)}"
+            )
+        return "\n".join(lines)
 
     # Added a more robust local parser to handle markdown and text filler
     def robust_json_parser(self, text: str) -> Dict[str, Any]:
@@ -208,7 +251,7 @@ class RelationshipExtractor:
     async def extract_from_chunk(
         self,
         text: str,
-        canonical_stakeholders: List[str],
+        alias_map: dict[str, list[str]],
         doc_id: str,
         filename: str,
     ) -> Dict[str, Any]:
@@ -218,10 +261,14 @@ class RelationshipExtractor:
         from enrichment import graph
 
         aggregated_results = {"relationships": [], "pain_points": []}
+        canonical_stakeholders = list(alias_map.keys())
 
         # Loop through batches of stakeholders to ensure all are processed
         for batch in self.get_stakeholder_batches(canonical_stakeholders):
-            entities_prompt = self.format_entities_prompt(batch)  # canonical names
+            batch_alias_map = {k: v for k, v in alias_map.items() if k in batch}
+            entities_prompt = self.format_entities_prompt(
+                batch_alias_map
+            )  # canonical names
             source_header = f"SOURCE METADATA\nDocument ID: {doc_id}\nFilename: {filename}\nEND METADATA"
 
             # Refined rules for evidence and metadata persistence
@@ -234,18 +281,17 @@ class RelationshipExtractor:
 
     RULES:
 
-    ENTITY IDENTIFICATION:
-    - ONLY use stakeholders from ALLOWED STAKEHOLDERS list above.
-
     RELATIONSHIP EXTRACTION:
-    - Relationships: Extract interactions between members of the ALLOWED LIST. 
+    - Relationships: Extract interactions between members of the ALLOWED LIST. The format is: CANONICAL_NAME -> alias1 | alias2 | alias3
     - Extract all explicitly stated OR strongly implied relationships based on verbs and context
-    - RELATIONSHIP_DESCRIPTION: Provide a brief (1-sentence) explanation of the interaction1.
+    - RELATIONSHIP_DESCRIPTION: Provide a brief (1-sentence) explanation of the interaction.
+    - ALWAYS output the CANONICAL NAME (leftmost) in 'source', 'target', and 'stakeholder'
+    
 
     PAIN POINT EXTRACTION (FRICTION & ATTRIBUTION):
     - Pain points: Extract issues explicitly tied to the stakeholders from ALLOWED LIST.
-    - Only extract if the text shows a current challenge, risk, grievance, or barrier. The evidence should show negative impact. 
-    - Do not infer potential future problems or "implied" dependency.
+    - Only extract if the text shows a challenge, risk, grievance, or barrier. The evidence should show negative impact. 
+    - Do not infer potential future problems or "implied" dependency. You MAY extract structural or systemic friction if the text clearly implies operational strain.
     - If the evidence snippet describes a successful partnership, a donation, or a standard activity without using words of struggle (e.g., 'insufficient', 'failing', 'difficult', 'declining'), you MUST NOT extract it as a pain point.
     - Ensure the 'Stakeholder' assigned to the pain point is the group actually experiencing the problem.
     - General statements of "Following the rules" are NOT pain points. Only extract if the compliance is described as a "burden," "difficulty," or "limitation."
@@ -293,15 +339,13 @@ class RelationshipExtractor:
         return aggregated_results
 
     async def extract_adaptive(
-        self, text: str, canonical_stakeholders: List[str], doc_id: str, filename: str
+        self, text: str, alias_map: dict[str, list[str]], doc_id: str, filename: str
     ) -> Dict[str, Any]:
         """Adaptive chunking"""
         # print(f"  {filename}: {len(text) / 1000:.1f}k chars")
         if len(text) <= self.threshold:
             print(f" -> File: {filename} - Whole document extraction.")
-            result = await self.extract_from_chunk(
-                text, canonical_stakeholders, doc_id, filename
-            )
+            result = await self.extract_from_chunk(text, alias_map, doc_id, filename)
             # print(
             #     f"Relationship result from whole doc{filename}:{len(result['relationships'])}"
             # )  ############################
@@ -319,8 +363,7 @@ class RelationshipExtractor:
         )
 
         tasks = [
-            self.extract_from_chunk(c, canonical_stakeholders, doc_id, filename)
-            for c in chunks
+            self.extract_from_chunk(c, alias_map, doc_id, filename) for c in chunks
         ]
 
         results = await asyncio.gather(*tasks, return_exceptions=True)
@@ -366,7 +409,7 @@ class RelationshipExtractor:
                 raw_text = get_document_data(self.supabase, doc_id)
                 full_text = decode_string(raw_text)
                 task = self.extract_adaptive(
-                    full_text, canonical_stakeholders, doc_id, filename
+                    full_text, alias_map, doc_id, filename
                 )  # coroutine object of extract_adaptive for each doc
                 doc_tasks.append(task)
             except Exception as e:
@@ -453,7 +496,8 @@ class RelationshipExtractor:
             for stakeholder in data["consolidated_stakeholders"]
         ]
         canonicals = await self.deduplicate_canonical_stakeholders(canonicals)
-        return canonicals
+        alias_map = await self.extract_alias(data)
+        return canonicals, alias_map
 
 
 async def run_test_mode():
@@ -469,26 +513,76 @@ async def run_test_mode():
             mock_doc_id = "test_doc_001"
             mock_filename = test_file_path.name
 
-            test_canonicals = [
-                "SWD",
-                "HA",
-                "Labour and Welfare Bureau",
-                "HKCSS",
-                "Caritas Hong Kong",
-                "Baptist Oi Kwan Social Service",
-                "Residential care homes",
-                "For-Profit Hospital Groups",
-                "Family Caregivers",
-                "Elderly Citizens",
-                "District Elderly Community Centres",
-            ]
+            # test_alias_map = {
+            #     "SWD": ["SWD", "Social Welfare Department"],
+            #     "HA": ["HA", "Hospital Authority"],
+            #     "Labour and Welfare Bureau": [
+            #         "Labour and Welfare Bureau",
+            #         "LWB",
+            #         "Bureau",
+            #     ],
+            #     "HKCSS": ["HKCSS", "Hong Kong Council of Social Service"],
+            #     "Caritas Hong Kong": ["Caritas Hong Kong", "Caritas", "Caritas HK"],
+            #     "Baptist Oi Kwan Social Service": [
+            #         "Baptist Oi Kwan Social Service",
+            #         "BOKSS",
+            #         "Oi Kwan",
+            #     ],
+            #     "Residential care homes": [
+            #         "Residential care homes",
+            #         "residential care homes",
+            #         "RCHs",
+            #         "PRCHs",
+            #         "private residential care homes",
+            #     ],
+            #     "For-Profit Hospital Groups": [
+            #         "For-Profit Hospital Groups",
+            #         "private hospitals",
+            #         "for-profit hospitals",
+            #         "Hong Kong Sanatorium",
+            #     ],
+            #     "Family Caregivers": [
+            #         "Family Caregivers",
+            #         "family carers",
+            #         "caregivers",
+            #     ],
+            #     "Elderly Citizens": ["Elderly Citizens", "elderly", "seniors"],
+            #     "District Elderly Community Centres": [
+            #         "District Elderly Community Centres",
+            #         "DECCs",
+            #         "DECC",
+            #         "elderly community centres",
+            #         "district elderly centres",
+            #     ],
+            # }
+
+            test_alias_map = {
+                "LTA": ["LTA", "Land Transport Authority"],
+                "MOT": ["MOT", "Ministry of Transport"],
+                "MOF": ["MOF", "Ministry of Finance"],
+                "SMRT Corporation": ["SMRT Corporation", "SMRT"],
+                "SBS Transit": ["SBS Transit"],
+                "Grab Singapore": ["Grab Singapore", "Grab"],
+                "Gojek Singapore": ["Gojek Singapore", "Gojek"],
+                "NEA": ["NEA", "National Environment Agency"],
+                "Town Councils": ["Town Councils"],
+                "CAS": [
+                    "CAS",
+                    "Commuters’ Association of Singapore",
+                    "Commuters Association of Singapore",
+                ],
+                "Public Transport Operators": ["Public Transport Operators"],
+                "Technology Firms": ["Technology Firms"],
+                "Private Mobility Providers": ["Private Mobility Providers"],
+                "Fleet Operators": ["Fleet Operators"],
+            }
 
             extractor = RelationshipExtractor(
                 output_dir="output", concurrency_limit=3, max_docs=3
             )
 
             result = await extractor.extract_adaptive(
-                test_text, test_canonicals, mock_doc_id, mock_filename
+                test_text, test_alias_map, mock_doc_id, mock_filename
             )
 
             print(
@@ -497,7 +591,7 @@ async def run_test_mode():
             print(json.dumps(result, indent=2, ensure_ascii=False)[:1000] + "...")
 
             # Save
-            output_filename = "test_policy_output.json"
+            output_filename = "test_policy_output_relationship.json"
 
             output_path = save_output(
                 result=result,
@@ -515,7 +609,7 @@ async def run_test_mode():
 
 # Usage example (matching your pipeline)
 async def main():
-    RUNNING_TEST_MODE = False  # CHANGE: Set to False to run real extraction
+    RUNNING_TEST_MODE = True  # CHANGE: Set to False to run real extraction
     if RUNNING_TEST_MODE:
         await run_test_mode()
         return
@@ -534,10 +628,11 @@ async def main():
         output_dir="output", concurrency_limit=3, max_docs=3
     )
 
-    canonicals = await extractor.canonical_names_from_file(input_file)
+    canonicals, alias_map = await extractor.canonical_names_from_file(input_file)
+    # alias_map = await extractor.extract_aliases_from_consolidated(consolidated_data)
 
     result = await extractor.extract_from_brain(
-        "ce88cb71-2528-4598-a585-5fa2dfd03319", canonicals
+        "ce88cb71-2528-4598-a585-5fa2dfd03319", alias_map
     )
 
     elapsed = time.time() - start

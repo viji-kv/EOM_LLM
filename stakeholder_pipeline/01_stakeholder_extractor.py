@@ -367,7 +367,7 @@ async def run_test_mode():
 
 
 async def main():
-    RUNNING_TEST_MODE = False  # CHANGE: Set to False to run real extraction
+    RUNNING_TEST_MODE = True  # CHANGE: Set to False to run real extraction
     if RUNNING_TEST_MODE:
         await run_test_mode()
         return

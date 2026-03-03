@@ -2,136 +2,160 @@
   "brain": "Test Elderly Policy",
   "brain_id": "test_123",
   "test_file": "stakeholder_pipeline\\test_policy_text.txt",
-  "total_stakeholders": 10,
+  "total_stakeholders": 11,
   "stakeholders": [
     {
-      "Stakeholder Name": "Social Welfare Department",
-      "Canonical Name": "Social Welfare Department",
+      "Stakeholder Name": "Land Transport Authority",
+      "Canonical Name": "Land Transport Authority",
       "Category": "Regulator",
-      "Role": "Leads the implementation of elderly care reforms, regulating all public and subsidized residential care homes.",
+      "Role": "Regulates public transport operators and oversees licensing compliance for all rail and bus services.",
       "Confidence Score": "95%",
       "Source metadata": {
         "filename": "test_policy_text.txt",
         "document_id": "test_doc_001",
         "chunk_index": 0,
-        "extraction_context": "The Social Welfare Department (SWD) leads the implementation of elderly care reforms, regulating all public and subsidized residential care homes. SWD oversees licensing and compliance for 450+ facilities serving 30,000+ seniors."
+        "evidence_original": "The Land Transport Authority (LTA) leads the Smart Urban Mobility Reform 2027. LTA regulates public transport operators and oversees licensing compliance for all rail and bus services.",
+        "evidence_translated": "The Land Transport Authority (LTA) leads the Smart Urban Mobility Reform 2027. LTA regulates public transport operators and oversees licensing compliance for all rail and bus services."
       }
     },
     {
-      "Stakeholder Name": "Hospital Authority",
-      "Canonical Name": "Hospital Authority",
+      "Stakeholder Name": "Ministry of Transport",
+      "Canonical Name": "Ministry of Transport",
       "Category": "Regulator",
-      "Role": "Provides acute medical support but faces capacity shortages, often transferring stable elderly patients to NGO-run homes.",
-      "Confidence Score": "90%",
+      "Role": "Supervises LTA and allocates annual budgetary funding.",
+      "Confidence Score": "95%",
       "Source metadata": {
         "filename": "test_policy_text.txt",
         "document_id": "test_doc_001",
         "chunk_index": 0,
-        "extraction_context": "The Hospital Authority (HA) provides acute medical support but faces capacity shortages, often transferring stable elderly patients to NGO-run homes."
+        "evidence_original": "The Ministry of Transport (MOT) supervises LTA and allocates annual budgetary funding.",
+        "evidence_translated": "The Ministry of Transport (MOT) supervises LTA and allocates annual budgetary funding."
       }
     },
     {
-      "Stakeholder Name": "Labour and Welfare Bureau",
-      "Canonical Name": "Labour and Welfare Bureau",
-      "Category": "Government",
-      "Role": "Policy oversight, approves SWD budgets.",
-      "Confidence Score": "90%",
+      "Stakeholder Name": "Ministry of Finance",
+      "Canonical Name": "Ministry of Finance",
+      "Category": "Regulator",
+      "Role": "Coordinates with MOT to secure infrastructure financing.",
+      "Confidence Score": "95%",
       "Source metadata": {
         "filename": "test_policy_text.txt",
         "document_id": "test_doc_001",
         "chunk_index": 0,
-        "extraction_context": "- Labour and Welfare Bureau: Policy oversight, approves SWD budgets."
+        "evidence_original": "MOT coordinates with the Ministry of Finance (MOF) to secure infrastructure financing.",
+        "evidence_translated": "MOT coordinates with the Ministry of Finance (MOF) to secure infrastructure financing."
       }
     },
     {
-      "Stakeholder Name": "Hong Kong Council of Social Service",
-      "Canonical Name": "Hong Kong Council of Social Service",
-      "Category": "NGO",
-      "Role": "Umbrella body coordinating 180+ member agencies, advocates for increased SWD funding and trains staff for elderly centers.",
-      "Confidence Score": "90%",
+      "Stakeholder Name": "SMRT Corporation",
+      "Canonical Name": "SMRT Corporation",
+      "Category": "Supplier",
+      "Role": "Operates major MRT lines under license from LTA.",
+      "Confidence Score": "95%",
       "Source metadata": {
         "filename": "test_policy_text.txt",
         "document_id": "test_doc_001",
         "chunk_index": 0,
-        "extraction_context": "- Hong Kong Council of Social Service (HKCSS): Umbrella body coordinating 180+ member agencies. HKCSS advocates for increased SWD funding..."
+        "evidence_original": "SMRT Corporation operates major MRT lines under license from LTA.",
+        "evidence_translated": "SMRT Corporation operates major MRT lines under license from LTA."
       }
     },
     {
-      "Stakeholder Name": "Caritas Hong Kong",
-      "Canonical Name": "Caritas Hong Kong",
-      "Category": "NGO",
-      "Role": "Operates 25 residential homes (1,200 beds), receives SWD subsidies but supplements with private donations.",
-      "Confidence Score": "90%",
+      "Stakeholder Name": "SBS Transit",
+      "Canonical Name": "SBS Transit",
+      "Category": "Partner",
+      "Role": "Partners with SMRT to integrate digital ticketing systems across rail and bus networks.",
+      "Confidence Score": "95%",
       "Source metadata": {
         "filename": "test_policy_text.txt",
         "document_id": "test_doc_001",
         "chunk_index": 0,
-        "extraction_context": "- Caritas Hong Kong: Operates 25 residential homes (1,200 beds). Receives SWD subsidies but supplements with private donations..."
+        "evidence_original": "SMRT partners with SBS Transit to integrate digital ticketing systems across rail and bus networks.",
+        "evidence_translated": "SMRT partners with SBS Transit to integrate digital ticketing systems across rail and bus networks."
       }
     },
     {
-      "Stakeholder Name": "Baptist Oi Kwan Social Service",
-      "Canonical Name": "Baptist Oi Kwan Social Service",
-      "Category": "NGO",
-      "Role": "Runs day care centers for 500 seniors daily, competes with other NGOs for SWD tenders.",
-      "Confidence Score": "90%",
-      "Source metadata": {
-        "filename": "test_policy_text.txt",
-        "document_id": "test_doc_001",
-        "chunk_index": 0,
-        "extraction_context": "- Baptist Oi Kwan Social Service: Runs day care centers for 500 seniors daily. Competes with other NGOs for SWD tenders; reports staffing shortages as major pain point."
-      }
-    },
-    {
-      "Stakeholder Name": "Private Residential Care Homes",
-      "Canonical Name": "Private Residential Care Homes",
-      "Category": "Private Sector",
-      "Role": "300+ facilities (15,000 beds), fully self-funded, regulated by SWD but criticize over-regulation.",
+      "Stakeholder Name": "Private mobility providers",
+      "Canonical Name": "Private Mobility Providers",
+      "Category": "Competitor",
+      "Role": "Competes with SMRT for commuter market share.",
       "Confidence Score": "85%",
       "Source metadata": {
         "filename": "test_policy_text.txt",
         "document_id": "test_doc_001",
         "chunk_index": 0,
-        "extraction_context": "- Private Residential Care Homes (PRCHs): 300+ facilities (15,000 beds), fully self-funded. Regulated by SWD but criticize over-regulation."
+        "evidence_original": "However, SMRT competes with private mobility providers for commuter market share.",
+        "evidence_translated": "However, SMRT competes with private mobility providers for commuter market share."
       }
     },
     {
-      "Stakeholder Name": "Elderly Citizens",
-      "Canonical Name": "Elderly Citizens",
-      "Category": "Consumer",
-      "Role": "Primary consumers, 80% prefer aging-in-place over institutional care, demand better home care subsidies.",
+      "Stakeholder Name": "Grab Singapore",
+      "Canonical Name": "Grab Singapore",
+      "Category": "Supplier",
+      "Role": "Collaborates with LTA on first-mile/last-mile pilot programs.",
       "Confidence Score": "90%",
       "Source metadata": {
         "filename": "test_policy_text.txt",
         "document_id": "test_doc_001",
         "chunk_index": 0,
-        "extraction_context": "- Elderly Citizens (65+): Primary consumers, 80% prefer aging-in-place over institutional care. Demand better home care subsidies from SWD."
+        "evidence_original": "Grab Singapore collaborates with LTA on first-mile/last-mile pilot programs but has raised concerns about regulatory constraints on surge pricing.",
+        "evidence_translated": "Grab Singapore collaborates with LTA on first-mile/last-mile pilot programs but has raised concerns about regulatory constraints on surge pricing."
       }
     },
     {
-      "Stakeholder Name": "Family Caregivers",
-      "Canonical Name": "Family Caregivers",
-      "Category": "Consumer",
-      "Role": "Informal support network, overburdened; seek respite services from HKCSS and Baptist Oi Kwan.",
-      "Confidence Score": "92%",
-      "Source metadata": {
-        "filename": "test_policy_text.txt",
-        "document_id": "test_doc_001",
-        "chunk_index": 0,
-        "extraction_context": "- Family Caregivers: Informal support network, overburdened; seek respite services from HKCSS and Baptist Oi Kwan."
-      }
-    },
-    {
-      "Stakeholder Name": "District Elderly Community Centres",
-      "Canonical Name": "District Elderly Community Centres",
-      "Category": "Community",
-      "Role": "120+ centers run by NGOs, funded 50/50 by SWD and community donations.",
+      "Stakeholder Name": "Gojek Singapore",
+      "Canonical Name": "Gojek Singapore",
+      "Category": "Competitor",
+      "Role": "Competes with Grab Singapore for ride-hailing customers.",
       "Confidence Score": "90%",
       "Source metadata": {
         "filename": "test_policy_text.txt",
         "document_id": "test_doc_001",
         "chunk_index": 0,
-        "extraction_context": "- District Elderly Community Centres (DECCs): 120+ centers run by NGOs, funded 50/50 by SWD and community donations."
+        "evidence_original": "Grab competes with Gojek Singapore for ride-hailing customers.",
+        "evidence_translated": "Grab competes with Gojek Singapore for ride-hailing customers."
+      }
+    },
+    {
+      "Stakeholder Name": "National Environment Agency",
+      "Canonical Name": "National Environment Agency",
+      "Category": "Regulator",
+      "Role": "Works with LTA to enforce vehicle emissions standards and penalizes non-compliant fleet operators.",
+      "Confidence Score": "95%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "evidence_original": "The National Environment Agency (NEA) works with LTA to enforce vehicle emissions standards and penalizes non-compliant fleet operators.",
+        "evidence_translated": "The National Environment Agency (NEA) works with LTA to enforce vehicle emissions standards and penalizes non-compliant fleet operators."
+      }
+    },
+    {
+      "Stakeholder Name": "Town Councils",
+      "Canonical Name": "Town Councils",
+      "Category": "Partner",
+      "Role": "Coordinate with LTA on infrastructure upgrades around MRT stations and pedestrian pathways.",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "evidence_original": "Town Councils coordinate with LTA on infrastructure upgrades around MRT stations and pedestrian pathways.",
+        "evidence_translated": "Town Councils coordinate with LTA on infrastructure upgrades around MRT stations and pedestrian pathways."
+      }
+    },
+    {
+      "Stakeholder Name": "Commuters’ Association of Singapore",
+      "Canonical Name": "Commuters Association of Singapore",
+      "Category": "Consumer",
+      "Role": "Advocates for passenger rights and submits policy feedback to MOT.",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "evidence_original": "Commuters’ Association of Singapore (CAS) advocates for passenger rights and submits policy feedback to MOT.",
+        "evidence_translated": "Commuters’ Association of Singapore (CAS) advocates for passenger rights and submits policy feedback to MOT."
       }
     }
   ]

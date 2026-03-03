@@ -66,7 +66,7 @@ def parse_json_response(raw_info: str) -> List[Dict]:
 
 
 # CHECK FOR OTHER LANGUAGES EG: CHINESE
-CONTEXT_FOR_TEXT = 0.5  # 0.2 for chinese
+CONTEXT_FOR_TEXT = 0.4  # 0.2 for chinese
 
 
 def calculate_splitter_params(model_context) -> tuple:
