@@ -80,8 +80,8 @@ STAKEHOLDERS (by index):
 
     for i, s in enumerate(stakeholders):
         name = s.get("Canonical Name", s.get("Stakeholder Name", "Unknown"))
-        role = s.get("Role", "")[:100]  # Truncate long roles
-        conf = s.get("Confidence Score", "N/A")
+        # role = s.get("Role", "")[:100]  # Truncate long roles
+        # conf = s.get("Confidence Score", "N/A")
         # prompt_text += f"{i}. {name} - {role} (conf: {conf})\n"
         prompt_text += f"{i}. {name}\n"
 
@@ -125,7 +125,7 @@ def merge_llm_clusters(
     original_indices: List[int],  # Pass actual indices for this category
 ) -> List[Dict]:
     """
-    Merge stakeholders based on LLM clustering with STRICT validation.
+    Merge stakeholders based on LLM clustering with validation.
     """
     consolidated = []
     used_indices = set()
@@ -189,8 +189,9 @@ def merge_llm_clusters(
         primary_idx = max(scores)[1]
 
         master = stakeholders[primary_idx].copy()
+        # print(f"master:{master}")
         master["Canonical Name"] = cluster_info.get(
-            "canonical_name", master.get("Canonical Name")
+            "canonical_name", master.get("Stakeholder Name")
         )
 
         # Aggregate sources
@@ -201,6 +202,7 @@ def merge_llm_clusters(
                 {
                     "index": i,
                     "original_name": stakeholders[i].get("Stakeholder Name"),
+                    "Role": stakeholders[i].get("Role"),
                     "filename": meta.get("filename"),
                     "confidence": stakeholders[i].get("Confidence Score"),
                 }

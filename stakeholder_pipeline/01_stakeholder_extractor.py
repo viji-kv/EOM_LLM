@@ -47,11 +47,11 @@ STAKEHOLDER_SCHEMA = {
         "properties": {
             "Stakeholder Name": {
                 "type": "string",
-                "description": "Exact name of the stakeholder/organization (e.g., 'Social Welfare Department')",
+                "description": "Extract the EXACT name of the stakeholder/organization as mentioned in the text.",
             },
             "Canonical Name": {
                 "type": "string",
-                "description": "Normalized name of the stakeholder/organization (e.g., 'Social Welfare Department' and 'SWD','Taiwanese Government' and 'Government of Taiwan')",
+                "description": "Normalized the Stakeholder Name (e.g., 'Social Welfare Department' and 'SWD','Taiwanese Government' and 'Government of Taiwan') in English.",
             },
             "Category": {
                 "type": "string",
@@ -59,7 +59,7 @@ STAKEHOLDER_SCHEMA = {
             },
             "Role": {
                 "type": "string",
-                "description": "Specific role/description (e.g., 'Regulates public elderly services')",
+                "description": "Specific role/description of the entity(e.g., 'Regulates public elderly services')",
             },
             "Confidence Score": {
                 "type": "string",
@@ -76,11 +76,11 @@ STAKEHOLDER_SCHEMA = {
                     "chunk_index": {"type": "integer"},
                     "evidence_original": {
                         "type": "string",
-                        "description": "Exact snippet containing stakeholder mention (max 300 chars) in original language.",
+                        "description": "Copy the EXACT snippet from the text containing stakeholder mention (max 300 chars) as mentioned in the text.",
                     },
                     "evidence_translated": {
                         "type": "string",
-                        "description": "Exact snippet containing stakeholder mention (max 300 chars), translated into English",
+                        "description": "English translation of evidence_original. English text stays English.",
                     },
                 },
                 "required": ["filename", "evidence_original", "evidence_translated"],
@@ -155,9 +155,9 @@ class StakeholderExtractor:
                 "You are an assistant tasked with extracting specific information from the provided text using the extraction schema.\n\n"
                 "Schema:\n{schema}\n\n"
                 "Text:\n{topic}\n\n"
-                "Please provide your answer directly in clear text, filling in the schema (In English)."
-                "evidence_original in Source metadata: For each stakeholder, copy 200-300 chars around the mention from the document in its original language.\n"
-                "evidence_translated in Source metadata: English translation of evidence_original.\n"
+                "Please provide your answer directly in clear text, filling in the schema."
+                "Except for Stakeholder Name and evidence_original, rest of the schema should be filled in English."
+                "Extract even if same entity is mentioned multiple times."
                 "Rules: "
                 "Use only the information explicitly provided in the input text."
                 "Do not add assumptions, external knowledge, or inferred entities not present in the text."
@@ -165,6 +165,8 @@ class StakeholderExtractor:
             max_loops=self.max_loops,
         ).__dict__
 
+        # "evidence_original in Source metadata: For each stakeholder, copy EXACT original text, 200-300 chars around the mention from the document.\n"
+        # "evidence_translated in Source metadata: English translation of evidence_original.English text stays English.\n"
         # final_state = await graph.ainvoke(initial_state, config)
 
         # Use semaphore to prevent hitting rate limits during gather
@@ -299,9 +301,8 @@ class StakeholderExtractor:
                 successful += 1
 
         print(f" {successful}/{len(doc_tasks)} docs complete")
-
-        all_stakeholders = await normalize_stakeholder_names(all_stakeholders)
-        print(f"Normalized: {len(all_stakeholders)} stakeholders with canonical names.")
+        # all_stakeholders = await normalize_stakeholder_names(all_stakeholders)
+        # print(f"Normalized: {len(all_stakeholders)} stakeholders with canonical names.")
 
         # Save JSON
         output = {
@@ -327,13 +328,13 @@ async def run_test_mode():
             mock_filename = test_file_path.name
 
             # Extract → exactly like real documents!
-            extractor = StakeholderExtractor(model="openai/gpt-4o-mini")
+            extractor = StakeholderExtractor(model="openai/gpt-4o")
             stakeholders = await extractor.extract_stakeholders_adaptive(
                 text=test_text, doc_id=mock_doc_id, filename=mock_filename
             )
-
+            # print(stakeholders)
             # Normalize
-            stakeholders = await normalize_stakeholder_names(stakeholders)
+            # stakeholders = await normalize_stakeholder_names(stakeholders)
 
             # Results
             output = {
@@ -367,7 +368,7 @@ async def run_test_mode():
 
 
 async def main():
-    RUNNING_TEST_MODE = True  # CHANGE: Set to False to run real extraction
+    RUNNING_TEST_MODE = False  # CHANGE: Set to False to run real extraction
     if RUNNING_TEST_MODE:
         await run_test_mode()
         return
@@ -414,7 +415,7 @@ async def main():
 
     output_dir = extractor.output_dir
 
-    output_file = f"stakeholders_output_{result['brain']}.json"
+    output_file = f"{result['brain']}_stakeholders.json"
 
     output_path = save_output(result, output_file, output_dir)
     print(f"\n Full results saved to: {output_path}")

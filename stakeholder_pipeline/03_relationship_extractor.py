@@ -179,7 +179,9 @@ class RelationshipExtractor:
 
         for stakeholder in consolidated_data["consolidated_stakeholders"]:
             canonical = stakeholder["Canonical Name"]
-            all_names = [stakeholder["Stakeholder Name"]]  # Start with main name
+            if not canonical:
+                continue
+            all_names = [canonical]  # Start with main name
 
             # Extract ALL original names from all_sources
             if (
@@ -189,21 +191,18 @@ class RelationshipExtractor:
                 for source in stakeholder["consolidation_info"]["all_sources"]:
                     all_names.append(source["original_name"])
 
-            # Also extract common abbreviations from evidence (parentheses patterns)
-            evidence = stakeholder["Source metadata"]["evidence_original"]
-            abbrevs = re.findall(r"\b[A-Z]{2,5}\b\s*\([^)]{2,30}\)", evidence)
-            for match in abbrevs:
-                if canonical.lower() in match.lower():
-                    abbr = match.split()[0]
-                    if abbr != canonical.split()[0][0] and abbr not in all_names:
-                        all_names.append(abbr)
-
             # Deduplicate and filter
             unique_names = list(
                 set([name.strip() for name in all_names if name.strip()])
             )
-            alias_map[canonical] = unique_names
-        print(alias_map)
+            # alias_map[canonical] = unique_names
+            if canonical in alias_map:
+                current = set(alias_map[canonical])
+                alias_map[canonical].extend(
+                    name for name in unique_names if name not in current
+                )
+            else:
+                alias_map[canonical] = unique_names
         return alias_map
 
     # Added helper to chunk the stakeholder list into batches
@@ -211,11 +210,6 @@ class RelationshipExtractor:
         """Splits the stakeholder list into manageable batches."""
         for i in range(0, len(entities), self.MAX_ENTITIES_PER_PROMPT):
             yield entities[i : i + self.MAX_ENTITIES_PER_PROMPT]
-
-    # def format_entities_prompt(self, canonical_stakeholders: List[str]) -> str:
-    #     """Truncate + format canonical list."""
-    #     entities = canonical_stakeholders[: self.MAX_ENTITIES_PER_PROMPT]
-    #     return "ALLOWED STAKEHOLDERS:\n" + "\n".join(f"- {e}" for e in entities)
 
     def format_entities_prompt(self, alias_map: dict[str, list[str]]) -> str:
         """Format canonical→aliases for LLM matching."""
@@ -294,7 +288,7 @@ class RelationshipExtractor:
     - Do not infer potential future problems or "implied" dependency. You MAY extract structural or systemic friction if the text clearly implies operational strain.
     - If the evidence snippet describes a successful partnership, a donation, or a standard activity without using words of struggle (e.g., 'insufficient', 'failing', 'difficult', 'declining'), you MUST NOT extract it as a pain point.
     - Ensure the 'Stakeholder' assigned to the pain point is the group actually experiencing the problem.
-    - General statements of "Following the rules" are NOT pain points. Only extract if the compliance is described as a "burden," "difficulty," or "limitation."
+    - General statements of "Following the rules" are NOT pain points. Only extract if the compliance is described as a "burden," "difficulty","limitation.. etc"
     
     SOURCE METADATA:
     - evidence_original in Source metadata: For each stakeholder, copy 1 or 2 sentences around the mention from the document in its original language. If entities are far apart, use 'snippet...snippet'.\n"
@@ -346,9 +340,7 @@ class RelationshipExtractor:
         if len(text) <= self.threshold:
             print(f" -> File: {filename} - Whole document extraction.")
             result = await self.extract_from_chunk(text, alias_map, doc_id, filename)
-            # print(
-            #     f"Relationship result from whole doc{filename}:{len(result['relationships'])}"
-            # )  ############################
+
             return result
 
         chunk_size, chunk_overlap = calculate_splitter_params(self.model_context)
@@ -367,12 +359,7 @@ class RelationshipExtractor:
         ]
 
         results = await asyncio.gather(*tasks, return_exceptions=True)
-        # total_relationships = sum(
-        #     len(r["relationships"]) for r in results if isinstance(r, dict)
-        # )  ############################
-        # print(
-        #     f"Total relationships across all chunks of {filename}: {total_relationships}"
-        # )  ##############
+
         aggregated = {"relationships": [], "pain_points": []}
 
         successful = 0
@@ -388,7 +375,7 @@ class RelationshipExtractor:
         return aggregated
 
     async def extract_from_brain(
-        self, brain_id: str, canonical_stakeholders: List[str]
+        self, brain_id: str, alias_map: dict[str, list[str]]
     ) -> Dict[str, Any]:
         """Full brain extraction (matching 01)."""
         documents = get_documents_per_brain(self.supabase, brain_id)
@@ -461,47 +448,18 @@ class RelationshipExtractor:
             "pain_points": all_pps,
         }
 
-    async def deduplicate_canonical_stakeholders(
-        self,
-        canonical_stakeholders: List[str],
-    ) -> List[str]:
-        """
-        Deduplicate canonical stakeholders while preserving order.
-
-        """
-        seen = set()
-        unique = []
-
-        for stakeholder in canonical_stakeholders:
-            if stakeholder and stakeholder.strip():  # Skip empty
-                cleaned = stakeholder.strip()
-                if cleaned not in seen:
-                    seen.add(cleaned)
-                    unique.append(cleaned)
-
-        print(
-            f" Deduplicated: {len(canonical_stakeholders)} → {len(unique)} stakeholders"
-        )
-        if len(canonical_stakeholders) > len(unique):
-            print(f"   Removed {len(canonical_stakeholders) - len(unique)} duplicates")
-
-        return unique
-
-    async def canonical_names_from_file(self, input_file: str) -> List[str]:
+    async def canonical_names_from_file(self, input_file: str) -> dict[str, list[str]]:
         """Utility to load canonical names from a JSON file."""
         with open(input_file, "r", encoding="utf-8") as f:
             data = json.load(f)
-        canonicals = [
-            stakeholder["Canonical Name"]
-            for stakeholder in data["consolidated_stakeholders"]
-        ]
-        canonicals = await self.deduplicate_canonical_stakeholders(canonicals)
+
         alias_map = await self.extract_alias(data)
-        return canonicals, alias_map
+        return alias_map
 
 
 async def run_test_mode():
     #  TEST MODE - Load from real TXT file
+    input_file = "output/test_policy_output_consolidated.json"
     test_file_path = Path("stakeholder_pipeline/test_policy_text.txt")
     if test_file_path.exists():
         print(" TEST MODE: Loading from test_policy_text.txt")
@@ -514,73 +472,30 @@ async def run_test_mode():
             mock_filename = test_file_path.name
 
             # test_alias_map = {
-            #     "SWD": ["SWD", "Social Welfare Department"],
-            #     "HA": ["HA", "Hospital Authority"],
-            #     "Labour and Welfare Bureau": [
-            #         "Labour and Welfare Bureau",
-            #         "LWB",
-            #         "Bureau",
+            #     "LTA": ["LTA", "Land Transport Authority"],
+            #     "MOT": ["MOT", "Ministry of Transport"],
+            #     "MOF": ["MOF", "Ministry of Finance"],
+            #     "SMRT Corporation": ["SMRT Corporation", "SMRT"],
+            #     "SBS Transit": ["SBS Transit"],
+            #     "Grab Singapore": ["Grab Singapore", "Grab"],
+            #     "Gojek Singapore": ["Gojek Singapore", "Gojek"],
+            #     "NEA": ["NEA", "National Environment Agency"],
+            #     "Town Councils": ["Town Councils"],
+            #     "CAS": [
+            #         "CAS",
+            #         "Commuters’ Association of Singapore",
+            #         "Commuters Association of Singapore",
             #     ],
-            #     "HKCSS": ["HKCSS", "Hong Kong Council of Social Service"],
-            #     "Caritas Hong Kong": ["Caritas Hong Kong", "Caritas", "Caritas HK"],
-            #     "Baptist Oi Kwan Social Service": [
-            #         "Baptist Oi Kwan Social Service",
-            #         "BOKSS",
-            #         "Oi Kwan",
-            #     ],
-            #     "Residential care homes": [
-            #         "Residential care homes",
-            #         "residential care homes",
-            #         "RCHs",
-            #         "PRCHs",
-            #         "private residential care homes",
-            #     ],
-            #     "For-Profit Hospital Groups": [
-            #         "For-Profit Hospital Groups",
-            #         "private hospitals",
-            #         "for-profit hospitals",
-            #         "Hong Kong Sanatorium",
-            #     ],
-            #     "Family Caregivers": [
-            #         "Family Caregivers",
-            #         "family carers",
-            #         "caregivers",
-            #     ],
-            #     "Elderly Citizens": ["Elderly Citizens", "elderly", "seniors"],
-            #     "District Elderly Community Centres": [
-            #         "District Elderly Community Centres",
-            #         "DECCs",
-            #         "DECC",
-            #         "elderly community centres",
-            #         "district elderly centres",
-            #     ],
+            #     "Public Transport Operators": ["Public Transport Operators"],
+            #     "Technology Firms": ["Technology Firms"],
+            #     "Private Mobility Providers": ["Private Mobility Providers"],
+            #     "Fleet Operators": ["Fleet Operators"],
             # }
-
-            test_alias_map = {
-                "LTA": ["LTA", "Land Transport Authority"],
-                "MOT": ["MOT", "Ministry of Transport"],
-                "MOF": ["MOF", "Ministry of Finance"],
-                "SMRT Corporation": ["SMRT Corporation", "SMRT"],
-                "SBS Transit": ["SBS Transit"],
-                "Grab Singapore": ["Grab Singapore", "Grab"],
-                "Gojek Singapore": ["Gojek Singapore", "Gojek"],
-                "NEA": ["NEA", "National Environment Agency"],
-                "Town Councils": ["Town Councils"],
-                "CAS": [
-                    "CAS",
-                    "Commuters’ Association of Singapore",
-                    "Commuters Association of Singapore",
-                ],
-                "Public Transport Operators": ["Public Transport Operators"],
-                "Technology Firms": ["Technology Firms"],
-                "Private Mobility Providers": ["Private Mobility Providers"],
-                "Fleet Operators": ["Fleet Operators"],
-            }
 
             extractor = RelationshipExtractor(
                 output_dir="output", concurrency_limit=3, max_docs=3
             )
-
+            test_alias_map = await extractor.canonical_names_from_file(input_file)
             result = await extractor.extract_adaptive(
                 test_text, test_alias_map, mock_doc_id, mock_filename
             )
@@ -628,8 +543,7 @@ async def main():
         output_dir="output", concurrency_limit=3, max_docs=3
     )
 
-    canonicals, alias_map = await extractor.canonical_names_from_file(input_file)
-    # alias_map = await extractor.extract_aliases_from_consolidated(consolidated_data)
+    alias_map = await extractor.canonical_names_from_file(input_file)
 
     result = await extractor.extract_from_brain(
         "ce88cb71-2528-4598-a585-5fa2dfd03319", alias_map
@@ -638,7 +552,7 @@ async def main():
     elapsed = time.time() - start
 
     input_path = Path(input_file).name
-    output_filename = input_path.replace(".json", "_relationships.json")
+    output_filename = input_path.replace("_consolidated.json", "_relationships.json")
 
     output_path = save_output(
         result=result, output_filename=output_filename, output_dir=extractor.output_dir

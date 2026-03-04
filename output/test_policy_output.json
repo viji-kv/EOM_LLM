@@ -2,7 +2,7 @@
   "brain": "Test Elderly Policy",
   "brain_id": "test_123",
   "test_file": "stakeholder_pipeline\\test_policy_text.txt",
-  "total_stakeholders": 11,
+  "total_stakeholders": 14,
   "stakeholders": [
     {
       "Stakeholder Name": "Land Transport Authority",
@@ -14,12 +14,40 @@
         "filename": "test_policy_text.txt",
         "document_id": "test_doc_001",
         "chunk_index": 0,
-        "evidence_original": "The Land Transport Authority (LTA) leads the Smart Urban Mobility Reform 2027. LTA regulates public transport operators and oversees licensing compliance for all rail and bus services.",
-        "evidence_translated": "The Land Transport Authority (LTA) leads the Smart Urban Mobility Reform 2027. LTA regulates public transport operators and oversees licensing compliance for all rail and bus services."
+        "evidence_original": "The Land Transport Authority (LTA) leads the Smart Urban Mobility Reform 2027.",
+        "evidence_translated": "The Land Transport Authority (LTA) leads the Smart Urban Mobility Reform 2027."
       }
     },
     {
-      "Stakeholder Name": "Ministry of Transport",
+      "Stakeholder Name": "Land Transport Authority",
+      "Canonical Name": "Land Transport Authority",
+      "Category": "Partner",
+      "Role": "Partners with technology firms to fund pilot projects for autonomous buses.",
+      "Confidence Score": "95%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "evidence_original": "LTA also funds pilot projects for autonomous buses in partnership with technology firms.",
+        "evidence_translated": "LTA also funds pilot projects for autonomous buses in partnership with technology firms."
+      }
+    },
+    {
+      "Stakeholder Name": "土地交通局（LTA）",
+      "Canonical Name": "Land Transport Authority",
+      "Category": "Partner",
+      "Role": "Collaborates with Singapore technology companies on autonomous bus projects.",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "evidence_original": "土地交通局（LTA）与新加坡科技公司合作开发无人驾驶巴士项目，但该公司反映测试场地审批流程过长，严重延误了研发进度。",
+        "evidence_translated": "Land Transport Authority (LTA) collaborates with Singapore technology companies to develop autonomous bus projects, but the company reported that the test site approval process is too long, which seriously delays the development progress."
+      }
+    },
+    {
+      "Stakeholder Name": "The Ministry of Transport",
       "Canonical Name": "Ministry of Transport",
       "Category": "Regulator",
       "Role": "Supervises LTA and allocates annual budgetary funding.",
@@ -33,11 +61,11 @@
       }
     },
     {
-      "Stakeholder Name": "Ministry of Finance",
-      "Canonical Name": "Ministry of Finance",
-      "Category": "Regulator",
-      "Role": "Coordinates with MOT to secure infrastructure financing.",
-      "Confidence Score": "95%",
+      "Stakeholder Name": "The Ministry of Transport",
+      "Canonical Name": "Ministry of Transport",
+      "Category": "Partner",
+      "Role": "Coordinates with the Ministry of Finance to secure infrastructure financing.",
+      "Confidence Score": "90%",
       "Source metadata": {
         "filename": "test_policy_text.txt",
         "document_id": "test_doc_001",
@@ -61,11 +89,11 @@
       }
     },
     {
-      "Stakeholder Name": "SBS Transit",
-      "Canonical Name": "SBS Transit",
+      "Stakeholder Name": "SMRT Corporation",
+      "Canonical Name": "SMRT Corporation",
       "Category": "Partner",
-      "Role": "Partners with SMRT to integrate digital ticketing systems across rail and bus networks.",
-      "Confidence Score": "95%",
+      "Role": "Partners with SBS Transit to integrate digital ticketing systems across rail and bus networks.",
+      "Confidence Score": "90%",
       "Source metadata": {
         "filename": "test_policy_text.txt",
         "document_id": "test_doc_001",
@@ -75,10 +103,10 @@
       }
     },
     {
-      "Stakeholder Name": "Private mobility providers",
-      "Canonical Name": "Private Mobility Providers",
+      "Stakeholder Name": "SMRT Corporation",
+      "Canonical Name": "SMRT Corporation",
       "Category": "Competitor",
-      "Role": "Competes with SMRT for commuter market share.",
+      "Role": "Competes with private mobility providers for commuter market share.",
       "Confidence Score": "85%",
       "Source metadata": {
         "filename": "test_policy_text.txt",
@@ -91,23 +119,23 @@
     {
       "Stakeholder Name": "Grab Singapore",
       "Canonical Name": "Grab Singapore",
-      "Category": "Supplier",
+      "Category": "Partner",
       "Role": "Collaborates with LTA on first-mile/last-mile pilot programs.",
-      "Confidence Score": "90%",
+      "Confidence Score": "95%",
       "Source metadata": {
         "filename": "test_policy_text.txt",
         "document_id": "test_doc_001",
         "chunk_index": 0,
-        "evidence_original": "Grab Singapore collaborates with LTA on first-mile/last-mile pilot programs but has raised concerns about regulatory constraints on surge pricing.",
-        "evidence_translated": "Grab Singapore collaborates with LTA on first-mile/last-mile pilot programs but has raised concerns about regulatory constraints on surge pricing."
+        "evidence_original": "Grab Singapore collaborates with LTA on first-mile/last-mile pilot programs",
+        "evidence_translated": "Grab Singapore collaborates with LTA on first-mile/last-mile pilot programs"
       }
     },
     {
-      "Stakeholder Name": "Gojek Singapore",
-      "Canonical Name": "Gojek Singapore",
+      "Stakeholder Name": "Grab Singapore",
+      "Canonical Name": "Grab Singapore",
       "Category": "Competitor",
-      "Role": "Competes with Grab Singapore for ride-hailing customers.",
-      "Confidence Score": "90%",
+      "Role": "Competes with Gojek Singapore for ride-hailing customers.",
+      "Confidence Score": "95%",
       "Source metadata": {
         "filename": "test_policy_text.txt",
         "document_id": "test_doc_001",
@@ -117,11 +145,11 @@
       }
     },
     {
-      "Stakeholder Name": "National Environment Agency",
+      "Stakeholder Name": "The National Environment Agency",
       "Canonical Name": "National Environment Agency",
-      "Category": "Regulator",
+      "Category": "Enforcer",
       "Role": "Works with LTA to enforce vehicle emissions standards and penalizes non-compliant fleet operators.",
-      "Confidence Score": "95%",
+      "Confidence Score": "90%",
       "Source metadata": {
         "filename": "test_policy_text.txt",
         "document_id": "test_doc_001",
@@ -146,7 +174,7 @@
     },
     {
       "Stakeholder Name": "Commuters’ Association of Singapore",
-      "Canonical Name": "Commuters Association of Singapore",
+      "Canonical Name": "Commuters’ Association of Singapore",
       "Category": "Consumer",
       "Role": "Advocates for passenger rights and submits policy feedback to MOT.",
       "Confidence Score": "90%",
@@ -156,6 +184,20 @@
         "chunk_index": 0,
         "evidence_original": "Commuters’ Association of Singapore (CAS) advocates for passenger rights and submits policy feedback to MOT.",
         "evidence_translated": "Commuters’ Association of Singapore (CAS) advocates for passenger rights and submits policy feedback to MOT."
+      }
+    },
+    {
+      "Stakeholder Name": "Commuters’ Association of Singapore",
+      "Canonical Name": "Commuters’ Association of Singapore",
+      "Category": "Consumer",
+      "Role": "Criticized fare increases and service disruptions.",
+      "Confidence Score": "85%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "evidence_original": "CAS has criticized fare increases and service disruptions.",
+        "evidence_translated": "CAS has criticized fare increases and service disruptions."
       }
     }
   ]

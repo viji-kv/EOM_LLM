@@ -1,35 +1,9 @@
 {
   "relationships": [
     {
-      "source": "LTA",
-      "target": "Public Transport Operators",
-      "relationship_description": "LTA regulates public transport operators and oversees licensing compliance for all rail and bus services.",
-      "relationship_category": "regulates",
-      "confidence": "90%",
-      "source_metadata": {
-        "file_name": "test_policy_text.txt",
-        "document_id": "test_doc_001",
-        "evidence_original": "The Land Transport Authority (LTA) leads the Smart Urban Mobility Reform 2027. LTA regulates public transport operators and oversees licensing compliance for all rail and bus services.",
-        "evidence_translated": "The Land Transport Authority (LTA) leads the Smart Urban Mobility Reform 2027. LTA regulates public transport operators and oversees licensing compliance for all rail and bus services."
-      }
-    },
-    {
-      "source": "LTA",
-      "target": "Technology Firms",
-      "relationship_description": "LTA funds pilot projects for autonomous buses in partnership with technology firms.",
-      "relationship_category": "partners",
-      "confidence": "85%",
-      "source_metadata": {
-        "file_name": "test_policy_text.txt",
-        "document_id": "test_doc_001",
-        "evidence_original": "LTA also funds pilot projects for autonomous buses in partnership with technology firms.",
-        "evidence_translated": "LTA also funds pilot projects for autonomous buses in partnership with technology firms."
-      }
-    },
-    {
-      "source": "MOT",
-      "target": "LTA",
-      "relationship_description": "MOT supervises LTA and allocates annual budgetary funding.",
+      "source": "Land Transport Authority",
+      "target": "Ministry of Transport",
+      "relationship_description": "The Ministry of Transport supervises the Land Transport Authority and allocates annual budgetary funding.",
       "relationship_category": "regulates",
       "confidence": "90%",
       "source_metadata": {
@@ -40,23 +14,10 @@
       }
     },
     {
-      "source": "MOT",
-      "target": "MOF",
-      "relationship_description": "MOT coordinates with MOF to secure infrastructure financing.",
-      "relationship_category": "partners",
-      "confidence": "85%",
-      "source_metadata": {
-        "file_name": "test_policy_text.txt",
-        "document_id": "test_doc_001",
-        "evidence_original": "MOT coordinates with the Ministry of Finance (MOF) to secure infrastructure financing.",
-        "evidence_translated": "MOT coordinates with the Ministry of Finance (MOF) to secure infrastructure financing."
-      }
-    },
-    {
-      "source": "SMRT Corporation",
-      "target": "LTA",
-      "relationship_description": "SMRT operates major MRT lines under license from LTA.",
-      "relationship_category": "partners",
+      "source": "Land Transport Authority",
+      "target": "SMRT Corporation",
+      "relationship_description": "SMRT Corporation operates major MRT lines under license from the Land Transport Authority.",
+      "relationship_category": "regulates",
       "confidence": "90%",
       "source_metadata": {
         "file_name": "test_policy_text.txt",
@@ -70,7 +31,7 @@
       "target": "SBS Transit",
       "relationship_description": "SMRT partners with SBS Transit to integrate digital ticketing systems across rail and bus networks.",
       "relationship_category": "partners",
-      "confidence": "85%",
+      "confidence": "90%",
       "source_metadata": {
         "file_name": "test_policy_text.txt",
         "document_id": "test_doc_001",
@@ -80,23 +41,23 @@
     },
     {
       "source": "SMRT Corporation",
-      "target": "Private Mobility Providers",
-      "relationship_description": "SMRT competes with private mobility providers for commuter market share.",
+      "target": "Grab Singapore",
+      "relationship_description": "SMRT competes with Grab Singapore for commuter market share.",
       "relationship_category": "competes",
-      "confidence": "85%",
+      "confidence": "90%",
       "source_metadata": {
         "file_name": "test_policy_text.txt",
         "document_id": "test_doc_001",
-        "evidence_original": "However, SMRT competes with private mobility providers for commuter market share.",
-        "evidence_translated": "However, SMRT competes with private mobility providers for commuter market share."
+        "evidence_original": "SMRT competes with private mobility providers for commuter market share.",
+        "evidence_translated": "SMRT competes with private mobility providers for commuter market share."
       }
     },
     {
-      "source": "Grab Singapore",
-      "target": "LTA",
-      "relationship_description": "Grab collaborates with LTA on first-mile/last-mile pilot programs.",
+      "source": "Land Transport Authority",
+      "target": "Grab Singapore",
+      "relationship_description": "Grab Singapore collaborates with LTA on first-mile/last-mile pilot programs.",
       "relationship_category": "collaborates",
-      "confidence": "85%",
+      "confidence": "90%",
       "source_metadata": {
         "file_name": "test_policy_text.txt",
         "document_id": "test_doc_001",
@@ -105,50 +66,24 @@
       }
     },
     {
-      "source": "Grab Singapore",
-      "target": "Gojek Singapore",
-      "relationship_description": "Grab competes with Gojek Singapore for ride-hailing customers.",
-      "relationship_category": "competes",
-      "confidence": "85%",
+      "source": "National Environment Agency",
+      "target": "Land Transport Authority",
+      "relationship_description": "The NEA works with the LTA to enforce vehicle emissions standards and penalizes non-compliant fleet operators.",
+      "relationship_category": "collaborates",
+      "confidence": "90%",
       "source_metadata": {
         "file_name": "test_policy_text.txt",
         "document_id": "test_doc_001",
-        "evidence_original": "Grab competes with Gojek Singapore for ride-hailing customers.",
-        "evidence_translated": "Grab competes with Gojek Singapore for ride-hailing customers."
+        "evidence_original": "The National Environment Agency (NEA) works with LTA to enforce vehicle emissions standards and penalizes non-compliant fleet operators.",
+        "evidence_translated": "The National Environment Agency (NEA) works with LTA to enforce vehicle emissions standards and penalizes non-compliant fleet operators."
       }
     },
     {
-      "source": "NEA",
-      "target": "LTA",
-      "relationship_description": "NEA works with LTA to enforce vehicle emissions standards.",
-      "relationship_category": "partners",
-      "confidence": "85%",
-      "source_metadata": {
-        "file_name": "test_policy_text.txt",
-        "document_id": "test_doc_001",
-        "evidence_original": "The National Environment Agency (NEA) works with LTA to enforce vehicle emissions standards.",
-        "evidence_translated": "The National Environment Agency (NEA) works with LTA to enforce vehicle emissions standards."
-      }
-    },
-    {
-      "source": "Town Councils",
-      "target": "LTA",
-      "relationship_description": "Town Councils coordinate with LTA on infrastructure upgrades around MRT stations and pedestrian pathways.",
-      "relationship_category": "partners",
-      "confidence": "85%",
-      "source_metadata": {
-        "file_name": "test_policy_text.txt",
-        "document_id": "test_doc_001",
-        "evidence_original": "Town Councils coordinate with LTA on infrastructure upgrades around MRT stations and pedestrian pathways.",
-        "evidence_translated": "Town Councils coordinate with LTA on infrastructure upgrades around MRT stations and pedestrian pathways."
-      }
-    },
-    {
-      "source": "CAS",
-      "target": "MOT",
-      "relationship_description": "CAS submits policy feedback to MOT.",
-      "relationship_category": "other",
-      "confidence": "80%",
+      "source": "Commuters’ Association of Singapore",
+      "target": "Ministry of Transport",
+      "relationship_description": "Commuters' Association of Singapore submits policy feedback to MOT.",
+      "relationship_category": "collaborates",
+      "confidence": "90%",
       "source_metadata": {
         "file_name": "test_policy_text.txt",
         "document_id": "test_doc_001",
@@ -159,10 +94,22 @@
   ],
   "pain_points": [
     {
+      "stakeholder": "Land Transport Authority",
+      "painpoint": "Approval process for test sites severely delays research and development progress.",
+      "painpoint_category": "Regulatory Delay",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "evidence_original": "土地交通局（LTA）与新加坡科技公司合作开发无人驾驶巴士项目，但该公司反映测试场地审批流程过长，严重延误了研发进度。",
+        "evidence_translated": "The Land Transport Authority (LTA) works with a Singapore tech company to develop autonomous bus projects, but the company reported that the approval process for test sites takes too long, severely delaying research and development progress."
+      }
+    },
+    {
       "stakeholder": "Grab Singapore",
-      "painpoint": "Grab has raised concerns about regulatory constraints on surge pricing.",
+      "painpoint": "Concerns about regulatory constraints on surge pricing.",
       "painpoint_category": "Regulatory Constraints",
-      "confidence": "85%",
+      "confidence": "90%",
       "source_metadata": {
         "file_name": "test_policy_text.txt",
         "document_id": "test_doc_001",
@@ -171,27 +118,27 @@
       }
     },
     {
-      "stakeholder": "CAS",
-      "painpoint": "CAS has criticized fare increases and service disruptions.",
-      "painpoint_category": "Service Disruptions and Costs",
+      "stakeholder": "National Environment Agency",
+      "painpoint": "Non-payment collection is considered an overhead.",
+      "painpoint_category": "Operational Overhead",
       "confidence": "85%",
+      "source_metadata": {
+        "file_name": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "evidence_original": "The National Environment Agency (NEA) works with LTA to enforce vehicle emissions standards and penalizes non-compliant fleet operators. They consider non payment collection as an overhead.",
+        "evidence_translated": "The National Environment Agency (NEA) works with LTA to enforce vehicle emissions standards and penalizes non-compliant fleet operators. They consider non-payment collection as an overhead."
+      }
+    },
+    {
+      "stakeholder": "Commuters’ Association of Singapore",
+      "painpoint": "Criticized fare increases and service disruptions.",
+      "painpoint_category": "Cost and Service Reliability",
+      "confidence": "90%",
       "source_metadata": {
         "file_name": "test_policy_text.txt",
         "document_id": "test_doc_001",
         "evidence_original": "Commuters’ Association of Singapore (CAS) advocates for passenger rights and submits policy feedback to MOT. CAS has criticized fare increases and service disruptions.",
         "evidence_translated": "Commuters’ Association of Singapore (CAS) advocates for passenger rights and submits policy feedback to MOT. CAS has criticized fare increases and service disruptions."
-      }
-    },
-    {
-      "stakeholder": "NEA",
-      "painpoint": "They consider non payment collection as an overhead.",
-      "painpoint_category": "Financial Barriers",
-      "confidence": "80%",
-      "source_metadata": {
-        "file_name": "test_policy_text.txt",
-        "document_id": "test_doc_001",
-        "evidence_original": "The National Environment Agency (NEA) works with LTA to enforce vehicle emissions standards and penalizes non-compliant fleet operators. They consider non payment collection as an overhead.",
-        "evidence_translated": "The National Environment Agency (NEA) works with LTA to enforce vehicle emissions standards and penalizes non-compliant fleet operators. They consider non payment collection as an overhead."
       }
     }
   ]

@@ -2,9 +2,10 @@ Smart Urban Mobility Reform Policy 2027 – Singapore
 Policy Background
 
 The Land Transport Authority (LTA) leads the Smart Urban Mobility Reform 2027. LTA regulates public transport operators and oversees licensing compliance for all rail and bus services. LTA also funds pilot projects for autonomous buses in partnership with technology firms.
+土地交通局（LTA）与新加坡科技公司合作开发无人驾驶巴士项目，但该公司反映测试场地审批流程过长，严重延误了研发进度。
 
 The Ministry of Transport (MOT) supervises LTA and allocates annual budgetary funding. MOT coordinates with the Ministry of Finance (MOF) to secure infrastructure financing.
-
+LTA and MOT jointly established the Road Safety Enforcement Task Force to coordinate joint operations against traffic violations across Singapore.
 SMRT Corporation operates major MRT lines under license from LTA. SMRT partners with SBS Transit to integrate digital ticketing systems across rail and bus networks. However, SMRT competes with private mobility providers for commuter market share.
 
 Grab Singapore collaborates with LTA on first-mile/last-mile pilot programs but has raised concerns about regulatory constraints on surge pricing. Grab competes with Gojek Singapore for ride-hailing customers.
