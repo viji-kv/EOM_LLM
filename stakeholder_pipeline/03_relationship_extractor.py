@@ -195,6 +195,9 @@ class RelationshipExtractor:
             unique_names = list(
                 set([name.strip() for name in all_names if name.strip()])
             )
+            for name in unique_names:
+                if "DBS Group Holdings" in name:
+                    print(repr(name))
             # alias_map[canonical] = unique_names
             if canonical in alias_map:
                 current = set(alias_map[canonical])
@@ -215,10 +218,13 @@ class RelationshipExtractor:
         """Format canonical→aliases for LLM matching."""
         lines = ["ALLOWED STAKEHOLDERS (CANONICAL → ALIASES):"]
         for canonical, aliases in alias_map.items():
-            # Show canonical | all surface forms found in docs
-            display_names = [canonical] + aliases[1:]  # Skip duplicate canonical
+            # Build list of all names, with canonical first, then unique aliases
+            all_names = [canonical] + [a for a in aliases if a != canonical]
+            unique_display = list(
+                dict.fromkeys(all_names)
+            )  # preserve order, remove dups
             lines.append(
-                f"CANONICAL NAME: {canonical} -> ALIAS: {' | '.join(display_names)}"
+                f"CANONICAL NAME: {canonical} -> ALIAS: {' | '.join(unique_display)}"
             )
         return "\n".join(lines)
 

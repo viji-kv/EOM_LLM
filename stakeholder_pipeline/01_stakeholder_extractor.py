@@ -51,7 +51,7 @@ STAKEHOLDER_SCHEMA = {
             },
             "Canonical Name": {
                 "type": "string",
-                "description": "Normalized the Stakeholder Name (e.g., 'Social Welfare Department' and 'SWD','Taiwanese Government' and 'Government of Taiwan') in English.",
+                "description": "Normalize the Stakeholder Name (e.g., 'Social Welfare Department' and 'SWD','Taiwanese Government' and 'Government of Taiwan') in English.",
             },
             "Category": {
                 "type": "string",
@@ -164,10 +164,6 @@ class StakeholderExtractor:
             ),
             max_loops=self.max_loops,
         ).__dict__
-
-        # "evidence_original in Source metadata: For each stakeholder, copy EXACT original text, 200-300 chars around the mention from the document.\n"
-        # "evidence_translated in Source metadata: English translation of evidence_original.English text stays English.\n"
-        # final_state = await graph.ainvoke(initial_state, config)
 
         # Use semaphore to prevent hitting rate limits during gather
         async with self.semaphore:
@@ -301,8 +297,8 @@ class StakeholderExtractor:
                 successful += 1
 
         print(f" {successful}/{len(doc_tasks)} docs complete")
-        # all_stakeholders = await normalize_stakeholder_names(all_stakeholders)
-        # print(f"Normalized: {len(all_stakeholders)} stakeholders with canonical names.")
+        all_stakeholders = await normalize_stakeholder_names(all_stakeholders)
+        print(f"Normalized: {len(all_stakeholders)} stakeholders with canonical names.")
 
         # Save JSON
         output = {
@@ -334,7 +330,7 @@ async def run_test_mode():
             )
             # print(stakeholders)
             # Normalize
-            # stakeholders = await normalize_stakeholder_names(stakeholders)
+            stakeholders = await normalize_stakeholder_names(stakeholders)
 
             # Results
             output = {
@@ -368,7 +364,7 @@ async def run_test_mode():
 
 
 async def main():
-    RUNNING_TEST_MODE = False  # CHANGE: Set to False to run real extraction
+    RUNNING_TEST_MODE = True  # CHANGE: Set to False to run real extraction
     if RUNNING_TEST_MODE:
         await run_test_mode()
         return

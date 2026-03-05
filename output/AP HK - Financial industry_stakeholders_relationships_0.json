@@ -1,0 +1,149 @@
+{
+  "brain_id": "ce88cb71-2528-4598-a585-5fa2dfd03319",
+  "total_relationships": 8,
+  "total_pain_points": 3,
+  "relationships": [
+    {
+      "source": "Hongkong and Shanghai Banking Corporation Limited",
+      "target": "Hong Kong Alzheimer’s Disease Association",
+      "relationship_description": "HSBC is collaborating with the Hong Kong Alzheimer’s Disease Association to create a dementia-friendly environment.",
+      "relationship_category": "collaborates",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2018_HSBC_managing-money-with-dementia.pdf",
+        "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa",
+        "evidence_original": "We are proud to be working in partnership with Hong Kong Alzheimer’s Disease Association. Together we are building a more dementia-friendly community and are working towards HSBC becoming a dementia-friendly business.",
+        "evidence_translated": "We are proud to be working in partnership with Hong Kong Alzheimer’s Disease Association. Together we are building a more dementia-friendly community and are working towards HSBC becoming a dementia-friendly business."
+      }
+    },
+    {
+      "source": "DBS Group Holdings Ltd",
+      "target": "Reliance Industries",
+      "relationship_description": "DBS Group Holdings Ltd collaborates with Reliance Industries to promote a Compressed Biogas (CBG) project in India.",
+      "relationship_category": "collaborates",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "evidence_original": "Case study 2: Reliance Industries Limited and DBS Bank India collaborate to promote Compressed Biogas (CBG) project.",
+        "evidence_translated": "Case study 2: Reliance Industries Limited and DBS Bank India collaborate to promote Compressed Biogas (CBG) project."
+      }
+    },
+    {
+      "source": "DBS Group Holdings Ltd",
+      "target": "Monetary Authority of Singapore",
+      "relationship_description": "In 2023, the Monetary Authority of Singapore (MAS) initiated an industry-focused Gen Al Project to drive innovation and responsible use of Gen Al for the financial service industry.",
+      "relationship_category": "collaborates",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "evidence_original": "In early 2023, the Monetary Authority of Singapore (MAS) initiated an industry-focused Gen Al Project to drive innovation...Monetary Authority of Singapore initiated a consortium...to drive this initiative.",
+        "evidence_translated": "In early 2023, the Monetary Authority of Singapore (MAS) initiated an industry-focused Gen Al Project to drive innovation...Monetary Authority of Singapore initiated a consortium...to drive this initiative."
+      }
+    },
+    {
+      "source": "DBS Group Holdings Ltd",
+      "target": "Infocomm Media Development Authority",
+      "relationship_description": "Actively supported the IMDA’s efforts in its promotion of its DPTM programme to promote certification in safeguarding personal data.",
+      "relationship_category": "partners",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "evidence_original": "In 2023, we actively supported the IMDA’s efforts in its promotion of its DPTM programme. We recognised its significance in expanding the community of organisations independently certified in the safeguarding and handling of personal data, and in...",
+        "evidence_translated": "In 2023, we actively supported the IMDA’s efforts in its promotion of its DPTM programme. We recognised its significance in expanding the community of organisations independently certified in the safeguarding and handling of personal data, and in..."
+      }
+    },
+    {
+      "source": "Hang Seng University of Hong Kong",
+      "target": "The Community Chest of Hong Kong",
+      "relationship_description": "Hang Seng University of Hong Kong supports The Community Chest of Hong Kong through its Board of Governors' participation.",
+      "relationship_category": "collaborates",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2022_Hang Seng Bank ESG report.pdf",
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
+        "evidence_original": "Our senior management members have also devoted their time to civic and volunteer activities. For example, the Bank’s Executive Director and Chief Executive, Diana Cesar, is the Chairman of the Board of Governors at the Hang Seng University of Hong Kong, as well as a Director, Campaign Committee Co-Chairman and Member of Executive Committee of The Community Chest of Hong Kong.",
+        "evidence_translated": "Our senior management members have also devoted their time to civic and volunteer activities. For example, the Bank’s Executive Director and Chief Executive, Diana Cesar, is the Chairman of the Board of Governors at the Hang Seng University of Hong Kong, as well as a Director, Campaign Committee Co-Chairman and Member of Executive Committee of The Community Chest of Hong Kong."
+      }
+    },
+    {
+      "source": "The Conservancy Association",
+      "target": "World Wide Fund for Nature (WWF) Hong Kong",
+      "relationship_description": "Both organizations receive support from Hang Seng in efforts focused on environmental conservation.",
+      "relationship_category": "collaborates",
+      "confidence": "85%",
+      "source_metadata": {
+        "file_name": "2022_Hang Seng Bank ESG report.pdf",
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
+        "evidence_original": "We supported The Conservancy Association (‘CA’) in the Country Parks Plantation Enrichment Programme (‘PEP’)... We also continued to provide support to the corporate membership programmes of the World Wide Fund for Nature Hong Kong and Business Environment Council.",
+        "evidence_translated": "We supported The Conservancy Association (‘CA’) in the Country Parks Plantation Enrichment Programme (‘PEP’)... We also continued to provide support to the corporate membership programmes of the World Wide Fund for Nature Hong Kong and Business Environment Council."
+      }
+    },
+    {
+      "source": "World Wide Fund for Nature (WWF) Hong Kong",
+      "target": "Business Environment Council",
+      "relationship_description": "Both organizations receive support from Hang Seng to participate in programmes focused on environmental sustainability.",
+      "relationship_category": "partners",
+      "confidence": "85%",
+      "source_metadata": {
+        "file_name": "2022_Hang Seng Bank ESG report.pdf",
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
+        "evidence_original": "We also continued to provide support to the corporate membership programmes of the World Wide Fund for Nature Hong Kong and Business Environment Council.",
+        "evidence_translated": "We also continued to provide support to the corporate membership programmes of the World Wide Fund for Nature Hong Kong and Business Environment Council."
+      }
+    },
+    {
+      "source": "Hang Seng University of Hong Kong",
+      "target": "Hong Kong Table Tennis Association",
+      "relationship_description": "Co-organized the Hang Seng Table Tennis Academy to train local talents.",
+      "relationship_category": "collaborates",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2022_Hang Seng Bank ESG report.pdf",
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
+        "evidence_original": "Hang Seng Table Tennis Academy... Co-organised with the Hong Kong Table Tennis Association, the Hang Seng Table Tennis Academy (‘HSTTA’) identifies and nurtures home-grown table tennis talents through high- quality, structured training sessions.",
+        "evidence_translated": "Hang Seng Table Tennis Academy... Co-organised with the Hong Kong Table Tennis Association, the Hang Seng Table Tennis Academy (‘HSTTA’) identifies and nurtures home-grown table tennis talents through high-quality, structured training sessions."
+      }
+    }
+  ],
+  "pain_points": [
+    {
+      "stakeholder": "DBS Group Holdings Ltd",
+      "painpoint": "There are ongoing concerns around employee wellbeing, particularly work-related stress, and issues regarding rewards and recognition.",
+      "painpoint_category": "Employee Wellbeing",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "evidence_original": "Through the annual employee engagement survey and quarterly employee experience survey, the key areas of concern raised by employees are around wellbeing (work-related stress), and rewards and recognition.",
+        "evidence_translated": "Through the annual employee engagement survey and quarterly employee experience survey, the key areas of concern raised by employees are around wellbeing (work-related stress), and rewards and recognition."
+      }
+    },
+    {
+      "stakeholder": "Reliance Industries",
+      "painpoint": "The agricultural residue supply chain in India has traditionally been unorganised as farmers and aggregators have not been adequately incentivised and financed.",
+      "painpoint_category": "Financial Barriers",
+      "confidence": "85%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "evidence_original": "India produces a significant amount of agricultural residue which is usually burnt in the absence of adequate processing infrastructure and logistical support. The agricultural residue supply chain in India has traditionally been unorganised as farmers and aggregators have not been adequately incentivised and financed.",
+        "evidence_translated": "India produces a significant amount of agricultural residue which is usually burnt in the absence of adequate processing infrastructure and logistical support. The agricultural residue supply chain in India has traditionally been unorganised as farmers and aggregators have not been adequately incentivised and financed."
+      }
+    },
+    {
+      "stakeholder": "DBS Group Holdings Ltd",
+      "painpoint": "Scams persist as a threat in Singapore despite rising adoption of digital payment channels.",
+      "painpoint_category": "Security",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "evidence_original": "Amidst the rising adoption of digital payment channels, scams persist as a threat in Singapore.",
+        "evidence_translated": "Amidst the rising adoption of digital payment channels, scams persist as a threat in Singapore."
+      }
+    }
+  ]
+}

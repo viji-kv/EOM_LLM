@@ -1,92 +1,170 @@
 {
   "brain_id": "ce88cb71-2528-4598-a585-5fa2dfd03319",
-  "total_relationships": 8,
-  "total_pain_points": 3,
+  "total_relationships": 14,
+  "total_pain_points": 2,
   "relationships": [
     {
-      "source": "Hongkong and Shanghai Banking Corporation Limited",
-      "target": "Hong Kong Alzheimer’s Disease Association",
-      "relationship_description": "HSBC is collaborating with the Hong Kong Alzheimer’s Disease Association to create a dementia-friendly environment.",
-      "relationship_category": "collaborates",
+      "source": "HSBC",
+      "target": "Hong Kong Alzheimer's Disease Association",
+      "relationship_description": "Partnered to build a more dementia-friendly community.",
+      "relationship_category": "partners",
       "confidence": "90%",
       "source_metadata": {
         "file_name": "2018_HSBC_managing-money-with-dementia.pdf",
         "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa",
-        "evidence_original": "We are proud to be working in partnership with Hong Kong Alzheimer’s Disease Association. Together we are building a more dementia-friendly community and are working towards HSBC becoming a dementia-friendly business.",
-        "evidence_translated": "We are proud to be working in partnership with Hong Kong Alzheimer’s Disease Association. Together we are building a more dementia-friendly community and are working towards HSBC becoming a dementia-friendly business."
+        "evidence_original": "We are proud to be working in partnership with Hong Kong Alzheimer’s Disease Association. Together we are building a more dementia-friendly community...",
+        "evidence_translated": "We are proud to be working in partnership with the Hong Kong Alzheimer's Disease Association. Together we are building a more dementia-friendly community..."
       }
     },
     {
-      "source": "DBS Group Holdings Ltd",
+      "source": "DBS Group Holdings",
+      "target": "Singapore Centre for Social Enterprise",
+      "relationship_description": "DBS Group Holdings connected with Singapore Centre for Social Enterprise for discussions to create impact.",
+      "relationship_category": "collaborates",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "evidence_original": "Regular events and conversations with Businesses for Impact, community partners and social service agencies to understand the social landscape and how DBS can partner to create impact. Connection with government bodies and associations, including Singapore Centre for Social Enterprise and Community Chest.",
+        "evidence_translated": "Regular events and conversations with Businesses for Impact, community partners and social service agencies to understand the social landscape and how DBS can partner to create impact. Connection with government bodies and associations, including Singapore Centre for Social Enterprise and Community Chest."
+      }
+    },
+    {
+      "source": "DBS Group Holdings",
+      "target": "Community Chest",
+      "relationship_description": "DBS Group Holdings connected with Community Chest for discussions to create impact.",
+      "relationship_category": "collaborates",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "evidence_original": "Regular events and conversations with Businesses for Impact, community partners and social service agencies to understand the social landscape and how DBS can partner to create impact. Connection with government bodies and associations, including Singapore Centre for Social Enterprise and Community Chest.",
+        "evidence_translated": "Regular events and conversations with Businesses for Impact, community partners and social service agencies to understand the social landscape and how DBS can partner to create impact. Connection with government bodies and associations, including Singapore Centre for Social Enterprise and Community Chest."
+      }
+    },
+    {
+      "source": "DBS Group Holdings",
       "target": "Reliance Industries",
-      "relationship_description": "DBS Group Holdings Ltd collaborates with Reliance Industries to promote a Compressed Biogas (CBG) project in India.",
-      "relationship_category": "collaborates",
+      "relationship_description": "DBS Group Holdings and Reliance Industries collaborate on a Compressed Biogas (CBG) project in India.",
+      "relationship_category": "partners",
       "confidence": "90%",
       "source_metadata": {
         "file_name": "2023_DBS_SR2023.pdf",
         "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
-        "evidence_original": "Case study 2: Reliance Industries Limited and DBS Bank India collaborate to promote Compressed Biogas (CBG) project.",
-        "evidence_translated": "Case study 2: Reliance Industries Limited and DBS Bank India collaborate to promote Compressed Biogas (CBG) project."
+        "evidence_original": "Case study 2: Reliance Industries Limited and DBS Bank India collaborate to promote Compressed Biogas (CBG) project...DBS collaborated with Reliance to develop a supply chain financing programme...",
+        "evidence_translated": "Case study 2: Reliance Industries Limited and DBS Bank India collaborate to promote Compressed Biogas (CBG) project...DBS collaborated with Reliance to develop a supply chain financing programme..."
       }
     },
     {
-      "source": "DBS Group Holdings Ltd",
+      "source": "DBS Group Holdings",
+      "target": "Migrant Workers' Centre",
+      "relationship_description": "DBS Group Holdings collaborates with Migrant Workers' Centre to help migrant workers overcome language barriers in digital skills.",
+      "relationship_category": "partners",
+      "confidence": "85%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "evidence_original": "In collaboration with the Migrant Workers' Centre, we launched the inaugural 'MiDigi Ambassador Programme,’ an initiative to help migrant workers overcome language barriers in picking up digital skills.",
+        "evidence_translated": "In collaboration with the Migrant Workers' Centre, we launched the inaugural 'MiDigi Ambassador Programme,’ an initiative to help migrant workers overcome language barriers in picking up digital skills."
+      }
+    },
+    {
+      "source": "DBS Group Holdings",
       "target": "Monetary Authority of Singapore",
-      "relationship_description": "In 2023, the Monetary Authority of Singapore (MAS) initiated an industry-focused Gen Al Project to drive innovation and responsible use of Gen Al for the financial service industry.",
-      "relationship_category": "collaborates",
-      "confidence": "90%",
+      "relationship_description": "DBS Group Holdings actively supported the Monetary Authority of Singapore in its industry-focused initiatives.",
+      "relationship_category": "partners",
+      "confidence": "85%",
       "source_metadata": {
         "file_name": "2023_DBS_SR2023.pdf",
         "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
-        "evidence_original": "In early 2023, the Monetary Authority of Singapore (MAS) initiated an industry-focused Gen Al Project to drive innovation...Monetary Authority of Singapore initiated a consortium...to drive this initiative.",
-        "evidence_translated": "In early 2023, the Monetary Authority of Singapore (MAS) initiated an industry-focused Gen Al Project to drive innovation...Monetary Authority of Singapore initiated a consortium...to drive this initiative."
+        "evidence_original": "In early 2023, the Monetary Authority of Singapore (MAS) initiated an industry-focused Gen Al Project to drive innovation and responsible use of Gen Al... MAS established a consortium of financial industry companies, leading technology providers and consultancies to drive this initiative.",
+        "evidence_translated": "In early 2023, the Monetary Authority of Singapore (MAS) initiated an industry-focused General Artificial Intelligence (Gen AI) Project to drive innovation and responsible use of Gen AI... MAS established a consortium of financial industry companies, leading technology providers and consultancies to drive this initiative."
       }
     },
     {
-      "source": "DBS Group Holdings Ltd",
+      "source": "DBS Group Holdings",
       "target": "Infocomm Media Development Authority",
-      "relationship_description": "Actively supported the IMDA’s efforts in its promotion of its DPTM programme to promote certification in safeguarding personal data.",
+      "relationship_description": "DBS Group Holdings supported the Infocomm Media Development Authority in promoting the DPTM programme.",
       "relationship_category": "partners",
+      "confidence": "85%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "evidence_original": "In 2023, we actively supported the IMDA’s efforts in its promotion of its DPTM programme...",
+        "evidence_translated": "In 2023, we actively supported the Infocomm Media Development Authority’s (IMDA) efforts in its promotion of its Data Protection Trustmark (DPTM) programme..."
+      }
+    },
+    {
+      "source": "DBS Group Holdings",
+      "target": "DBS Foundation",
+      "relationship_description": "DBS Group Holdings committed significant funds to support the efforts and expansion of the DBS Foundation.",
+      "relationship_category": "funds",
       "confidence": "90%",
       "source_metadata": {
         "file_name": "2023_DBS_SR2023.pdf",
         "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
-        "evidence_original": "In 2023, we actively supported the IMDA’s efforts in its promotion of its DPTM programme. We recognised its significance in expanding the community of organisations independently certified in the safeguarding and handling of personal data, and in...",
-        "evidence_translated": "In 2023, we actively supported the IMDA’s efforts in its promotion of its DPTM programme. We recognised its significance in expanding the community of organisations independently certified in the safeguarding and handling of personal data, and in..."
+        "evidence_original": "The Bank committed an additional SGD 100 million to further its efforts in creating positive societal impact. This went towards growing the work of DBSF, which includes expanding its scope with the formation of the Community Impact chapter...",
+        "evidence_translated": "The Bank committed an additional SGD 100 million to further its efforts in creating positive societal impact. This went towards growing the work of DBS Foundation, which includes expanding its scope with the formation of the Community Impact chapter..."
       }
     },
     {
-      "source": "Hang Seng University of Hong Kong",
+      "source": "Hang Seng University",
       "target": "The Community Chest of Hong Kong",
-      "relationship_description": "Hang Seng University of Hong Kong supports The Community Chest of Hong Kong through its Board of Governors' participation.",
+      "relationship_description": "Hang Seng University supports The Community Chest of Hong Kong through sponsorship and participation in its programs.",
+      "relationship_category": "funds",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2022_Hang Seng Bank ESG report.pdf",
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
+        "evidence_original": "Hang Seng has continued to provide support to The Community Chest of Hong Kong (‘the Chest’). We are the Diamond Sponsor of Dress Casual Day for the 25th consecutive year.",
+        "evidence_translated": "Hang Seng has continued to provide support to The Community Chest of Hong Kong (‘the Chest’). We are the Diamond Sponsor of Dress Casual Day for the 25th consecutive year."
+      }
+    },
+    {
+      "source": "Hang Seng University",
+      "target": "Hong Kong Table Tennis Association",
+      "relationship_description": "Hang Seng University collaborates with the Hong Kong Table Tennis Association to nurture local table tennis talents.",
       "relationship_category": "collaborates",
       "confidence": "90%",
       "source_metadata": {
         "file_name": "2022_Hang Seng Bank ESG report.pdf",
         "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
-        "evidence_original": "Our senior management members have also devoted their time to civic and volunteer activities. For example, the Bank’s Executive Director and Chief Executive, Diana Cesar, is the Chairman of the Board of Governors at the Hang Seng University of Hong Kong, as well as a Director, Campaign Committee Co-Chairman and Member of Executive Committee of The Community Chest of Hong Kong.",
-        "evidence_translated": "Our senior management members have also devoted their time to civic and volunteer activities. For example, the Bank’s Executive Director and Chief Executive, Diana Cesar, is the Chairman of the Board of Governors at the Hang Seng University of Hong Kong, as well as a Director, Campaign Committee Co-Chairman and Member of Executive Committee of The Community Chest of Hong Kong."
+        "evidence_original": "Co-organised with the Hong Kong Table Tennis Association, the Hang Seng Table Tennis Academy (‘HSTTA’) identifies and nurtures home-grown table tennis talents through high- quality, structured training sessions.",
+        "evidence_translated": "Co-organised with the Hong Kong Table Tennis Association, the Hang Seng Table Tennis Academy (‘HSTTA’) identifies and nurtures home-grown table tennis talents through high- quality, structured training sessions."
       }
     },
     {
-      "source": "The Conservancy Association",
-      "target": "World Wide Fund for Nature (WWF) Hong Kong",
-      "relationship_description": "Both organizations receive support from Hang Seng in efforts focused on environmental conservation.",
-      "relationship_category": "collaborates",
-      "confidence": "85%",
+      "source": "Hang Seng University",
+      "target": "CarbonCare InnoLab",
+      "relationship_description": "Hang Seng University funds the Hang Seng Low Carbon Future – SolarCare Programme in collaboration with CarbonCare InnoLab.",
+      "relationship_category": "funds",
+      "confidence": "90%",
       "source_metadata": {
         "file_name": "2022_Hang Seng Bank ESG report.pdf",
         "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
-        "evidence_original": "We supported The Conservancy Association (‘CA’) in the Country Parks Plantation Enrichment Programme (‘PEP’)... We also continued to provide support to the corporate membership programmes of the World Wide Fund for Nature Hong Kong and Business Environment Council.",
-        "evidence_translated": "We supported The Conservancy Association (‘CA’) in the Country Parks Plantation Enrichment Programme (‘PEP’)... We also continued to provide support to the corporate membership programmes of the World Wide Fund for Nature Hong Kong and Business Environment Council."
+        "evidence_original": "In collaboration with CarbonCare InnoLab (‘CCIL’), we funded the Hang Seng Low Carbon Future – SolarCare Programme, a project which involved the installation of over 268 solar panels at the Breakthrough Youth Village in 2022.",
+        "evidence_translated": "In collaboration with CarbonCare InnoLab (‘CCIL’), we funded the Hang Seng Low Carbon Future – SolarCare Programme, a project which involved the installation of over 268 solar panels at the Breakthrough Youth Village in 2022."
       }
     },
     {
-      "source": "World Wide Fund for Nature (WWF) Hong Kong",
-      "target": "Business Environment Council",
-      "relationship_description": "Both organizations receive support from Hang Seng to participate in programmes focused on environmental sustainability.",
+      "source": "Hang Seng University",
+      "target": "The Conservancy Association",
+      "relationship_description": "Hang Seng University supports The Conservancy Association through the Country Parks Plantation Enrichment Programme.",
       "relationship_category": "partners",
-      "confidence": "85%",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2022_Hang Seng Bank ESG report.pdf",
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
+        "evidence_original": "We supported The Conservancy Association (‘CA’) in the Country Parks Plantation Enrichment Programme (‘PEP’), which was launched by the Agriculture, Fisheries and Conservation Department.",
+        "evidence_translated": "We supported The Conservancy Association (‘CA’) in the Country Parks Plantation Enrichment Programme (‘PEP’), which was launched by the Agriculture, Fisheries and Conservation Department."
+      }
+    },
+    {
+      "source": "Hang Seng University",
+      "target": "WWF Hong Kong",
+      "relationship_description": "Hang Seng University supports WWF Hong Kong through corporate membership programmes.",
+      "relationship_category": "partners",
+      "confidence": "90%",
       "source_metadata": {
         "file_name": "2022_Hang Seng Bank ESG report.pdf",
         "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
@@ -95,54 +173,42 @@
       }
     },
     {
-      "source": "Hang Seng University of Hong Kong",
-      "target": "Hong Kong Table Tennis Association",
-      "relationship_description": "Co-organized the Hang Seng Table Tennis Academy to train local talents.",
-      "relationship_category": "collaborates",
+      "source": "Hang Seng University",
+      "target": "Business Environment Council",
+      "relationship_description": "Hang Seng University supports Business Environment Council through corporate membership programmes.",
+      "relationship_category": "partners",
       "confidence": "90%",
       "source_metadata": {
         "file_name": "2022_Hang Seng Bank ESG report.pdf",
         "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
-        "evidence_original": "Hang Seng Table Tennis Academy... Co-organised with the Hong Kong Table Tennis Association, the Hang Seng Table Tennis Academy (‘HSTTA’) identifies and nurtures home-grown table tennis talents through high- quality, structured training sessions.",
-        "evidence_translated": "Hang Seng Table Tennis Academy... Co-organised with the Hong Kong Table Tennis Association, the Hang Seng Table Tennis Academy (‘HSTTA’) identifies and nurtures home-grown table tennis talents through high-quality, structured training sessions."
+        "evidence_original": "We also continued to provide support to the corporate membership programmes of the World Wide Fund for Nature Hong Kong and Business Environment Council.",
+        "evidence_translated": "We also continued to provide support to the corporate membership programmes of the World Wide Fund for Nature Hong Kong and Business Environment Council."
       }
     }
   ],
   "pain_points": [
     {
-      "stakeholder": "DBS Group Holdings Ltd",
-      "painpoint": "There are ongoing concerns around employee wellbeing, particularly work-related stress, and issues regarding rewards and recognition.",
-      "painpoint_category": "Employee Wellbeing",
-      "confidence": "90%",
+      "stakeholder": "Hong Kong Alzheimer's Disease Association",
+      "painpoint": "The stigma and lack of understanding about people living with dementia.",
+      "painpoint_category": "Social Barriers",
+      "confidence": "85%",
+      "source_metadata": {
+        "file_name": "2018_HSBC_managing-money-with-dementia.pdf",
+        "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa",
+        "evidence_original": "Dementia Friends is a global movement that aims to change people’s perceptions of dementia, to tackle the stigma and lack of understanding about people living with the condition.",
+        "evidence_translated": "Dementia Friends is a global movement that aims to change people’s perceptions of dementia, to tackle the stigma and lack of understanding about people living with the condition."
+      }
+    },
+    {
+      "stakeholder": "DBS Group Holdings",
+      "painpoint": "Concerns raised by employees about wellbeing, including work-related stress and rewards and recognition.",
+      "painpoint_category": "Workplace Stress",
+      "confidence": "85%",
       "source_metadata": {
         "file_name": "2023_DBS_SR2023.pdf",
         "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
         "evidence_original": "Through the annual employee engagement survey and quarterly employee experience survey, the key areas of concern raised by employees are around wellbeing (work-related stress), and rewards and recognition.",
         "evidence_translated": "Through the annual employee engagement survey and quarterly employee experience survey, the key areas of concern raised by employees are around wellbeing (work-related stress), and rewards and recognition."
-      }
-    },
-    {
-      "stakeholder": "Reliance Industries",
-      "painpoint": "The agricultural residue supply chain in India has traditionally been unorganised as farmers and aggregators have not been adequately incentivised and financed.",
-      "painpoint_category": "Financial Barriers",
-      "confidence": "85%",
-      "source_metadata": {
-        "file_name": "2023_DBS_SR2023.pdf",
-        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
-        "evidence_original": "India produces a significant amount of agricultural residue which is usually burnt in the absence of adequate processing infrastructure and logistical support. The agricultural residue supply chain in India has traditionally been unorganised as farmers and aggregators have not been adequately incentivised and financed.",
-        "evidence_translated": "India produces a significant amount of agricultural residue which is usually burnt in the absence of adequate processing infrastructure and logistical support. The agricultural residue supply chain in India has traditionally been unorganised as farmers and aggregators have not been adequately incentivised and financed."
-      }
-    },
-    {
-      "stakeholder": "DBS Group Holdings Ltd",
-      "painpoint": "Scams persist as a threat in Singapore despite rising adoption of digital payment channels.",
-      "painpoint_category": "Security",
-      "confidence": "90%",
-      "source_metadata": {
-        "file_name": "2023_DBS_SR2023.pdf",
-        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
-        "evidence_original": "Amidst the rising adoption of digital payment channels, scams persist as a threat in Singapore.",
-        "evidence_translated": "Amidst the rising adoption of digital payment channels, scams persist as a threat in Singapore."
       }
     }
   ]
