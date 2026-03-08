@@ -216,13 +216,40 @@ def merge_llm_clusters(
 
         consolidated.append(master)
 
-    # Add ONLY unused stakeholders from original_indices
+    # # Add ONLY unused stakeholders from original_indices
+    # for real_idx in original_indices:
+    #     if real_idx not in used_indices:
+    #         singleton = stakeholders[real_idx].copy()
+    #         singleton["consolidation_info"] = {
+    #             "cluster_size": 1,
+    #             "member_indices": [real_idx],
+    #         }
+    #         consolidated.append(singleton)
+    #         used_indices.add(real_idx)
+
+    # print(
+    #     f"       Created {len(consolidated)} consolidated (from {len(original_indices)} original)"
+    # )
+
+    # return consolidated
+
     for real_idx in original_indices:
         if real_idx not in used_indices:
             singleton = stakeholders[real_idx].copy()
+            meta = stakeholders[real_idx].get("Source metadata", {})
+            all_sources = [  # Single-element list for consistency
+                {
+                    "index": real_idx,
+                    "original_name": stakeholders[real_idx].get("Stakeholder Name"),
+                    "Role": stakeholders[real_idx].get("Role"),
+                    "filename": meta.get("filename"),
+                    "confidence": stakeholders[real_idx].get("Confidence Score"),
+                }
+            ]
             singleton["consolidation_info"] = {
                 "cluster_size": 1,
                 "member_indices": [real_idx],
+                "all_sources": all_sources,  # # 🔴 CHANGE:: Now always present
             }
             consolidated.append(singleton)
             used_indices.add(real_idx)
@@ -264,12 +291,34 @@ async def consolidate_with_llm_only(
         # Extract stakeholders for this category
         cat_stakeholders = [stakeholders[i] for i in indices]
 
+        # if len(cat_stakeholders) == 1:
+        #     # Singleton category
+        #     single = cat_stakeholders[0].copy()
+        #     single["consolidation_info"] = {
+        #         "cluster_size": 1,
+        #         "member_indices": indices,
+        #     }
+        #     all_consolidated.append(single)
+        #     continue
+
         if len(cat_stakeholders) == 1:
             # Singleton category
             single = cat_stakeholders[0].copy()
+            # # 🔴 CHANGE:: Add full consolidation_info structure
+            meta = single.get("Source metadata", {})
+            all_sources = [
+                {
+                    "index": indices[0],
+                    "original_name": single.get("Stakeholder Name"),
+                    "Role": single.get("Role"),
+                    "filename": meta.get("filename"),
+                    "confidence": single.get("Confidence Score"),
+                }
+            ]
             single["consolidation_info"] = {
                 "cluster_size": 1,
                 "member_indices": indices,
+                "all_sources": all_sources,
             }
             all_consolidated.append(single)
             continue

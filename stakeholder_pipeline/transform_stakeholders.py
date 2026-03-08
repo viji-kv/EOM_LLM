@@ -1,0 +1,187 @@
+# import json
+# from collections import defaultdict
+# from typing import Dict, List, Any
+
+
+# def transform_stakeholder_data(input_data: Dict[str, Any]) -> List[Dict[str, Any]]:
+#     """
+#     Transform the original stakeholder JSON into the grouped canonical format.
+
+#     Args:
+#         input_data: The original JSON structure with consolidated_stakeholders, relationships, pain_points
+
+#     Returns:
+#         List of stakeholder objects grouped by canonical_name
+#     """
+#     # Extract data
+#     consolidated = input_data.get("consolidated_stakeholders", [])
+#     relationships = input_data.get("relationships", [])
+#     pain_points = input_data.get("pain_points", [])
+
+#     # Group stakeholders by canonical_name to collect roles
+#     roles_by_stakeholder = defaultdict(dict)
+#     for stakeholder in consolidated:
+#         canonical = stakeholder["Canonical Name"]
+#         category = stakeholder["Category"]
+#         role_desc = stakeholder["Role"]
+#         # Use role_desc as-is, or shorten if too verbose
+#         roles_by_stakeholder[canonical][category] = role_desc
+
+#     # Group relationships by source -> list of targets
+#     rels_by_source = defaultdict(list)
+#     for rel in relationships:
+#         source = rel["source"]
+#         target = rel["target"]
+#         rel_type = rel["relationship_category"]
+#         desc = rel["relationship_description"]
+#         rels_by_source[source].append(
+#             {"target": target, "relationship_type": rel_type, "description": desc}
+#         )
+
+#     # Group pain points by stakeholder
+#     pains_by_stakeholder = defaultdict(list)
+#     for pain in pain_points:
+#         pains_by_stakeholder[pain["stakeholder"]].append(
+#             {"category": pain["painpoint_category"], "description": pain["painpoint"]}
+#         )
+
+#     # Collect all unique canonical names (from stakeholders + relationships + pains)
+#     all_stakeholders = set(roles_by_stakeholder.keys())
+#     for rels in rels_by_source.values():
+#         for rel in rels:
+#             all_stakeholders.add(rel["target"])
+#     for stakeholder in pains_by_stakeholder:
+#         all_stakeholders.add(stakeholder)
+
+#     # Build final output
+#     result = []
+#     for canonical in sorted(all_stakeholders):
+#         result.append(
+#             {
+#                 "canonical_name": canonical,
+#                 "roles": roles_by_stakeholder[canonical],
+#                 "relationships": rels_by_source[canonical],
+#                 "painpoints": pains_by_stakeholder[canonical],
+#             }
+#         )
+
+#     return result
+
+
+import json
+from collections import defaultdict, Counter
+from typing import Dict, List, Any
+from stakeholder_pipeline.utils import save_output
+from pathlib import Path
+
+
+def transform_stakeholder_data(input_data: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """
+    Transform stakeholder data, extracting ALL roles from all_sources array.
+    """
+    consolidated = input_data.get("consolidated_stakeholders", [])
+    relationships = input_data.get("relationships", [])
+    pain_points = input_data.get("pain_points", [])
+
+    # Group by canonical_name -> {category: [all_role_descriptions]}
+    roles_by_stakeholder = defaultdict(lambda: defaultdict(list))
+
+    for stakeholder in consolidated:
+        canonical = stakeholder["Canonical Name"]
+        category = stakeholder["Category"]
+
+        # Extract from primary Role
+        roles_by_stakeholder[canonical][category].append(stakeholder["Role"])
+
+        # Extract ALL roles from all_sources if present
+        if (
+            "consolidation_info" in stakeholder
+            and "all_sources" in stakeholder["consolidation_info"]
+        ):
+            for source in stakeholder["consolidation_info"]["all_sources"]:
+                if "Role" in source:
+                    roles_by_stakeholder[canonical][category].append(source["Role"])
+
+        # Deduplicate roles per category (keep unique)
+        for cat in roles_by_stakeholder[canonical]:
+            roles_by_stakeholder[canonical][cat] = list(
+                set(roles_by_stakeholder[canonical][cat])
+            )
+
+    # Convert lists back to dicts with concatenated descriptions
+    formatted_roles = {}
+    for canonical, categories in roles_by_stakeholder.items():
+        formatted_roles[canonical] = {}
+        for category, roles_list in categories.items():
+            # Join multiple roles with semicolon separator
+            formatted_roles[canonical][category] = "; ".join(roles_list)
+
+    # Relationships (unchanged)
+    rels_by_source = defaultdict(list)
+    for rel in relationships:
+        source = rel["source"]
+        target = rel["target"]
+        rel_type = rel["relationship_category"]
+        desc = rel["relationship_description"]
+        rels_by_source[source].append(
+            {"target": target, "relationship_type": rel_type, "description": desc}
+        )
+
+    # Pain points (unchanged)
+    pains_by_stakeholder = defaultdict(list)
+    for pain in pain_points:
+        pains_by_stakeholder[pain["stakeholder"]].append(
+            {"category": pain["painpoint_category"], "description": pain["painpoint"]}
+        )
+
+    # All unique stakeholders
+    all_stakeholders = set(formatted_roles.keys())
+    for source in rels_by_source:
+        all_stakeholders.add(source)
+        for rel in rels_by_source[source]:
+            all_stakeholders.add(rel["target"])
+    for stakeholder in pains_by_stakeholder:
+        all_stakeholders.add(stakeholder)
+
+    # Build result
+    result = []
+    for canonical in sorted(all_stakeholders):
+        result.append(
+            {
+                "canonical_name": canonical,
+                "roles": formatted_roles.get(canonical, {}),
+                "relationships": rels_by_source[canonical],
+                "painpoints": pains_by_stakeholder[canonical],
+            }
+        )
+
+    return result
+
+
+# Usage example
+if __name__ == "__main__":
+    # Your original JSON data here
+    input_file = "output/test_policy_output_relationship.json"
+
+    with open(input_file, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    transformed = transform_stakeholder_data(data)
+
+    # print(json.dumps(transformed, indent=2))
+    # # Save to file
+    # with open("transformed_stakeholders.json", "w") as f:
+    #     json.dump(transformed, f, indent=2)
+    # print("Saved to transformed_stakeholders.json")
+
+    input_path = Path(input_file).name
+    output_filename = input_path.replace("_relationship.json", "_transformed.json")
+    save_output(
+        result=transformed,
+        output_filename=output_filename,
+        output_dir="output",
+    )
+
+
+# input_file = "output/test_policy_output_relationship.json"
+# with open(input_file, "r", encoding="utf-8") as f:
+#     data = json.load(f)

@@ -33,11 +33,11 @@ RELATIONSHIP_SCHEMA = {
                 "properties": {
                     "source": {
                         "type": "string",
-                        "description": "Canonical stakeholder name from the provided list",
+                        "description": "Entity performing the action. Use Canonical stakeholder name from the provided list",
                     },
                     "target": {
                         "type": "string",
-                        "description": "Canonical stakeholder name from the provided list",
+                        "description": "Entity receiving the action. Use Canonical stakeholder name from the provided list",
                     },
                     "relationship_description": {
                         "type": "string",
@@ -283,7 +283,7 @@ class RelationshipExtractor:
 
     RELATIONSHIP EXTRACTION:
     - Relationships: Extract interactions between members of the ALLOWED LIST. The format is: CANONICAL_NAME -> alias1 | alias2 | alias3
-    - Extract all explicitly stated OR strongly implied relationships based on verbs and context
+    - Extract all explicitly stated OR strongly implied relationships based on verbs and context. Make sure 'source' is the entity performing the action and 'target' is the entity receiving the action.
     - RELATIONSHIP_DESCRIPTION: Provide a brief (1-sentence) explanation of the interaction.
     - ALWAYS output the CANONICAL NAME (leftmost) in 'source', 'target', and 'stakeholder'
     
@@ -383,7 +383,7 @@ class RelationshipExtractor:
     async def extract_from_brain(
         self, brain_id: str, alias_map: dict[str, list[str]]
     ) -> Dict[str, Any]:
-        """Full brain extraction (matching 01)."""
+        """Full brain extraction"""
         documents = get_documents_per_brain(self.supabase, brain_id)
 
         print(f"Processing {len(documents)} docs in parallel...")
@@ -511,11 +511,19 @@ async def run_test_mode():
             )
             print(json.dumps(result, indent=2, ensure_ascii=False)[:1000] + "...")
 
+            with open(input_file, "r", encoding="utf-8") as f:
+                input_data = json.load(f)
+
+            input_data["relationships"] = result["relationships"]
+            input_data["pain_points"] = result["pain_points"]
+            # input_data["total_relationships"] = result["total_relationships"]
+            # input_data["total_pain_points"] = result["total_pain_points"]
+
             # Save
             output_filename = "test_policy_output_relationship.json"
 
-            output_path = save_output(
-                result=result,
+            save_output(
+                result=input_data,
                 output_filename=output_filename,
                 output_dir=extractor.output_dir,
             )
@@ -557,11 +565,21 @@ async def main():
 
     elapsed = time.time() - start
 
+    with open(input_file, "r", encoding="utf-8") as f:
+        input_data = json.load(f)
+
+    input_data["relationships"] = result["relationships"]
+    input_data["pain_points"] = result["pain_points"]
+    input_data["total_relationships"] = result["total_relationships"]
+    input_data["total_pain_points"] = result["total_pain_points"]
+
     input_path = Path(input_file).name
     output_filename = input_path.replace("_consolidated.json", "_relationships.json")
 
-    output_path = save_output(
-        result=result, output_filename=output_filename, output_dir=extractor.output_dir
+    save_output(
+        result=input_data,
+        output_filename=output_filename,
+        output_dir=extractor.output_dir,
     )
     print(
         f"Extracted {result['total_relationships']} rels + {result['total_pain_points']} pain points"

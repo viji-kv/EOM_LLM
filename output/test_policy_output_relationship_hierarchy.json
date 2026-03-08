@@ -1,0 +1,82 @@
+{
+  "brain": null,
+  "brain_id": null,
+  "hierarchy_graph": {
+    "nodes": [
+      {
+        "id": "Ministry of Transport",
+        "level": "macro",
+        "parent": null,
+        "size": 50
+      },
+      {
+        "id": "Land Transport Authority",
+        "level": "macro",
+        "parent": "Ministry of Transport",
+        "size": 50
+      },
+      {
+        "id": "National Environment Agency",
+        "level": "meso",
+        "parent": "Land Transport Authority",
+        "size": 30
+      },
+      {
+        "id": "Commuters’ Association of Singapore",
+        "level": "meso",
+        "parent": "Ministry of Transport",
+        "size": 30
+      },
+      {
+        "id": "SMRT Corporation",
+        "level": "micro",
+        "parent": "Land Transport Authority",
+        "size": 15
+      },
+      {
+        "id": "Grab Singapore",
+        "level": "micro",
+        "parent": "Land Transport Authority",
+        "size": 15
+      }
+    ],
+    "edges": [
+      {
+        "source": "Land Transport Authority",
+        "target": "SMRT Corporation",
+        "weight": 1,
+        "evidence_strength": "low"
+      },
+      {
+        "source": "Ministry of Transport",
+        "target": "Land Transport Authority",
+        "weight": 1,
+        "evidence_strength": "low"
+      },
+      {
+        "source": "National Environment Agency",
+        "target": "Land Transport Authority",
+        "weight": 1,
+        "evidence_strength": "low"
+      },
+      {
+        "source": "Land Transport Authority",
+        "target": "Grab Singapore",
+        "weight": 1,
+        "evidence_strength": "low"
+      },
+      {
+        "source": "Commuters’ Association of Singapore",
+        "target": "Ministry of Transport",
+        "weight": 1,
+        "evidence_strength": "low"
+      }
+    ]
+  },
+  "input_stats": {
+    "relationships_count": 5
+  },
+  "processing_stats": {
+    "llm_calls": 1
+  }
+}
