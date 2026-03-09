@@ -1,0 +1,127 @@
+[
+  {
+    "canonical_name": "Commuters’ Association of Singapore",
+    "roles": {
+      "Consumer": "Advocates for passenger rights and submits policy feedback to MOT."
+    },
+    "relationships": [
+      {
+        "target": "Ministry of Transport",
+        "relationship_type": "other",
+        "description": "CAS advocates for passenger rights and submits policy feedback to MOT."
+      }
+    ],
+    "painpoints": [
+      {
+        "category": "Service Quality",
+        "description": "CAS has criticized fare increases and service disruptions."
+      }
+    ],
+    "primary_level": "micro",
+    "parent": "Land Transport Authority"
+  },
+  {
+    "canonical_name": "Grab Singapore",
+    "roles": {
+      "Partner": "Collaborates with LTA on first-mile/last-mile pilot programs.",
+      "Competitor": "Competes with Gojek Singapore for ride-hailing customers."
+    },
+    "relationships": [
+      {
+        "target": "Land Transport Authority",
+        "relationship_type": "collaborates",
+        "description": "Grab Singapore collaborates with LTA on first-mile/last-mile pilot programs."
+      }
+    ],
+    "painpoints": [
+      {
+        "category": "Regulatory Constraints",
+        "description": "Grab Singapore has raised concerns about regulatory constraints on surge pricing."
+      }
+    ],
+    "primary_level": "micro",
+    "parent": "Land Transport Authority"
+  },
+  {
+    "canonical_name": "Land Transport Authority",
+    "roles": {
+      "Regulator": "Leads the Smart Urban Mobility Reform 2027 and funds pilot projects for autonomous buses.; Regulates public transport operators and oversees licensing compliance for all rail and bus services."
+    },
+    "relationships": [
+      {
+        "target": "SMRT Corporation",
+        "relationship_type": "regulates",
+        "description": "SMRT Corporation operates major MRT lines under license from LTA."
+      }
+    ],
+    "painpoints": [
+      {
+        "category": "Regulatory Hurdles",
+        "description": "Test site approval processes are too long, significantly delaying R&D progress."
+      }
+    ],
+    "primary_level": "meso",
+    "parent": "Ministry of Transport"
+  },
+  {
+    "canonical_name": "Ministry of Transport",
+    "roles": {},
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "macro",
+    "parent": null
+  },
+  {
+    "canonical_name": "National Environment Agency",
+    "roles": {
+      "Regulator": "Works with LTA to enforce vehicle emissions standards and penalizes non-compliant fleet operators."
+    },
+    "relationships": [
+      {
+        "target": "Land Transport Authority",
+        "relationship_type": "collaborates",
+        "description": "NEA works with LTA to enforce vehicle emissions standards."
+      }
+    ],
+    "painpoints": [],
+    "primary_level": "meso",
+    "parent": "Ministry of Transport"
+  },
+  {
+    "canonical_name": "SBS Transit",
+    "roles": {
+      "Partner": "Partners with SMRT to integrate digital ticketing systems across rail and bus networks."
+    },
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "micro",
+    "parent": "Land Transport Authority"
+  },
+  {
+    "canonical_name": "SMRT Corporation",
+    "roles": {
+      "Supplier": "Operates major MRT lines under license from LTA.",
+      "Competitor": "Competes with private mobility providers for commuter market share."
+    },
+    "relationships": [
+      {
+        "target": "SBS Transit",
+        "relationship_type": "partners",
+        "description": "SMRT partners with SBS Transit to integrate digital ticketing systems."
+      }
+    ],
+    "painpoints": [],
+    "primary_level": "micro",
+    "parent": "Land Transport Authority"
+  },
+  {
+    "canonical_name": "Town Councils",
+    "roles": {
+      "Partner": "Coordinate with LTA on infrastructure upgrades around MRT stations and pedestrian pathways."
+    },
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "meso",
+    "parent": "Land Transport Authority"
+  }
+]
