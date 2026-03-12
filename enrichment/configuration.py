@@ -30,6 +30,12 @@ class Configuration:
             "description": "The maximum number of interaction loops before termination."
         },
     )
+    temperature: float = field(
+        default=0.0,
+        metadata={
+            "description": "LLM temperature (0.0 = deterministic, 1.0 = creative)"
+        }
+    )
 
     @classmethod
     def from_runnable_config(

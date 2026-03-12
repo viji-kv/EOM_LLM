@@ -17,8 +17,13 @@
         "description": "CAS has criticized fare increases and service disruptions."
       }
     ],
-    "primary_level": "micro",
-    "parent": "Land Transport Authority"
+    "layer_info": {
+      "name": "Consumer Advocacy",
+      "description": "Represents the interests of commuters and engages with regulatory bodies."
+    },
+    "parent": "Ministry of Transport",
+    "reasoning": "CAS advocates for passenger rights, directly engaging with MOT for policy feedback.",
+    "evidence": "advocates for passenger rights and submits policy feedback to MOT"
   },
   {
     "canonical_name": "Grab Singapore",
@@ -33,14 +38,19 @@
         "description": "Grab Singapore has raised concerns about regulatory constraints on surge pricing."
       }
     ],
-    "primary_level": "micro",
-    "parent": "Land Transport Authority"
+    "layer_info": {
+      "name": "Transport Operators",
+      "description": "Provide transport services and operate under regulatory compliance."
+    },
+    "parent": "Land Transport Authority",
+    "reasoning": "Grab collaborates with LTA for transport services despite being a competitor.",
+    "evidence": "collaborates with LTA on first-mile/last-mile pilot programs"
   },
   {
     "canonical_name": "Land Transport Authority",
     "roles": {
       "Regulator": "Regulates public transport operators and oversees licensing compliance for all rail and bus services",
-      "Partner": "Cooperates with Singaporean technology companies to develop autonomous bus projects; LTA funds pilot projects for autonomous buses in partnership with technology firms"
+      "Partner": "LTA funds pilot projects for autonomous buses in partnership with technology firms; Cooperates with Singaporean technology companies to develop autonomous bus projects"
     },
     "relationships": [
       {
@@ -65,8 +75,13 @@
         "description": "LTA faces delays in autonomous bus development due to lengthy testing site approval processes."
       }
     ],
-    "primary_level": "meso",
-    "parent": "Ministry of Transport"
+    "layer_info": {
+      "name": "Regulatory Authority",
+      "description": "Oversees and regulates the public transport ecosystem in Singapore."
+    },
+    "parent": "Ministry of Transport",
+    "reasoning": "LTA 'regulates public transport operators and oversees licensing compliance for all rail and bus services.'",
+    "evidence": "Regulates public transport operators"
   },
   {
     "canonical_name": "Ministry of Finance",
@@ -75,8 +90,13 @@
     },
     "relationships": [],
     "painpoints": [],
-    "primary_level": "macro",
-    "parent": null
+    "layer_info": {
+      "name": "Regulatory Authority",
+      "description": "Oversees and regulates the public transport ecosystem in Singapore."
+    },
+    "parent": null,
+    "reasoning": "MOF coordinates financial activities, including infrastructure financing for transport.",
+    "evidence": "Coordinates with MOT to secure infrastructure financing"
   },
   {
     "canonical_name": "Ministry of Transport",
@@ -91,8 +111,13 @@
       }
     ],
     "painpoints": [],
-    "primary_level": "macro",
-    "parent": null
+    "layer_info": {
+      "name": "Regulatory Authority",
+      "description": "Oversees and regulates the public transport ecosystem in Singapore."
+    },
+    "parent": "Ministry of Finance",
+    "reasoning": "MOT 'supervises LTA and allocates annual budgetary funding.'",
+    "evidence": "supervises LTA"
   },
   {
     "canonical_name": "National Environment Agency",
@@ -101,16 +126,26 @@
     },
     "relationships": [],
     "painpoints": [],
-    "primary_level": "meso",
-    "parent": "Land Transport Authority"
+    "layer_info": {
+      "name": "Regulatory Authority",
+      "description": "Oversees and regulates the public transport ecosystem in Singapore."
+    },
+    "parent": "Land Transport Authority",
+    "reasoning": "NEA enforces vehicle emissions standards impacting transport regulations.",
+    "evidence": "works with LTA to enforce vehicle emissions standards"
   },
   {
     "canonical_name": "SBS Transit",
     "roles": {},
     "relationships": [],
     "painpoints": [],
-    "primary_level": "micro",
-    "parent": "Land Transport Authority"
+    "layer_info": {
+      "name": "Transport Operators",
+      "description": "Provide transport services and operate under regulatory compliance."
+    },
+    "parent": "Land Transport Authority",
+    "reasoning": "SBS Transit operates major public transportation services compliant with LTA regulations.",
+    "evidence": "operates major MRT lines under license from LTA"
   },
   {
     "canonical_name": "SMRT Corporation",
@@ -127,8 +162,13 @@
       }
     ],
     "painpoints": [],
-    "primary_level": "micro",
-    "parent": "Land Transport Authority"
+    "layer_info": {
+      "name": "Transport Operators",
+      "description": "Provide transport services and operate under regulatory compliance."
+    },
+    "parent": "Land Transport Authority",
+    "reasoning": "SMRT operates under a license from LTA, offering key MRT services.",
+    "evidence": "operates major MRT lines under license from LTA"
   },
   {
     "canonical_name": "Town Councils",
@@ -137,7 +177,12 @@
     },
     "relationships": [],
     "painpoints": [],
-    "primary_level": "meso",
-    "parent": "Land Transport Authority"
+    "layer_info": {
+      "name": "Transport Operators",
+      "description": "Provide transport services and operate under regulatory compliance."
+    },
+    "parent": "Land Transport Authority",
+    "reasoning": "Town Councils coordinate infrastructural upgrades that are essential for transport networks.",
+    "evidence": "coordinate with LTA on infrastructure upgrades"
   }
 ]

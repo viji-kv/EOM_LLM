@@ -6,8 +6,13 @@
     },
     "relationships": [],
     "painpoints": [],
-    "primary_level": "meso",
-    "parent": "Hong Kong Government"
+    "layer_info": {
+      "name": "Regulators",
+      "description": "Entities enforcing laws and regulations in their respective domains."
+    },
+    "parent": null,
+    "reasoning": "Collaborates on addressing financial crime risks.",
+    "evidence": "Addresses emerging money laundering and terrorism financing risks in Singapore."
   },
   {
     "canonical_name": "Agency for Volunteer Service",
@@ -16,8 +21,10 @@
     },
     "relationships": [],
     "painpoints": [],
-    "primary_level": "meso",
-    "parent": "Hong Kong Government"
+    "layer_info": {},
+    "parent": null,
+    "reasoning": "",
+    "evidence": ""
   },
   {
     "canonical_name": "Agriculture, Fisheries and Conservation Department",
@@ -26,8 +33,13 @@
     },
     "relationships": [],
     "painpoints": [],
-    "primary_level": "meso",
-    "parent": "Hong Kong Government"
+    "layer_info": {
+      "name": "Regulators",
+      "description": "Entities enforcing laws and regulations in their respective domains."
+    },
+    "parent": null,
+    "reasoning": "Regulates the management of natural resources and environmental conservation.",
+    "evidence": "Launched the Country Parks Plantation Enrichment Programme"
   },
   {
     "canonical_name": "Business Environment Council",
@@ -36,8 +48,13 @@
     },
     "relationships": [],
     "painpoints": [],
-    "primary_level": "micro",
-    "parent": "Hong Kong Government"
+    "layer_info": {
+      "name": "Partners",
+      "description": "Collaborators working on initiatives to uplift communities and address industry challenges."
+    },
+    "parent": null,
+    "reasoning": "Works on corporate membership programmes to promote environmental initiatives.",
+    "evidence": "Collaborated with in corporate membership programmes."
   },
   {
     "canonical_name": "CarbonCare InnoLab",
@@ -46,8 +63,13 @@
     },
     "relationships": [],
     "painpoints": [],
-    "primary_level": "micro",
-    "parent": "Hong Kong Government"
+    "layer_info": {
+      "name": "Partners",
+      "description": "Collaborators working on initiatives to uplift communities and address industry challenges."
+    },
+    "parent": null,
+    "reasoning": "Collaborates on low-carbon future projects.",
+    "evidence": "Collaborated on the Hang Seng Low Carbon Future – SolarCare Programme."
   },
   {
     "canonical_name": "Chamber of Hong Kong Listed",
@@ -56,8 +78,13 @@
     },
     "relationships": [],
     "painpoints": [],
-    "primary_level": "micro",
-    "parent": "Hong Kong Government"
+    "layer_info": {
+      "name": "Partners",
+      "description": "Collaborators working on initiatives to uplift communities and address industry challenges."
+    },
+    "parent": null,
+    "reasoning": "Focused on promoting environmental and finance opportunities through forums.",
+    "evidence": "Organized the '2022 ESG and Green Finance Opportunities Forum.'"
   },
   {
     "canonical_name": "DBS Foundation",
@@ -87,8 +114,13 @@
       }
     ],
     "painpoints": [],
-    "primary_level": "micro",
-    "parent": "Hong Kong Government"
+    "layer_info": {
+      "name": "Partners",
+      "description": "Collaborators working on initiatives to uplift communities and address industry challenges."
+    },
+    "parent": null,
+    "reasoning": "Engages in multiple strategic partnerships to benefit communities.",
+    "evidence": "Supports strategic partnerships to uplift communities and foster a socially-conscious society."
   },
   {
     "canonical_name": "Dementia Friends",
@@ -103,8 +135,13 @@
       }
     ],
     "painpoints": [],
-    "primary_level": "micro",
-    "parent": "Hong Kong Alzheimer's Disease Association"
+    "layer_info": {
+      "name": "Partners",
+      "description": "Collaborators working on initiatives to uplift communities and address industry challenges."
+    },
+    "parent": null,
+    "reasoning": "Part of a movement to increase support and awareness for dementia.",
+    "evidence": "A global movement to change perceptions of dementia and offer support."
   },
   {
     "canonical_name": "Esplanade - Theatres on the Bay",
@@ -113,8 +150,13 @@
     },
     "relationships": [],
     "painpoints": [],
-    "primary_level": "micro",
-    "parent": null
+    "layer_info": {
+      "name": "Partners",
+      "description": "Collaborators working on initiatives to uplift communities and address industry challenges."
+    },
+    "parent": null,
+    "reasoning": "Collaborates on community programs to enrich local culture.",
+    "evidence": "Collaborates with DBS to uplift the community."
   },
   {
     "canonical_name": "Green Power",
@@ -123,8 +165,13 @@
     },
     "relationships": [],
     "painpoints": [],
-    "primary_level": "micro",
-    "parent": "Hong Kong Government"
+    "layer_info": {
+      "name": "Partners",
+      "description": "Collaborators working on initiatives to uplift communities and address industry challenges."
+    },
+    "parent": null,
+    "reasoning": "Engages the community through environmental initiatives and fundraising.",
+    "evidence": "Received donations for Green Power Hike."
   },
   {
     "canonical_name": "Group Management Committee",
@@ -133,8 +180,13 @@
     },
     "relationships": [],
     "painpoints": [],
-    "primary_level": "meso",
-    "parent": "Hong Kong Government"
+    "layer_info": {
+      "name": "Regulators",
+      "description": "Entities enforcing laws and regulations in their respective domains."
+    },
+    "parent": null,
+    "reasoning": "Provides oversight and management for program implementation.",
+    "evidence": "Provides senior management direction and oversight for the implementation of Gen Al programme."
   },
   {
     "canonical_name": "HSBC",
@@ -150,8 +202,13 @@
       }
     ],
     "painpoints": [],
-    "primary_level": "micro",
-    "parent": "Hong Kong Government"
+    "layer_info": {
+      "name": "Banks",
+      "description": "Financial institutions providing banking services and support to various initiatives."
+    },
+    "parent": null,
+    "reasoning": "Offers banking services while contributing to community-focused initiatives.",
+    "evidence": "Provides banking services and support for dementia care."
   },
   {
     "canonical_name": "Hang Seng Bank",
@@ -199,8 +256,13 @@
       }
     ],
     "painpoints": [],
-    "primary_level": "micro",
-    "parent": "Hong Kong Government"
+    "layer_info": {
+      "name": "Banks",
+      "description": "Financial institutions providing banking services and support to various initiatives."
+    },
+    "parent": null,
+    "reasoning": "Provides banking and financing support for various community and environmental initiatives.",
+    "evidence": "Provided support to the corporate membership programmes of the Business Environment Council."
   },
   {
     "canonical_name": "Hong Kong Alzheimer's Disease Association",
@@ -214,8 +276,13 @@
         "description": "There is a challenge in motivating the public to put their care into action for dementia support."
       }
     ],
-    "primary_level": "micro",
-    "parent": "Hong Kong Government"
+    "layer_info": {
+      "name": "Partners",
+      "description": "Collaborators working on initiatives to uplift communities and address industry challenges."
+    },
+    "parent": null,
+    "reasoning": "Collaborates to create a dementia-friendly community.",
+    "evidence": "Provides information and support for dementia."
   },
   {
     "canonical_name": "Hong Kong Government",
@@ -235,8 +302,13 @@
         "description": "The enforcement of new regulatory and legal requirements, as well as new global or market standards, presents a burden."
       }
     ],
-    "primary_level": "macro",
-    "parent": null
+    "layer_info": {
+      "name": "Regulators",
+      "description": "Entities enforcing laws and regulations in their respective domains."
+    },
+    "parent": null,
+    "reasoning": "Provides oversight on regulatory frameworks for the fiscal and environmental sectors.",
+    "evidence": "Feed-in Tariff Scheme provider"
   },
   {
     "canonical_name": "Hong Kong Judiciary",
@@ -245,8 +317,13 @@
     },
     "relationships": [],
     "painpoints": [],
-    "primary_level": "meso",
-    "parent": "Hong Kong Government"
+    "layer_info": {
+      "name": "Regulators",
+      "description": "Entities enforcing laws and regulations in their respective domains."
+    },
+    "parent": null,
+    "reasoning": "Responsible for appointing committees related to incapacitated persons.",
+    "evidence": "Appoints Committee of Estate for Mentally Incapacitated Persons."
   },
   {
     "canonical_name": "Hong Kong Table Tennis Association",
@@ -255,8 +332,13 @@
     },
     "relationships": [],
     "painpoints": [],
-    "primary_level": "micro",
-    "parent": "Hang Seng Bank"
+    "layer_info": {
+      "name": "Partners",
+      "description": "Collaborators working on initiatives to uplift communities and address industry challenges."
+    },
+    "parent": null,
+    "reasoning": "Works on promoting sports and organizing community initiatives.",
+    "evidence": "Co-organized Hang Seng Table Tennis Academy."
   },
   {
     "canonical_name": "Infocomm Media Development Authority of Singapore",
@@ -265,8 +347,13 @@
     },
     "relationships": [],
     "painpoints": [],
-    "primary_level": "meso",
-    "parent": "Hong Kong Government"
+    "layer_info": {
+      "name": "Regulators",
+      "description": "Entities enforcing laws and regulations in their respective domains."
+    },
+    "parent": null,
+    "reasoning": "Promotes standards for data protection and safeguarding.",
+    "evidence": "Promotes DPTM programme to expand certified organisations for data safeguarding."
   },
   {
     "canonical_name": "MAS-led Project COSMIC",
@@ -275,16 +362,23 @@
     },
     "relationships": [],
     "painpoints": [],
-    "primary_level": "micro",
-    "parent": "AML/CFT Industry Partnership"
+    "layer_info": {},
+    "parent": null,
+    "reasoning": "",
+    "evidence": ""
   },
   {
     "canonical_name": "Migrant Workers",
     "roles": {},
     "relationships": [],
     "painpoints": [],
-    "primary_level": "micro",
-    "parent": "DBS Foundation"
+    "layer_info": {
+      "name": "Partners",
+      "description": "Collaborators working on initiatives to uplift communities and address industry challenges."
+    },
+    "parent": null,
+    "reasoning": "Engage in collaborative programs aimed at community support.",
+    "evidence": "Launched the 'MiDigi Ambassador Programme' to help migrant workers overcome language barriers."
   },
   {
     "canonical_name": "Monetary Authority of Singapore",
@@ -299,8 +393,13 @@
       }
     ],
     "painpoints": [],
-    "primary_level": "macro",
-    "parent": null
+    "layer_info": {
+      "name": "Regulatory Authorities",
+      "description": "Oversees the adherence to regulations and approves Gen AI use in various sectors."
+    },
+    "parent": null,
+    "reasoning": "As a regulator, it initiated Project MindForge for Gen AI in finance.",
+    "evidence": "regulates-MAS launched Project MindForge to develop a framework for Gen Al in the financial sector."
   },
   {
     "canonical_name": "RAI Taskforce",
@@ -309,8 +408,13 @@
     },
     "relationships": [],
     "painpoints": [],
-    "primary_level": "meso",
-    "parent": "Monetary Authority of Singapore"
+    "layer_info": {
+      "name": "Regulatory Authorities",
+      "description": "Oversees the adherence to regulations and approves Gen AI use in various sectors."
+    },
+    "parent": "Monetary Authority of Singapore",
+    "reasoning": "It approves Gen AI use cases, ensuring comprehensive assessments.",
+    "evidence": "Approves Gen Al use cases, providing assurance of a holistic assessment before deployment."
   },
   {
     "canonical_name": "Responsible Data Use Committee",
@@ -325,8 +429,13 @@
       }
     ],
     "painpoints": [],
-    "primary_level": "meso",
-    "parent": "RAI Taskforce"
+    "layer_info": {
+      "name": "Regulatory Authorities",
+      "description": "Oversees the adherence to regulations and approves Gen AI use in various sectors."
+    },
+    "parent": "RAI Taskforce",
+    "reasoning": "Collaborates with RAI Taskforce to evaluate and approve Gen AI use pilots.",
+    "evidence": "The Responsible Data Use Committee and RAI Taskforce jointly evaluated and approved Gen Al use cases."
   },
   {
     "canonical_name": "SMEs",
@@ -338,8 +447,13 @@
         "description": "Lack of awareness and adoption of sustainable practices in renovations."
       }
     ],
-    "primary_level": "micro",
-    "parent": "Responsible Data Use Committee"
+    "layer_info": {
+      "name": "Industry Stakeholders",
+      "description": "Involves organizations in the financial and related sectors, focusing on innovation and implementation."
+    },
+    "parent": null,
+    "reasoning": "Experiences a lack of awareness and adoption of sustainable practices.",
+    "evidence": "Lack of awareness and adoption of sustainable practices in renovations."
   },
   {
     "canonical_name": "Social Welfare Department",
@@ -348,8 +462,13 @@
     },
     "relationships": [],
     "painpoints": [],
-    "primary_level": "macro",
-    "parent": null
+    "layer_info": {
+      "name": "Regulatory Authorities",
+      "description": "Oversees the adherence to regulations and approves Gen AI use in various sectors."
+    },
+    "parent": null,
+    "reasoning": "Serves as a regulator by providing various social services.",
+    "evidence": "Provides Guardianship Orders and elderly services."
   },
   {
     "canonical_name": "The Community Chest of Hong Kong",
@@ -358,8 +477,13 @@
     },
     "relationships": [],
     "painpoints": [],
-    "primary_level": "meso",
-    "parent": "Social Welfare Department"
+    "layer_info": {
+      "name": "Community Organizations",
+      "description": "Provides community support and facilitates collaboration among various stakeholders."
+    },
+    "parent": null,
+    "reasoning": "Partners to support charitable initiatives within the community.",
+    "evidence": "Supported various charitable programmes."
   },
   {
     "canonical_name": "The Conservancy Association",
@@ -368,8 +492,13 @@
     },
     "relationships": [],
     "painpoints": [],
-    "primary_level": "meso",
-    "parent": "The Community Chest of Hong Kong"
+    "layer_info": {
+      "name": "Community Organizations",
+      "description": "Provides community support and facilitates collaboration among various stakeholders."
+    },
+    "parent": "The Community Chest of Hong Kong",
+    "reasoning": "Engages in environmental stewardship through partnerships.",
+    "evidence": "Partnered to plant seedlings in local country parks."
   },
   {
     "canonical_name": "The Hong Kong Society for Rehabilitation",
@@ -378,8 +507,13 @@
     },
     "relationships": [],
     "painpoints": [],
-    "primary_level": "micro",
-    "parent": "The Community Chest of Hong Kong"
+    "layer_info": {
+      "name": "Community Organizations",
+      "description": "Provides community support and facilitates collaboration among various stakeholders."
+    },
+    "parent": "Social Welfare Department",
+    "reasoning": "Focuses on community support and rehabilitation services.",
+    "evidence": "Provides community support and rehabilitation services."
   },
   {
     "canonical_name": "The Neighbourhood Advice-Action Council",
@@ -388,8 +522,13 @@
     },
     "relationships": [],
     "painpoints": [],
-    "primary_level": "micro",
-    "parent": "The Community Chest of Hong Kong"
+    "layer_info": {
+      "name": "Community Organizations",
+      "description": "Provides community support and facilitates collaboration among various stakeholders."
+    },
+    "parent": "The Community Chest of Hong Kong",
+    "reasoning": "Receives support and donations for community efforts.",
+    "evidence": "Recipient of staff donations."
   },
   {
     "canonical_name": "Tung Wah Group of Hospitals",
@@ -398,8 +537,13 @@
     },
     "relationships": [],
     "painpoints": [],
-    "primary_level": "micro",
-    "parent": "Social Welfare Department"
+    "layer_info": {
+      "name": "Community Organizations",
+      "description": "Provides community support and facilitates collaboration among various stakeholders."
+    },
+    "parent": "Social Welfare Department",
+    "reasoning": "Provides elderly services and community support, enhancing welfare.",
+    "evidence": "Provides elderly services and community support."
   },
   {
     "canonical_name": "World Wide Fund for Nature Hong Kong",
@@ -408,15 +552,25 @@
     },
     "relationships": [],
     "painpoints": [],
-    "primary_level": "meso",
-    "parent": "The Conservancy Association"
+    "layer_info": {
+      "name": "Community Organizations",
+      "description": "Provides community support and facilitates collaboration among various stakeholders."
+    },
+    "parent": "The Community Chest of Hong Kong",
+    "reasoning": "Collaborates on corporate membership for sustainability.",
+    "evidence": "Collaborated with in corporate membership programmes."
   },
   {
     "canonical_name": "financial industry companies",
     "roles": {},
     "relationships": [],
     "painpoints": [],
-    "primary_level": "micro",
-    "parent": "RAI Taskforce"
+    "layer_info": {
+      "name": "Industry Stakeholders",
+      "description": "Involves organizations in the financial and related sectors, focusing on innovation and implementation."
+    },
+    "parent": "Monetary Authority of Singapore",
+    "reasoning": "Must comply with regulations set by the Monetary Authority.",
+    "evidence": "regulates-MAS launched Project MindForge to develop a framework for Gen Al in the financial sector."
   }
 ]

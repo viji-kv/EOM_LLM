@@ -1,0 +1,3888 @@
+{
+  "ecosystem_id": "72073da4-80db-4a4e-87f5-e780910a07d0",
+  "name": "5.2 v5",
+  "description": "sadasdjslkdjalskjda",
+  "parameters": {
+    "workspace": "Ageing population in HK",
+    "experts": [
+      "AP HK - Academia"
+    ],
+    "model": "gpt-5.2",
+    "number_of_documents": 3
+  },
+  "status": "finished",
+  "stage": "locked",
+  "creation_time": "2026-01-20T18:47:03.096162",
+  "last_update": "2026-03-10T15:13:25.147589",
+  "current_analysis_result": {
+    "ecosystem_analysis": {
+      "stakeholders": [
+        {
+          "id": "SH-001",
+          "name": "HKSAR Government",
+          "long_name": "Hong Kong Special Administrative Region Government (HKSAR Government)",
+          "category": "Governance and Regulation",
+          "role": "Sets aging-related policy direction (e.g., ageing in place), provides subsidies/regulation and cross-bureau coordination for age-friendly implementation.",
+          "hierarchy_level": "Macro",
+          "confidence": 92.0,
+          "mentions": 6,
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            },
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            },
+            {
+              "knowledge_id": "056a246b-1f37-4a66-8d18-296832de467c",
+              "name": "2021_Factors Affecting Trends in Societal Indicators of Ageing Well in Hong Kong- Policies Politics and Pandemics.pdf"
+            }
+          ],
+          "original_names": [
+            "HKSAR Government",
+            "Hong Kong Government"
+          ],
+          "influence_scope": "high",
+          "intervention_capacity": "high",
+          "decision_authority": "high",
+          "resource_control": "high",
+          "challenge_relevance_capacity": "high",
+          "cross_theme_connections": "high"
+        },
+        {
+          "id": "SH-002",
+          "name": "Chief Executive (Hong Kong)",
+          "long_name": "Chief Executive of the Hong Kong Special Administrative Region",
+          "category": "Governance and Regulation",
+          "role": "Sets policy priorities (e.g., inclusion of age-friendly cities in the 2016 Policy Address) guiding bureaus.",
+          "hierarchy_level": "Macro",
+          "confidence": 80.0,
+          "mentions": 2,
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            },
+            {
+              "knowledge_id": "056a246b-1f37-4a66-8d18-296832de467c",
+              "name": "2021_Factors Affecting Trends in Societal Indicators of Ageing Well in Hong Kong- Policies Politics and Pandemics.pdf"
+            }
+          ],
+          "original_names": [
+            "Chief Executive (HKSAR)",
+            "Chief Executive (Hong Kong)"
+          ],
+          "influence_scope": "high",
+          "intervention_capacity": "medium",
+          "decision_authority": "high",
+          "resource_control": "medium",
+          "challenge_relevance_capacity": "high",
+          "cross_theme_connections": "high"
+        },
+        {
+          "id": "SH-003",
+          "name": "WHO",
+          "long_name": "World Health Organization (WHO)",
+          "category": "Governance and Regulation",
+          "role": "Provides global age-friendly framework, program and checklists shaping local assessment and implementation.",
+          "hierarchy_level": "Macro",
+          "confidence": 92.0,
+          "mentions": 6,
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            },
+            {
+              "knowledge_id": "056a246b-1f37-4a66-8d18-296832de467c",
+              "name": "2021_Factors Affecting Trends in Societal Indicators of Ageing Well in Hong Kong- Policies Politics and Pandemics.pdf"
+            },
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ],
+          "original_names": [
+            "WHO",
+            "World Health Organization (WHO)"
+          ],
+          "influence_scope": "high",
+          "intervention_capacity": "medium",
+          "decision_authority": "low",
+          "resource_control": "low",
+          "challenge_relevance_capacity": "high",
+          "cross_theme_connections": "high"
+        },
+        {
+          "id": "SH-013",
+          "name": "Elderly Commission",
+          "long_name": "Elderly Commission (Hong Kong)",
+          "category": "Governance and Regulation",
+          "role": "Adopts and promotes guidelines such as “active and healthy ageing” for elderly policy direction.",
+          "hierarchy_level": "Macro",
+          "confidence": 84.67,
+          "mentions": 6,
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            },
+            {
+              "knowledge_id": "056a246b-1f37-4a66-8d18-296832de467c",
+              "name": "2021_Factors Affecting Trends in Societal Indicators of Ageing Well in Hong Kong- Policies Politics and Pandemics.pdf"
+            },
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ],
+          "original_names": null,
+          "influence_scope": "medium",
+          "intervention_capacity": "medium",
+          "decision_authority": "medium",
+          "resource_control": "low",
+          "challenge_relevance_capacity": "high",
+          "cross_theme_connections": "high"
+        },
+        {
+          "id": "SH-005",
+          "name": "Food and Health Bureau",
+          "long_name": "Food and Health Bureau (Hong Kong)",
+          "category": "Governance and Regulation",
+          "role": "Key bureau for policy/implementation on health services for older adults; coordination needed with welfare/community support.",
+          "hierarchy_level": "Macro",
+          "confidence": 92.0,
+          "mentions": 4,
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            },
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ],
+          "original_names": [
+            "Food and Health Bureau",
+            "Food and Health Bureau (FHB)"
+          ],
+          "influence_scope": "high",
+          "intervention_capacity": "high",
+          "decision_authority": "high",
+          "resource_control": "high",
+          "challenge_relevance_capacity": "high",
+          "cross_theme_connections": "high"
+        },
+        {
+          "id": "SH-007",
+          "name": "Department of Health",
+          "long_name": "Department of Health (Hong Kong)",
+          "category": "Governance and Regulation",
+          "role": "Runs clinics and elderly health centers; tasked with preventive care promotion and service scope improvements.",
+          "hierarchy_level": "Macro",
+          "confidence": 94.0,
+          "mentions": 4,
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            },
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ],
+          "original_names": [
+            "Department of Health",
+            "Department of Health (DH)"
+          ],
+          "influence_scope": "high",
+          "intervention_capacity": "high",
+          "decision_authority": "medium",
+          "resource_control": "high",
+          "challenge_relevance_capacity": "high",
+          "cross_theme_connections": "medium"
+        },
+        {
+          "id": "SH-006",
+          "name": "Social Welfare Department",
+          "long_name": "Social Welfare Department (Hong Kong)",
+          "category": "Governance and Regulation",
+          "role": "Provides community support services and community mental health services for older adults; part of cross-system coordination needs.",
+          "hierarchy_level": "Macro",
+          "confidence": 95.0,
+          "mentions": 4,
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            },
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ],
+          "original_names": [
+            "Social Welfare Department",
+            "Social Welfare Department (SWD)"
+          ],
+          "influence_scope": "high",
+          "intervention_capacity": "high",
+          "decision_authority": "medium",
+          "resource_control": "high",
+          "challenge_relevance_capacity": "high",
+          "cross_theme_connections": "high"
+        },
+        {
+          "id": "SH-020",
+          "name": "Labour and Welfare Bureau",
+          "long_name": "Labour and Welfare Bureau (Hong Kong)",
+          "category": "Governance and Regulation",
+          "role": "Key bureau for welfare/community support and employment-related policy affecting older adults and caregivers.",
+          "hierarchy_level": "Macro",
+          "confidence": 86.0,
+          "mentions": 2,
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ],
+          "original_names": null,
+          "influence_scope": "high",
+          "intervention_capacity": "high",
+          "decision_authority": "high",
+          "resource_control": "high",
+          "challenge_relevance_capacity": "high",
+          "cross_theme_connections": "high"
+        },
+        {
+          "id": "SH-048",
+          "name": "Legislative Council (LegCo)",
+          "long_name": "Legislative Council of the Hong Kong Special Administrative Region (香港特別行政區立法會)",
+          "category": "Governance and Regulation",
+          "role": "Legislative scrutiny and policy oversight; panels raise issues on respite, carers, dental assistance, EOL/advance directives.",
+          "hierarchy_level": "Macro",
+          "confidence": 90.0,
+          "mentions": 2,
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ],
+          "original_names": [
+            "Legislative Council"
+          ],
+          "influence_scope": "high",
+          "intervention_capacity": "medium",
+          "decision_authority": "high",
+          "resource_control": "medium",
+          "challenge_relevance_capacity": "high",
+          "cross_theme_connections": "high"
+        },
+        {
+          "id": "SH-004",
+          "name": "Hospital Authority",
+          "long_name": "Hospital Authority (Hong Kong)",
+          "category": "Enablers and Infrastructure",
+          "role": "Operates public hospital/clinic services used by older adults; implicated in coordination, repeat examinations, and chronic-care pathways.",
+          "hierarchy_level": "Meso",
+          "confidence": 95.0,
+          "mentions": 6,
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            },
+            {
+              "knowledge_id": "056a246b-1f37-4a66-8d18-296832de467c",
+              "name": "2021_Factors Affecting Trends in Societal Indicators of Ageing Well in Hong Kong- Policies Politics and Pandemics.pdf"
+            },
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ],
+          "original_names": [
+            "Hospital Authority",
+            "Hospital Authority (HA)"
+          ],
+          "influence_scope": "high",
+          "intervention_capacity": "high",
+          "decision_authority": "medium",
+          "resource_control": "high",
+          "challenge_relevance_capacity": "high",
+          "cross_theme_connections": "medium"
+        },
+        {
+          "id": "SH-054",
+          "name": "Private healthcare providers",
+          "long_name": "Private healthcare providers (private clinics and hospitals) (私營醫療服務提供者)",
+          "category": "Market Actors",
+          "role": "Provide majority of primary care and fee-for-service services; participate in vouchers and PPP programmes.",
+          "hierarchy_level": "Meso",
+          "confidence": 90.0,
+          "mentions": 2,
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ],
+          "original_names": null,
+          "influence_scope": "high",
+          "intervention_capacity": "high",
+          "decision_authority": "high",
+          "resource_control": "high",
+          "challenge_relevance_capacity": "high",
+          "cross_theme_connections": "high"
+        },
+        {
+          "id": "SH-059",
+          "name": "eHRSS / eHealth",
+          "long_name": "Electronic Health Record Sharing System and eHealth App (電子健康紀錄互通系統 eHRSS / 醫健通)",
+          "category": "Enablers and Infrastructure",
+          "role": "Territory-wide digital health record sharing and patient-facing app enabling continuity, appointments and voucher balance visibility.",
+          "hierarchy_level": "Macro",
+          "confidence": 90.0,
+          "mentions": 1,
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ],
+          "original_names": null,
+          "influence_scope": "high",
+          "intervention_capacity": "high",
+          "decision_authority": "medium",
+          "resource_control": "high",
+          "challenge_relevance_capacity": "high",
+          "cross_theme_connections": "high"
+        },
+        {
+          "id": "SH-015",
+          "name": "Hong Kong Jockey Club Charities Trust",
+          "long_name": "Hong Kong Jockey Club Charities Trust",
+          "category": "Finance and Investment",
+          "role": "Major philanthropic funder; initiated and supported territory-wide Age-friendly City project and supported this study.",
+          "hierarchy_level": "Meso",
+          "confidence": 94.5,
+          "mentions": 4,
+          "sources": [
+            {
+              "knowledge_id": "056a246b-1f37-4a66-8d18-296832de467c",
+              "name": "2021_Factors Affecting Trends in Societal Indicators of Ageing Well in Hong Kong- Policies Politics and Pandemics.pdf"
+            },
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ],
+          "original_names": null,
+          "influence_scope": "high",
+          "intervention_capacity": "high",
+          "decision_authority": "high",
+          "resource_control": "high",
+          "challenge_relevance_capacity": "high",
+          "cross_theme_connections": "high"
+        },
+        {
+          "id": "SH-050",
+          "name": "Jockey Club Age-friendly City Project (JCAFC)",
+          "long_name": "Jockey Club Age-friendly City Project (賽馬會長者友善城市計劃)",
+          "category": "Enablers and Infrastructure",
+          "role": "Citywide programme promoting age-friendly culture across 18 districts; conducts assessments and supports local initiatives.",
+          "hierarchy_level": "Meso",
+          "confidence": 93.0,
+          "mentions": 2,
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ],
+          "original_names": [
+            "JCAFC Project"
+          ],
+          "influence_scope": "high",
+          "intervention_capacity": "high",
+          "decision_authority": "medium",
+          "resource_control": "high",
+          "challenge_relevance_capacity": "high",
+          "cross_theme_connections": "high"
+        },
+        {
+          "id": "SH-016",
+          "name": "HKCSS",
+          "long_name": "The Hong Kong Council of Social Service (HKCSS)",
+          "category": "Society and Community",
+          "role": "Lead NGO council coordinating social service agencies; spearheads Age-Friendly Hong Kong, convenes steering committee, advises government, develops AFHK Index.",
+          "hierarchy_level": "Meso",
+          "confidence": 95.0,
+          "mentions": 2,
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ],
+          "original_names": null,
+          "influence_scope": "high",
+          "intervention_capacity": "high",
+          "decision_authority": "medium",
+          "resource_control": "medium",
+          "challenge_relevance_capacity": "high",
+          "cross_theme_connections": "high"
+        },
+        {
+          "id": "SH-052",
+          "name": "Non-governmental organizations (NGOs)",
+          "long_name": "Non-governmental organizations (NGOs)",
+          "category": "Society and Community",
+          "role": "Deliver community support, outreach health services, training and carer support in collaboration with SWD/HA/DH and funders.",
+          "hierarchy_level": "Meso",
+          "confidence": 90.0,
+          "mentions": 1,
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ],
+          "original_names": [
+            "NGOs and service providers",
+            "NGOs (HK)",
+            "NGOs & Service Providers"
+          ],
+          "influence_scope": "medium",
+          "intervention_capacity": "high",
+          "decision_authority": "medium",
+          "resource_control": "medium",
+          "challenge_relevance_capacity": "high",
+          "cross_theme_connections": "high"
+        },
+        {
+          "id": "SH-018",
+          "name": "District Councils",
+          "long_name": "District Councils (Hong Kong)",
+          "category": "Governance and Regulation",
+          "role": "District-level planning, resource allocation, follow-up minor works projects; supports district age-friendly initiatives and monitoring.",
+          "hierarchy_level": "Meso",
+          "confidence": 90.0,
+          "mentions": 2,
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ],
+          "original_names": null,
+          "influence_scope": "medium",
+          "intervention_capacity": "medium",
+          "decision_authority": "medium",
+          "resource_control": "medium",
+          "challenge_relevance_capacity": "high",
+          "cross_theme_connections": "high"
+        },
+        {
+          "id": "SH-024",
+          "name": "Hong Kong Housing Authority",
+          "long_name": "Hong Kong Housing Authority",
+          "category": "Governance and Regulation",
+          "role": "Key public housing body suggested to lead development of special housing for older adults and barrier-free designs.",
+          "hierarchy_level": "Macro",
+          "confidence": 86.0,
+          "mentions": 2,
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ],
+          "original_names": null,
+          "influence_scope": "high",
+          "intervention_capacity": "high",
+          "decision_authority": "high",
+          "resource_control": "high",
+          "challenge_relevance_capacity": "high",
+          "cross_theme_connections": "high"
+        },
+        {
+          "id": "SH-025",
+          "name": "Hong Kong Housing Society",
+          "long_name": "Hong Kong Housing Society",
+          "category": "Enablers and Infrastructure",
+          "role": "Develops housing including Senior Citizen Residences; operates Elderly Resources Center for public education on home modification and safety.",
+          "hierarchy_level": "Meso",
+          "confidence": 88.0,
+          "mentions": 2,
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ],
+          "original_names": null,
+          "influence_scope": "medium",
+          "intervention_capacity": "high",
+          "decision_authority": "medium",
+          "resource_control": "medium",
+          "challenge_relevance_capacity": "high",
+          "cross_theme_connections": "high"
+        },
+        {
+          "id": "SH-008",
+          "name": "Older adults (50+ in HK)",
+          "long_name": "Community-living older people in Hong Kong (aged 50 years and over)",
+          "category": "Society and Community",
+          "role": "Primary population whose quality of life, health, participation, and wellbeing are measured and affected by policies, unrest, and pandemics.",
+          "hierarchy_level": "Micro",
+          "confidence": 96.0,
+          "mentions": 5,
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            },
+            {
+              "knowledge_id": "056a246b-1f37-4a66-8d18-296832de467c",
+              "name": "2021_Factors Affecting Trends in Societal Indicators of Ageing Well in Hong Kong- Policies Politics and Pandemics.pdf"
+            },
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ],
+          "original_names": [
+            "Older adults",
+            "Older adults (Hong Kong)",
+            "Older adults in Hong Kong",
+            "Elderly adults (HK)",
+            "Older adults (50+)"
+          ],
+          "influence_scope": "medium",
+          "intervention_capacity": "low",
+          "decision_authority": "low",
+          "resource_control": "low",
+          "challenge_relevance_capacity": "high",
+          "cross_theme_connections": "high"
+        },
+        {
+          "id": "SH-009",
+          "name": "Family Caregivers",
+          "long_name": "Family Members and Caregivers of Older Adults (Hong Kong)",
+          "category": "Society and Community",
+          "role": "Provide informal support; affected by lack of caregiver support services and long waiting times for residential care.",
+          "hierarchy_level": "Micro",
+          "confidence": 92.0,
+          "mentions": 4,
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            },
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ],
+          "original_names": [
+            "Carers (informal)",
+            "Family caregivers",
+            "Family carers"
+          ],
+          "influence_scope": "low",
+          "intervention_capacity": "medium",
+          "decision_authority": "low",
+          "resource_control": "low",
+          "challenge_relevance_capacity": "high",
+          "cross_theme_connections": "medium"
+        },
+        {
+          "id": "SH-010",
+          "name": "Elderly centres (DECC/NEC/S/E)",
+          "long_name": "Elderly centre services (District Elderly Community Centres; Neighbourhood Elderly Centres; Social Centres for the Elderly) (長者中心：地區長者社區中心/鄰舍長者中心/長者社交中心)",
+          "category": "Enablers and Infrastructure",
+          "role": "District/neighbourhood hubs for social engagement, counselling, referrals, carer training and outreach support teams.",
+          "hierarchy_level": "Meso",
+          "confidence": 88.0,
+          "mentions": 3,
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            },
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ],
+          "original_names": [
+            "DECC/NEC/SE Elderly Centres",
+            "Elderly Centres (DECC/NEC/SE)"
+          ],
+          "influence_scope": "medium",
+          "intervention_capacity": "high",
+          "decision_authority": "medium",
+          "resource_control": "medium",
+          "challenge_relevance_capacity": "high",
+          "cross_theme_connections": "high"
+        },
+        {
+          "id": "SH-055",
+          "name": "Private RCHE operators",
+          "long_name": "Private Residential Care Homes for the Elderly operators (私營安老院舍營辦者)",
+          "category": "Market Actors",
+          "role": "Operate privately-run RCHEs; quality varies; some participate in schemes (EBPS/contract/vouchers).",
+          "hierarchy_level": "Meso",
+          "confidence": 90.0,
+          "mentions": 2,
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ],
+          "original_names": null,
+          "influence_scope": "medium",
+          "intervention_capacity": "medium",
+          "decision_authority": "high",
+          "resource_control": "medium",
+          "challenge_relevance_capacity": "high",
+          "cross_theme_connections": "medium"
+        },
+        {
+          "id": "SH-057",
+          "name": "Community care service providers",
+          "long_name": "Community care service providers (home-based and centre-based) (社區照顧服務提供者)",
+          "category": "Market Actors",
+          "role": "Provide IHCS/EHCCS/day care and related services; reimbursed under voucher models; crucial for ageing in place.",
+          "hierarchy_level": "Meso",
+          "confidence": 85.0,
+          "mentions": 1,
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ],
+          "original_names": null,
+          "influence_scope": "medium",
+          "intervention_capacity": "high",
+          "decision_authority": "medium",
+          "resource_control": "medium",
+          "challenge_relevance_capacity": "high",
+          "cross_theme_connections": "high"
+        },
+        {
+          "id": "SH-053",
+          "name": "Foreign domestic helpers (FDHs)",
+          "long_name": "Foreign Domestic Helpers in elderly care (外籍家庭傭工)",
+          "category": "Internal and Workforce",
+          "role": "Key paid/informal workforce supporting home-based elderly care; targeted by training pilot.",
+          "hierarchy_level": "Micro",
+          "confidence": 88.0,
+          "mentions": 2,
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ],
+          "original_names": [
+            "Foreign domestic helpers"
+          ],
+          "influence_scope": "low",
+          "intervention_capacity": "medium",
+          "decision_authority": "low",
+          "resource_control": "low",
+          "challenge_relevance_capacity": "medium",
+          "cross_theme_connections": "medium"
+        },
+        {
+          "id": "SH-026",
+          "name": "MTR Corporation",
+          "long_name": "Mass Transit Railway Corporation (MTR Corporation)",
+          "category": "Market Actors",
+          "role": "Provides rail transport; discussed regarding concessionary fares, priority seats, and age-friendly measures.",
+          "hierarchy_level": "Meso",
+          "confidence": 88.0,
+          "mentions": 2,
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ],
+          "original_names": null,
+          "influence_scope": "high",
+          "intervention_capacity": "high",
+          "decision_authority": "medium",
+          "resource_control": "high",
+          "challenge_relevance_capacity": "high",
+          "cross_theme_connections": "medium"
+        },
+        {
+          "id": "SH-027",
+          "name": "Franchised Bus Companies",
+          "long_name": "Private Franchised Bus Companies (Hong Kong)",
+          "category": "Market Actors",
+          "role": "Provide bus services; age-friendly vehicle design measures vary by operator; issues include low-floor buses and priority seating.",
+          "hierarchy_level": "Meso",
+          "confidence": 85.0,
+          "mentions": 1,
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ],
+          "original_names": [
+            "Public transport operators"
+          ],
+          "influence_scope": "medium",
+          "intervention_capacity": "high",
+          "decision_authority": "medium",
+          "resource_control": "high",
+          "challenge_relevance_capacity": "high",
+          "cross_theme_connections": "medium"
+        },
+        {
+          "id": "SH-028",
+          "name": "Taxi Operators",
+          "long_name": "Taxi Operators (Hong Kong)",
+          "category": "Market Actors",
+          "role": "Provide taxi services; limited barrier-free taxis; proposals include conversion schemes and differentiated services for older/disabled passengers.",
+          "hierarchy_level": "Meso",
+          "confidence": 84.0,
+          "mentions": 2,
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ],
+          "original_names": [
+            "Taxi industry"
+          ],
+          "influence_scope": "medium",
+          "intervention_capacity": "medium",
+          "decision_authority": "medium",
+          "resource_control": "medium",
+          "challenge_relevance_capacity": "high",
+          "cross_theme_connections": "medium"
+        },
+        {
+          "id": "SH-014",
+          "name": "Census and Statistics Department",
+          "long_name": "Census and Statistics Department (Hong Kong)",
+          "category": "Governance and Regulation",
+          "role": "Produces demographic and social statistics used to plan age-friendly measures; data availability issues noted.",
+          "hierarchy_level": "Macro",
+          "confidence": 91.0,
+          "mentions": 6,
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            },
+            {
+              "knowledge_id": "056a246b-1f37-4a66-8d18-296832de467c",
+              "name": "2021_Factors Affecting Trends in Societal Indicators of Ageing Well in Hong Kong- Policies Politics and Pandemics.pdf"
+            },
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ],
+          "original_names": [
+            "C&SD",
+            "Census and Statistics Department"
+          ],
+          "influence_scope": "medium",
+          "intervention_capacity": "medium",
+          "decision_authority": "low",
+          "resource_control": "medium",
+          "challenge_relevance_capacity": "medium",
+          "cross_theme_connections": "medium"
+        }
+      ],
+      "pain_points": [
+        {
+          "id": "PP-001",
+          "label": "Age-unfriendly outdoor spaces and pedestrian infrastructure",
+          "category": "Social capital",
+          "description": "Outdoor environment and mobility barriers for older adults: inappropriate signage, lack of open spaces/leisure facilities, inadequate outdoor seating (especially at bus stops), lack of covered pedestrian roads, short pedestrian crossing time, and traffic/driver issues.",
+          "affected_stakeholders": [
+            "District Councils",
+            "HKSAR Government",
+            "Older adults (50+ in HK)"
+          ],
+          "causing_stakeholders": [
+            "HKSAR Government"
+          ],
+          "stakeholder_impact": {
+            "HKSAR Government": "Needs policy/ordinance integration and cross-department implementation for age-friendly built environment.",
+            "District Councils": "Pressure to follow up minor works and district upgrades; need coordination with elderly groups.",
+            "Older adults (50+ in HK)": "Reduced walkability and safety; difficulty navigating and crossing roads; constrained outdoor activity and wellbeing."
+          },
+          "confidence": 90.0,
+          "hierarchy_level": "Meso",
+          "severity": "high",
+          "urgency": "high",
+          "intervention_difficulty": "medium",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ]
+        },
+        {
+          "id": "PP-002",
+          "label": "Housing stock not age-friendly: lifts/accessibility deficits, maintenance burden, and affordability pressures",
+          "category": "Financial capital",
+          "description": "Older adults face age-unfriendly and deteriorating housing conditions—especially in older buildings and estates without lifts or adequate age-friendly facilities, often located on hilly terrain—combined with high and ongoing maintenance costs and broader housing unaffordability. Stringent eligibility for improvement schemes leaves some (including CSSA recipients) unable to fund safety modifications, undermining ageing in place and increasing home accident risk and isolation.",
+          "affected_stakeholders": [
+            "District Councils",
+            "HKSAR Government",
+            "Hong Kong Housing Authority",
+            "Hong Kong Housing Society",
+            "Older adults (50+ in HK)"
+          ],
+          "causing_stakeholders": [
+            "HKSAR Government"
+          ],
+          "stakeholder_impact": {
+            "HKSAR Government": "Policy pressure to address housing affordability/maintenance as part of age-friendly environment.",
+            "District Councils": "District-level infrastructure adjustments (e.g., bridges/lifts) require coordination and funding prioritization.",
+            "Older adults (50+ in HK)": "Mobility barriers and isolation risk; difficulty accessing services and community life, undermining ageing in place.; Financial insecurity and inability to make safety/age-friendly modifications; heightened accident risk at home.; Lower satisfaction with housing; financial stress and reduced quality of life.",
+            "Hong Kong Housing Society": "Role in education and potentially facilitating modification support via Elderly Resources Center.",
+            "Hong Kong Housing Authority": "Need to retrofit or redesign estates and integrate barrier-free standards in redevelopment approvals.; Need policies and mechanisms for retrofits and maintenance support in public housing stock."
+          },
+          "confidence": 86.0,
+          "hierarchy_level": "Macro",
+          "severity": "high",
+          "urgency": "high",
+          "intervention_difficulty": "high",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            },
+            {
+              "knowledge_id": "056a246b-1f37-4a66-8d18-296832de467c",
+              "name": "2021_Factors Affecting Trends in Societal Indicators of Ageing Well in Hong Kong- Policies Politics and Pandemics.pdf"
+            }
+          ]
+        },
+        {
+          "id": "PP-003",
+          "label": "Lack of tailor-made age-friendly housing due to market orientation",
+          "category": "Other",
+          "description": "Shortage of tailor-made housing for older adults attributed to 'market driven orientations of land developers'; Senior Citizen Residences marketed mainly to middle-class; lack of age-friendly facilities in public housing.",
+          "affected_stakeholders": [
+            "Hong Kong Housing Authority",
+            "Older adults (50+ in HK)"
+          ],
+          "causing_stakeholders": null,
+          "stakeholder_impact": {
+            "Older adults (50+ in HK)": "Limited suitable housing options across socio-economic groups; barriers to ageing in place.",
+            "Hong Kong Housing Authority": "Expected to lead special housing development and standardize barrier-free design requirements."
+          },
+          "confidence": 87.0,
+          "hierarchy_level": "Macro",
+          "severity": "high",
+          "urgency": "medium",
+          "intervention_difficulty": "high",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ]
+        },
+        {
+          "id": "PP-004",
+          "label": "Transport system not consistently age-friendly: lack of mandates, limited accessibility options, and worsening reliability/crowding",
+          "category": "Other",
+          "description": "Age-friendly accessibility in public transport is inconsistent due to the absence of statutory requirements and uneven operator adoption. Practical barriers include limited low-floor buses, limited barrier-free taxis/wheelchair compartments, inadequate feeder services, and poorly implemented priority seating. In addition, increased crowding and system breakdowns reduce satisfaction and constrain older adults’ mobility and participation.",
+          "affected_stakeholders": [
+            "District Councils",
+            "Franchised Bus Companies",
+            "HKSAR Government",
+            "MTR Corporation",
+            "Older adults (50+ in HK)",
+            "Taxi Operators"
+          ],
+          "causing_stakeholders": [
+            "HKSAR Government"
+          ],
+          "stakeholder_impact": {
+            "Taxi Operators": "Incentives and conversion schemes needed to expand barrier-free services.",
+            "MTR Corporation": "Faces expectations to lead concession and accessibility measures absent clear statutory backing.",
+            "HKSAR Government": "Policy gap on codifying accessibility requirements; must design regulation and monitoring.; Need to improve transport reliability/capacity within age-friendly planning.",
+            "District Councils": "Local planning needed for feeder services and accessible station environments.",
+            "Franchised Bus Companies": "Lack clear regulatory mandates; optional upgrades can create inconsistent service expectations.; Need fleet and stop/station adjustments (handrails, half-steps, low-floor design) and staff training.",
+            "Older adults (50+ in HK)": "Uneven accessibility experience across operators; barriers to mobility and participation.; Difficulty traveling safely and comfortably; reduced independence and participation.; Reduced mobility and satisfaction with public transport; barriers to participation."
+          },
+          "confidence": 85.0,
+          "hierarchy_level": "Macro",
+          "severity": "high",
+          "urgency": "high",
+          "intervention_difficulty": "high",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            },
+            {
+              "knowledge_id": "056a246b-1f37-4a66-8d18-296832de467c",
+              "name": "2021_Factors Affecting Trends in Societal Indicators of Ageing Well in Hong Kong- Policies Politics and Pandemics.pdf"
+            }
+          ]
+        },
+        {
+          "id": "PP-005",
+          "label": "Transport affordability gaps for ages 60–64",
+          "category": "Financial capital",
+          "description": "Lack of concessionary fares for ages 60–64 and expensive MTR fares for this group; transport costs remain a burden even with concessions, reducing motivation to go out (especially for frail wheelchair users needing taxis).",
+          "affected_stakeholders": [
+            "MTR Corporation",
+            "HKSAR Government",
+            "Older adults (50+ in HK)"
+          ],
+          "causing_stakeholders": [
+            "MTR Corporation",
+            "HKSAR Government"
+          ],
+          "stakeholder_impact": {
+            "MTR Corporation": "Pressure to provide broader concessions and to 'take the lead' on fare reductions.",
+            "HKSAR Government": "Need to subsidize and monitor concession schemes with smartcards and operator supplementation.",
+            "Older adults (50+ in HK)": "Lower social participation and access to services due to cost barriers; heightened isolation risk."
+          },
+          "confidence": 90.0,
+          "hierarchy_level": "Macro",
+          "severity": "high",
+          "urgency": "high",
+          "intervention_difficulty": "medium",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ]
+        },
+        {
+          "id": "PP-006",
+          "label": "Insufficient and uneven community support for frail older adults and caregivers (ageing-in-place shortfalls)",
+          "category": "Human capital",
+          "description": "Despite an ageing-in-place policy direction, community support capacity and quality are insufficient relative to frailty and ADL/IADL impairment. Gaps include inadequate quotas and coverage (home help, outreach, escort, day care, end-of-life support), limited accessibility for remote areas, weak promotion, and stringent eligibility—shifting burden onto family caregivers and increasing risk of avoidable institutionalization.",
+          "affected_stakeholders": [
+            "Community care service providers",
+            "Elderly centres (DECC/NEC/S/E)",
+            "Family Caregivers",
+            "Older adults (50+ in HK)",
+            "Social Welfare Department"
+          ],
+          "causing_stakeholders": [
+            "HKSAR Government",
+            "Social Welfare Department"
+          ],
+          "stakeholder_impact": {
+            "Family Caregivers": "Greater caregiving burden and stress; limited formal supports.; Higher caregiving burden and stress due to insufficient support/respite and difficult eligibility.",
+            "Older adults (50+ in HK)": "Unmet daily support needs; increased risk of institutionalization and reduced quality of life.; Reduced access/quality of home-help, outreach, escort and day care support; harder to age in place, especially in remote areas.",
+            "Social Welfare Department": "System strain and need for expanded community care and integrated service models.",
+            "Elderly centres (DECC/NEC/S/E)": "Increased pressure to handle referrals and unmet needs with limited quotas/resources.",
+            "Community care service providers": "Overstretched capacity and difficulty meeting demand; service gaps persist."
+          },
+          "confidence": 91.0,
+          "hierarchy_level": "Macro",
+          "severity": "critical",
+          "urgency": "critical",
+          "intervention_difficulty": "high",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            },
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ]
+        },
+        {
+          "id": "PP-007",
+          "label": "Long waits for subsidized residential care and inadequate caregiver support",
+          "category": "Human capital",
+          "description": "Caregiver needs are not adequately met in the long-term care system, highlighted by long waiting times for residential care home services. High demand and manpower constraints contribute to prolonged waits for subsidized places, increasing caregiver stress and leaving some older adults without timely placement when needed.",
+          "affected_stakeholders": [
+            "Family Caregivers",
+            "Older adults (50+ in HK)",
+            "Social Welfare Department"
+          ],
+          "causing_stakeholders": [
+            "HKSAR Government",
+            "Social Welfare Department"
+          ],
+          "stakeholder_impact": {
+            "Family Caregivers": "Increased stress and burden managing frailty without adequate formal support.",
+            "Older adults (50+ in HK)": "May be pushed toward residential care as 'only choice' despite preference to avoid it.; Delayed access to needed residential care; some die while waiting.",
+            "Social Welfare Department": "Capacity and service design pressure to reduce waiting times and expand alternatives.; Central Waiting List grows; reputational/policy pressure to expand and staff the sector."
+          },
+          "confidence": 89.0,
+          "hierarchy_level": "Macro",
+          "severity": "critical",
+          "urgency": "critical",
+          "intervention_difficulty": "high",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            },
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ]
+        },
+        {
+          "id": "PP-008",
+          "label": "Weak policy framework for implementing 'ageing in place'",
+          "category": "Other",
+          "description": "Participants note lack of policy detail/framework for how society works together to achieve ageing in place, especially for frail older adults.",
+          "affected_stakeholders": [
+            "HKSAR Government",
+            "Older adults (50+ in HK)"
+          ],
+          "causing_stakeholders": [
+            "HKSAR Government"
+          ],
+          "stakeholder_impact": {
+            "HKSAR Government": "Needs clearer priorities, measurable outcomes, and cross-bureau coordination to operationalize policy.",
+            "Older adults (50+ in HK)": "Inconsistent access to supports needed to remain in community safely."
+          },
+          "confidence": 85.0,
+          "hierarchy_level": "Macro",
+          "severity": "high",
+          "urgency": "high",
+          "intervention_difficulty": "high",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ]
+        },
+        {
+          "id": "PP-009",
+          "label": "Barriers to social participation: information, distance, and affordability",
+          "category": "Social capital",
+          "description": "Socially disengaged older adults lack information on activities/help; some live far from elderly centers; affordability affects ability to participate; poor neighborhood relations in urban communities.",
+          "affected_stakeholders": [
+            "Elderly centres (DECC/NEC/S/E)",
+            "Non-governmental organizations (NGOs)",
+            "Older adults (50+ in HK)"
+          ],
+          "causing_stakeholders": null,
+          "stakeholder_impact": {
+            "Older adults (50+ in HK)": "Lower participation, weaker networks, and higher isolation risk.",
+            "Elderly centres (DECC/NEC/S/E)": "Need outreach and redesigned activity mix and access strategies.",
+            "Non-governmental organizations (NGOs)": "Need diversified communication modes and neighborhood network programs."
+          },
+          "confidence": 88.0,
+          "hierarchy_level": "Micro",
+          "severity": "medium",
+          "urgency": "medium",
+          "intervention_difficulty": "medium",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ]
+        },
+        {
+          "id": "PP-010",
+          "label": "Ageism and declining respect/social inclusion",
+          "category": "Social capital",
+          "description": "Older adults perceived as neglected/disrespected; youth not always respectful; elderly abuse occurs (often by family) with unreported cases; some malls exclude older adults; few age-friendly facilities in malls.",
+          "affected_stakeholders": [
+            "HKSAR Government",
+            "Older adults (50+ in HK)"
+          ],
+          "causing_stakeholders": null,
+          "stakeholder_impact": {
+            "HKSAR Government": "Need to address ageism and social inclusion through education, public messaging and protective policy mechanisms.",
+            "Older adults (50+ in HK)": "Reduced dignity, participation and belonging; heightened vulnerability to abuse and exclusion."
+          },
+          "confidence": 92.0,
+          "hierarchy_level": "Macro",
+          "severity": "critical",
+          "urgency": "high",
+          "intervention_difficulty": "high",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ]
+        },
+        {
+          "id": "PP-011",
+          "label": "Inadequate retirement protection (MPF insufficient)",
+          "category": "Financial capital",
+          "description": "Financial protection under MPF 'is not enough' for decent retirement; many older adults have little income and no MPF protection, avoiding activities to save money for essentials (e.g., medical consultation).",
+          "affected_stakeholders": [
+            "HKSAR Government",
+            "Older adults (50+ in HK)"
+          ],
+          "causing_stakeholders": [
+            "HKSAR Government"
+          ],
+          "stakeholder_impact": {
+            "HKSAR Government": "Faces calls for structural policy measures (e.g., universal retirement protection).",
+            "Older adults (50+ in HK)": "Economic insecurity and constrained social/health choices."
+          },
+          "confidence": 86.0,
+          "hierarchy_level": "Macro",
+          "severity": "high",
+          "urgency": "high",
+          "intervention_difficulty": "high",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ]
+        },
+        {
+          "id": "PP-012",
+          "label": "Limited volunteer options and lack of incentives for older volunteers",
+          "category": "Social capital",
+          "description": "Older volunteer services limited in scope; inadequate information; lack of financial incentives (e.g., transport allowance); no comprehensive strategy; government support mostly routed to NGOs rather than directly to volunteers.",
+          "affected_stakeholders": [
+            "Non-governmental organizations (NGOs)",
+            "HKSAR Government",
+            "Older adults (50+ in HK)"
+          ],
+          "causing_stakeholders": null,
+          "stakeholder_impact": {
+            "HKSAR Government": "Need long-term plan, indicators, and direct support mechanisms.",
+            "Older adults (50+ in HK)": "Underutilized skills/expertise and lower civic participation.",
+            "Non-governmental organizations (NGOs)": "Need diversification of roles, information flow, and recognition schemes."
+          },
+          "confidence": 84.0,
+          "hierarchy_level": "Meso",
+          "severity": "medium",
+          "urgency": "medium",
+          "intervention_difficulty": "medium",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ]
+        },
+        {
+          "id": "PP-013",
+          "label": "Age discrimination and limited employability supports for older workers",
+          "category": "Human capital",
+          "description": "Age discrimination in labor market; older workers not covered under employees’ compensation insurance reduces employability; lack of tailored retraining and limited employment statistics; gender pay disparities among older workers.",
+          "affected_stakeholders": [
+            "HKSAR Government",
+            "Older adults (50+ in HK)"
+          ],
+          "causing_stakeholders": [
+            "HKSAR Government"
+          ],
+          "stakeholder_impact": {
+            "HKSAR Government": "Need policies/incentives (tax/insurance) and improved data to extend working age.",
+            "Older adults (50+ in HK)": "Fewer job opportunities and insecure income, especially for low/no-skill workers during downturns."
+          },
+          "confidence": 87.0,
+          "hierarchy_level": "Macro",
+          "severity": "high",
+          "urgency": "high",
+          "intervention_difficulty": "high",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ]
+        },
+        {
+          "id": "PP-014",
+          "label": "Digital and communication exclusion of older adults (including frail users)",
+          "category": "Human capital",
+          "description": "Older adults—especially frail, low-literacy, blind, cognitively impaired, or low-income individuals—are excluded by digital-first and automated communication channels. Service information is often online-only; many lack device skills or capacity and may not afford costs. Automated systems without human support are confusing; printed alternatives are limited; NGO ICT access is constrained; and broadcast content may be too fast/complex—reducing service uptake and remote support access.",
+          "affected_stakeholders": [
+            "Non-governmental organizations (NGOs)",
+            "Older adults (50+ in HK)"
+          ],
+          "causing_stakeholders": null,
+          "stakeholder_impact": {
+            "Older adults (50+ in HK)": "Information isolation, reduced service uptake, and difficulty navigating automated service channels.; Digital divide reduces capability domain outcomes and access to services.",
+            "Non-governmental organizations (NGOs)": "Operational constraints in supporting older adults due to limited ICT resources; need training and ambassador models."
+          },
+          "confidence": 90.0,
+          "hierarchy_level": "Meso",
+          "severity": "high",
+          "urgency": "high",
+          "intervention_difficulty": "medium",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            },
+            {
+              "knowledge_id": "056a246b-1f37-4a66-8d18-296832de467c",
+              "name": "2021_Factors Affecting Trends in Societal Indicators of Ageing Well in Hong Kong- Policies Politics and Pandemics.pdf"
+            }
+          ]
+        },
+        {
+          "id": "PP-015",
+          "label": "Fragmented health–social care integration and poor continuity across sectors",
+          "category": "Social capital",
+          "description": "Health and community care are poorly integrated across bureaus, departments, and provider tiers. Coordination and communication failures lead to duplicated examinations, recurrent referrals, wasted resources, and lack of seamless pathways. Continuity is weak (rotating doctors/doctor shopping), and planning for new services can be inconsistent—creating fragmented journeys and poorer outcomes for older adults with chronic needs.",
+          "affected_stakeholders": [
+            "Food and Health Bureau",
+            "Hospital Authority",
+            "Labour and Welfare Bureau",
+            "Non-governmental organizations (NGOs)",
+            "Older adults (50+ in HK)",
+            "Social Welfare Department"
+          ],
+          "causing_stakeholders": [
+            "Food and Health Bureau",
+            "HKSAR Government",
+            "Hospital Authority",
+            "Social Welfare Department"
+          ],
+          "stakeholder_impact": {
+            "Hospital Authority": "Operational inefficiencies from poor information exchange and repeated examinations.; Unnecessary demand and inefficiencies (duplication/overlap), increasing wait times.",
+            "Food and Health Bureau": "Must lead cross-sector cooperation and integrated policy design.",
+            "Older adults (50+ in HK)": "Time-consuming care journeys, duplicative tests, fragmented support and poorer outcomes for chronic conditions.; More clinic/hospital visits, duplicated assessments, longer stays, poorer experience and outcomes.",
+            "Labour and Welfare Bureau": "Must align community support policy with health system pathways.",
+            "Social Welfare Department": "Fragmented interface with medical services undermines community support effectiveness.; Long-term care pathways affected by lack of cohesive linkage with medical sector.",
+            "Non-governmental organizations (NGOs)": "Harder to coordinate services and referrals; higher admin burden."
+          },
+          "confidence": 90.0,
+          "hierarchy_level": "Macro",
+          "severity": "critical",
+          "urgency": "high",
+          "intervention_difficulty": "high",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            },
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ]
+        },
+        {
+          "id": "PP-016",
+          "label": "Health service access friction and user-unfriendly appointment systems",
+          "category": "Human capital",
+          "description": "Older adults face practical access barriers in health services due to misaligned district quotas, separated service locations (consultations vs dispensaries) that increase travel, and appointment/booking systems that limit choice and are not user-oriented for sensory or cognitive difficulties. Technical failures and rescheduling difficulties further reduce timely access to primary and preventive care.",
+          "affected_stakeholders": [
+            "Department of Health",
+            "Hospital Authority",
+            "Older adults (50+ in HK)"
+          ],
+          "causing_stakeholders": [
+            "Hospital Authority"
+          ],
+          "stakeholder_impact": {
+            "Hospital Authority": "Faces downstream impacts of access inefficiencies and chronic disease management gaps.; Higher call friction, missed appointments, and inefficiencies in appointment management.",
+            "Department of Health": "Needs service redesign (quota alignment, preventive care, booking improvements).",
+            "Older adults (50+ in HK)": "Greater burden especially for multi-morbidity; increased travel and reduced timely access.; Reduced ability to access primary care appointments and manage care plans independently."
+          },
+          "confidence": 89.0,
+          "hierarchy_level": "Meso",
+          "severity": "high",
+          "urgency": "high",
+          "intervention_difficulty": "medium",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            },
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ]
+        },
+        {
+          "id": "PP-017",
+          "label": "Hospital capacity strain: inpatient crowding and long waits for public services",
+          "category": "Human capital",
+          "description": "Public hospital services are overwhelmed, leading to inpatient crowding and long waiting times (including A&E crowding and very long specialist outpatient waits). Demand exceeding supply reduces perceived quality and timeliness of care and increases burden on families coordinating repeated visits.",
+          "affected_stakeholders": [
+            "Family Caregivers",
+            "Hospital Authority",
+            "Older adults (50+ in HK)"
+          ],
+          "causing_stakeholders": [
+            "Food and Health Bureau",
+            "Hospital Authority"
+          ],
+          "stakeholder_impact": {
+            "Family Caregivers": "More time spent coordinating care and accompanying elders; stress from delays and repeated visits.",
+            "Hospital Authority": "Staff workload increases; service quality and throughput undermined.; Operational strain due to demand exceeding supply; capacity management challenges.",
+            "Older adults (50+ in HK)": "Delayed consultations/treatments and reduced quality due to shortened consultation time.; Delays/access barriers and crowding reduce perceived quality and timeliness of care."
+          },
+          "confidence": 89.0,
+          "hierarchy_level": "Macro",
+          "severity": "critical",
+          "urgency": "critical",
+          "intervention_difficulty": "high",
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            },
+            {
+              "knowledge_id": "056a246b-1f37-4a66-8d18-296832de467c",
+              "name": "2021_Factors Affecting Trends in Societal Indicators of Ageing Well in Hong Kong- Policies Politics and Pandemics.pdf"
+            }
+          ]
+        },
+        {
+          "id": "PP-018",
+          "label": "Hospital-centric system and inadequate redesign to meet rising frailty burden",
+          "category": "Human capital",
+          "description": "The health and social care system is not adequately designed for the growing frailty and dependency burden. Primary care is underdeveloped and the system relies heavily on acute hospitals; many admissions could be prevented or managed through stronger primary care, early detection/screening, and improved lower-tier chronic care—contributing to escalating demand pressures.",
+          "affected_stakeholders": [
+            "Department of Health",
+            "Hospital Authority",
+            "Older adults (50+ in HK)"
+          ],
+          "causing_stakeholders": [
+            "Food and Health Bureau",
+            "HKSAR Government"
+          ],
+          "stakeholder_impact": {
+            "Hospital Authority": "Increased demand pressure and inpatient crowding, stressing service capacity.; Avoidable admissions and outpatient overload increase, worsening waits and workforce strain.",
+            "Department of Health": "Preventive services have limited ability to offset downstream acute demand without stronger primary-care integration.",
+            "Older adults (50+ in HK)": "Unmet care needs and declining self-rated health, wellbeing, and functional outcomes.; Chronic conditions and geriatric syndromes receive fragmented episodic care rather than continuous community management."
+          },
+          "confidence": 90.0,
+          "hierarchy_level": "Macro",
+          "severity": "critical",
+          "urgency": "critical",
+          "intervention_difficulty": "high",
+          "sources": [
+            {
+              "knowledge_id": "056a246b-1f37-4a66-8d18-296832de467c",
+              "name": "2021_Factors Affecting Trends in Societal Indicators of Ageing Well in Hong Kong- Policies Politics and Pandemics.pdf"
+            },
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ]
+        },
+        {
+          "id": "PP-019",
+          "label": "Limited discharge support and transitional care",
+          "category": "Human capital",
+          "description": "Discharge support services are relatively limited; ICDS targets only high-risk readmission patients, leaving many without home care support; long waits for day care (6+ months) lead to use of private residential homes as immediate alternatives.",
+          "affected_stakeholders": [
+            "Hospital Authority",
+            "Family Caregivers",
+            "Non-governmental organizations (NGOs)",
+            "Older adults (50+ in HK)"
+          ],
+          "causing_stakeholders": [
+            "Hospital Authority"
+          ],
+          "stakeholder_impact": {
+            "Family Caregivers": "Increased burden immediately after discharge; more coordination and care tasks.",
+            "Hospital Authority": "Readmission risk and extended care demand persists when community follow-up is inadequate.",
+            "Older adults (50+ in HK)": "Higher risk of poor transitions, reduced independence, and being diverted to private residential homes.",
+            "Non-governmental organizations (NGOs)": "Need to fill discharge and home support gaps with limited capacity/coordination."
+          },
+          "confidence": 90.0,
+          "hierarchy_level": "Meso",
+          "severity": "high",
+          "urgency": "high",
+          "intervention_difficulty": "medium",
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ]
+        },
+        {
+          "id": "PP-020",
+          "label": "Imbalanced funding: residential care prioritized over community care",
+          "category": "Financial capital",
+          "description": "Expenditure and places skew toward residential care vs community care (2014/15: HK$3.9b for 26,325 residential places vs HK$1.1b for 9,680 community places), undermining 'ageing in place' and contributing to high institutionalization.",
+          "affected_stakeholders": [
+            "Social Welfare Department",
+            "Community care service providers",
+            "Older adults (50+ in HK)"
+          ],
+          "causing_stakeholders": [
+            "Social Welfare Department",
+            "HKSAR Government"
+          ],
+          "stakeholder_impact": {
+            "Older adults (50+ in HK)": "Fewer comprehensive community options, increasing reliance on institutional care even when home ageing is feasible.",
+            "Social Welfare Department": "Policy incoherence vs stated ageing-in-place direction; pressure to revisit financing models.",
+            "Community care service providers": "Under-resourced relative to need, limiting scale and coverage."
+          },
+          "confidence": 88.0,
+          "hierarchy_level": "Macro",
+          "severity": "high",
+          "urgency": "medium",
+          "intervention_difficulty": "high",
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ]
+        },
+        {
+          "id": "PP-021",
+          "label": "Weak quality assurance in private residential care homes",
+          "category": "Other",
+          "description": "Private RCHE quality varies; many only meet minimum standards under an outdated ordinance (Cap.459 from 1996); voluntary accreditation uptake is low (61 of 738), indicating need for updated statutory requirements and compulsory accreditation.",
+          "affected_stakeholders": [
+            "Social Welfare Department",
+            "Private RCHE operators",
+            "Older adults (50+ in HK)"
+          ],
+          "causing_stakeholders": [
+            "Social Welfare Department",
+            "HKSAR Government"
+          ],
+          "stakeholder_impact": {
+            "Private RCHE operators": "Uneven standards; reputable operators compete with low-standard providers; impending regulatory tightening risk.",
+            "Older adults (50+ in HK)": "Greater uncertainty and safety/quality risks when diverted to private homes due to public shortages.",
+            "Social Welfare Department": "Limited assurance over sector quality unless schemes (EBPS/contract) apply."
+          },
+          "confidence": 88.0,
+          "hierarchy_level": "Macro",
+          "severity": "high",
+          "urgency": "high",
+          "intervention_difficulty": "high",
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ]
+        },
+        {
+          "id": "PP-022",
+          "label": "High and opaque private-sector costs and voucher limitations",
+          "category": "Financial capital",
+          "description": "Dissatisfaction with private medical/dental costs and fee transparency; EHCV amount sometimes insufficient for dental/general expenses; claims that some private providers increase charges for voucher users.",
+          "affected_stakeholders": [
+            "Private healthcare providers",
+            "Older adults (50+ in HK)"
+          ],
+          "causing_stakeholders": [
+            "Private healthcare providers",
+            "Department of Health"
+          ],
+          "stakeholder_impact": {
+            "Older adults (50+ in HK)": "Financial barriers persist even with vouchers; reduced ability to access private options.",
+            "Private healthcare providers": "Reputational risk and trust issues related to fee transparency and voucher-linked price increases."
+          },
+          "confidence": 85.0,
+          "hierarchy_level": "Meso",
+          "severity": "medium",
+          "urgency": "medium",
+          "intervention_difficulty": "medium",
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ]
+        },
+        {
+          "id": "PP-023",
+          "label": "Inadequate end-of-life care capacity and lack of holistic framework",
+          "category": "Human capital",
+          "description": "Many older people die in acute wards lacking privacy/dignity and spiritual/holistic care; palliative single rooms and units are inadequate; no overarching framework addressing holistic patient and family needs.",
+          "affected_stakeholders": [
+            "Hospital Authority",
+            "Family Caregivers",
+            "Non-governmental organizations (NGOs)",
+            "Older adults (50+ in HK)"
+          ],
+          "causing_stakeholders": [
+            "Hospital Authority",
+            "Food and Health Bureau"
+          ],
+          "stakeholder_impact": {
+            "Family Caregivers": "Emotional distress and limited support/visiting flexibility during final stage.",
+            "Hospital Authority": "Acute wards take on end-of-life demand; capacity mismatch in palliative units.",
+            "Older adults (50+ in HK)": "End-of-life experience often in crowded unfamiliar acute settings, not aligned with 'good death' principles.",
+            "Non-governmental organizations (NGOs)": "Need to supplement bereavement/hospice support without system-wide framework."
+          },
+          "confidence": 88.0,
+          "hierarchy_level": "Macro",
+          "severity": "high",
+          "urgency": "high",
+          "intervention_difficulty": "high",
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ]
+        },
+        {
+          "id": "PP-024",
+          "label": "Legal uncertainty around advance directives",
+          "category": "Other",
+          "description": "Hong Kong lacks statute/case law for advance directives; reliance on common-law informed consent creates practical difficulties and potential conflicts, prompting need for legal framework/public consultation.",
+          "affected_stakeholders": [
+            "Hospital Authority",
+            "Food and Health Bureau",
+            "Family Caregivers",
+            "Older adults (50+ in HK)",
+            "Legislative Council (LegCo)"
+          ],
+          "causing_stakeholders": [
+            "Legislative Council (LegCo)",
+            "HKSAR Government"
+          ],
+          "stakeholder_impact": {
+            "Family Caregivers": "Greater decision burden and potential conflict with providers during end-of-life decisions.",
+            "Hospital Authority": "Operational ambiguity and risk management challenges implementing ADs.",
+            "Food and Health Bureau": "Policy obligation to pursue consultation and legislative framework.",
+            "Older adults (50+ in HK)": "Reduced certainty that preferences will be respected when incapacitated."
+          },
+          "confidence": 85.0,
+          "hierarchy_level": "Macro",
+          "severity": "medium",
+          "urgency": "medium",
+          "intervention_difficulty": "high",
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ]
+        },
+        {
+          "id": "PP-025",
+          "label": "Pandemic containment measures driving isolation and frailty",
+          "category": "Human capital",
+          "description": "COVID-19 and containment measures (closures of centres, restrictions on gatherings, cordoned exercise areas) contributed to isolation/loneliness and deterioration in frailty among older adults.",
+          "affected_stakeholders": [
+            "Non-governmental organizations (NGOs)",
+            "Older adults (50+ in HK)"
+          ],
+          "causing_stakeholders": [
+            "HKSAR Government"
+          ],
+          "stakeholder_impact": {
+            "Older adults (50+ in HK)": "Increased isolation and loneliness; reduced social participation and wellbeing during restrictions."
+          },
+          "confidence": 92.0,
+          "hierarchy_level": "Macro",
+          "severity": "high",
+          "urgency": "critical",
+          "intervention_difficulty": "medium",
+          "sources": [
+            {
+              "knowledge_id": "056a246b-1f37-4a66-8d18-296832de467c",
+              "name": "2021_Factors Affecting Trends in Societal Indicators of Ageing Well in Hong Kong- Policies Politics and Pandemics.pdf"
+            }
+          ]
+        },
+        {
+          "id": "PP-026",
+          "label": "Mental health burden from social unrest and pandemic",
+          "category": "Human capital",
+          "description": "Political conflicts/social unrest and COVID-19 coincided with marked drops in mental health and life satisfaction indicators; unrest linked to depression/PTSD burden and family conflicts.",
+          "affected_stakeholders": [
+            "Older adults (50+ in HK)"
+          ],
+          "causing_stakeholders": null,
+          "stakeholder_impact": {
+            "Older adults (50+ in HK)": "Declines in mental health and subjective wellbeing; increased stress and insecurity."
+          },
+          "confidence": 85.0,
+          "hierarchy_level": "Macro",
+          "severity": "high",
+          "urgency": "high",
+          "intervention_difficulty": "high",
+          "sources": [
+            {
+              "knowledge_id": "056a246b-1f37-4a66-8d18-296832de467c",
+              "name": "2021_Factors Affecting Trends in Societal Indicators of Ageing Well in Hong Kong- Policies Politics and Pandemics.pdf"
+            }
+          ]
+        },
+        {
+          "id": "PP-027",
+          "label": "Employment loss and widening health inequalities during COVID-19",
+          "category": "Financial capital",
+          "description": "Pandemic containment led to employment loss, isolation, and loneliness, aggravating existing health inequalities affecting older adults.",
+          "affected_stakeholders": [
+            "HKSAR Government",
+            "Older adults (50+ in HK)"
+          ],
+          "causing_stakeholders": null,
+          "stakeholder_impact": {
+            "HKSAR Government": "Need for targeted socioeconomic policies to counter disparities during crises.",
+            "Older adults (50+ in HK)": "Reduced income security and increased vulnerability; heightened inequality effects."
+          },
+          "confidence": 80.0,
+          "hierarchy_level": "Macro",
+          "severity": "high",
+          "urgency": "high",
+          "intervention_difficulty": "medium",
+          "sources": [
+            {
+              "knowledge_id": "056a246b-1f37-4a66-8d18-296832de467c",
+              "name": "2021_Factors Affecting Trends in Societal Indicators of Ageing Well in Hong Kong- Policies Politics and Pandemics.pdf"
+            }
+          ]
+        },
+        {
+          "id": "PP-028",
+          "label": "Lack of measurable outcomes and data transparency for age-friendly initiatives",
+          "category": "Other",
+          "description": "No measurable policy outcomes identified under the age-friendly framework; difficulties allocating updated data encountered; need regular databases and transparency so public can evaluate objectives.",
+          "affected_stakeholders": [
+            "District Councils",
+            "HKCSS",
+            "HKSAR Government",
+            "Census and Statistics Department"
+          ],
+          "causing_stakeholders": null,
+          "stakeholder_impact": {
+            "HKCSS": "Harder to evaluate and benchmark initiatives like AFHKI and consolidate best practices.",
+            "HKSAR Government": "Reduced accountability and difficulty setting priorities and targets across bureaus.",
+            "District Councils": "Harder to monitor district progress and justify resource allocation.",
+            "Census and Statistics Department": "Demand for more regular/accessible indicators and updated datasets."
+          },
+          "confidence": 89.0,
+          "hierarchy_level": "Macro",
+          "severity": "medium",
+          "urgency": "medium",
+          "intervention_difficulty": "medium",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ]
+        }
+      ],
+      "relationships": [
+        {
+          "id": "RL-001",
+          "source_stakeholder": "HKCSS",
+          "target_stakeholder": "Age-Friendly HK Steering Committee",
+          "relationship_type": "Governance_Rules",
+          "relationship_subtype": "Transparency_Accountability",
+          "direction": "Unidirectional_Source_to_Target",
+          "strength": 92.0,
+          "justification": "Text states HKCSS 'took the lead... by establishing the ‘Age-Friendly Hong Kong Steering Committee’ in 2008' with defined core tasks (promote understanding, foster solutions, exchange information).",
+          "confidence": 93.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "low",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-002",
+          "source_stakeholder": "HKCSS",
+          "target_stakeholder": "Non-governmental organizations (NGOs)",
+          "relationship_type": "Social_Capital",
+          "relationship_subtype": "Partnerships",
+          "direction": "Bidirectional",
+          "strength": 88.0,
+          "justification": "HKCSS 'solicited support from various nongovernment organizations (NGOs) and other local agencies at district level since 2009' and is 'a council that coordinates social service agencies' with 'more than 440 agency members'.",
+          "confidence": 90.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "low",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-003",
+          "source_stakeholder": "HKCSS",
+          "target_stakeholder": "HKSAR Government",
+          "relationship_type": "Governance_Rules",
+          "relationship_subtype": "Policy_Input",
+          "direction": "Bidirectional",
+          "strength": 80.0,
+          "justification": "HKCSS is described as 'a key representative of many local NGOs to advise the government on many major social policies' and has 'established regular platforms to exchange views with key government Bureaus'.",
+          "confidence": 86.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "medium",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-004",
+          "source_stakeholder": "HKCSS",
+          "target_stakeholder": "Labour and Welfare Bureau",
+          "relationship_type": "Governance_Rules",
+          "relationship_subtype": "Policy_Input",
+          "direction": "Bidirectional",
+          "strength": 75.0,
+          "justification": "Text notes HKCSS has 'regular platforms to exchange views with key government Bureaus such as Welfare and Labor Bureau'.",
+          "confidence": 82.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "medium",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-005",
+          "source_stakeholder": "HKCSS",
+          "target_stakeholder": "Food and Health Bureau",
+          "relationship_type": "Governance_Rules",
+          "relationship_subtype": "Policy_Input",
+          "direction": "Bidirectional",
+          "strength": 75.0,
+          "justification": "Text notes HKCSS has 'regular platforms to exchange views with key government Bureaus such as ... Health and Food Bureau'.",
+          "confidence": 82.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "medium",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-006",
+          "source_stakeholder": "District Councils",
+          "target_stakeholder": "Older adults (50+ in HK)",
+          "relationship_type": "Social_Capital",
+          "relationship_subtype": "Civic_Engagement",
+          "direction": "Bidirectional",
+          "strength": 78.0,
+          "justification": "District initiatives emphasize that 'older adults have been empowered to raise their concerns, advocate changes, negotiate with government departments or business companies' and suggestions include that 'Older adults should be invited to express their views on development projects.'",
+          "confidence": 84.0,
+          "relationship_formality": "informal",
+          "collaboration_potential": "high",
+          "conflict_potential": "low",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-007",
+          "source_stakeholder": "District Councils",
+          "target_stakeholder": "HKSAR Government",
+          "relationship_type": "Governance_Rules",
+          "relationship_subtype": "Policy_Input",
+          "direction": "Bidirectional",
+          "strength": 70.0,
+          "justification": "Implied operational interface: 'Each District Council should actively follow-up all minor-work projects' and district platforms enable older adults to 'negotiate with government departments'.",
+          "confidence": 78.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "medium",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-008",
+          "source_stakeholder": "HKSAR Government",
+          "target_stakeholder": "MTR Corporation",
+          "relationship_type": "Financial_Capital",
+          "relationship_subtype": "Redistribution",
+          "direction": "Bidirectional",
+          "strength": 68.0,
+          "justification": "Transport suggestions call for government subsidy via smartcard and that 'the government should supplement the private transport enterprises in providing concessionary fares' while also urging 'MTR ... take the lead in giving concessionary fares'.",
+          "confidence": 80.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "medium",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-009",
+          "source_stakeholder": "HKSAR Government",
+          "target_stakeholder": "Franchised Bus Companies",
+          "relationship_type": "Governance_Rules",
+          "relationship_subtype": "Regulation_Compliance",
+          "direction": "Unidirectional_Source_to_Target",
+          "strength": 72.0,
+          "justification": "Text highlights regulatory gap: 'there is no statutory requirement for public transport companies to design measures' and suggestions include government monitoring and subsidy supplementation for private transport enterprises.",
+          "confidence": 84.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "medium",
+          "conflict_potential": "medium",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-010",
+          "source_stakeholder": "Food and Health Bureau",
+          "target_stakeholder": "Labour and Welfare Bureau",
+          "relationship_type": "Governance_Rules",
+          "relationship_subtype": "Policy_Input",
+          "direction": "Bidirectional",
+          "strength": 65.0,
+          "justification": "Community support and health services section states multiple bureaus are responsible and 'There is room for better coordination between health services and community support services', naming these two as 'the key ones'.",
+          "confidence": 82.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "medium",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-011",
+          "source_stakeholder": "Department of Health",
+          "target_stakeholder": "Older adults (50+ in HK)",
+          "relationship_type": "Produced_Capital",
+          "relationship_subtype": "Product_Service",
+          "direction": "Unidirectional_Source_to_Target",
+          "strength": 85.0,
+          "justification": "Text: DH provides '18 Elderly health centres' screening/assessment/counselling and Visiting Health Teams; also administers EHCV for those aged 65+.",
+          "confidence": 90.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "low",
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-012",
+          "source_stakeholder": "Hospital Authority",
+          "target_stakeholder": "Older adults (50+ in HK)",
+          "relationship_type": "Produced_Capital",
+          "relationship_subtype": "Product_Service",
+          "direction": "Unidirectional_Source_to_Target",
+          "strength": 90.0,
+          "justification": "Hospital Authority is 'the main provider of health care' and during COVID-19 'anyone who had been tested positive received appropriate care promptly either in a hospital or quarantine facility.'",
+          "confidence": 92.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "medium",
+          "sources": [
+            {
+              "knowledge_id": "056a246b-1f37-4a66-8d18-296832de467c",
+              "name": "2021_Factors Affecting Trends in Societal Indicators of Ageing Well in Hong Kong- Policies Politics and Pandemics.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-013",
+          "source_stakeholder": "Social Welfare Department",
+          "target_stakeholder": "Older adults (50+ in HK)",
+          "relationship_type": "Produced_Capital",
+          "relationship_subtype": "Product_Service",
+          "direction": "Unidirectional_Source_to_Target",
+          "strength": 78.0,
+          "justification": "Text: older adults 'will go to Social Welfare Department for community support services and community mental health services' and shortages/waiting times are discussed.",
+          "confidence": 87.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "low",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-014",
+          "source_stakeholder": "Hong Kong Housing Authority",
+          "target_stakeholder": "Older adults (50+ in HK)",
+          "relationship_type": "Produced_Capital",
+          "relationship_subtype": "Infrastructure_Access",
+          "direction": "Unidirectional_Source_to_Target",
+          "strength": 80.0,
+          "justification": "Text calls for 'Hong Kong Housing Authority… should take the lead in developing special housing for older adults,' and notes lack of tailor-made facilities in public housing affecting older adults.",
+          "confidence": 80.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "medium",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-015",
+          "source_stakeholder": "Education Bureau",
+          "target_stakeholder": "Older adults (50+ in HK)",
+          "relationship_type": "Cultural_Capital",
+          "relationship_subtype": "Norms_Influence",
+          "direction": "Unidirectional_Source_to_Target",
+          "strength": 60.0,
+          "justification": "Respect/social inclusion recommendations: 'educational policy has to be reviewed on how “filial piety” and “respecting the old” can be effectively integrated into the school curricula', naming Education Bureau as lead.",
+          "confidence": 80.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "medium",
+          "conflict_potential": "low",
+          "sources": [
+            {
+              "knowledge_id": "024eb529-e01a-41ea-b860-5abf485fbe42",
+              "name": "2016_Age-Friendly Hong Kong.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-016",
+          "source_stakeholder": "Hong Kong Jockey Club Charities Trust",
+          "target_stakeholder": "HKSAR Government",
+          "relationship_type": "Social_Capital",
+          "relationship_subtype": "Advocacy",
+          "direction": "Unidirectional_Source_to_Target",
+          "strength": 78.0,
+          "justification": "Text states a territory-wide initiative was 'supported by a major philanthropic organization' and used a strategy of 'lobbying policy makers' and that government later included the age-friendly cities concept in the Chief Executive’s Policy Address (2016), implying philanthropy-to-government influence and agenda setting.",
+          "confidence": 83.0,
+          "relationship_formality": "informal",
+          "collaboration_potential": "high",
+          "conflict_potential": "low",
+          "sources": [
+            {
+              "knowledge_id": "056a246b-1f37-4a66-8d18-296832de467c",
+              "name": "2021_Factors Affecting Trends in Societal Indicators of Ageing Well in Hong Kong- Policies Politics and Pandemics.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-017",
+          "source_stakeholder": "WHO",
+          "target_stakeholder": "HKSAR Government",
+          "relationship_type": "Governance_Rules",
+          "relationship_subtype": "Policy_Input",
+          "direction": "Unidirectional_Source_to_Target",
+          "strength": 75.0,
+          "justification": "Text notes improvements alongside adoption of the WHO Age Friendly City concept by government policy; specifically: adoption of the World Health Organization’s Age Friendly City concept by government policy and inclusion of the concept in the Chief Executive’s Policy Address in 2016.",
+          "confidence": 88.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "low",
+          "sources": [
+            {
+              "knowledge_id": "056a246b-1f37-4a66-8d18-296832de467c",
+              "name": "2021_Factors Affecting Trends in Societal Indicators of Ageing Well in Hong Kong- Policies Politics and Pandemics.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-018",
+          "source_stakeholder": "Hong Kong Jockey Club Charities Trust",
+          "target_stakeholder": "CUHK Jockey Club Institute of Ageing",
+          "relationship_type": "Financial_Capital",
+          "relationship_subtype": "Investment_Funding",
+          "direction": "Unidirectional_Source_to_Target",
+          "strength": 88.0,
+          "justification": "Acknowledgement: 'This study was supported by the Hong Kong Jockey Club Charities Trust.' The institute is explicitly named as CUHK Jockey Club Institute of Ageing and produced HKEQOL reports and the project.",
+          "confidence": 90.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "low",
+          "sources": [
+            {
+              "knowledge_id": "056a246b-1f37-4a66-8d18-296832de467c",
+              "name": "2021_Factors Affecting Trends in Societal Indicators of Ageing Well in Hong Kong- Policies Politics and Pandemics.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-019",
+          "source_stakeholder": "Elderly Commission",
+          "target_stakeholder": "HKSAR Government",
+          "relationship_type": "Governance_Rules",
+          "relationship_subtype": "Policy_Input",
+          "direction": "Unidirectional_Source_to_Target",
+          "strength": 70.0,
+          "justification": "Described as advising government: 'The Elderly Commission that advises the government on ageing matters'.",
+          "confidence": 88.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "low",
+          "sources": [
+            {
+              "knowledge_id": "056a246b-1f37-4a66-8d18-296832de467c",
+              "name": "2021_Factors Affecting Trends in Societal Indicators of Ageing Well in Hong Kong- Policies Politics and Pandemics.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-020",
+          "source_stakeholder": "HKSAR Government",
+          "target_stakeholder": "Elderly Commission",
+          "relationship_type": "Financial_Capital",
+          "relationship_subtype": "Investment_Funding",
+          "direction": "Unidirectional_Source_to_Target",
+          "strength": 60.0,
+          "justification": "Commission introduced a scheme 'supported by government grants' to create lifelong learning opportunities, implying government resourcing for commission-led initiatives.",
+          "confidence": 70.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "low",
+          "sources": [
+            {
+              "knowledge_id": "056a246b-1f37-4a66-8d18-296832de467c",
+              "name": "2021_Factors Affecting Trends in Societal Indicators of Ageing Well in Hong Kong- Policies Politics and Pandemics.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-021",
+          "source_stakeholder": "HKSAR Government",
+          "target_stakeholder": "Hospital Authority",
+          "relationship_type": "Governance_Rules",
+          "relationship_subtype": "Regulation_Compliance",
+          "direction": "Unidirectional_Source_to_Target",
+          "strength": 60.0,
+          "justification": "Pandemic 'public health disease containment measures' and the public system response described (hospital/quarantine care) strongly imply government-led public health governance shaping HA operations, though not detailed as an explicit directive in the text.",
+          "confidence": 70.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "medium",
+          "sources": [
+            {
+              "knowledge_id": "056a246b-1f37-4a66-8d18-296832de467c",
+              "name": "2021_Factors Affecting Trends in Societal Indicators of Ageing Well in Hong Kong- Policies Politics and Pandemics.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-022",
+          "source_stakeholder": "HKSAR Government",
+          "target_stakeholder": "Older adults (50+ in HK)",
+          "relationship_type": "Financial_Capital",
+          "relationship_subtype": "Redistribution",
+          "direction": "Unidirectional_Source_to_Target",
+          "strength": 78.0,
+          "justification": "Government provides allowances and welfare supports: 'allowances for old age, disability, comprehensive social security, low cost rent for public housing, various cash allowances, means tested vouchers for health care, day care and home visits.'",
+          "confidence": 88.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "low",
+          "sources": [
+            {
+              "knowledge_id": "056a246b-1f37-4a66-8d18-296832de467c",
+              "name": "2021_Factors Affecting Trends in Societal Indicators of Ageing Well in Hong Kong- Policies Politics and Pandemics.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-023",
+          "source_stakeholder": "HKSAR Government",
+          "target_stakeholder": "Non-governmental organizations (NGOs)",
+          "relationship_type": "Financial_Capital",
+          "relationship_subtype": "Redistribution",
+          "direction": "Unidirectional_Source_to_Target",
+          "strength": 72.0,
+          "justification": "Text notes NGOs provide courses where 'the fees are subsidized by the government' and NGOs provide 'a great variety of community social activities', indicating government financial support enabling NGO services.",
+          "confidence": 84.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "low",
+          "sources": [
+            {
+              "knowledge_id": "056a246b-1f37-4a66-8d18-296832de467c",
+              "name": "2021_Factors Affecting Trends in Societal Indicators of Ageing Well in Hong Kong- Policies Politics and Pandemics.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-024",
+          "source_stakeholder": "Hong Kong Jockey Club Charities Trust",
+          "target_stakeholder": "Jockey Club Age-friendly City Project (JCAFC)",
+          "relationship_type": "Financial_Capital",
+          "relationship_subtype": "Investment_Funding",
+          "direction": "Unidirectional_Source_to_Target",
+          "strength": 95.0,
+          "justification": "Text: the Trust has been 'implementing the Jockey Club Age-friendly City Project' and 'support ... made possible by the Club’s ... charity donations', indicating direct funding and initiation.",
+          "confidence": 92.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "low",
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-025",
+          "source_stakeholder": "Jockey Club Age-friendly City Project (JCAFC)",
+          "target_stakeholder": "CUHK Jockey Club Institute of Ageing",
+          "relationship_type": "Produced_Capital",
+          "relationship_subtype": "Operational_Coordination",
+          "direction": "Bidirectional",
+          "strength": 90.0,
+          "justification": "Text: 'The CUHK Jockey Club Institute of Ageing, our project partner, has published a series of thematic reports'—collaboration to produce knowledge products and implement project activities.",
+          "confidence": 90.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "low",
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-026",
+          "source_stakeholder": "Food and Health Bureau",
+          "target_stakeholder": "Hospital Authority",
+          "relationship_type": "Governance_Rules",
+          "relationship_subtype": "Regulation_Compliance",
+          "direction": "Unidirectional_Source_to_Target",
+          "strength": 85.0,
+          "justification": "Text: Food and Health Bureau 'overseeing healthcare policy implementation and resource allocation' and Hospital Authority is 'responsible for delivering medical treatments', implying governance/oversight relationship.",
+          "confidence": 85.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "medium",
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-027",
+          "source_stakeholder": "Food and Health Bureau",
+          "target_stakeholder": "Department of Health",
+          "relationship_type": "Governance_Rules",
+          "relationship_subtype": "Regulation_Compliance",
+          "direction": "Unidirectional_Source_to_Target",
+          "strength": 80.0,
+          "justification": "Food and Health Bureau is described as overseeing healthcare policy implementation/resource allocation while Department of Health provides preventive services and administers schemes, indicating policy governance over Department of Health functions.",
+          "confidence": 82.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "low",
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-028",
+          "source_stakeholder": "Social Welfare Department",
+          "target_stakeholder": "Non-governmental organizations (NGOs)",
+          "relationship_type": "Produced_Capital",
+          "relationship_subtype": "Operational_Coordination",
+          "direction": "Bidirectional",
+          "strength": 90.0,
+          "justification": "Text: 'In collaboration with NGOs, the SWD offers comprehensive long-term care services' indicating contracted/co-delivery relationships.",
+          "confidence": 90.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "medium",
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-029",
+          "source_stakeholder": "Hospital Authority",
+          "target_stakeholder": "Non-governmental organizations (NGOs)",
+          "relationship_type": "Produced_Capital",
+          "relationship_subtype": "Operational_Coordination",
+          "direction": "Bidirectional",
+          "strength": 78.0,
+          "justification": "Patient Empowerment Programme is 'a collaborative scheme run by HA and NGOs'; also EHAPP was launched 'in collaboration with NGOs'.",
+          "confidence": 85.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "low",
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-030",
+          "source_stakeholder": "Hospital Authority",
+          "target_stakeholder": "Private healthcare providers",
+          "relationship_type": "Produced_Capital",
+          "relationship_subtype": "Operational_Coordination",
+          "direction": "Bidirectional",
+          "strength": 80.0,
+          "justification": "Text: HA 'implemented several “Public-Private Partnership” (PPP) programmes' to utilize private capacity; examples include GOPC PPP and Glaucoma PPP with private clinics delivering services at subsidized rates.",
+          "confidence": 86.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "medium",
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-031",
+          "source_stakeholder": "Food and Health Bureau",
+          "target_stakeholder": "eHRSS / eHealth",
+          "relationship_type": "Produced_Capital",
+          "relationship_subtype": "Technology_IP",
+          "direction": "Unidirectional_Source_to_Target",
+          "strength": 80.0,
+          "justification": "Text: eHRSS 'was formally launched in March 2016 by the Food and Health Bureau' as a territory-wide database for sharing records.",
+          "confidence": 70.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "low",
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-032",
+          "source_stakeholder": "eHRSS / eHealth",
+          "target_stakeholder": "Hospital Authority",
+          "relationship_type": "Produced_Capital",
+          "relationship_subtype": "Infrastructure_Access",
+          "direction": "Bidirectional",
+          "strength": 75.0,
+          "justification": "Text: eHRSS enables records to be 'easily accessed by ... service providers across the public and private sectors'; Hospital Authority is a key public provider using/accessing shared records for continuity and avoiding duplication.",
+          "confidence": 75.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "medium",
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-033",
+          "source_stakeholder": "eHRSS / eHealth",
+          "target_stakeholder": "Private healthcare providers",
+          "relationship_type": "Produced_Capital",
+          "relationship_subtype": "Infrastructure_Access",
+          "direction": "Bidirectional",
+          "strength": 70.0,
+          "justification": "Text: eHRSS records are accessible 'across the public and private sectors' on consent, implying private provider participation in viewing/sharing records.",
+          "confidence": 72.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "medium",
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-034",
+          "source_stakeholder": "Social Welfare Department",
+          "target_stakeholder": "Elderly centres (DECC/NEC/S/E)",
+          "relationship_type": "Produced_Capital",
+          "relationship_subtype": "Product_Service",
+          "direction": "Unidirectional_Source_to_Target",
+          "strength": 85.0,
+          "justification": "Text: 'the Social Welfare Department provides three types of elderly centre services' and allocates based on proximity; SWD funds/organizes these service modes.",
+          "confidence": 88.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "low",
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-035",
+          "source_stakeholder": "Social Welfare Department",
+          "target_stakeholder": "Private RCHE operators",
+          "relationship_type": "Governance_Rules",
+          "relationship_subtype": "Regulation_Compliance",
+          "direction": "Unidirectional_Source_to_Target",
+          "strength": 80.0,
+          "justification": "SWD regulates/partners via licensing and schemes; text notes Funding and Service Agreements for contracted/EBPS RCHEs and compliance with Residential Care Homes (Elderly Persons) Ordinance for others.",
+          "confidence": 85.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "medium",
+          "conflict_potential": "high",
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-036",
+          "source_stakeholder": "Department of Health",
+          "target_stakeholder": "Private healthcare providers",
+          "relationship_type": "Governance_Rules",
+          "relationship_subtype": "Regulation_Compliance",
+          "direction": "Unidirectional_Source_to_Target",
+          "strength": 70.0,
+          "justification": "EHCV scheme administered by DH enables use in private sector; also EVSS uses participating private clinics, implying DH sets scheme rules for private providers' participation.",
+          "confidence": 78.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "medium",
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ]
+        },
+        {
+          "id": "RL-037",
+          "source_stakeholder": "Community Care Fund (CCF)",
+          "target_stakeholder": "Social Welfare Department",
+          "relationship_type": "Financial_Capital",
+          "relationship_subtype": "Redistribution",
+          "direction": "Unidirectional_Source_to_Target",
+          "strength": 70.0,
+          "justification": "Text: SWD pilot 'Living Allowance...' provides $2,400/month to eligible carers 'via the Community Care Fund (CCF)'.",
+          "confidence": 85.0,
+          "relationship_formality": "formal",
+          "collaboration_potential": "high",
+          "conflict_potential": "low",
+          "sources": [
+            {
+              "knowledge_id": "34d14583-edd4-4f8b-8dc7-c6c5706ae5d1",
+              "name": "2022_Community-Support-and-Health-Services.pdf"
+            }
+          ]
+        }
+      ],
+      "themes": [
+        {
+          "id": "TH-001",
+          "theme_name": "Age-friendly governance and multi-level implementation (top-down and bottom-up)",
+          "description": "The system depends on a mix of district-based bottom-up initiatives led by HKCSS and NGOs, and top-down government commitment, regulation, and cross-bureau coordination. Includes the need for clear government leadership roles and achievable target-setting.",
+          "prevalence": "high",
+          "related_stakeholders": [
+            "District Councils",
+            "HKCSS",
+            "HKSAR Government"
+          ],
+          "related_pain_points": [
+            {
+              "id": "PP-028",
+              "label": "Lack of measurable outcomes and data transparency for age-friendly initiatives"
+            },
+            {
+              "id": "PP-008",
+              "label": "Weak policy framework for implementing 'ageing in place'"
+            }
+          ],
+          "potential_challenges": [
+            "Create governance mechanisms that enable older adults’ participation without tokenism",
+            "Translate WHO checklist into actionable local ordinances and implementation plans",
+            "Define clear division of responsibilities between district and territory-wide policy change"
+          ]
+        },
+        {
+          "id": "TH-002",
+          "theme_name": "Built environment, mobility, and outdoor accessibility",
+          "description": "Outdoor spaces, pedestrian infrastructure, buildings, and transport design features affecting older adults’ mobility and safety (signage, crossings, covered walkways, seating, lifts, barrier-free vehicles and stops).",
+          "prevalence": "high",
+          "related_stakeholders": [
+            "District Councils",
+            "Franchised Bus Companies",
+            "Hong Kong Housing Authority",
+            "MTR Corporation",
+            "Older adults (50+ in HK)",
+            "Taxi Operators",
+            "HKSAR Government"
+          ],
+          "related_pain_points": [
+            {
+              "id": "PP-002",
+              "label": "Housing stock not age-friendly: lifts/accessibility deficits, maintenance burden, and affordability pressures"
+            },
+            {
+              "id": "PP-004",
+              "label": "Transport system not consistently age-friendly: lack of mandates, limited accessibility options, and worsening reliability/crowding"
+            },
+            {
+              "id": "PP-001",
+              "label": "Age-unfriendly outdoor spaces and pedestrian infrastructure"
+            }
+          ],
+          "potential_challenges": [
+            "Standardizing age-friendly design requirements across operators and redevelopment projects",
+            "Retrofitting old districts/buildings for barrier-free access",
+            "Reducing traffic risk and improving crossing design for slower walkers"
+          ]
+        },
+        {
+          "id": "TH-003",
+          "theme_name": "Housing and ageing in place",
+          "description": "Housing stock, maintenance, design, affordability, and options that enable older adults to remain safely in the community; includes policy gaps and the role of public housing bodies vs market-driven developers.",
+          "prevalence": "high",
+          "related_stakeholders": [
+            "HKSAR Government",
+            "Hong Kong Housing Authority",
+            "Hong Kong Housing Society",
+            "Older adults (50+ in HK)",
+            "Social Welfare Department"
+          ],
+          "related_pain_points": [
+            {
+              "id": "PP-006",
+              "label": "Insufficient and uneven community support for frail older adults and caregivers (ageing-in-place shortfalls)"
+            },
+            {
+              "id": "PP-002",
+              "label": "Housing stock not age-friendly: lifts/accessibility deficits, maintenance burden, and affordability pressures"
+            },
+            {
+              "id": "PP-008",
+              "label": "Weak policy framework for implementing 'ageing in place'"
+            },
+            {
+              "id": "PP-007",
+              "label": "Long waits for subsidized residential care and inadequate caregiver support"
+            },
+            {
+              "id": "PP-003",
+              "label": "Lack of tailor-made age-friendly housing due to market orientation"
+            }
+          ],
+          "potential_challenges": [
+            "Financing and eligibility reforms for owner-occupier seniors and home modifications",
+            "Creating housing options for diverse socio-economic groups",
+            "Expanding community care supports to match ageing-in-place rhetoric"
+          ]
+        },
+        {
+          "id": "TH-004",
+          "theme_name": "Social participation and community networks",
+          "description": "Opportunities and barriers for older adults to participate socially and civically, including center access, neighborhood relations, volunteering scope, and supports such as transport allowances and information flow.",
+          "prevalence": "medium",
+          "related_stakeholders": [
+            "District Councils",
+            "Elderly centres (DECC/NEC/S/E)",
+            "Non-governmental organizations (NGOs)",
+            "Older adults (50+ in HK)"
+          ],
+          "related_pain_points": [
+            {
+              "id": "PP-012",
+              "label": "Limited volunteer options and lack of incentives for older volunteers"
+            },
+            {
+              "id": "PP-009",
+              "label": "Barriers to social participation: information, distance, and affordability"
+            }
+          ],
+          "potential_challenges": [
+            "Reaching socially disengaged and hidden elderly",
+            "Designing activity and volunteer options for different age cohorts and abilities",
+            "Strengthening intergenerational neighborhood networks"
+          ]
+        },
+        {
+          "id": "TH-005",
+          "theme_name": "Respect, ageism, and intergenerational inclusion",
+          "description": "Cultural and social norms around respect for older adults, stereotyping, exclusion from public/commercial spaces, and the need for civic/moral education and media reframing.",
+          "prevalence": "high",
+          "related_stakeholders": [
+            "HKSAR Government",
+            "Older adults (50+ in HK)"
+          ],
+          "related_pain_points": [
+            {
+              "id": "PP-010",
+              "label": "Ageism and declining respect/social inclusion"
+            }
+          ],
+          "potential_challenges": [
+            "Improving reporting and prevention of elder abuse",
+            "Reducing age discrimination in public and commercial settings",
+            "Integrating respect/filial piety concepts into curricula without stigma"
+          ]
+        },
+        {
+          "id": "TH-006",
+          "theme_name": "Economic security, retirement protection, and affordability of participation",
+          "description": "Financial constraints affecting transport, housing maintenance, and participation, plus structural concerns about MPF adequacy and the call for broader retirement protection mechanisms.",
+          "prevalence": "medium",
+          "related_stakeholders": [
+            "HKSAR Government",
+            "MTR Corporation",
+            "Older adults (50+ in HK)"
+          ],
+          "related_pain_points": [
+            {
+              "id": "PP-011",
+              "label": "Inadequate retirement protection (MPF insufficient)"
+            },
+            {
+              "id": "PP-002",
+              "label": "Housing stock not age-friendly: lifts/accessibility deficits, maintenance burden, and affordability pressures"
+            },
+            {
+              "id": "PP-005",
+              "label": "Transport affordability gaps for ages 60–64"
+            }
+          ],
+          "potential_challenges": [
+            "Reforming retirement protection beyond MPF for vulnerable older adults",
+            "Designing equitable concessions and subsidies (including 60–64 cohort)",
+            "Balancing resource allocation across age groups in policy priorities"
+          ]
+        },
+        {
+          "id": "TH-007",
+          "theme_name": "Health and community support service integration",
+          "description": "Accessibility and coordination of health services and community support, including fragmented responsibilities, repeat exams, non-seamless care pathways, quotas and booking systems, caregiver support, and data/records integration.",
+          "prevalence": "high",
+          "related_stakeholders": [
+            "Department of Health",
+            "Family Caregivers",
+            "Food and Health Bureau",
+            "Hospital Authority",
+            "Labour and Welfare Bureau",
+            "Older adults (50+ in HK)",
+            "Social Welfare Department"
+          ],
+          "related_pain_points": [
+            {
+              "id": "PP-007",
+              "label": "Long waits for subsidized residential care and inadequate caregiver support"
+            },
+            {
+              "id": "PP-016",
+              "label": "Health service access friction and user-unfriendly appointment systems"
+            },
+            {
+              "id": "PP-015",
+              "label": "Fragmented health–social care integration and poor continuity across sectors"
+            }
+          ],
+          "potential_challenges": [
+            "Reducing caregiver strain through better respite, information and pathways",
+            "Implementing interoperable electronic medical records and public–private interfaces",
+            "Aligning district service quotas with demographic change"
+          ]
+        },
+        {
+          "id": "TH-008",
+          "theme_name": "Communication, information access, and the digital divide",
+          "description": "Barriers to accessing information due to low literacy, limited ICT use, inaccessible modes for blind/illiterate/hidden elderly, and insufficient tailored broadcast channels; includes the role of NGOs and media in accessible dissemination.",
+          "prevalence": "high",
+          "related_stakeholders": [
+            "District Councils",
+            "Non-governmental organizations (NGOs)",
+            "Older adults (50+ in HK)"
+          ],
+          "related_pain_points": [
+            {
+              "id": "PP-014",
+              "label": "Digital and communication exclusion of older adults (including frail users)"
+            }
+          ],
+          "potential_challenges": [
+            "Creating multi-modal (audio-visual, hotline-supported) service information",
+            "Building district broadcast channels and ambassador networks",
+            "Avoiding stigmatizing portrayals while improving clarity and usability"
+          ]
+        },
+        {
+          "id": "TH-009",
+          "theme_name": "Age-friendly city policy adoption and cross-sector implementation",
+          "description": "Adoption of WHO Age-friendly City concepts into Hong Kong policy and a territory-wide initiative involving lobbying policy makers, engaging businesses, and older adults through district networks.",
+          "prevalence": "high",
+          "related_stakeholders": [
+            "Chief Executive (Hong Kong)",
+            "HKSAR Government",
+            "Hong Kong Jockey Club Charities Trust",
+            "HKCSS",
+            "Older adults (50+ in HK)",
+            "WHO",
+            "District Councils"
+          ],
+          "related_pain_points": [],
+          "potential_challenges": [
+            "Embedding age-friendly design into housing/transport/urban planning decisions",
+            "Sustaining multi-sector coordination beyond philanthropic project cycles"
+          ]
+        },
+        {
+          "id": "TH-010",
+          "theme_name": "Composite indicators for ageing wellbeing (HKEQOL) and benchmarking",
+          "description": "Development and annual compilation of the Hong Kong Elder Quality of Life Index across income security, health status, capability, and enabling environment using government data and surveys to monitor policy impact and shocks.",
+          "prevalence": "high",
+          "related_stakeholders": [
+            "Census and Statistics Department",
+            "HKSAR Government"
+          ],
+          "related_pain_points": [],
+          "potential_challenges": [
+            "Maintaining data availability for locally relevant indicators",
+            "Ensuring representativeness of subjective surveys across socioeconomic groups"
+          ]
+        },
+        {
+          "id": "TH-011",
+          "theme_name": "System strain from rapid population ageing and rising frailty",
+          "description": "Rapid demographic ageing and trends of increasing dependency/frailty create growing health and social care burdens, requiring redesign of systems to meet frail older people's needs.",
+          "prevalence": "high",
+          "related_stakeholders": [
+            "Hospital Authority",
+            "HKSAR Government",
+            "Older adults (50+ in HK)"
+          ],
+          "related_pain_points": [
+            {
+              "id": "PP-018",
+              "label": "Hospital-centric system and inadequate redesign to meet rising frailty burden"
+            },
+            {
+              "id": "PP-017",
+              "label": "Hospital capacity strain: inpatient crowding and long waits for public services"
+            }
+          ],
+          "potential_challenges": [
+            "Expanding capacity while improving accessibility and continuity of care",
+            "Scaling integrated health-social care models for frailty"
+          ]
+        },
+        {
+          "id": "TH-012",
+          "theme_name": "Societal unrest and cohesion breakdown impacting wellbeing",
+          "description": "Political conflicts and social unrest (including violence and policing responses) reduce societal cohesion, increase mental health burdens, and can override gains from ageing policies.",
+          "prevalence": "high",
+          "related_stakeholders": [
+            "HKSAR Government",
+            "Older adults (50+ in HK)"
+          ],
+          "related_pain_points": [
+            {
+              "id": "PP-026",
+              "label": "Mental health burden from social unrest and pandemic"
+            }
+          ],
+          "potential_challenges": [
+            "Protecting vulnerable groups’ wellbeing during unrest",
+            "Restoring social trust and reducing intergenerational conflict"
+          ]
+        },
+        {
+          "id": "TH-013",
+          "theme_name": "Pandemic shocks and the need for targeted older-adult policies",
+          "description": "COVID-19 both directly and via containment measures impacted employment, social participation, and frailty; highlights need for specific policies targeting older people during crises to maintain wellbeing.",
+          "prevalence": "high",
+          "related_stakeholders": [
+            "HKSAR Government",
+            "HKCSS",
+            "Hospital Authority",
+            "Non-governmental organizations (NGOs)",
+            "Older adults (50+ in HK)"
+          ],
+          "related_pain_points": [
+            {
+              "id": "PP-027",
+              "label": "Employment loss and widening health inequalities during COVID-19"
+            },
+            {
+              "id": "PP-025",
+              "label": "Pandemic containment measures driving isolation and frailty"
+            }
+          ],
+          "potential_challenges": [
+            "Maintaining community services safely during outbreaks",
+            "Balancing infection control with social/functional health needs"
+          ]
+        },
+        {
+          "id": "TH-014",
+          "theme_name": "Digital inclusion and ICT as a resilience tool",
+          "description": "ICT use increased during the pandemic for remote socializing and accessing services, but significant segments of frail older adults remain excluded due to capability and affordability barriers.",
+          "prevalence": "medium",
+          "related_stakeholders": [
+            "HKSAR Government",
+            "Non-governmental organizations (NGOs)",
+            "Older adults (50+ in HK)"
+          ],
+          "related_pain_points": [
+            {
+              "id": "PP-014",
+              "label": "Digital and communication exclusion of older adults (including frail users)"
+            }
+          ],
+          "potential_challenges": [
+            "Subsidizing connectivity and training for disadvantaged older adults",
+            "Designing accessible devices/services for cognitive/physical limitations"
+          ]
+        },
+        {
+          "id": "TH-015",
+          "theme_name": "Ageing in place and long-term care system design",
+          "description": "Policy principle of ageing at home with institutional care as back-up; design and balance of community care, residential care, respite, discharge support, and eligibility/quotas affecting feasibility of ageing in place.",
+          "prevalence": "high",
+          "related_stakeholders": [
+            "Community care service providers",
+            "Elderly centres (DECC/NEC/S/E)",
+            "Family Caregivers",
+            "HKSAR Government",
+            "Older adults (50+ in HK)",
+            "Social Welfare Department"
+          ],
+          "related_pain_points": [
+            {
+              "id": "PP-020",
+              "label": "Imbalanced funding: residential care prioritized over community care"
+            },
+            {
+              "id": "PP-019",
+              "label": "Limited discharge support and transitional care"
+            },
+            {
+              "id": "PP-006",
+              "label": "Insufficient and uneven community support for frail older adults and caregivers (ageing-in-place shortfalls)"
+            },
+            {
+              "id": "PP-007",
+              "label": "Long waits for subsidized residential care and inadequate caregiver support"
+            }
+          ],
+          "potential_challenges": [
+            "Improving access for remote/rural areas",
+            "Rebalancing LTC funding toward community care",
+            "Expanding outreach/escort/day care/end-of-life service quotas"
+          ]
+        },
+        {
+          "id": "TH-016",
+          "theme_name": "Public healthcare overload and access barriers",
+          "description": "Overwhelming demand on public hospitals, A&E and SOPCs driven by ageing and weak primary care; long waits and service pressure reduce quality and timely access.",
+          "prevalence": "high",
+          "related_stakeholders": [
+            "Food and Health Bureau",
+            "Hospital Authority",
+            "Older adults (50+ in HK)"
+          ],
+          "related_pain_points": [
+            {
+              "id": "PP-018",
+              "label": "Hospital-centric system and inadequate redesign to meet rising frailty burden"
+            },
+            {
+              "id": "PP-017",
+              "label": "Hospital capacity strain: inpatient crowding and long waits for public services"
+            }
+          ],
+          "potential_challenges": [
+            "Redistributing demand via primary care and PPPs",
+            "Reducing avoidable A&E use for primary-care category cases",
+            "Shortening SOPC waiting times for chronic conditions"
+          ]
+        },
+        {
+          "id": "TH-017",
+          "theme_name": "Primary care development and preventive health",
+          "description": "Shift from disease-based curative hospital model to person-centred integrated care with stronger primary care, screening, chronic disease management, and geriatric syndrome prevention.",
+          "prevalence": "high",
+          "related_stakeholders": [
+            "Department of Health",
+            "Food and Health Bureau",
+            "Hospital Authority",
+            "WHO"
+          ],
+          "related_pain_points": [
+            {
+              "id": "PP-018",
+              "label": "Hospital-centric system and inadequate redesign to meet rising frailty burden"
+            },
+            {
+              "id": "PP-017",
+              "label": "Hospital capacity strain: inpatient crowding and long waits for public services"
+            }
+          ],
+          "potential_challenges": [
+            "Embedding functional ability/intrinsic capacity assessments",
+            "Scaling DHC/CHC models and community screening",
+            "Improving population-wide screening affordability"
+          ]
+        },
+        {
+          "id": "TH-018",
+          "theme_name": "Integration and continuity across medical-social sectors",
+          "description": "Need for cohesive linkage across public/private, primary/hospital, medical/social services to reduce duplication, improve discharge planning, and strengthen continuity (e.g., eHRSS, coordinated referrals, one-stop care).",
+          "prevalence": "high",
+          "related_stakeholders": [
+            "eHRSS / eHealth",
+            "Hospital Authority",
+            "Non-governmental organizations (NGOs)",
+            "Older adults (50+ in HK)",
+            "Private healthcare providers",
+            "Social Welfare Department"
+          ],
+          "related_pain_points": [
+            {
+              "id": "PP-015",
+              "label": "Fragmented health–social care integration and poor continuity across sectors"
+            },
+            {
+              "id": "PP-019",
+              "label": "Limited discharge support and transitional care"
+            }
+          ],
+          "potential_challenges": [
+            "Strengthening medical-social coordination for rehab and post-discharge care",
+            "Interoperability and data sharing on a need-to-know basis",
+            "Reducing serial referrals for multimorbidity via multidisciplinary teams"
+          ]
+        },
+        {
+          "id": "TH-019",
+          "theme_name": "Affordability, financing tools, and public-private balance",
+          "description": "Dual-track system tensions: high subsidization drives public overuse while private costs and transparency issues limit uptake; vouchers (EHCV, care service vouchers), VHIS, and PPPs aim to shift demand and expand choices.",
+          "prevalence": "medium",
+          "related_stakeholders": [
+            "Department of Health",
+            "Food and Health Bureau",
+            "Hospital Authority",
+            "Older adults (50+ in HK)",
+            "Private healthcare providers"
+          ],
+          "related_pain_points": [
+            {
+              "id": "PP-022",
+              "label": "High and opaque private-sector costs and voucher limitations"
+            },
+            {
+              "id": "PP-017",
+              "label": "Hospital capacity strain: inpatient crowding and long waits for public services"
+            }
+          ],
+          "potential_challenges": [
+            "Strengthening regulated insurance and PPP uptake without worsening inequity",
+            "Ensuring equitable geographic distribution of enrolled providers",
+            "Improving voucher adequacy and reducing perverse price responses"
+          ]
+        },
+        {
+          "id": "TH-020",
+          "theme_name": "Quality regulation for residential care and workforce constraints",
+          "description": "Shortage of subsidized places and manpower issues push reliance on private RCHEs with variable quality; need to update standards, accreditation, and strengthen staffing and training supports.",
+          "prevalence": "medium",
+          "related_stakeholders": [
+            "Family Caregivers",
+            "HKSAR Government",
+            "Older adults (50+ in HK)",
+            "Private RCHE operators",
+            "Social Welfare Department"
+          ],
+          "related_pain_points": [
+            {
+              "id": "PP-021",
+              "label": "Weak quality assurance in private residential care homes"
+            },
+            {
+              "id": "PP-007",
+              "label": "Long waits for subsidized residential care and inadequate caregiver support"
+            }
+          ],
+          "potential_challenges": [
+            "Improving oversight while maintaining capacity",
+            "Addressing low pay/long hours and turnover in elderly-care workforce",
+            "Implementing compulsory accreditation and updated statutory standards"
+          ]
+        },
+        {
+          "id": "TH-021",
+          "theme_name": "End-of-life care, dignity, and advance care planning",
+          "description": "Insufficient palliative/end-of-life capacity and lack of holistic framework; need for community-based models, advance care planning guidance, and legal clarity for advance directives.",
+          "prevalence": "medium",
+          "related_stakeholders": [
+            "Family Caregivers",
+            "Food and Health Bureau",
+            "Hospital Authority",
+            "HKSAR Government",
+            "Legislative Council (LegCo)",
+            "Non-governmental organizations (NGOs)",
+            "Older adults (50+ in HK)"
+          ],
+          "related_pain_points": [
+            {
+              "id": "PP-023",
+              "label": "Inadequate end-of-life care capacity and lack of holistic framework"
+            },
+            {
+              "id": "PP-024",
+              "label": "Legal uncertainty around advance directives"
+            }
+          ],
+          "potential_challenges": [
+            "Legal framework and public consultation for advance directives",
+            "Expanding community/home palliative care and suitable facilities",
+            "Training multidisciplinary staff for end-of-life conversations"
+          ]
+        },
+        {
+          "id": "TH-022",
+          "theme_name": "Age-friendly digital access and gerontechnology",
+          "description": "Use of eHealth records/apps, telecare/telemedicine, and assistive technologies to support self-management, reduce service pressure, and enable independence, while ensuring usability for older adults.",
+          "prevalence": "medium",
+          "related_stakeholders": [
+            "eHRSS / eHealth",
+            "Hospital Authority",
+            "Older adults (50+ in HK)",
+            "Social Welfare Department"
+          ],
+          "related_pain_points": [
+            {
+              "id": "PP-015",
+              "label": "Fragmented health–social care integration and poor continuity across sectors"
+            },
+            {
+              "id": "PP-016",
+              "label": "Health service access friction and user-unfriendly appointment systems"
+            }
+          ],
+          "potential_challenges": [
+            "Clinical safety, liability, and appropriate triage for telemedicine",
+            "Designing user-friendly booking and digital interfaces for cognitive/sensory decline",
+            "Scaling technology adoption with training and support"
+          ]
+        }
+      ],
+      "theme_clusters": [
+        {
+          "id": null,
+          "cluster_name": "Age-friendly city delivery system",
+          "themes": [
+            "Age-friendly governance and multi-level implementation (top-down and bottom-up)",
+            "Communication, information access, and the digital divide"
+          ],
+          "cluster_description": "Effective age-friendly transformation requires governance arrangements, shared measurement and transparent data, and inclusive communication channels so stakeholders (public, NGOs, districts, older adults) can coordinate and evaluate progress."
+        },
+        {
+          "id": null,
+          "cluster_name": "Enabling ageing in place",
+          "themes": [
+            "Housing and ageing in place",
+            "Economic security, retirement protection, and affordability of participation",
+            "Health and community support service integration",
+            "Built environment, mobility, and outdoor accessibility"
+          ],
+          "cluster_description": "Ageing in place depends on accessible homes and neighborhoods, integrated health and support services, and affordability/retirement protection that enables older adults to remain active and safe in the community."
+        },
+        {
+          "id": null,
+          "cluster_name": "Policy, measurement, and implementation for ageing well",
+          "themes": [
+            "Composite indicators for ageing wellbeing (HKEQOL) and benchmarking",
+            "Age-friendly city policy adoption and cross-sector implementation",
+            "System strain from rapid population ageing and rising frailty"
+          ],
+          "cluster_description": "These themes connect governance frameworks and philanthropic support with measurement tools (HKEQOL) and the practical system redesign needed to improve ageing outcomes."
+        },
+        {
+          "id": null,
+          "cluster_name": "Societal shocks overriding wellbeing gains",
+          "themes": [
+            "Pandemic shocks and the need for targeted older-adult policies",
+            "Digital inclusion and ICT as a resilience tool",
+            "Societal unrest and cohesion breakdown impacting wellbeing"
+          ],
+          "cluster_description": "Unrest and pandemics act as external shocks that degrade wellbeing; ICT can partially mitigate impacts but can also exacerbate inequities for frail older adults."
+        },
+        {
+          "id": null,
+          "cluster_name": "Service delivery reform for healthy ageing",
+          "themes": [
+            "Integration and continuity across medical-social sectors",
+            "Ageing in place and long-term care system design",
+            "Primary care development and preventive health",
+            "Public healthcare overload and access barriers"
+          ],
+          "cluster_description": "These themes jointly describe system redesign from hospital-centric episodic care to integrated community-based models that enable ageing in place, reduce overload, and improve continuity."
+        },
+        {
+          "id": null,
+          "cluster_name": "Enablers: financing, regulation, and technology",
+          "themes": [
+            "End-of-life care, dignity, and advance care planning",
+            "Affordability, financing tools, and public-private balance",
+            "Age-friendly digital access and gerontechnology",
+            "Quality regulation for residential care and workforce constraints"
+          ],
+          "cluster_description": "These themes cover the policy instruments and enablers—funding mechanisms, regulatory standards, digital/gerontechnology tools, and end-of-life governance—needed to operationalize age-friendly reforms."
+        }
+      ],
+      "summary": {
+        "total_documents": 3,
+        "total_stakeholders": 29,
+        "total_pain_points": 28,
+        "total_relationships": 37,
+        "total_themes": 22,
+        "total_theme_clusters": 6
+      }
+    },
+    "causality_analysis": {
+      "domain_context": {
+        "domain_name": "Age-friendly living, health, and long-term care system (Hong Kong)",
+        "scope": "Causal network linking built environment, transport, financial security, social participation, and health/social care system pain points affecting older adults and caregivers."
+      },
+      "causal_relationships": [
+        {
+          "id": "CR-001",
+          "cause_entity_id": "PP-008",
+          "effect_entity_id": "PP-006",
+          "causality_type": "Enabling",
+          "strength": 78.0,
+          "mechanism": "Lack of an operational framework weakens coordination, funding priorities, and service design, resulting in insufficient/uneven community support capacity.",
+          "evidence": "PP-008 cites lack of policy detail for ageing-in-place; PP-006 describes insufficient capacity/coverage and weak promotion/eligibility gaps.",
+          "confidence": 82.0,
+          "time_delay": "Medium-term"
+        },
+        {
+          "id": "CR-002",
+          "cause_entity_id": "PP-020",
+          "effect_entity_id": "PP-006",
+          "causality_type": "Direct",
+          "strength": 86.0,
+          "mechanism": "Funding and place allocation skewed to residential care leaves community care under-resourced, limiting quotas, coverage, and quality of community supports.",
+          "evidence": "PP-020: expenditure skew undermines ageing in place; PP-006: inadequate quotas/coverage and capacity shortfalls.",
+          "confidence": 88.0,
+          "time_delay": "Medium-term"
+        },
+        {
+          "id": "CR-003",
+          "cause_entity_id": "PP-006",
+          "effect_entity_id": "PP-007",
+          "causality_type": "Contributing",
+          "strength": 72.0,
+          "mechanism": "When community supports are insufficient, frail older adults deteriorate at home and caregivers cannot sustain care, increasing demand/pressure for residential placement and highlighting wait-time burdens.",
+          "evidence": "PP-006 notes increased risk of avoidable institutionalization and caregiver burden; PP-007 highlights high demand and long waits for subsidized residential care.",
+          "confidence": 78.0,
+          "time_delay": "Medium-term"
+        },
+        {
+          "id": "CR-004",
+          "cause_entity_id": "PP-018",
+          "effect_entity_id": "PP-017",
+          "causality_type": "Direct",
+          "strength": 90.0,
+          "mechanism": "Hospital-centric design and underdeveloped primary/lower-tier chronic care increases avoidable admissions and outpatient load, producing inpatient crowding and long waits.",
+          "evidence": "PP-018 explicitly states reliance on acute hospitals contributes to escalating demand pressures; PP-017 describes overwhelmed public hospital services and long waits.",
+          "confidence": 92.0,
+          "time_delay": "Medium-term"
+        },
+        {
+          "id": "CR-005",
+          "cause_entity_id": "PP-015",
+          "effect_entity_id": "PP-017",
+          "causality_type": "Contributing",
+          "strength": 70.0,
+          "mechanism": "Poor cross-sector coordination causes duplicated examinations and inefficient referral loops, wasting capacity and adding avoidable load that worsens waiting times and crowding.",
+          "evidence": "PP-015 mentions duplicated examinations and wasted resources; PP-017 reports services overwhelmed with long waits.",
+          "confidence": 80.0,
+          "time_delay": "Short-term"
+        },
+        {
+          "id": "CR-006",
+          "cause_entity_id": "PP-016",
+          "effect_entity_id": "PP-017",
+          "causality_type": "Contributing",
+          "strength": 62.0,
+          "mechanism": "Access friction and user-unfriendly booking lead to missed/delayed primary/preventive care, allowing conditions to worsen and increasing downstream demand on crowded hospital services.",
+          "evidence": "PP-016: reduced timely access to primary/preventive care; PP-017: long waits and crowding from demand exceeding supply.",
+          "confidence": 72.0,
+          "time_delay": "Medium-term"
+        },
+        {
+          "id": "CR-007",
+          "cause_entity_id": "PP-019",
+          "effect_entity_id": "PP-006",
+          "causality_type": "Contributing",
+          "strength": 68.0,
+          "mechanism": "Limited transitional/discharge support increases need for home help and community follow-up, exacerbating unmet demand and perceived insufficiency of community support services.",
+          "evidence": "PP-019: many discharged patients lack home care support; PP-006: community support capacity insufficient relative to frailty/ADL needs.",
+          "confidence": 76.0,
+          "time_delay": "Short-term"
+        },
+        {
+          "id": "CR-008",
+          "cause_entity_id": "PP-019",
+          "effect_entity_id": "PP-007",
+          "causality_type": "Contributing",
+          "strength": 65.0,
+          "mechanism": "When discharge support and day care access are limited, families seek residential placements (including as immediate alternatives), increasing demand pressures that relate to long waits for subsidized places.",
+          "evidence": "PP-019: long waits for day care lead to use of private residential homes as alternatives; PP-007: high demand contributes to prolonged waits.",
+          "confidence": 73.0,
+          "time_delay": "Short-term"
+        },
+        {
+          "id": "CR-009",
+          "cause_entity_id": "PP-007",
+          "effect_entity_id": "PP-021",
+          "causality_type": "Enabling",
+          "strength": 74.0,
+          "mechanism": "Long waits for subsidized residential care push some older adults toward private residential care options, increasing exposure to variable quality where assurance is weak.",
+          "evidence": "PP-007: delayed access to needed residential care; PP-021: private RCHE quality varies and standards are outdated/low accreditation.",
+          "confidence": 79.0,
+          "time_delay": "Short-term"
+        },
+        {
+          "id": "CR-010",
+          "cause_entity_id": "PP-018",
+          "effect_entity_id": "PP-023",
+          "causality_type": "Contributing",
+          "strength": 66.0,
+          "mechanism": "A system oriented to acute hospitals rather than holistic frailty/end-of-life pathways increases likelihood of dying in acute wards and exacerbates shortages in dedicated palliative settings.",
+          "evidence": "PP-018 describes reliance on acute hospitals; PP-023 states many die in acute wards and palliative capacity/framework is inadequate.",
+          "confidence": 72.0,
+          "time_delay": "Long-term"
+        },
+        {
+          "id": "CR-011",
+          "cause_entity_id": "PP-017",
+          "effect_entity_id": "PP-023",
+          "causality_type": "Amplifying",
+          "strength": 71.0,
+          "mechanism": "Inpatient crowding and long waits constrain privacy, time, and appropriate bed allocation, worsening end-of-life experience in acute settings when palliative capacity is insufficient.",
+          "evidence": "PP-017: inpatient crowding; PP-023: lack of privacy/dignity and inadequate palliative single rooms/units.",
+          "confidence": 74.0,
+          "time_delay": "Immediate"
+        },
+        {
+          "id": "CR-012",
+          "cause_entity_id": "PP-024",
+          "effect_entity_id": "PP-023",
+          "causality_type": "Contributing",
+          "strength": 58.0,
+          "mechanism": "Legal ambiguity around advance directives increases conflict and operational difficulty, making it harder to deliver preference-concordant, holistic end-of-life care at scale.",
+          "evidence": "PP-024: practical difficulties/conflicts due to lack of statute; PP-023: lack of holistic framework and dignity-focused capacity.",
+          "confidence": 66.0,
+          "time_delay": "Medium-term"
+        },
+        {
+          "id": "CR-013",
+          "cause_entity_id": "PP-014",
+          "effect_entity_id": "PP-016",
+          "causality_type": "Direct",
+          "strength": 84.0,
+          "mechanism": "Digital/automated communication exclusion makes appointment/booking systems harder to use, increasing confusion, failures, and reduced ability to secure or manage appointments.",
+          "evidence": "PP-014: excluded by digital-first/automated channels; PP-016: appointment systems not user-oriented for sensory/cognitive difficulties and technical failures reduce access.",
+          "confidence": 87.0,
+          "time_delay": "Immediate"
+        },
+        {
+          "id": "CR-014",
+          "cause_entity_id": "PP-014",
+          "effect_entity_id": "PP-009",
+          "causality_type": "Direct",
+          "strength": 80.0,
+          "mechanism": "Online-only service and activity information plus low digital skills/capacity creates information gaps, reducing awareness and participation in social activities/support.",
+          "evidence": "PP-014: service info often online-only causing reduced uptake; PP-009: disengaged older adults lack information on activities/help.",
+          "confidence": 84.0,
+          "time_delay": "Short-term"
+        },
+        {
+          "id": "CR-015",
+          "cause_entity_id": "PP-025",
+          "effect_entity_id": "PP-009",
+          "causality_type": "Direct",
+          "strength": 82.0,
+          "mechanism": "Centre closures and gathering/exercise restrictions directly reduce opportunities to attend activities and maintain social ties, increasing participation barriers.",
+          "evidence": "PP-025: closures/restrictions contributed to isolation and reduced participation; PP-009: barriers to participation include distance and affordability and lack of engagement.",
+          "confidence": 80.0,
+          "time_delay": "Immediate"
+        },
+        {
+          "id": "CR-016",
+          "cause_entity_id": "PP-025",
+          "effect_entity_id": "PP-026",
+          "causality_type": "Contributing",
+          "strength": 74.0,
+          "mechanism": "Isolation and disruption from pandemic containment measures increase loneliness and stress, contributing to declines in mental health and life satisfaction.",
+          "evidence": "PP-025: isolation/loneliness during restrictions; PP-026: pandemic coincided with marked drops in mental health and life satisfaction.",
+          "confidence": 81.0,
+          "time_delay": "Short-term"
+        },
+        {
+          "id": "CR-017",
+          "cause_entity_id": "PP-025",
+          "effect_entity_id": "PP-027",
+          "causality_type": "Direct",
+          "strength": 76.0,
+          "mechanism": "Containment measures disrupt economic activity and employment, contributing to employment loss and widening inequalities experienced during COVID-19.",
+          "evidence": "PP-027 explicitly states pandemic containment led to employment loss and aggravated inequalities; PP-025 defines the containment measures context.",
+          "confidence": 83.0,
+          "time_delay": "Short-term"
+        },
+        {
+          "id": "CR-018",
+          "cause_entity_id": "PP-027",
+          "effect_entity_id": "PP-011",
+          "causality_type": "Amplifying",
+          "strength": 60.0,
+          "mechanism": "Employment loss reduces income and savings accumulation, worsening inadequacy of retirement protection and increasing financial insecurity in later life.",
+          "evidence": "PP-027: employment loss reduces income security; PP-011: many older adults have little income and MPF is not enough.",
+          "confidence": 68.0,
+          "time_delay": "Medium-term"
+        },
+        {
+          "id": "CR-019",
+          "cause_entity_id": "PP-013",
+          "effect_entity_id": "PP-011",
+          "causality_type": "Contributing",
+          "strength": 67.0,
+          "mechanism": "Age discrimination and limited employability supports reduce job opportunities and earnings, limiting retirement contributions/accumulation and worsening later-life financial protection gaps.",
+          "evidence": "PP-013: fewer job opportunities and insecure income; PP-011: insufficient retirement protection and low income constrains choices.",
+          "confidence": 73.0,
+          "time_delay": "Long-term"
+        },
+        {
+          "id": "CR-020",
+          "cause_entity_id": "PP-011",
+          "effect_entity_id": "PP-009",
+          "causality_type": "Direct",
+          "strength": 75.0,
+          "mechanism": "Insufficient retirement income forces older adults to avoid discretionary spending, making activity fees and related costs unaffordable and reducing participation.",
+          "evidence": "PP-011: avoiding activities to save money; PP-009: affordability affects ability to participate.",
+          "confidence": 86.0,
+          "time_delay": "Short-term"
+        },
+        {
+          "id": "CR-021",
+          "cause_entity_id": "PP-005",
+          "effect_entity_id": "PP-009",
+          "causality_type": "Direct",
+          "strength": 78.0,
+          "mechanism": "High transport costs and missing concessions reduce willingness/ability to travel to centres and activities, lowering social participation and increasing isolation risk.",
+          "evidence": "PP-005: costs reduce motivation to go out; PP-009: distance and affordability are participation barriers.",
+          "confidence": 85.0,
+          "time_delay": "Immediate"
+        },
+        {
+          "id": "CR-022",
+          "cause_entity_id": "PP-004",
+          "effect_entity_id": "PP-009",
+          "causality_type": "Contributing",
+          "strength": 70.0,
+          "mechanism": "Inconsistent accessibility, limited feeder services, and reliability/crowding issues make travel harder and less comfortable, reducing attendance at community activities and supports.",
+          "evidence": "PP-004: constraints on mobility and participation; PP-009: distance to centres is a barrier.",
+          "confidence": 80.0,
+          "time_delay": "Short-term"
+        },
+        {
+          "id": "CR-023",
+          "cause_entity_id": "PP-001",
+          "effect_entity_id": "PP-009",
+          "causality_type": "Contributing",
+          "strength": 66.0,
+          "mechanism": "Unsafe/unwalkable outdoor environments and crossing barriers reduce older adults’ ability to reach community venues, lowering participation especially for those relying on walking.",
+          "evidence": "PP-001: reduced walkability and safety constrains outdoor activity; PP-009: distance and disengagement reduce participation.",
+          "confidence": 74.0,
+          "time_delay": "Short-term"
+        },
+        {
+          "id": "CR-024",
+          "cause_entity_id": "PP-002",
+          "effect_entity_id": "PP-009",
+          "causality_type": "Contributing",
+          "strength": 64.0,
+          "mechanism": "Inaccessible/unsafe housing and hilly/no-lift buildings create mobility barriers and isolation risk, reducing ability to go out for social and community participation.",
+          "evidence": "PP-002: mobility barriers and isolation risk; PP-009: socially disengaged older adults face distance/affordability barriers.",
+          "confidence": 77.0,
+          "time_delay": "Medium-term"
+        },
+        {
+          "id": "CR-025",
+          "cause_entity_id": "PP-003",
+          "effect_entity_id": "PP-002",
+          "causality_type": "Amplifying",
+          "strength": 69.0,
+          "mechanism": "Shortage of tailor-made age-friendly housing reduces alternatives to deteriorating/inaccessible stock, increasing the prevalence and impact of age-unfriendly housing conditions.",
+          "evidence": "PP-003: shortage of tailor-made housing and lack of age-friendly facilities; PP-002: housing stock not age-friendly and deteriorating.",
+          "confidence": 81.0,
+          "time_delay": "Long-term"
+        },
+        {
+          "id": "CR-026",
+          "cause_entity_id": "PP-010",
+          "effect_entity_id": "PP-009",
+          "causality_type": "Contributing",
+          "strength": 61.0,
+          "mechanism": "Experiences of disrespect, exclusion (e.g., malls), and fear of abuse reduce perceived belonging and willingness to engage publicly, lowering social participation.",
+          "evidence": "PP-010: reduced participation and belonging; PP-009: disengagement and poor neighborhood relations.",
+          "confidence": 72.0,
+          "time_delay": "Medium-term"
+        },
+        {
+          "id": "CR-027",
+          "cause_entity_id": "PP-014",
+          "effect_entity_id": "PP-012",
+          "causality_type": "Contributing",
+          "strength": 63.0,
+          "mechanism": "Digital exclusion reduces awareness of volunteer opportunities and ability to navigate sign-ups/communications, worsening limited information and under-participation in volunteering.",
+          "evidence": "PP-014: information often online-only; PP-012: inadequate information and limited volunteer options.",
+          "confidence": 74.0,
+          "time_delay": "Short-term"
+        },
+        {
+          "id": "CR-028",
+          "cause_entity_id": "PP-011",
+          "effect_entity_id": "PP-012",
+          "causality_type": "Contributing",
+          "strength": 57.0,
+          "mechanism": "Financial insecurity makes unpaid/low-supported volunteering less feasible (e.g., transport costs), reinforcing low incentives and limiting volunteer participation.",
+          "evidence": "PP-011: older adults avoid activities to save money; PP-012: lack of financial incentives such as transport allowance.",
+          "confidence": 67.0,
+          "time_delay": "Short-term"
+        },
+        {
+          "id": "CR-029",
+          "cause_entity_id": "PP-028",
+          "effect_entity_id": "PP-008",
+          "causality_type": "Amplifying",
+          "strength": 65.0,
+          "mechanism": "Absent measurable outcomes and transparent data reduces accountability and learning, making it harder to specify/operationalize an ageing-in-place framework across sectors.",
+          "evidence": "PP-028: no measurable policy outcomes and difficulty allocating updated data; PP-008: lack of policy detail/framework for ageing in place.",
+          "confidence": 76.0,
+          "time_delay": "Medium-term"
+        },
+        {
+          "id": "CR-030",
+          "cause_entity_id": "PP-028",
+          "effect_entity_id": "PP-006",
+          "causality_type": "Contributing",
+          "strength": 58.0,
+          "mechanism": "Poor data transparency makes it harder to plan quotas, target remote gaps, and monitor coverage/quality, contributing to uneven and insufficient community support provision.",
+          "evidence": "PP-028: difficulties allocating updated data and evaluating objectives; PP-006: uneven coverage and insufficient quotas/quality.",
+          "confidence": 66.0,
+          "time_delay": "Medium-term"
+        },
+        {
+          "id": "CR-031",
+          "cause_entity_id": "PP-004",
+          "effect_entity_id": "PP-016",
+          "causality_type": "Contributing",
+          "strength": 55.0,
+          "mechanism": "Limited accessibility options and reliability issues in transport increase travel burden to separated service locations, worsening practical friction in accessing health services.",
+          "evidence": "PP-016: separated locations increase travel burden; PP-004: accessibility barriers and breakdowns constrain mobility.",
+          "confidence": 64.0,
+          "time_delay": "Short-term"
+        },
+        {
+          "id": "CR-032",
+          "cause_entity_id": "PP-005",
+          "effect_entity_id": "PP-016",
+          "causality_type": "Contributing",
+          "strength": 54.0,
+          "mechanism": "High transport costs (especially taxis for frail users) reduce ability to attend appointments or collect medicines across separated locations, increasing access friction.",
+          "evidence": "PP-005: transport costs burden, frail wheelchair users needing taxis; PP-016: separated service locations increase travel burden and reduce timely access.",
+          "confidence": 63.0,
+          "time_delay": "Short-term"
+        },
+        {
+          "id": "CR-033",
+          "cause_entity_id": "PP-022",
+          "effect_entity_id": "PP-017",
+          "causality_type": "Contributing",
+          "strength": 60.0,
+          "mechanism": "High/opaque private-sector costs reduce substitution away from public services, keeping demand concentrated in public hospitals and worsening capacity strain and waits.",
+          "evidence": "PP-022: financial barriers persist even with vouchers; PP-017: public hospital services overwhelmed due to demand exceeding supply.",
+          "confidence": 69.0,
+          "time_delay": "Medium-term"
+        },
+        {
+          "id": "CR-034",
+          "cause_entity_id": "PP-018",
+          "effect_entity_id": "PP-015",
+          "causality_type": "Contributing",
+          "strength": 59.0,
+          "mechanism": "A hospital-centric model with underdeveloped primary care makes cross-sector pathways harder to build, reinforcing fragmented health–social care coordination and continuity problems.",
+          "evidence": "PP-018: system relies heavily on acute hospitals; PP-015: poor integration across bureaus/departments and weak continuity.",
+          "confidence": 70.0,
+          "time_delay": "Long-term"
+        },
+        {
+          "id": "CR-035",
+          "cause_entity_id": "PP-015",
+          "effect_entity_id": "PP-019",
+          "causality_type": "Contributing",
+          "strength": 68.0,
+          "mechanism": "Weak integration and continuity undermines discharge planning and handoffs to community services, reducing effective transitional care and home support after discharge.",
+          "evidence": "PP-015: lack of seamless pathways and communication failures; PP-019: discharge support services relatively limited and many left without home care.",
+          "confidence": 78.0,
+          "time_delay": "Short-term"
+        }
+      ],
+      "causal_chains": [
+        {
+          "chain_id": "CH-001",
+          "entity_sequence": [
+            "PP-018",
+            "PP-015",
+            "PP-019",
+            "PP-006",
+            "PP-007",
+            "PP-021"
+          ],
+          "chain_description": "A hospital-centric system design (PP-018) makes cross-sector pathways hard to build, worsening fragmented health–social integration (PP-015). Poor integration weakens discharge and handoff planning (PP-019), which then increases unmet demand for home/community support (PP-006). As families cannot sustain care, demand for subsidized residential care rises and waiting pressure grows (PP-007), pushing more people into private homes where quality assurance is weak (PP-021).",
+          "chain_type": "cascading",
+          "confidence": 76.2
+        },
+        {
+          "chain_id": "CH-002",
+          "entity_sequence": [
+            "PP-028",
+            "PP-008",
+            "PP-006",
+            "PP-007",
+            "PP-021"
+          ],
+          "chain_description": "When age-friendly initiatives lack measurable outcomes and transparent data (PP-028), policymakers have less accountability and learning to specify an operational ageing-in-place framework (PP-008). That weak framework translates into uneven and insufficient community support capacity (PP-006), increasing caregiver strain and institutional placement demand (PP-007) and consequently diverting more older adults to variable-quality private residential care homes (PP-021).",
+          "chain_type": "cascading",
+          "confidence": 78.75
+        },
+        {
+          "chain_id": "CH-003",
+          "entity_sequence": [
+            "PP-018",
+            "PP-015",
+            "PP-019",
+            "PP-007",
+            "PP-021"
+          ],
+          "chain_description": "A hospital-centric model (PP-018) reinforces fragmented coordination between medical and social care (PP-015), which undermines discharge planning and transitional support (PP-019). Without effective post-discharge options, families seek residential placements, contributing to long waits for subsidized residential care (PP-007) and increasing reliance on private homes where standards and accreditation are inconsistent (PP-021).",
+          "chain_type": "linear",
+          "confidence": 75.0
+        },
+        {
+          "chain_id": "CH-004",
+          "entity_sequence": [
+            "PP-020",
+            "PP-006",
+            "PP-007",
+            "PP-021"
+          ],
+          "chain_description": "Funding that prioritizes residential care over community care (PP-020) leaves community supports under-resourced and uneven (PP-006). As ageing-in-place becomes harder, demand for subsidized residential placements rises and waiting times worsen (PP-007), resulting in more older adults turning to private RCHEs where quality assurance remains weak (PP-021).",
+          "chain_type": "cascading",
+          "confidence": 81.67
+        },
+        {
+          "chain_id": "CH-005",
+          "entity_sequence": [
+            "PP-025",
+            "PP-027",
+            "PP-011",
+            "PP-009"
+          ],
+          "chain_description": "Pandemic containment measures (PP-025) disrupt employment and widen inequalities (PP-027), reducing income stability and savings. This amplifies inadequate retirement protection (PP-011), leaving older adults unable to afford transport/fees and therefore less able or willing to engage in community activities and support networks (PP-009).",
+          "chain_type": "cascading",
+          "confidence": 79.0
+        },
+        {
+          "chain_id": "CH-006",
+          "entity_sequence": [
+            "PP-014",
+            "PP-016",
+            "PP-017",
+            "PP-023"
+          ],
+          "chain_description": "Digital and communication exclusion (PP-014) makes it difficult for older adults to use booking and information channels, worsening appointment access friction (PP-016). Delayed or missed care allows conditions to escalate and shifts demand to hospitals, aggravating capacity strain and long waits (PP-017), which in turn reduces privacy/time/resources for dignified end-of-life care in acute settings (PP-023).",
+          "chain_type": "cascading",
+          "confidence": 77.67
+        },
+        {
+          "chain_id": "CH-007",
+          "entity_sequence": [
+            "PP-018",
+            "PP-015",
+            "PP-017",
+            "PP-023"
+          ],
+          "chain_description": "Reliance on acute hospitals and weak primary-care redesign (PP-018) contributes to fragmented coordination across sectors (PP-015), creating inefficiencies and duplicated pathways that waste capacity. These inefficiencies add to inpatient crowding and long waits (PP-017), which then worsen the ability to deliver dignified, holistic end-of-life care due to constrained space, time, and appropriate bed allocation (PP-023).",
+          "chain_type": "cascading",
+          "confidence": 74.67
+        },
+        {
+          "chain_id": "CH-008",
+          "entity_sequence": [
+            "PP-028",
+            "PP-006",
+            "PP-007",
+            "PP-021"
+          ],
+          "chain_description": "Without measurable outcomes and accessible data (PP-028), planners struggle to size quotas, target remote gaps, and monitor quality, contributing to insufficient community support coverage (PP-006). As community supports fail to meet frailty needs, pressure for subsidized residential care increases and waiting times lengthen (PP-007), pushing some users toward private homes with uneven regulatory assurance (PP-021).",
+          "chain_type": "linear",
+          "confidence": 74.33
+        },
+        {
+          "chain_id": "CH-009",
+          "entity_sequence": [
+            "PP-025",
+            "PP-027",
+            "PP-011",
+            "PP-012"
+          ],
+          "chain_description": "Containment measures during COVID-19 (PP-025) contribute to employment loss and widening inequalities (PP-027), reducing financial security later in life. This worsens already inadequate retirement protection (PP-011), making unpaid or poorly supported volunteering less feasible, especially when transport allowances and incentives are lacking, thereby limiting older adults’ volunteer participation options (PP-012).",
+          "chain_type": "cascading",
+          "confidence": 72.67
+        },
+        {
+          "chain_id": "CH-010",
+          "entity_sequence": [
+            "PP-004",
+            "PP-016",
+            "PP-017",
+            "PP-023"
+          ],
+          "chain_description": "An inconsistently age-friendly transport system (PP-004) increases the burden of reaching dispersed clinics and dispensaries, worsening practical access friction to health services (PP-016). Reduced timely primary/preventive access increases downstream hospital demand, contributing to capacity strain and long waits (PP-017), which then degrades end-of-life care quality in acute wards where privacy and dedicated palliative capacity are limited (PP-023).",
+          "chain_type": "cascading",
+          "confidence": 70.0
+        },
+        {
+          "chain_id": "CH-011",
+          "entity_sequence": [
+            "PP-005",
+            "PP-016",
+            "PP-017",
+            "PP-023"
+          ],
+          "chain_description": "Transport affordability gaps for ages 60–64 and high taxi reliance for frail users (PP-005) reduce appointment attendance and medicine collection across separated locations, intensifying access friction (PP-016). Poor access increases avoidable deterioration and reliance on public hospitals, worsening crowding and waits (PP-017), which constrains dignified end-of-life care delivery in acute settings (PP-023).",
+          "chain_type": "cascading",
+          "confidence": 69.67
+        },
+        {
+          "chain_id": "CH-012",
+          "entity_sequence": [
+            "PP-018",
+            "PP-017",
+            "PP-023"
+          ],
+          "chain_description": "A hospital-centric system with underdeveloped primary care (PP-018) increases avoidable admissions and outpatient load, driving inpatient crowding and long waits (PP-017). Crowding then directly undermines privacy, attention, and appropriate settings for a dignified, holistic end-of-life experience (PP-023).",
+          "chain_type": "cascading",
+          "confidence": 83.0
+        },
+        {
+          "chain_id": "CH-013",
+          "entity_sequence": [
+            "PP-013",
+            "PP-011",
+            "PP-009"
+          ],
+          "chain_description": "Age discrimination and weak employability supports (PP-013) reduce job opportunities and earnings, limiting retirement savings and worsening later-life financial protection (PP-011). With constrained budgets, older adults avoid discretionary spending and participation costs, lowering social participation and community engagement (PP-009).",
+          "chain_type": "linear",
+          "confidence": 79.5
+        },
+        {
+          "chain_id": "CH-014",
+          "entity_sequence": [
+            "PP-003",
+            "PP-002",
+            "PP-009"
+          ],
+          "chain_description": "A market-oriented shortage of tailor-made age-friendly housing (PP-003) leaves more older adults in deteriorating, inaccessible stock (PP-002). Mobility barriers (no lifts, hilly terrain) and safety/maintenance burdens increase homebound risk and isolation, reducing the ability to attend activities and maintain community ties (PP-009).",
+          "chain_type": "cascading",
+          "confidence": 79.0
+        },
+        {
+          "chain_id": "CH-015",
+          "entity_sequence": [
+            "PP-022",
+            "PP-017",
+            "PP-023"
+          ],
+          "chain_description": "High and opaque private-sector costs and voucher limitations (PP-022) reduce the ability of older adults to substitute toward private care, keeping demand concentrated in public hospitals. This contributes to hospital capacity strain and long waits (PP-017), which then worsen end-of-life care conditions in acute wards due to crowding and limited dedicated palliative resources (PP-023).",
+          "chain_type": "cascading",
+          "confidence": 71.5
+        },
+        {
+          "chain_id": "CH-016",
+          "entity_sequence": [
+            "PP-013",
+            "PP-011",
+            "PP-012"
+          ],
+          "chain_description": "Age discrimination and limited employability supports (PP-013) depress lifetime earnings and savings, worsening inadequate retirement protection (PP-011). Financial insecurity makes it harder to volunteer without incentives (e.g., transport allowance) and reduces capacity to engage, reinforcing limited volunteer uptake and options for older adults (PP-012).",
+          "chain_type": "linear",
+          "confidence": 70.0
+        }
+      ],
+      "causal_loops": [],
+      "root_causes": [
+        {
+          "entity_id": "PP-001",
+          "justification": "PP-001 is upstream in the network with no identified causal drivers here; it functions as an environmental baseline that directly constrains mobility and thus social participation (PP-009).",
+          "downstream_effects_count": 1,
+          "controllability": "moderately_controllable"
+        },
+        {
+          "entity_id": "PP-003",
+          "justification": "PP-003 appears as an originating market/stock-formation issue with no modeled upstream causes; it drives deterioration/inaccessibility problems in existing housing (PP-002) and related isolation outcomes.",
+          "downstream_effects_count": 2,
+          "controllability": "moderately_controllable"
+        },
+        {
+          "entity_id": "PP-004",
+          "justification": "PP-004 is treated as a starting condition (no upstream causes captured) that shapes both participation and health-access pathways by determining whether older adults can reliably and safely reach services and activities.",
+          "downstream_effects_count": 4,
+          "controllability": "moderately_controllable"
+        },
+        {
+          "entity_id": "PP-005",
+          "justification": "PP-005 is an upstream affordability rule/price-design issue without prior causes in this graph; it directly limits travel to services and activities and contributes to health access friction via transport cost barriers.",
+          "downstream_effects_count": 4,
+          "controllability": "moderately_controllable"
+        },
+        {
+          "entity_id": "PP-010",
+          "justification": "PP-010 is a foundational social-norm and inclusion problem with no modeled antecedents; it discourages public engagement and belonging, contributing to reduced social participation (PP-009).",
+          "downstream_effects_count": 1,
+          "controllability": "moderately_controllable"
+        },
+        {
+          "entity_id": "PP-013",
+          "justification": "PP-013 is upstream because it shapes lifetime earnings and employability without any identified causes in this dataset; it feeds forward into retirement insecurity (PP-011) and subsequent participation/volunteering constraints.",
+          "downstream_effects_count": 3,
+          "controllability": "moderately_controllable"
+        },
+        {
+          "entity_id": "PP-014",
+          "justification": "PP-014 is a root cause here because no earlier drivers are specified, yet it directly blocks access to information and digital-first services, creating multiple downstream barriers in health access (PP-016) and social/volunteer participation (PP-009, PP-012).",
+          "downstream_effects_count": 5,
+          "controllability": "moderately_controllable"
+        },
+        {
+          "entity_id": "PP-018",
+          "justification": "PP-018 is a structural upstream design problem (hospital-centric model) with no modeled causes; it propagates into integration failures, hospital strain, and end-of-life capacity gaps, making it a true system-level root driver.",
+          "downstream_effects_count": 7,
+          "controllability": "moderately_controllable"
+        },
+        {
+          "entity_id": "PP-020",
+          "justification": "PP-020 is upstream because it reflects funding and place-allocation priorities not explained by other nodes; this resource distribution directly determines community-care capacity (PP-006) and downstream institutionalization pressure.",
+          "downstream_effects_count": 3,
+          "controllability": "moderately_controllable"
+        },
+        {
+          "entity_id": "PP-022",
+          "justification": "PP-022 is a root cause in this graph because no upstream determinants of private pricing/transparency are represented; it limits substitution to private care, thereby concentrating demand in public hospitals (PP-017).",
+          "downstream_effects_count": 2,
+          "controllability": "moderately_controllable"
+        },
+        {
+          "entity_id": "PP-024",
+          "justification": "PP-024 is upstream as a legal/policy gap with no prior causes modeled; it contributes to system-wide difficulty delivering preference-concordant, holistic end-of-life care (PP-023).",
+          "downstream_effects_count": 1,
+          "controllability": "moderately_controllable"
+        },
+        {
+          "entity_id": "PP-025",
+          "justification": "PP-025 is a root shock factor (pandemic containment) without upstream causes in the network; it directly and broadly drives isolation, mental health declines, and economic insecurity pathways.",
+          "downstream_effects_count": 5,
+          "controllability": "moderately_controllable"
+        },
+        {
+          "entity_id": "PP-028",
+          "justification": "PP-028 is upstream because the network does not specify what causes weak measurement/transparency; it then undermines policy operationalization (PP-008) and planning/monitoring of community support provision (PP-006).",
+          "downstream_effects_count": 4,
+          "controllability": "moderately_controllable"
+        }
+      ],
+      "ultimate_effects": [
+        {
+          "entity_id": "PP-009",
+          "justification": "PP-009 is an endpoint outcome capturing reduced participation driven by many upstream constraints (transport, built environment, finances, digital exclusion, ageism), with no further downstream impacts modeled beyond participation itself.",
+          "upstream_causes_count": 11,
+          "impact_severity": "moderate"
+        },
+        {
+          "entity_id": "PP-012",
+          "justification": "PP-012 is modeled as a final participation outcome: upstream financial and digital barriers reduce volunteering, and the dataset does not specify additional consequences of low volunteering beyond the volunteering limitation itself.",
+          "upstream_causes_count": 5,
+          "impact_severity": "moderate"
+        },
+        {
+          "entity_id": "PP-021",
+          "justification": "PP-021 is an ultimate harm outcome where upstream system pressures (notably long waits and diversion to private homes) culminate in exposure to variable-quality care; no downstream nodes describe subsequent safety, health, or rights consequences in this graph.",
+          "upstream_causes_count": 8,
+          "impact_severity": "high"
+        },
+        {
+          "entity_id": "PP-023",
+          "justification": "PP-023 represents the end-stage care experience outcome that results from upstream hospital strain, system design, and legal ambiguity; the model does not extend to downstream impacts (e.g., bereavement outcomes), so it functions as a terminal node.",
+          "upstream_causes_count": 9,
+          "impact_severity": "high"
+        },
+        {
+          "entity_id": "PP-026",
+          "justification": "PP-026 is treated as a final wellbeing outcome (mental health burden) caused upstream by pandemic-related isolation and disruption, with no further modeled downstream effects such as service use or functional decline.",
+          "upstream_causes_count": 1,
+          "impact_severity": "high"
+        }
+      ],
+      "leverage_points": [
+        {
+          "entity_id": "PP-014",
+          "leverage_score": 100.0,
+          "impact_reasoning": "PP-014 sits upstream of both care access and social participation pathways: reducing digital exclusion immediately improves appointment usability (PP-016), which can ease downstream hospital strain (PP-017) and end-of-life pressures (PP-023), while also improving information access for participation (PP-009) and volunteering (PP-012)."
+        },
+        {
+          "entity_id": "PP-018",
+          "leverage_score": 100.0,
+          "impact_reasoning": "PP-018 is a structural driver of multiple system failures: strengthening primary care and shifting away from hospital-centrism would reduce avoidable admissions (PP-017), make integration pathways easier (PP-015), improve transitions (PP-019), and ultimately improve end-of-life experiences (PP-023) and residential-care demand pressures."
+        },
+        {
+          "entity_id": "PP-025",
+          "leverage_score": 100.0,
+          "impact_reasoning": "PP-025 triggers multiple downstream harms at once—reduced participation (PP-009), worse mental health (PP-026), and employment/income shocks (PP-027→PP-011). Intervening via mitigation measures (safe reopening, outreach alternatives) can cut several parallel deterioration channels during crises."
+        },
+        {
+          "entity_id": "PP-011",
+          "leverage_score": 100.0,
+          "impact_reasoning": "PP-011 is a financial bottleneck that directly suppresses social participation (PP-009) and limits volunteering feasibility (PP-012). Improving retirement protection or reducing out-of-pocket burdens would unlock multiple wellbeing and inclusion outcomes by increasing older adults’ discretionary capacity."
+        },
+        {
+          "entity_id": "PP-007",
+          "leverage_score": 100.0,
+          "impact_reasoning": "PP-007 is the gateway pressure point leading to private RCHE exposure (PP-021): reducing wait times or providing credible alternatives would immediately lower forced diversion into poorly assured private homes, improving safety/quality outcomes for a high-severity downstream effect."
+        },
+        {
+          "entity_id": "PP-019",
+          "leverage_score": 100.0,
+          "impact_reasoning": "PP-019 connects hospitals to community living: better transitional care reduces post-discharge crises, lowers caregiver overload, and decreases demand for residential placement (PP-007) while also reducing load on community supports (PP-006). Improvements here propagate across both health and LTC pathways."
+        },
+        {
+          "entity_id": "PP-017",
+          "leverage_score": 100.0,
+          "impact_reasoning": "PP-017 is a high-impact downstream choke point: easing crowding/waits improves overall care timeliness and directly improves end-of-life experience conditions (PP-023). Because many upstream causes funnel into hospital strain, capacity improvements can yield broad system-wide benefits."
+        },
+        {
+          "entity_id": "PP-015",
+          "leverage_score": 100.0,
+          "impact_reasoning": "PP-015 drives inefficiency and poor handoffs: improving integration and continuity reduces duplication and wasted capacity that worsen hospital strain (PP-017) and enables better discharge/transitional pathways (PP-019), reducing subsequent demand for community support and residential placement."
+        },
+        {
+          "entity_id": "PP-006",
+          "leverage_score": 100.0,
+          "impact_reasoning": "PP-006 is the practical backbone of ageing-in-place: increasing coverage, quotas, and accessibility directly reduces caregiver overload and avoidable institutionalization pressure (PP-007). Because it sits mid-network, strengthening it interrupts several chains leading to private RCHE quality risk (PP-021)."
+        },
+        {
+          "entity_id": "PP-004",
+          "leverage_score": 100.0,
+          "impact_reasoning": "PP-004 affects both health access and social participation: more reliable, accessible transport reduces appointment friction (PP-016) and improves participation (via mobility), which can prevent deterioration that later contributes to hospital demand. Transport fixes also benefit many neighborhoods simultaneously."
+        }
+      ],
+      "network_metrics": {
+        "total_relationships": 35,
+        "total_chains": 16,
+        "total_loops": 0,
+        "average_confidence": 76.29
+      },
+      "analysis_metadata": {
+        "analysis_approach": [
+          "explicit_causality",
+          "semantic_causality",
+          "domain_knowledge",
+          "temporal_logic",
+          "stakeholder_analysis",
+          "expert_judgment",
+          "literature_review"
+        ],
+        "data_sources": [
+          "Pain point descriptions provided in prompt"
+        ],
+        "limitations": [
+          "Causality inferred from short descriptions; limited quantitative evidence.",
+          "Some links are system-plausible but not explicitly stated; confidence reflects this."
+        ],
+        "validation_methods": [
+          "Cross-check with explicit wording in descriptions",
+          "Consistency with common system dynamics (resource constraints, access barriers, substitution effects)"
+        ]
+      }
+    }
+  },
+  "feedbacks": null
+}
