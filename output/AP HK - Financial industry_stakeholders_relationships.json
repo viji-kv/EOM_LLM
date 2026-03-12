@@ -848,5 +848,268 @@
         ]
       }
     }
-  ]
+  ],
+  "relationships": [
+    {
+      "source": "HSBC",
+      "target": "Hong Kong Alzheimer's Disease Association",
+      "relationship_description": "HSBC is working in partnership with the Hong Kong Alzheimer’s Disease Association to build a more dementia-friendly community.",
+      "relationship_category": "partners",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2018_HSBC_managing-money-with-dementia.pdf",
+        "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa",
+        "evidence_original": "We are proud to be working in partnership with Hong Kong Alzheimer’s Disease Association. Together we are building a more dementia-friendly community...",
+        "evidence_translated": "We are proud to be working in partnership with Hong Kong Alzheimer’s Disease Association. Together we are building a more dementia-friendly community..."
+      }
+    },
+    {
+      "source": "Dementia Friends",
+      "target": "Hong Kong Alzheimer's Disease Association",
+      "relationship_description": "The Hong Kong Alzheimer’s Disease Association joined the Dementia Friends movement in 2017.",
+      "relationship_category": "collaborates",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2018_HSBC_managing-money-with-dementia.pdf",
+        "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa",
+        "evidence_original": "The movement also motivates the public to put their care into action, to help support people with dementia...Hong Kong Alzheimer’s Disease Association joined the movement in 2017.",
+        "evidence_translated": "The movement also motivates the public to put their care into action, to help support people with dementia...Hong Kong Alzheimer’s Disease Association joined the movement in 2017."
+      }
+    },
+    {
+      "source": "DBS Foundation",
+      "target": "The Community Chest of Hong Kong",
+      "relationship_description": "Through regular events and conversations with social service agencies including The Community Chest of Hong Kong, DBS aims to understand the social landscape and create impact.",
+      "relationship_category": "partners",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "evidence_original": "Regular events and conversations with Businesses for Impact, community partners and social service agencies to understand the social landscape and how DBS can partner to create impact. Connection with government bodies and associations, including Singapore Centre for Social Enterprise and Community Chest.",
+        "evidence_translated": "Regular events and conversations with Businesses for Impact, community partners and social service agencies to understand the social landscape and how DBS can partner to create impact. Connection with government bodies and associations, including Singapore Centre for Social Enterprise and Community Chest."
+      }
+    },
+    {
+      "source": "DBS Foundation",
+      "target": "SMEs",
+      "relationship_description": "DBS Foundation provided the DBS Eco Renovate Loan to encourage SMEs to adopt eco-friendly solutions during renovations.",
+      "relationship_category": "funds",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "evidence_original": "In late 2023, we introduced the DBS Eco Renovate Loan. The loan is designed to encourage SMEs to use eco-friendly solutions or materials when renovating their office spaces or industrial facilities.",
+        "evidence_translated": "In late 2023, we introduced the DBS Eco Renovate Loan. The loan is designed to encourage SMEs to use eco-friendly solutions or materials when renovating their office spaces or industrial facilities."
+      }
+    },
+    {
+      "source": "DBS Foundation",
+      "target": "Migrant Workers",
+      "relationship_description": "Launched the 'MiDigi Ambassador Programme' to help migrant workers overcome language barriers in digital skills acquisition.",
+      "relationship_category": "collaborates",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "evidence_original": "In collaboration with the Migrant Workers' Centre, we launched the inaugural 'MiDigi Ambassador Programme,' an initiative to help migrant workers overcome language barriers in picking up digital skills.",
+        "evidence_translated": "In collaboration with the Migrant Workers' Centre, we launched the inaugural 'MiDigi Ambassador Programme,' an initiative to help migrant workers overcome language barriers in picking up digital skills."
+      }
+    },
+    {
+      "source": "Responsible Data Use Committee",
+      "target": "RAI Taskforce",
+      "relationship_description": "The Responsible Data Use Committee and RAI Taskforce jointly evaluated and approved Gen Al use cases.",
+      "relationship_category": "collaborates",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "evidence_original": "¢ Ensured each of our Gen Al use pilots have also been evaluated and approved by our Responsible Data Use (RDU) Committee as well as our RAI Taskforce.",
+        "evidence_translated": "Ensured each of our Gen Al use pilots have also been evaluated and approved by our Responsible Data Use (RDU) Committee as well as our RAI Taskforce."
+      }
+    },
+    {
+      "source": "Monetary Authority of Singapore",
+      "target": "financial industry companies",
+      "relationship_description": "MAS launched Project MindForge to develop a framework for Gen Al in the financial sector.",
+      "relationship_category": "regulates",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "evidence_original": "In early 2023, the Monetary Authority of Singapore (MAS) initiated an industry-focused Gen Al Project to drive innovation and responsible use of Gen Al for the financial service industry.",
+        "evidence_translated": "In early 2023, the Monetary Authority of Singapore (MAS) initiated an industry-focused Gen Al Project to drive innovation and responsible use of Gen Al for the financial service industry."
+      }
+    },
+    {
+      "source": "DBS Foundation",
+      "target": "Esplanade - Theatres on the Bay",
+      "relationship_description": "DBS Foundation partnered with Esplanade to support free community programs.",
+      "relationship_category": "partners",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "evidence_original": "DBS and Esplanade - Theatres on the Bay announced a strategic partnership, centred around a common vision to uplift the community.",
+        "evidence_translated": "DBS and Esplanade - Theatres on the Bay announced a strategic partnership, centred around a common vision to uplift the community."
+      }
+    },
+    {
+      "source": "Hang Seng Bank",
+      "target": "The Conservancy Association",
+      "relationship_description": "Hang Seng Bank supported The Conservancy Association in the Country Parks Plantation Enrichment Programme.",
+      "relationship_category": "collaborates",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2022_Hang Seng Bank ESG report.pdf",
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
+        "evidence_original": "We supported The Conservancy Association (‘CA’) in the Country Parks Plantation Enrichment Programme (‘PEP’), which was launched by the Agriculture, Fisheries and Conservation Department.",
+        "evidence_translated": "We supported The Conservancy Association ('CA') in the Country Parks Plantation Enrichment Programme ('PEP'), which was launched by the Agriculture, Fisheries and Conservation Department."
+      }
+    },
+    {
+      "source": "Hang Seng Bank",
+      "target": "World Wide Fund for Nature Hong Kong",
+      "relationship_description": "Hang Seng Bank provided support to the corporate membership programmes of the World Wide Fund for Nature Hong Kong.",
+      "relationship_category": "collaborates",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2022_Hang Seng Bank ESG report.pdf",
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
+        "evidence_original": "We also continued to provide support to the corporate membership programmes of the World Wide Fund for Nature Hong Kong and Business Environment Council.",
+        "evidence_translated": "We also continued to provide support to the corporate membership programmes of the World Wide Fund for Nature Hong Kong and Business Environment Council."
+      }
+    },
+    {
+      "source": "Hang Seng Bank",
+      "target": "Business Environment Council",
+      "relationship_description": "Hang Seng Bank provided support to the corporate membership programmes of the Business Environment Council.",
+      "relationship_category": "collaborates",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2022_Hang Seng Bank ESG report.pdf",
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
+        "evidence_original": "We also continued to provide support to the corporate membership programmes of the World Wide Fund for Nature Hong Kong and Business Environment Council.",
+        "evidence_translated": "We also continued to provide support to the corporate membership programmes of the World Wide Fund for Nature Hong Kong and Business Environment Council."
+      }
+    },
+    {
+      "source": "Hang Seng Bank",
+      "target": "Green Power",
+      "relationship_description": "Hang Seng Bank supported Green Power by donating to Green Power Hike for 15 years.",
+      "relationship_category": "funds",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2022_Hang Seng Bank ESG report.pdf",
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
+        "evidence_original": "In addition, we supported Green Power by donating to Green Power Hike for 15 years.",
+        "evidence_translated": "In addition, we supported Green Power by donating to Green Power Hike for 15 years."
+      }
+    },
+    {
+      "source": "Hang Seng Bank",
+      "target": "The Community Chest of Hong Kong",
+      "relationship_description": "Hang Seng Bank is the Diamond Sponsor of the Dress Casual Day hosted by The Community Chest of Hong Kong.",
+      "relationship_category": "supports",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2022_Hang Seng Bank ESG report.pdf",
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
+        "evidence_original": "Hang Seng has continued to provide support to The Community Chest of Hong Kong (‘the Chest’). We are the Diamond Sponsor of Dress Casual Day for the 25th consecutive year.",
+        "evidence_translated": "Hang Seng has continued to provide support to The Community Chest of Hong Kong ('the Chest'). We are the Diamond Sponsor of Dress Casual Day for the 25th consecutive year."
+      }
+    },
+    {
+      "source": "Hang Seng Bank",
+      "target": "Hong Kong Table Tennis Association",
+      "relationship_description": "Hang Seng Bank co-organised the Hang Seng Table Tennis Academy with the Hong Kong Table Tennis Association.",
+      "relationship_category": "partners",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2022_Hang Seng Bank ESG report.pdf",
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
+        "evidence_original": "Co-organised with the Hong Kong Table Tennis Association, the Hang Seng Table Tennis Academy (‘HSTTA’) identifies and nurtures home-grown table tennis talents through high-quality, structured training sessions.",
+        "evidence_translated": "Co-organised with the Hong Kong Table Tennis Association, the Hang Seng Table Tennis Academy ('HSTTA') identifies and nurtures home-grown table tennis talents through high-quality, structured training sessions."
+      }
+    },
+    {
+      "source": "Hang Seng Bank",
+      "target": "Agency for Volunteer Service",
+      "relationship_description": "Hang Seng Volunteer Team received the Hong Kong Volunteer Award 2022, presented by the Agency for Volunteer Service.",
+      "relationship_category": "recognizes",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2022_Hang Seng Bank ESG report.pdf",
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
+        "evidence_original": "Our ongoing efforts earned us the Hong Kong Volunteer Award 2022, presented by the Agency for Volunteer Service.",
+        "evidence_translated": "Our ongoing efforts earned us the Hong Kong Volunteer Award 2022, presented by the Agency for Volunteer Service."
+      }
+    },
+    {
+      "source": "Hang Seng Bank",
+      "target": "CarbonCare InnoLab",
+      "relationship_description": "Hang Seng Bank funded the Hang Seng Low Carbon Future – SolarCare Programme in collaboration with CarbonCare InnoLab.",
+      "relationship_category": "collaborates",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2022_Hang Seng Bank ESG report.pdf",
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
+        "evidence_original": "In collaboration with CarbonCare InnoLab (‘CCIL’), we funded the Hang Seng Low Carbon Future – SolarCare Programme, a project which involved the installation of over 268 solar panels at the Breakthrough Youth Village in 2022.",
+        "evidence_translated": "In collaboration with CarbonCare InnoLab ('CCIL'), we funded the Hang Seng Low Carbon Future – SolarCare Programme, a project which involved the installation of over 268 solar panels at the Breakthrough Youth Village in 2022."
+      }
+    },
+    {
+      "source": "Hong Kong Government",
+      "target": "Hang Seng Bank",
+      "relationship_description": "The Hong Kong Government's Feed-in Tariff Scheme was utilised by Hang Seng Bank to organise youth climate education activities.",
+      "relationship_category": "other",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "2022_Hang Seng Bank ESG report.pdf",
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
+        "evidence_original": "The programme will make use of the rebates resulting from the Hong Kong Government’s Feed-in Tariff Scheme to organise various youth climate education activities.",
+        "evidence_translated": "The programme will make use of the rebates resulting from the Hong Kong Government’s Feed-in Tariff Scheme to organise various youth climate education activities."
+      }
+    }
+  ],
+  "pain_points": [
+    {
+      "stakeholder": "Hong Kong Alzheimer's Disease Association",
+      "painpoint": "There is a challenge in motivating the public to put their care into action for dementia support.",
+      "painpoint_category": "Healthcare Access",
+      "confidence": "85%",
+      "source_metadata": {
+        "file_name": "2018_HSBC_managing-money-with-dementia.pdf",
+        "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa",
+        "evidence_original": "Dementia Friends is a global movement that aims to change people’s perceptions of dementia, to tackle the stigma and lack of understanding about people living with the condition...",
+        "evidence_translated": "Dementia Friends is a global movement that aims to change people’s perceptions of dementia, to tackle the stigma and lack of understanding about people living with the condition..."
+      }
+    },
+    {
+      "stakeholder": "Hong Kong Government",
+      "painpoint": "The enforcement of new regulatory and legal requirements, as well as new global or market standards, presents a burden.",
+      "painpoint_category": "Compliance Challenges",
+      "confidence": "85%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "evidence_original": "New regulatory and legal requirements, as well as new global or market standards in new growth areas such as fintech/ tech platforms, carbon markets, sustainable financing, green taxonomies, and climate and nature-related reporting and disclosures.",
+        "evidence_translated": "New regulatory and legal requirements, as well as new global or market standards in new growth areas such as fintech/ tech platforms, carbon markets, sustainable financing, green taxonomies, and climate and nature-related reporting and disclosures."
+      }
+    },
+    {
+      "stakeholder": "SMEs",
+      "painpoint": "Lack of awareness and adoption of sustainable practices in renovations.",
+      "painpoint_category": "Awareness",
+      "confidence": "85%",
+      "source_metadata": {
+        "file_name": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "evidence_original": "We recognise this is a first step in raising awareness among our SME customers on the sustainable practices through the renovation process.",
+        "evidence_translated": "We recognise this is a first step in raising awareness among our SME customers on the sustainable practices through the renovation process."
+      }
+    }
+  ],
+  "total_relationships": 17,
+  "total_pain_points": 3
 }

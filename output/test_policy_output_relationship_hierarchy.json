@@ -1,82 +1,143 @@
-{
-  "brain": null,
-  "brain_id": null,
-  "hierarchy_graph": {
-    "nodes": [
+[
+  {
+    "canonical_name": "Commuters' Association of Singapore",
+    "roles": {
+      "Consumer": "Advocates for passenger rights and submits policy feedback to MOT"
+    },
+    "relationships": [
       {
-        "id": "Ministry of Transport",
-        "level": "macro",
-        "parent": null,
-        "size": 50
-      },
-      {
-        "id": "Land Transport Authority",
-        "level": "macro",
-        "parent": "Ministry of Transport",
-        "size": 50
-      },
-      {
-        "id": "National Environment Agency",
-        "level": "meso",
-        "parent": "Land Transport Authority",
-        "size": 30
-      },
-      {
-        "id": "Commuters’ Association of Singapore",
-        "level": "meso",
-        "parent": "Ministry of Transport",
-        "size": 30
-      },
-      {
-        "id": "SMRT Corporation",
-        "level": "micro",
-        "parent": "Land Transport Authority",
-        "size": 15
-      },
-      {
-        "id": "Grab Singapore",
-        "level": "micro",
-        "parent": "Land Transport Authority",
-        "size": 15
+        "target": "Ministry of Transport",
+        "relationship_type": "collaborates",
+        "description": "CAS submits policy feedback to MOT and advocates for passenger rights."
       }
     ],
-    "edges": [
+    "painpoints": [
       {
-        "source": "Land Transport Authority",
-        "target": "SMRT Corporation",
-        "weight": 1,
-        "evidence_strength": "low"
-      },
-      {
-        "source": "Ministry of Transport",
-        "target": "Land Transport Authority",
-        "weight": 1,
-        "evidence_strength": "low"
-      },
-      {
-        "source": "National Environment Agency",
-        "target": "Land Transport Authority",
-        "weight": 1,
-        "evidence_strength": "low"
-      },
-      {
-        "source": "Land Transport Authority",
-        "target": "Grab Singapore",
-        "weight": 1,
-        "evidence_strength": "low"
-      },
-      {
-        "source": "Commuters’ Association of Singapore",
-        "target": "Ministry of Transport",
-        "weight": 1,
-        "evidence_strength": "low"
+        "category": "Financial Barriers",
+        "description": "CAS has criticized fare increases and service disruptions."
       }
-    ]
+    ],
+    "primary_level": "micro",
+    "parent": "Land Transport Authority"
   },
-  "input_stats": {
-    "relationships_count": 5
+  {
+    "canonical_name": "Grab Singapore",
+    "roles": {
+      "Partner": "Collaborates with LTA on first-mile/last-mile pilot programs",
+      "Competitor": "Competes with Gojek Singapore for ride-hailing customers"
+    },
+    "relationships": [],
+    "painpoints": [
+      {
+        "category": "Regulatory Constraints",
+        "description": "Grab Singapore has raised concerns about regulatory constraints on surge pricing."
+      }
+    ],
+    "primary_level": "micro",
+    "parent": "Land Transport Authority"
   },
-  "processing_stats": {
-    "llm_calls": 1
+  {
+    "canonical_name": "Land Transport Authority",
+    "roles": {
+      "Regulator": "Regulates public transport operators and oversees licensing compliance for all rail and bus services",
+      "Partner": "Cooperates with Singaporean technology companies to develop autonomous bus projects; LTA funds pilot projects for autonomous buses in partnership with technology firms"
+    },
+    "relationships": [
+      {
+        "target": "Ministry of Transport",
+        "relationship_type": "regulates",
+        "description": "MOT supervises LTA and allocates annual budgetary funding."
+      },
+      {
+        "target": "Grab Singapore",
+        "relationship_type": "collaborates",
+        "description": "LTA collaborates with Grab Singapore on first-mile/last-mile pilot programs."
+      },
+      {
+        "target": "SMRT Corporation",
+        "relationship_type": "regulates",
+        "description": "SMRT Corporation operates major MRT lines under license from LTA."
+      }
+    ],
+    "painpoints": [
+      {
+        "category": "Regulatory Delays",
+        "description": "LTA faces delays in autonomous bus development due to lengthy testing site approval processes."
+      }
+    ],
+    "primary_level": "meso",
+    "parent": "Ministry of Transport"
+  },
+  {
+    "canonical_name": "Ministry of Finance",
+    "roles": {
+      "Regulator": "Coordinates with MOT to secure infrastructure financing"
+    },
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "macro",
+    "parent": null
+  },
+  {
+    "canonical_name": "Ministry of Transport",
+    "roles": {
+      "Regulator": "Supervises LTA and allocates annual budgetary funding"
+    },
+    "relationships": [
+      {
+        "target": "Ministry of Finance",
+        "relationship_type": "collaborates",
+        "description": "MOT coordinates with MOF to secure infrastructure financing."
+      }
+    ],
+    "painpoints": [],
+    "primary_level": "macro",
+    "parent": null
+  },
+  {
+    "canonical_name": "National Environment Agency",
+    "roles": {
+      "Regulator": "Works with LTA to enforce vehicle emissions standards and penalizes non-compliant fleet operators"
+    },
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "macro",
+    "parent": null
+  },
+  {
+    "canonical_name": "SBS Transit",
+    "roles": {},
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "micro",
+    "parent": "SMRT Corporation"
+  },
+  {
+    "canonical_name": "SMRT Corporation",
+    "roles": {
+      "Partner": "Partners with SBS Transit to integrate digital ticketing systems",
+      "Supplier": "Operates major MRT lines under license from LTA",
+      "Competitor": "Competes with private mobility providers for commuter market share"
+    },
+    "relationships": [
+      {
+        "target": "SBS Transit",
+        "relationship_type": "partners",
+        "description": "SMRT partners with SBS Transit to integrate digital ticketing systems."
+      }
+    ],
+    "painpoints": [],
+    "primary_level": "meso",
+    "parent": "National Environment Agency"
+  },
+  {
+    "canonical_name": "Town Councils",
+    "roles": {
+      "Partner": "Coordinate with LTA on infrastructure upgrades around MRT stations and pedestrian pathways"
+    },
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "meso",
+    "parent": "National Environment Agency"
   }
-}
+]

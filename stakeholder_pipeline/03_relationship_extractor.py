@@ -283,7 +283,8 @@ class RelationshipExtractor:
 
     RELATIONSHIP EXTRACTION:
     - Relationships: Extract interactions between members of the ALLOWED LIST. The format is: CANONICAL_NAME -> alias1 | alias2 | alias3
-    - Extract all explicitly stated OR strongly implied relationships based on verbs and context. Make sure 'source' is the entity performing the action and 'target' is the entity receiving the action.
+    - Extract all explicitly stated OR strongly implied relationships based on verbs and context. 
+    - Make sure 'source' is the entity performing the action and 'target' is the entity receiving the action.
     - RELATIONSHIP_DESCRIPTION: Provide a brief (1-sentence) explanation of the interaction.
     - ALWAYS output the CANONICAL NAME (leftmost) in 'source', 'target', and 'stakeholder'
     
@@ -509,7 +510,7 @@ async def run_test_mode():
             print(
                 f"\n SUCCESS: Extracted {len(result['relationships'])} relationships from {len(test_text) / 1000:.0f}k chars!"
             )
-            print(json.dumps(result, indent=2, ensure_ascii=False)[:1000] + "...")
+            # print(json.dumps(result, indent=2, ensure_ascii=False)[:1000] + "...")
 
             with open(input_file, "r", encoding="utf-8") as f:
                 input_data = json.load(f)
@@ -538,7 +539,7 @@ async def run_test_mode():
 
 # Usage example (matching your pipeline)
 async def main():
-    RUNNING_TEST_MODE = True  # CHANGE: Set to False to run real extraction
+    RUNNING_TEST_MODE = False  # CHANGE: Set to False to run real extraction
     if RUNNING_TEST_MODE:
         await run_test_mode()
         return

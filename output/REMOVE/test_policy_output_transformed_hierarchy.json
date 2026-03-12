@@ -1,6 +1,6 @@
 [
   {
-    "canonical_name": "Commuters\u00e2\u20ac\u2122 Association of Singapore",
+    "canonical_name": "Commuters’ Association of Singapore",
     "roles": {
       "Consumer": "Advocates for passenger rights and submits policy feedback to MOT."
     },
@@ -121,7 +121,7 @@
     },
     "relationships": [],
     "painpoints": [],
-    "primary_level": "meso",
-    "parent": "Ministry of Transport"
+    "primary_level": "micro",
+    "parent": "Land Transport Authority"
   }
 ]

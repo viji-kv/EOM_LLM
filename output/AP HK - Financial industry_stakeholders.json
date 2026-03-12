@@ -1,28 +1,14 @@
 {
   "brain": "AP HK - Financial industry",
   "brain_id": "ce88cb71-2528-4598-a585-5fa2dfd03319",
-  "total_stakeholders": 27,
+  "total_stakeholders": 29,
   "stakeholders": [
-    {
-      "Stakeholder Name": "HSBC",
-      "Canonical Name": "HSBC",
-      "Category": "Partner",
-      "Role": "Committed to helping everyone bank safely and independently",
-      "Confidence Score": "95%",
-      "Source metadata": {
-        "filename": "2018_HSBC_managing-money-with-dementia.pdf",
-        "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa",
-        "chunk_index": 0,
-        "evidence_original": "At HSBC we are committed to helping everyone bank safely, independently and receive the correct support when needed.",
-        "evidence_translated": "At HSBC we are committed to helping everyone bank safely, independently and receive the correct support when needed."
-      }
-    },
     {
       "Stakeholder Name": "Social Welfare Department",
       "Canonical Name": "Social Welfare Department",
       "Category": "Regulator",
-      "Role": "Provides guardianship orders and elderly services",
-      "Confidence Score": "90%",
+      "Role": "Provides Guardianship Orders and elderly services.",
+      "Confidence Score": "95%",
       "Source metadata": {
         "filename": "2018_HSBC_managing-money-with-dementia.pdf",
         "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa",
@@ -35,8 +21,8 @@
       "Stakeholder Name": "Hong Kong Judiciary",
       "Canonical Name": "Hong Kong Judiciary",
       "Category": "Regulator",
-      "Role": "Appoints committee for the estate of mentally incapacitated persons",
-      "Confidence Score": "90%",
+      "Role": "Appoints Committee of Estate for Mentally Incapacitated Persons.",
+      "Confidence Score": "95%",
       "Source metadata": {
         "filename": "2018_HSBC_managing-money-with-dementia.pdf",
         "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa",
@@ -49,232 +35,246 @@
       "Stakeholder Name": "Hong Kong Alzheimer’s Disease Association",
       "Canonical Name": "Hong Kong Alzheimer's Disease Association",
       "Category": "Partner",
-      "Role": "Provides information and support about living with dementia",
+      "Role": "Provides information and support for dementia, building a dementia-friendly community.",
       "Confidence Score": "95%",
       "Source metadata": {
         "filename": "2018_HSBC_managing-money-with-dementia.pdf",
         "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa",
         "chunk_index": 0,
-        "evidence_original": "We are proud to be working in partnership with Hong Kong Alzheimer’s Disease Association.",
-        "evidence_translated": "We are proud to be working in partnership with Hong Kong Alzheimer’s Disease Association."
+        "evidence_original": "Hong Kong Alzheimer’s Disease Association joined the movement in 2017.",
+        "evidence_translated": "Hong Kong Alzheimer’s Disease Association joined the movement in 2017."
       }
     },
     {
-      "Stakeholder Name": "DBS Group Holdings Ltd",
-      "Canonical Name": "DBS Group Holdings",
-      "Category": "Financial Institution",
-      "Role": "Leading financial services group in Asia, committed to sustainability and responsible banking.",
-      "Confidence Score": "95%",
-      "Source metadata": {
-        "filename": "2023_DBS_SR2023.pdf",
-        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
-        "chunk_index": 0,
-        "evidence_original": "At DBS, we believe that every individual has human rights as enshrined in the United Nations’ Universal Declaration on Human Rights.",
-        "evidence_translated": "At DBS, we believe that every individual has human rights as enshrined in the United Nations’ Universal Declaration on Human Rights."
-      }
-    },
-    {
-      "Stakeholder Name": "Singapore Centre for Social Enterprise",
-      "Canonical Name": "Singapore Centre for Social Enterprise",
+      "Stakeholder Name": "Dementia Friends",
+      "Canonical Name": "Dementia Friends",
       "Category": "Partner",
-      "Role": "Collaborates with DBS for social initiatives and community engagement.",
+      "Role": "A global movement to change perceptions of dementia and offer support.",
       "Confidence Score": "90%",
       "Source metadata": {
-        "filename": "2023_DBS_SR2023.pdf",
-        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "filename": "2018_HSBC_managing-money-with-dementia.pdf",
+        "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa",
         "chunk_index": 0,
-        "evidence_original": "Regular events and conversations with Businesses for Impact, community partners and social service agencies to understand the social landscape and how DBS can partner to create impact.",
-        "evidence_translated": "Regular events and conversations with Businesses for Impact, community partners and social service agencies to understand the social landscape and how DBS can partner to create impact."
+        "evidence_original": "Dementia Friends is a global movement that aims to change people’s perceptions of dementia",
+        "evidence_translated": "Dementia Friends is a global movement that aims to change people’s perceptions of dementia"
       }
     },
     {
-      "Stakeholder Name": "Community Chest",
-      "Canonical Name": "Community Chest",
-      "Category": "Partner",
-      "Role": "Collaborates with DBS for community initiatives and to facilitate social impact.",
-      "Confidence Score": "90%",
-      "Source metadata": {
-        "filename": "2023_DBS_SR2023.pdf",
-        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
-        "chunk_index": 0,
-        "evidence_original": "Connection with government bodies and associations, including Singapore Centre for Social Enterprise and Community Chest.",
-        "evidence_translated": "Connection with government bodies and associations, including Singapore Centre for Social Enterprise and Community Chest."
-      }
-    },
-    {
-      "Stakeholder Name": "Piyush Gupta",
-      "Canonical Name": "Piyush Gupta",
-      "Category": "Executive",
-      "Role": "CEO of DBS Group Holdings Ltd, leading sustainability efforts in the bank.",
-      "Confidence Score": "95%",
-      "Source metadata": {
-        "filename": "2023_DBS_SR2023.pdf",
-        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
-        "chunk_index": 0,
-        "evidence_original": "The BSC is chaired by DBS Group CEO Piyush Gupta.",
-        "evidence_translated": "The BSC is chaired by DBS Group CEO Piyush Gupta."
-      }
-    },
-    {
-      "Stakeholder Name": "DBS Group Holdings Ltd",
-      "Canonical Name": "DBS Group Holdings",
-      "Category": "Partner",
-      "Role": "Committed SGD 40 million to help lower-income households in Singapore ease the rising cost-of-living pressures",
-      "Confidence Score": "95%",
-      "Source metadata": {
-        "filename": "2023_DBS_SR2023.pdf",
-        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
-        "chunk_index": 1,
-        "evidence_original": "In 2023, DBS committed SGD 40 million to help lower- income households in Singapore ease the rising cost-of-living pressures.",
-        "evidence_translated": "In 2023, DBS committed SGD 40 million to help lower-income households in Singapore ease the rising cost-of-living pressures."
-      }
-    },
-    {
-      "Stakeholder Name": "DBS Bank India",
-      "Canonical Name": "DBS Bank",
-      "Category": "Partner",
-      "Role": "Collaborates with Reliance Industries Limited to promote Compressed Biogas (CBG) project",
-      "Confidence Score": "90%",
-      "Source metadata": {
-        "filename": "2023_DBS_SR2023.pdf",
-        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
-        "chunk_index": 1,
-        "evidence_original": "Case study 2: Reliance Industries Limited and DBS Bank India collaborate to promote Compressed Biogas (CBG) project",
-        "evidence_translated": "Case study 2: Reliance Industries Limited and DBS Bank India collaborate to promote Compressed Biogas (CBG) project"
-      }
-    },
-    {
-      "Stakeholder Name": "Reliance Industries Limited",
-      "Canonical Name": "Reliance Industries",
-      "Category": "Partner",
-      "Role": "Collaborates with DBS Bank India to promote Compressed Biogas (CBG) project",
-      "Confidence Score": "90%",
-      "Source metadata": {
-        "filename": "2023_DBS_SR2023.pdf",
-        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
-        "chunk_index": 1,
-        "evidence_original": "Case study 2: Reliance Industries Limited and DBS Bank India collaborate to promote Compressed Biogas (CBG) project.",
-        "evidence_translated": "Case study 2: Reliance Industries Limited and DBS Bank India collaborate to promote Compressed Biogas (CBG) project."
-      }
-    },
-    {
-      "Stakeholder Name": "Migrant Workers' Centre",
-      "Canonical Name": "Migrant Workers' Centre",
-      "Category": "Partner",
-      "Role": "Collaborated with DBS to launch the MiDigi Ambassador Programme for migrant workers to overcome language barriers in picking up digital skills",
+      "Stakeholder Name": "The Hong Kong Society for Rehabilitation",
+      "Canonical Name": "The Hong Kong Society for Rehabilitation",
+      "Category": "Non-profit Organization",
+      "Role": "Provides community support and rehabilitation services.",
       "Confidence Score": "85%",
       "Source metadata": {
-        "filename": "2023_DBS_SR2023.pdf",
-        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
-        "chunk_index": 1,
-        "evidence_original": "In collaboration with the Migrant Workers' Centre, we launched the inaugural 'MiDigi Ambassador Programme,’ an initiative to help migrant workers overcome language barriers in picking up digital skills.",
-        "evidence_translated": "In collaboration with the Migrant Workers' Centre, we launched the inaugural 'MiDigi Ambassador Programme,’ an initiative to help migrant workers overcome language barriers in picking up digital skills."
+        "filename": "2018_HSBC_managing-money-with-dementia.pdf",
+        "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa",
+        "chunk_index": 0,
+        "evidence_original": "Community Rehabilitation Network, The Hong Kong Society for Rehabilitation Website www.rehabsociety.org.hk/dccs/crn",
+        "evidence_translated": "Community Rehabilitation Network, The Hong Kong Society for Rehabilitation Website www.rehabsociety.org.hk/dccs/crn"
       }
     },
     {
-      "Stakeholder Name": "DBS Group Holdings Ltd",
-      "Canonical Name": "DBS Group Holdings",
-      "Category": "Partner",
-      "Role": "Develops financial crime compliance activities and monitors financial crimes within the group.",
+      "Stakeholder Name": "Tung Wah Group of Hospitals",
+      "Canonical Name": "Tung Wah Group of Hospitals",
+      "Category": "Non-profit Organization",
+      "Role": "Provides elderly services and community support.",
+      "Confidence Score": "85%",
+      "Source metadata": {
+        "filename": "2018_HSBC_managing-money-with-dementia.pdf",
+        "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa",
+        "chunk_index": 0,
+        "evidence_original": "Circle of Care Community Support Centre for the Elderly, Tung Wah Group of Hospitals Website www.tungwahcsd.org/en/our-services/elderly-services/specialized-services/COC/introduction",
+        "evidence_translated": "Circle of Care Community Support Centre for the Elderly, Tung Wah Group of Hospitals Website www.tungwahcsd.org/en/our-services/elderly-services/specialized-services/COC/introduction"
+      }
+    },
+    {
+      "Stakeholder Name": "HSBC",
+      "Canonical Name": "HSBC",
+      "Category": "Bank",
+      "Role": "Provides banking services and support for dementia care.",
+      "Confidence Score": "95%",
+      "Source metadata": {
+        "filename": "2018_HSBC_managing-money-with-dementia.pdf",
+        "document_id": "ab0ef4b4-9abd-49ab-895b-81e4c8e983aa",
+        "chunk_index": 0,
+        "evidence_original": "At HSBC we are committed to helping everyone bank safely, independently and receive the correct support when needed.",
+        "evidence_translated": "At HSBC we are committed to helping everyone bank safely, independently and receive the correct support when needed."
+      }
+    },
+    {
+      "Stakeholder Name": "Responsible Data Use (RDU) Committee",
+      "Canonical Name": "Responsible Data Use Committee",
+      "Category": "Regulator",
+      "Role": "Evaluates and approves Gen Al use pilots for holistic assessment prior to deployment.",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "chunk_index": 2,
+        "evidence_original": "Ensured each of our Gen Al use pilots have also been evaluated and approved by our Responsible Data Use (RDU) Committee as well as our RAI Taskforce.",
+        "evidence_translated": "Ensured each of our Gen Al use pilots have also been evaluated and approved by our Responsible Data Use (RDU) Committee as well as our RAI Taskforce."
+      }
+    },
+    {
+      "Stakeholder Name": "RAI Taskforce",
+      "Canonical Name": "RAI Taskforce",
+      "Category": "Regulator",
+      "Role": "Approves Gen Al use cases, providing assurance of a holistic assessment before deployment.",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "chunk_index": 2,
+        "evidence_original": "Ensured each of our Gen Al use pilots have also been evaluated and approved by our Responsible Data Use (RDU) Committee as well as our RAI Taskforce.",
+        "evidence_translated": "Ensured each of our Gen Al use pilots have also been evaluated and approved by our Responsible Data Use (RDU) Committee as well as our RAI Taskforce."
+      }
+    },
+    {
+      "Stakeholder Name": "Group Management Committee (GMC)",
+      "Canonical Name": "Group Management Committee",
+      "Category": "Regulator",
+      "Role": "Provides senior management direction and oversight for the implementation of Gen Al programme.",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "chunk_index": 2,
+        "evidence_original": "A regular cadence has also been established with Group Management Committee (GMC) members to ensure senior management direction and oversight.",
+        "evidence_translated": "A regular cadence has also been established with Group Management Committee (GMC) members to ensure senior management direction and oversight."
+      }
+    },
+    {
+      "Stakeholder Name": "Monetary Authority of Singapore (MAS)",
+      "Canonical Name": "Monetary Authority of Singapore",
+      "Category": "Regulator",
+      "Role": "Initiated Project MindForge to drive innovation and responsible Gen Al use.",
       "Confidence Score": "95%",
       "Source metadata": {
         "filename": "2023_DBS_SR2023.pdf",
         "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
         "chunk_index": 2,
-        "evidence_original": "Our Group Financial Crime and Security Services team (Group FCSS) is responsible for and oversees the financial crime compliance activities for the Group, including fraud investigations and financial crime advisory.",
-        "evidence_translated": "Our Group Financial Crime and Security Services team (Group FCSS) is responsible for and oversees the financial crime compliance activities for the Group, including fraud investigations and financial crime advisory."
+        "evidence_original": "Monetary Authority of Singapore (MAS) initiated an industry-focused Gen Al Project to drive innovation and responsible use of Gen Al for the financial service industry.",
+        "evidence_translated": "Monetary Authority of Singapore (MAS) initiated an industry-focused Gen Al Project to drive innovation and responsible use of Gen Al for the financial service industry."
       }
     },
     {
-      "Stakeholder Name": "Monetary Authority of Singapore",
-      "Canonical Name": "Monetary Authority of Singapore",
-      "Category": "Regulator",
-      "Role": "Initiates and leads projects such as Project MindForge to develop frameworks for the responsible use of Generative AI in the financial services sector.",
+      "Stakeholder Name": "AML/ CFT Industry Partnership (ACIP)",
+      "Canonical Name": "AML/CFT Industry Partnership",
+      "Category": "Partner",
+      "Role": "Addresses emerging money laundering and terrorism financing risks in Singapore as a private-public collaboration.",
       "Confidence Score": "90%",
       "Source metadata": {
         "filename": "2023_DBS_SR2023.pdf",
         "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
         "chunk_index": 2,
-        "evidence_original": "In early 2023, the Monetary Authority of Singapore (MAS) initiated an industry-focused Gen Al Project to drive innovation and responsible use of Gen Al for the financial service industry.",
-        "evidence_translated": "In early 2023, the Monetary Authority of Singapore (MAS) initiated an industry-focused Gen Al Project to drive innovation and responsible use of Gen Al for the financial service industry."
-      }
-    },
-    {
-      "Stakeholder Name": "Infocomm Media Development Authority",
-      "Canonical Name": "Infocomm Media Development Authority",
-      "Category": "Regulator",
-      "Role": "Promotes digital literacy and inclusion in Singapore.",
-      "Confidence Score": "90%",
-      "Source metadata": {
-        "filename": "2023_DBS_SR2023.pdf",
-        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
-        "chunk_index": 2,
-        "evidence_original": "In 2023, we actively supported the IMDA’s efforts in its promotion of its DPTM programme.",
-        "evidence_translated": "In 2023, we actively supported the IMDA’s efforts in its promotion of its DPTM programme."
+        "evidence_original": "AML/ CFT Industry Partnership (ACIP) - a private- public collaboration which brings together financial institutions, regulators, and law enforcement agencies to address key and emerging money laundering and terrorism financing risks in Singapore.",
+        "evidence_translated": "AML/ CFT Industry Partnership (ACIP) - a private- public collaboration which brings together financial institutions, regulators, and law enforcement agencies to address key and emerging money laundering and terrorism financing risks in Singapore."
       }
     },
     {
       "Stakeholder Name": "DBS Foundation",
       "Canonical Name": "DBS Foundation",
       "Category": "Partner",
-      "Role": "Commits funding and resources to social enterprises and charitable initiatives for community impact.",
+      "Role": "Supports strategic partnerships to uplift communities and foster a socially-conscious society.",
       "Confidence Score": "95%",
       "Source metadata": {
         "filename": "2023_DBS_SR2023.pdf",
         "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
         "chunk_index": 2,
-        "evidence_original": "The DBS Foundation (DBSF) is committed to uplifting lives and livelihoods by igniting change in businesses and communities.",
-        "evidence_translated": "The DBS Foundation (DBSF) is committed to uplifting lives and livelihoods by igniting change in businesses and communities."
+        "evidence_original": "The Community Impact chapter was launched to dial up efforts for underserved communities ... enabling them to be more food secure and resilient.",
+        "evidence_translated": "The Community Impact chapter was launched to dial up efforts for underserved communities ... enabling them to be more food secure and resilient."
       }
     },
     {
-      "Stakeholder Name": "Haqdarshak Empowerment Solutions",
-      "Canonical Name": "Haqdarshak Empowerment Solutions",
+      "Stakeholder Name": "MAS-led Project COSMIC®",
+      "Canonical Name": "MAS-led Project COSMIC",
       "Category": "Partner",
-      "Role": "Provides financial literacy programs to marginalized communities.",
-      "Confidence Score": "85%",
+      "Role": "Digital platform for sharing key customer and transaction information on bad actors to accelerate detection of financial crime.",
+      "Confidence Score": "90%",
       "Source metadata": {
         "filename": "2023_DBS_SR2023.pdf",
         "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
         "chunk_index": 2,
-        "evidence_original": "We partnered Haqdarshak Empowerment Solutions to provide the marginalised in rural and semi-rural areas with financial literacy programmes.",
-        "evidence_translated": "We partnered Haqdarshak Empowerment Solutions to provide the marginalised in rural and semi-rural areas with financial literacy programmes."
+        "evidence_original": "MAS-led Project COSMIC® - a digital platform facilitating the sharing of key customer and transaction information on bad actors amongst financial institutions.",
+        "evidence_translated": "MAS-led Project COSMIC® - a digital platform facilitating the sharing of key customer and transaction information on bad actors amongst financial institutions."
+      }
+    },
+    {
+      "Stakeholder Name": "Infocomm Media Development Authority of Singapore (IMDA)",
+      "Canonical Name": "Infocomm Media Development Authority of Singapore",
+      "Category": "Regulator",
+      "Role": "Promotes DPTM programme to expand certified organisations for data safeguarding.",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "chunk_index": 2,
+        "evidence_original": "We actively supported the IMDA’s efforts in its promotion of its DPTM programme.",
+        "evidence_translated": "We actively supported the IMDA’s efforts in its promotion of its DPTM programme."
+      }
+    },
+    {
+      "Stakeholder Name": "Esplanade - Theatres on the Bay",
+      "Canonical Name": "Esplanade - Theatres on the Bay",
+      "Category": "Partner",
+      "Role": "Collaborates with DBS to uplift the community through a strategic partnership.",
+      "Confidence Score": "90%",
+      "Source metadata": {
+        "filename": "2023_DBS_SR2023.pdf",
+        "document_id": "81b24867-941a-4742-bccc-3ec2bf3750c2",
+        "chunk_index": 2,
+        "evidence_original": "Esplanade - Theatres on the Bay announced a strategic partnership, centred around a common vision to uplift the community ... Singapore.",
+        "evidence_translated": "Esplanade - Theatres on the Bay announced a strategic partnership, centred around a common vision to uplift the community ... Singapore."
       }
     },
     {
       "Stakeholder Name": "The Conservancy Association",
-      "Canonical Name": "Conservancy Association",
+      "Canonical Name": "The Conservancy Association",
       "Category": "Partner",
-      "Role": "Supported in the Country Parks Plantation Enrichment Programme",
-      "Confidence Score": "90%",
+      "Role": "Partnered to plant seedlings in local country parks",
+      "Confidence Score": "95%",
       "Source metadata": {
         "filename": "2022_Hang Seng Bank ESG report.pdf",
         "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
         "chunk_index": 0,
-        "evidence_original": "We supported The Conservancy Association (‘CA’) in the Country Parks Plantation Enrichment Programme (‘PEP’), which was launched by the Agriculture, Fisheries and Conservation Department.",
-        "evidence_translated": "We supported The Conservancy Association (‘CA’) in the Country Parks Plantation Enrichment Programme (‘PEP’), which was launched by the Agriculture, Fisheries and Conservation Department."
+        "evidence_original": "We supported The Conservancy Association (‘CA’) in the Country Parks Plantation Enrichment Programme (‘PEP’)",
+        "evidence_translated": "We supported The Conservancy Association (‘CA’) in the Country Parks Plantation Enrichment Programme (‘PEP’)"
+      }
+    },
+    {
+      "Stakeholder Name": "Agriculture, Fisheries and Conservation Department",
+      "Canonical Name": "Agriculture, Fisheries and Conservation Department",
+      "Category": "Regulator",
+      "Role": "Launched the Country Parks Plantation Enrichment Programme",
+      "Confidence Score": "93%",
+      "Source metadata": {
+        "filename": "2022_Hang Seng Bank ESG report.pdf",
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
+        "chunk_index": 0,
+        "evidence_original": "programme (‘PEP’), which was launched by the Agriculture, Fisheries and Conservation Department.",
+        "evidence_translated": "programme (‘PEP’), which was launched by the Agriculture, Fisheries and Conservation Department."
       }
     },
     {
       "Stakeholder Name": "World Wide Fund for Nature Hong Kong",
-      "Canonical Name": "WWF Hong Kong",
+      "Canonical Name": "World Wide Fund for Nature Hong Kong",
       "Category": "Partner",
-      "Role": "Supported corporate membership programmes",
+      "Role": "Collaborated with in corporate membership programmes",
       "Confidence Score": "90%",
       "Source metadata": {
         "filename": "2022_Hang Seng Bank ESG report.pdf",
         "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
         "chunk_index": 0,
-        "evidence_original": "We also continued to provide support to the corporate membership programmes of the World Wide Fund for Nature Hong Kong and Business Environment Council.",
-        "evidence_translated": "We also continued to provide support to the corporate membership programmes of the World Wide Fund for Nature Hong Kong and Business Environment Council."
+        "evidence_original": "We also continued to provide support to the corporate membership programmes of the World Wide Fund for Nature Hong Kong",
+        "evidence_translated": "We also continued to provide support to the corporate membership programmes of the World Wide Fund for Nature Hong Kong"
       }
     },
     {
       "Stakeholder Name": "Business Environment Council",
       "Canonical Name": "Business Environment Council",
       "Category": "Partner",
-      "Role": "Supported corporate membership programmes",
-      "Confidence Score": "85%",
+      "Role": "Collaborated with in corporate membership programmes",
+      "Confidence Score": "90%",
       "Source metadata": {
         "filename": "2022_Hang Seng Bank ESG report.pdf",
         "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
@@ -287,8 +287,8 @@
       "Stakeholder Name": "Green Power",
       "Canonical Name": "Green Power",
       "Category": "Partner",
-      "Role": "Received donations for Green Power Hike for 15 years",
-      "Confidence Score": "85%",
+      "Role": "Received donations for Green Power Hike",
+      "Confidence Score": "88%",
       "Source metadata": {
         "filename": "2022_Hang Seng Bank ESG report.pdf",
         "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
@@ -298,87 +298,115 @@
       }
     },
     {
-      "Stakeholder Name": "Chamber of Hong Kong Listed Companies",
-      "Canonical Name": "Chamber of Hong Kong Listed Companies",
+      "Stakeholder Name": "Chamber of Hong Kong Listed",
+      "Canonical Name": "Chamber of Hong Kong Listed",
       "Category": "Partner",
-      "Role": "Organized the ESG and Green Finance Opportunities Forum",
+      "Role": "Organized the “2022 ESG and Green Finance Opportunities Forum”",
+      "Confidence Score": "85%",
+      "Source metadata": {
+        "filename": "2022_Hang Seng Bank ESG report.pdf",
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
+        "chunk_index": 0,
+        "evidence_original": "For second year in a row, we continued to be the title- sponsor of the “2022 ESG and Green Finance Opportunities Forum” organised by the Chamber of Hong Kong Listed",
+        "evidence_translated": "For second year in a row, we continued to be the title- sponsor of the “2022 ESG and Green Finance Opportunities Forum” organised by the Chamber of Hong Kong Listed"
+      }
+    },
+    {
+      "Stakeholder Name": "HSBC",
+      "Canonical Name": "HSBC",
+      "Category": "Partner",
+      "Role": "Net zero ambitions contributor",
       "Confidence Score": "90%",
       "Source metadata": {
         "filename": "2022_Hang Seng Bank ESG report.pdf",
         "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
         "chunk_index": 0,
-        "evidence_original": "we continued to be the title-sponsor of the “2022 ESG and Green Finance Opportunities Forum” organised by the Chamber of Hong Kong Listed.",
-        "evidence_translated": "we continued to be the title-sponsor of the “2022 ESG and Green Finance Opportunities Forum” organised by the Chamber of Hong Kong Listed."
+        "evidence_original": "The Bank has contributed to HSBC’s net zero ambitions.",
+        "evidence_translated": "The Bank has contributed to HSBC’s net zero ambitions."
       }
     },
     {
       "Stakeholder Name": "CarbonCare InnoLab",
       "Canonical Name": "CarbonCare InnoLab",
       "Category": "Partner",
-      "Role": "Collaborated on Hang Seng Low Carbon Future – SolarCare Programme",
-      "Confidence Score": "90%",
+      "Role": "Collaborated on the Hang Seng Low Carbon Future – SolarCare Programme",
+      "Confidence Score": "92%",
       "Source metadata": {
         "filename": "2022_Hang Seng Bank ESG report.pdf",
         "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
         "chunk_index": 0,
-        "evidence_original": "In collaboration with CarbonCare InnoLab (‘CCIL’), we funded the Hang Seng Low Carbon Future – SolarCare Programme.",
-        "evidence_translated": "In collaboration with CarbonCare InnoLab (‘CCIL’), we funded the Hang Seng Low Carbon Future – SolarCare Programme."
+        "evidence_original": "In collaboration with CarbonCare InnoLab (‘CCIL’), we funded the Hang Seng Low Carbon Future – SolarCare Programme",
+        "evidence_translated": "In collaboration with CarbonCare InnoLab (‘CCIL’), we funded the Hang Seng Low Carbon Future – SolarCare Programme"
       }
     },
     {
-      "Stakeholder Name": "Hang Seng University of Hong Kong",
-      "Canonical Name": "Hang Seng University",
-      "Category": "Partner",
-      "Role": "Chairman of the Board of Governors is Executive Director and Chief Executive of Hang Seng",
-      "Confidence Score": "85%",
+      "Stakeholder Name": "Hong Kong Government",
+      "Canonical Name": "Hong Kong Government",
+      "Category": "Regulator",
+      "Role": "Feed-in Tariff Scheme provider",
+      "Confidence Score": "87%",
       "Source metadata": {
         "filename": "2022_Hang Seng Bank ESG report.pdf",
         "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
         "chunk_index": 0,
-        "evidence_original": "the Bank’s Executive Director and Chief Executive, Diana Cesar, is the Chairman of the Board of Governors at the Hang Seng University of Hong Kong.",
-        "evidence_translated": "the Bank’s Executive Director and Chief Executive, Diana Cesar, is the Chairman of the Board of Governors at the Hang Seng University of Hong Kong."
+        "evidence_original": "The programme will make use of the rebates resulting from the Hong Kong Government’s Feed- in Tariff Scheme to organise various youth climate education activities.",
+        "evidence_translated": "The programme will make use of the rebates resulting from the Hong Kong Government’s Feed- in Tariff Scheme to organise various youth climate education activities."
       }
     },
     {
       "Stakeholder Name": "The Community Chest of Hong Kong",
-      "Canonical Name": "Community Chest",
+      "Canonical Name": "The Community Chest of Hong Kong",
       "Category": "Partner",
-      "Role": "Diamond Sponsor of Dress Casual Day and supports various other programmes",
-      "Confidence Score": "90%",
+      "Role": "Supported various charitable programmes",
+      "Confidence Score": "88%",
       "Source metadata": {
         "filename": "2022_Hang Seng Bank ESG report.pdf",
         "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
         "chunk_index": 0,
-        "evidence_original": "Hang Seng has continued to provide support to The Community Chest of Hong Kong (‘the Chest’). We are the Diamond Sponsor of Dress Casual Day for the 25th consecutive year.",
-        "evidence_translated": "Hang Seng has continued to provide support to The Community Chest of Hong Kong (‘the Chest’). We are the Diamond Sponsor of Dress Casual Day for the 25th consecutive year."
+        "evidence_original": "Supporting the Charitable and Fundraising Event hosted by The Community Chest of Hong Kong. Hang Seng has continued to provide support to The Community Chest of Hong Kong (‘the Chest’).",
+        "evidence_translated": "Supporting the Charitable and Fundraising Event hosted by The Community Chest of Hong Kong. Hang Seng has continued to provide support to The Community Chest of Hong Kong (‘the Chest’)."
       }
     },
     {
       "Stakeholder Name": "Hong Kong Table Tennis Association",
       "Canonical Name": "Hong Kong Table Tennis Association",
       "Category": "Partner",
-      "Role": "Co-organized the Hang Seng Table Tennis Academy",
+      "Role": "Co-organized Hang Seng Table Tennis Academy",
       "Confidence Score": "90%",
       "Source metadata": {
         "filename": "2022_Hang Seng Bank ESG report.pdf",
         "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
         "chunk_index": 0,
-        "evidence_original": "Co-organised with the Hong Kong Table Tennis Association, the Hang Seng Table Tennis Academy (‘HSTTA’) identifies and nurtures home-grown table tennis talents.",
-        "evidence_translated": "Co-organised with the Hong Kong Table Tennis Association, the Hang Seng Table Tennis Academy (‘HSTTA’) identifies and nurtures home-grown table tennis talents."
+        "evidence_original": "Co-organised with the Hong Kong Table Tennis Association, the Hang Seng Table Tennis Academy (‘HSTTA’)",
+        "evidence_translated": "Co-organised with the Hong Kong Table Tennis Association, the Hang Seng Table Tennis Academy (‘HSTTA’)"
       }
     },
     {
-      "Stakeholder Name": "Hong Kong Family Welfare Society",
-      "Canonical Name": "Hong Kong Family Welfare Society",
+      "Stakeholder Name": "Agency for Volunteer Service",
+      "Canonical Name": "Agency for Volunteer Service",
       "Category": "Partner",
-      "Role": "Partnered to donate care packs during COVID-19",
+      "Role": "Presented Hong Kong Volunteer Award 2022",
       "Confidence Score": "85%",
       "Source metadata": {
         "filename": "2022_Hang Seng Bank ESG report.pdf",
         "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
         "chunk_index": 0,
-        "evidence_original": "In response to the rapid spread of the virus during the fifth wave of the COVID-19 pandemic in Hong Kong, the Bank partnered with the Hong Kong Family Welfare Society to donate HK$10 million worth of care packs.",
-        "evidence_translated": "In response to the rapid spread of the virus during the fifth wave of the COVID-19 pandemic in Hong Kong, the Bank partnered with the Hong Kong Family Welfare Society to donate HK$10 million worth of care packs."
+        "evidence_original": "our ongoing efforts earned us the Hong Kong Volunteer Award 2022, presented by the Agency for Volunteer Service.",
+        "evidence_translated": "our ongoing efforts earned us the Hong Kong Volunteer Award 2022, presented by the Agency for Volunteer Service."
+      }
+    },
+    {
+      "Stakeholder Name": "The Neighbourhood Advice-Action Council",
+      "Canonical Name": "The Neighbourhood Advice-Action Council",
+      "Category": "Partner",
+      "Role": "Recipient of staff donations",
+      "Confidence Score": "82%",
+      "Source metadata": {
+        "filename": "2022_Hang Seng Bank ESG report.pdf",
+        "document_id": "f2260239-74ef-4448-889b-8cec0196f1e9",
+        "chunk_index": 0,
+        "evidence_original": "raised HK$160,000 from staff donations for The Neighbourhood Advice-Action Council",
+        "evidence_translated": "raised HK$160,000 from staff donations for The Neighbourhood Advice-Action Council"
       }
     }
   ]

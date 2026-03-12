@@ -16,9 +16,7 @@
         "category": "Service Quality",
         "description": "CAS has criticized fare increases and service disruptions."
       }
-    ],
-    "primary_level": "micro",
-    "parent": "Land Transport Authority"
+    ]
   },
   {
     "canonical_name": "Grab Singapore",
@@ -38,9 +36,7 @@
         "category": "Regulatory Constraints",
         "description": "Grab Singapore has raised concerns about regulatory constraints on surge pricing."
       }
-    ],
-    "primary_level": "micro",
-    "parent": "Land Transport Authority"
+    ]
   },
   {
     "canonical_name": "Land Transport Authority",
@@ -59,17 +55,13 @@
         "category": "Regulatory Hurdles",
         "description": "Test site approval processes are too long, significantly delaying R&D progress."
       }
-    ],
-    "primary_level": "meso",
-    "parent": "Ministry of Transport"
+    ]
   },
   {
     "canonical_name": "Ministry of Transport",
     "roles": {},
     "relationships": [],
-    "painpoints": [],
-    "primary_level": "macro",
-    "parent": null
+    "painpoints": []
   },
   {
     "canonical_name": "National Environment Agency",
@@ -83,9 +75,7 @@
         "description": "NEA works with LTA to enforce vehicle emissions standards."
       }
     ],
-    "painpoints": [],
-    "primary_level": "meso",
-    "parent": "Ministry of Transport"
+    "painpoints": []
   },
   {
     "canonical_name": "SBS Transit",
@@ -93,9 +83,7 @@
       "Partner": "Partners with SMRT to integrate digital ticketing systems across rail and bus networks."
     },
     "relationships": [],
-    "painpoints": [],
-    "primary_level": "micro",
-    "parent": "Land Transport Authority"
+    "painpoints": []
   },
   {
     "canonical_name": "SMRT Corporation",
@@ -110,9 +98,7 @@
         "description": "SMRT partners with SBS Transit to integrate digital ticketing systems."
       }
     ],
-    "painpoints": [],
-    "primary_level": "micro",
-    "parent": "Land Transport Authority"
+    "painpoints": []
   },
   {
     "canonical_name": "Town Councils",
@@ -120,8 +106,6 @@
       "Partner": "Coordinate with LTA on infrastructure upgrades around MRT stations and pedestrian pathways."
     },
     "relationships": [],
-    "painpoints": [],
-    "primary_level": "meso",
-    "parent": "Land Transport Authority"
+    "painpoints": []
   }
 ]

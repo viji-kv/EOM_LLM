@@ -89,7 +89,7 @@ def calculate_threshold(model_context):
     )  # ~230k for gpt-4o-mini
 
 
-def save_output(result: Dict[str, Any], output_filename: str, output_dir) -> Path:
+def save_output(result, output_filename: str, output_dir) -> Path:
     output_path = output_dir if isinstance(output_dir, Path) else Path(output_dir)
 
     output_path.mkdir(parents=True, exist_ok=True)

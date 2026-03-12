@@ -1,0 +1,202 @@
+{
+  "brain": null,
+  "brain_id": "ce88cb71-2528-4598-a585-5fa2dfd03319",
+  "hierarchy_graph": {
+    "nodes": [
+      {
+        "id": "Infocomm Media Development Authority",
+        "level": "macro",
+        "parent": null,
+        "size": 50
+      },
+      {
+        "id": "Monetary Authority of Singapore",
+        "level": "macro",
+        "parent": null,
+        "size": 50
+      },
+      {
+        "id": "DBS Group Holdings",
+        "level": "meso",
+        "parent": "Monetary Authority of Singapore",
+        "size": 30
+      },
+      {
+        "id": "Hang Seng University",
+        "level": "meso",
+        "parent": null,
+        "size": 30
+      },
+      {
+        "id": "Community Chest",
+        "level": "meso",
+        "parent": null,
+        "size": 30
+      },
+      {
+        "id": "Singapore Centre for Social Enterprise",
+        "level": "meso",
+        "parent": null,
+        "size": 30
+      },
+      {
+        "id": "DBS Foundation",
+        "level": "micro",
+        "parent": "DBS Group Holdings",
+        "size": 15
+      },
+      {
+        "id": "Migrant Workers' Centre",
+        "level": "micro",
+        "parent": "DBS Group Holdings",
+        "size": 15
+      },
+      {
+        "id": "Reliance Industries",
+        "level": "micro",
+        "parent": "DBS Group Holdings",
+        "size": 15
+      },
+      {
+        "id": "Hong Kong Alzheimer's Disease Association",
+        "level": "micro",
+        "parent": "HSBC",
+        "size": 15
+      },
+      {
+        "id": "WWF Hong Kong",
+        "level": "micro",
+        "parent": "Hang Seng University",
+        "size": 15
+      },
+      {
+        "id": "Business Environment Council",
+        "level": "micro",
+        "parent": "Hang Seng University",
+        "size": 15
+      },
+      {
+        "id": "The Conservancy Association",
+        "level": "micro",
+        "parent": "Hang Seng University",
+        "size": 15
+      },
+      {
+        "id": "CarbonCare InnoLab",
+        "level": "micro",
+        "parent": "Hang Seng University",
+        "size": 15
+      },
+      {
+        "id": "Hong Kong Table Tennis Association",
+        "level": "micro",
+        "parent": "Hang Seng University",
+        "size": 15
+      },
+      {
+        "id": "The Community Chest of Hong Kong",
+        "level": "micro",
+        "parent": "Community Chest",
+        "size": 15
+      },
+      {
+        "id": "HSBC",
+        "level": "micro",
+        "parent": null,
+        "size": 15
+      }
+    ],
+    "edges": [
+      {
+        "source": "HSBC",
+        "target": "Hong Kong Alzheimer's Disease Association",
+        "weight": 1,
+        "evidence_strength": "low"
+      },
+      {
+        "source": "DBS Group Holdings",
+        "target": "Singapore Centre for Social Enterprise",
+        "weight": 1,
+        "evidence_strength": "low"
+      },
+      {
+        "source": "DBS Group Holdings",
+        "target": "Community Chest",
+        "weight": 1,
+        "evidence_strength": "low"
+      },
+      {
+        "source": "DBS Group Holdings",
+        "target": "Reliance Industries",
+        "weight": 1,
+        "evidence_strength": "low"
+      },
+      {
+        "source": "DBS Group Holdings",
+        "target": "Migrant Workers' Centre",
+        "weight": 1,
+        "evidence_strength": "low"
+      },
+      {
+        "source": "DBS Group Holdings",
+        "target": "Monetary Authority of Singapore",
+        "weight": 1,
+        "evidence_strength": "low"
+      },
+      {
+        "source": "DBS Group Holdings",
+        "target": "Infocomm Media Development Authority",
+        "weight": 1,
+        "evidence_strength": "low"
+      },
+      {
+        "source": "DBS Group Holdings",
+        "target": "DBS Foundation",
+        "weight": 1,
+        "evidence_strength": "low"
+      },
+      {
+        "source": "Hang Seng University",
+        "target": "The Community Chest of Hong Kong",
+        "weight": 1,
+        "evidence_strength": "low"
+      },
+      {
+        "source": "Hang Seng University",
+        "target": "Hong Kong Table Tennis Association",
+        "weight": 1,
+        "evidence_strength": "low"
+      },
+      {
+        "source": "Hang Seng University",
+        "target": "CarbonCare InnoLab",
+        "weight": 1,
+        "evidence_strength": "low"
+      },
+      {
+        "source": "Hang Seng University",
+        "target": "The Conservancy Association",
+        "weight": 1,
+        "evidence_strength": "low"
+      },
+      {
+        "source": "Hang Seng University",
+        "target": "WWF Hong Kong",
+        "weight": 1,
+        "evidence_strength": "low"
+      },
+      {
+        "source": "Hang Seng University",
+        "target": "Business Environment Council",
+        "weight": 1,
+        "evidence_strength": "low"
+      }
+    ]
+  },
+  "input_stats": {
+    "relationships_count": 14
+  },
+  "processing_stats": {
+    "llm_calls": 1
+  }
+}

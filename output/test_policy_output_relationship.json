@@ -2,8 +2,8 @@
   "brain": "Test Elderly Policy",
   "brain_id": "test_123",
   "consolidation_stats": {
-    "original_count": 10,
-    "consolidated_count": 9,
+    "original_count": 13,
+    "consolidated_count": 12,
     "categories_processed": 5
   },
   "consolidated_stakeholders": [
@@ -11,35 +11,85 @@
       "Stakeholder Name": "Land Transport Authority (LTA)",
       "Canonical Name": "Land Transport Authority",
       "Category": "Regulator",
-      "Role": "Leads the Smart Urban Mobility Reform 2027 and funds pilot projects for autonomous buses.",
-      "Confidence Score": "85%",
+      "Role": "Regulates public transport operators and oversees licensing compliance for all rail and bus services",
+      "Confidence Score": "95%",
       "Source metadata": {
         "filename": "test_policy_text.txt",
         "document_id": "test_doc_001",
         "chunk_index": 0,
-        "evidence_original": "The Land Transport Authority (LTA) leads the Smart Urban Mobility Reform 2027.",
-        "evidence_translated": "The Land Transport Authority (LTA) leads the Smart Urban Mobility Reform 2027."
+        "evidence_original": "The Land Transport Authority (LTA) leads the Smart Urban Mobility Reform 2027. LTA regulates public transport operators and oversees licensing compliance for all rail and bus services.",
+        "evidence_translated": "The Land Transport Authority (LTA) leads the Smart Urban Mobility Reform 2027. LTA regulates public transport operators and oversees licensing compliance for all rail and bus services."
       },
       "consolidation_info": {
-        "cluster_size": 2,
+        "cluster_size": 1,
         "member_indices": [
-          0,
-          1
+          0
         ],
         "all_sources": [
           {
             "index": 0,
-            "original_name": "土地交通局（LTA）",
-            "Role": "Regulates public transport operators and oversees licensing compliance for all rail and bus services.",
-            "filename": "test_policy_text.txt",
-            "confidence": "85%"
-          },
-          {
-            "index": 1,
             "original_name": "Land Transport Authority (LTA)",
-            "Role": "Leads the Smart Urban Mobility Reform 2027 and funds pilot projects for autonomous buses.",
+            "Role": "Regulates public transport operators and oversees licensing compliance for all rail and bus services",
             "filename": "test_policy_text.txt",
-            "confidence": "85%"
+            "confidence": "95%"
+          }
+        ]
+      }
+    },
+    {
+      "Stakeholder Name": "Ministry of Transport (MOT)",
+      "Canonical Name": "Ministry of Transport",
+      "Category": "Regulator",
+      "Role": "Supervises LTA and allocates annual budgetary funding",
+      "Confidence Score": "95%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "evidence_original": "The Ministry of Transport (MOT) supervises LTA and allocates annual budgetary funding.",
+        "evidence_translated": "The Ministry of Transport (MOT) supervises LTA and allocates annual budgetary funding."
+      },
+      "consolidation_info": {
+        "cluster_size": 1,
+        "member_indices": [
+          3
+        ],
+        "all_sources": [
+          {
+            "index": 3,
+            "original_name": "Ministry of Transport (MOT)",
+            "Role": "Supervises LTA and allocates annual budgetary funding",
+            "filename": "test_policy_text.txt",
+            "confidence": "95%"
+          }
+        ]
+      }
+    },
+    {
+      "Stakeholder Name": "Ministry of Finance (MOF)",
+      "Canonical Name": "Ministry of Finance",
+      "Category": "Regulator",
+      "Role": "Coordinates with MOT to secure infrastructure financing",
+      "Confidence Score": "95%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "evidence_original": "MOT coordinates with the Ministry of Finance (MOF) to secure infrastructure financing.",
+        "evidence_translated": "MOT coordinates with the Ministry of Finance (MOF) to secure infrastructure financing."
+      },
+      "consolidation_info": {
+        "cluster_size": 1,
+        "member_indices": [
+          4
+        ],
+        "all_sources": [
+          {
+            "index": 4,
+            "original_name": "Ministry of Finance (MOF)",
+            "Role": "Coordinates with MOT to secure infrastructure financing",
+            "filename": "test_policy_text.txt",
+            "confidence": "95%"
           }
         ]
       }
@@ -48,8 +98,8 @@
       "Stakeholder Name": "National Environment Agency (NEA)",
       "Canonical Name": "National Environment Agency",
       "Category": "Regulator",
-      "Role": "Works with LTA to enforce vehicle emissions standards and penalizes non-compliant fleet operators.",
-      "Confidence Score": "75%",
+      "Role": "Works with LTA to enforce vehicle emissions standards and penalizes non-compliant fleet operators",
+      "Confidence Score": "95%",
       "Source metadata": {
         "filename": "test_policy_text.txt",
         "document_id": "test_doc_001",
@@ -60,15 +110,52 @@
       "consolidation_info": {
         "cluster_size": 1,
         "member_indices": [
-          7
+          10
         ],
         "all_sources": [
           {
-            "index": 7,
+            "index": 10,
             "original_name": "National Environment Agency (NEA)",
-            "Role": "Works with LTA to enforce vehicle emissions standards and penalizes non-compliant fleet operators.",
+            "Role": "Works with LTA to enforce vehicle emissions standards and penalizes non-compliant fleet operators",
             "filename": "test_policy_text.txt",
-            "confidence": "75%"
+            "confidence": "95%"
+          }
+        ]
+      }
+    },
+    {
+      "Stakeholder Name": "Land Transport Authority (LTA)",
+      "Canonical Name": "Land Transport Authority",
+      "Category": "Partner",
+      "Role": "LTA funds pilot projects for autonomous buses in partnership with technology firms",
+      "Confidence Score": "95%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "evidence_original": "LTA also funds pilot projects for autonomous buses in partnership with technology firms.",
+        "evidence_translated": "LTA also funds pilot projects for autonomous buses in partnership with technology firms."
+      },
+      "consolidation_info": {
+        "cluster_size": 2,
+        "member_indices": [
+          1,
+          2
+        ],
+        "all_sources": [
+          {
+            "index": 1,
+            "original_name": "Land Transport Authority (LTA)",
+            "Role": "LTA funds pilot projects for autonomous buses in partnership with technology firms",
+            "filename": "test_policy_text.txt",
+            "confidence": "95%"
+          },
+          {
+            "index": 2,
+            "original_name": "土地交通局（LTA）",
+            "Role": "Cooperates with Singaporean technology companies to develop autonomous bus projects",
+            "filename": "test_policy_text.txt",
+            "confidence": "90%"
           }
         ]
       }
@@ -76,67 +163,9 @@
     {
       "Stakeholder Name": "SMRT Corporation",
       "Canonical Name": "SMRT Corporation",
-      "Category": "Supplier",
-      "Role": "Operates major MRT lines under license from LTA.",
-      "Confidence Score": "75%",
-      "Source metadata": {
-        "filename": "test_policy_text.txt",
-        "document_id": "test_doc_001",
-        "chunk_index": 0,
-        "evidence_original": "SMRT Corporation operates major MRT lines under license from LTA.",
-        "evidence_translated": "SMRT Corporation operates major MRT lines under license from LTA."
-      },
-      "consolidation_info": {
-        "cluster_size": 1,
-        "member_indices": [
-          2
-        ],
-        "all_sources": [
-          {
-            "index": 2,
-            "original_name": "SMRT Corporation",
-            "Role": "Operates major MRT lines under license from LTA.",
-            "filename": "test_policy_text.txt",
-            "confidence": "75%"
-          }
-        ]
-      }
-    },
-    {
-      "Stakeholder Name": "Commuters’ Association of Singapore (CAS)",
-      "Canonical Name": "Commuters’ Association of Singapore",
-      "Category": "Consumer",
-      "Role": "Advocates for passenger rights and submits policy feedback to MOT.",
-      "Confidence Score": "75%",
-      "Source metadata": {
-        "filename": "test_policy_text.txt",
-        "document_id": "test_doc_001",
-        "chunk_index": 0,
-        "evidence_original": "Commuters’ Association of Singapore (CAS) advocates for passenger rights and submits policy feedback to MOT.",
-        "evidence_translated": "Commuters’ Association of Singapore (CAS) advocates for passenger rights and submits policy feedback to MOT."
-      },
-      "consolidation_info": {
-        "cluster_size": 1,
-        "member_indices": [
-          9
-        ],
-        "all_sources": [
-          {
-            "index": 9,
-            "original_name": "Commuters’ Association of Singapore (CAS)",
-            "Role": "Advocates for passenger rights and submits policy feedback to MOT.",
-            "filename": "test_policy_text.txt",
-            "confidence": "75%"
-          }
-        ]
-      }
-    },
-    {
-      "Stakeholder Name": "SBS Transit",
-      "Canonical Name": "SBS Transit",
       "Category": "Partner",
-      "Role": "Partners with SMRT to integrate digital ticketing systems across rail and bus networks.",
-      "Confidence Score": "70%",
+      "Role": "Partners with SBS Transit to integrate digital ticketing systems",
+      "Confidence Score": "95%",
       "Source metadata": {
         "filename": "test_policy_text.txt",
         "document_id": "test_doc_001",
@@ -147,15 +176,15 @@
       "consolidation_info": {
         "cluster_size": 1,
         "member_indices": [
-          3
+          6
         ],
         "all_sources": [
           {
-            "index": 3,
-            "original_name": "SBS Transit",
-            "Role": "Partners with SMRT to integrate digital ticketing systems across rail and bus networks.",
+            "index": 6,
+            "original_name": "SMRT Corporation",
+            "Role": "Partners with SBS Transit to integrate digital ticketing systems",
             "filename": "test_policy_text.txt",
-            "confidence": "70%"
+            "confidence": "95%"
           }
         ]
       }
@@ -164,8 +193,8 @@
       "Stakeholder Name": "Grab Singapore",
       "Canonical Name": "Grab Singapore",
       "Category": "Partner",
-      "Role": "Collaborates with LTA on first-mile/last-mile pilot programs.",
-      "Confidence Score": "70%",
+      "Role": "Collaborates with LTA on first-mile/last-mile pilot programs",
+      "Confidence Score": "95%",
       "Source metadata": {
         "filename": "test_policy_text.txt",
         "document_id": "test_doc_001",
@@ -176,15 +205,15 @@
       "consolidation_info": {
         "cluster_size": 1,
         "member_indices": [
-          5
+          8
         ],
         "all_sources": [
           {
-            "index": 5,
+            "index": 8,
             "original_name": "Grab Singapore",
-            "Role": "Collaborates with LTA on first-mile/last-mile pilot programs.",
+            "Role": "Collaborates with LTA on first-mile/last-mile pilot programs",
             "filename": "test_policy_text.txt",
-            "confidence": "70%"
+            "confidence": "95%"
           }
         ]
       }
@@ -193,8 +222,8 @@
       "Stakeholder Name": "Town Councils",
       "Canonical Name": "Town Councils",
       "Category": "Partner",
-      "Role": "Coordinate with LTA on infrastructure upgrades around MRT stations and pedestrian pathways.",
-      "Confidence Score": "70%",
+      "Role": "Coordinate with LTA on infrastructure upgrades around MRT stations and pedestrian pathways",
+      "Confidence Score": "95%",
       "Source metadata": {
         "filename": "test_policy_text.txt",
         "document_id": "test_doc_001",
@@ -205,15 +234,44 @@
       "consolidation_info": {
         "cluster_size": 1,
         "member_indices": [
-          8
+          11
         ],
         "all_sources": [
           {
-            "index": 8,
+            "index": 11,
             "original_name": "Town Councils",
-            "Role": "Coordinate with LTA on infrastructure upgrades around MRT stations and pedestrian pathways.",
+            "Role": "Coordinate with LTA on infrastructure upgrades around MRT stations and pedestrian pathways",
             "filename": "test_policy_text.txt",
-            "confidence": "70%"
+            "confidence": "95%"
+          }
+        ]
+      }
+    },
+    {
+      "Stakeholder Name": "SMRT Corporation",
+      "Canonical Name": "SMRT Corporation",
+      "Category": "Supplier",
+      "Role": "Operates major MRT lines under license from LTA",
+      "Confidence Score": "95%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "evidence_original": "SMRT Corporation operates major MRT lines under license from LTA.",
+        "evidence_translated": "SMRT Corporation operates major MRT lines under license from LTA."
+      },
+      "consolidation_info": {
+        "cluster_size": 1,
+        "member_indices": [
+          5
+        ],
+        "all_sources": [
+          {
+            "index": 5,
+            "original_name": "SMRT Corporation",
+            "Role": "Operates major MRT lines under license from LTA",
+            "filename": "test_policy_text.txt",
+            "confidence": "95%"
           }
         ]
       }
@@ -222,8 +280,8 @@
       "Stakeholder Name": "SMRT Corporation",
       "Canonical Name": "SMRT Corporation",
       "Category": "Competitor",
-      "Role": "Competes with private mobility providers for commuter market share.",
-      "Confidence Score": "70%",
+      "Role": "Competes with private mobility providers for commuter market share",
+      "Confidence Score": "95%",
       "Source metadata": {
         "filename": "test_policy_text.txt",
         "document_id": "test_doc_001",
@@ -234,15 +292,15 @@
       "consolidation_info": {
         "cluster_size": 1,
         "member_indices": [
-          4
+          7
         ],
         "all_sources": [
           {
-            "index": 4,
+            "index": 7,
             "original_name": "SMRT Corporation",
-            "Role": "Competes with private mobility providers for commuter market share.",
+            "Role": "Competes with private mobility providers for commuter market share",
             "filename": "test_policy_text.txt",
-            "confidence": "70%"
+            "confidence": "95%"
           }
         ]
       }
@@ -251,8 +309,8 @@
       "Stakeholder Name": "Grab Singapore",
       "Canonical Name": "Grab Singapore",
       "Category": "Competitor",
-      "Role": "Competes with Gojek Singapore for ride-hailing customers.",
-      "Confidence Score": "70%",
+      "Role": "Competes with Gojek Singapore for ride-hailing customers",
+      "Confidence Score": "95%",
       "Source metadata": {
         "filename": "test_policy_text.txt",
         "document_id": "test_doc_001",
@@ -263,21 +321,76 @@
       "consolidation_info": {
         "cluster_size": 1,
         "member_indices": [
-          6
+          9
         ],
         "all_sources": [
           {
-            "index": 6,
+            "index": 9,
             "original_name": "Grab Singapore",
-            "Role": "Competes with Gojek Singapore for ride-hailing customers.",
+            "Role": "Competes with Gojek Singapore for ride-hailing customers",
             "filename": "test_policy_text.txt",
-            "confidence": "70%"
+            "confidence": "95%"
+          }
+        ]
+      }
+    },
+    {
+      "Stakeholder Name": "Commuters’ Association of Singapore (CAS)",
+      "Canonical Name": "Commuters' Association of Singapore",
+      "Category": "Consumer",
+      "Role": "Advocates for passenger rights and submits policy feedback to MOT",
+      "Confidence Score": "95%",
+      "Source metadata": {
+        "filename": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "chunk_index": 0,
+        "evidence_original": "Commuters’ Association of Singapore (CAS) advocates for passenger rights and submits policy feedback to MOT.",
+        "evidence_translated": "Commuters’ Association of Singapore (CAS) advocates for passenger rights and submits policy feedback to MOT."
+      },
+      "consolidation_info": {
+        "cluster_size": 1,
+        "member_indices": [
+          12
+        ],
+        "all_sources": [
+          {
+            "index": 12,
+            "original_name": "Commuters’ Association of Singapore (CAS)",
+            "Role": "Advocates for passenger rights and submits policy feedback to MOT",
+            "filename": "test_policy_text.txt",
+            "confidence": "95%"
           }
         ]
       }
     }
   ],
   "relationships": [
+    {
+      "source": "Land Transport Authority",
+      "target": "Ministry of Transport",
+      "relationship_description": "MOT supervises LTA and allocates annual budgetary funding.",
+      "relationship_category": "regulates",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "evidence_original": "The Ministry of Transport (MOT) supervises LTA and allocates annual budgetary funding.",
+        "evidence_translated": "The Ministry of Transport (MOT) supervises LTA and allocates annual budgetary funding."
+      }
+    },
+    {
+      "source": "Land Transport Authority",
+      "target": "Grab Singapore",
+      "relationship_description": "LTA collaborates with Grab Singapore on first-mile/last-mile pilot programs.",
+      "relationship_category": "collaborates",
+      "confidence": "90%",
+      "source_metadata": {
+        "file_name": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "evidence_original": "Grab Singapore collaborates with LTA on first-mile/last-mile pilot programs...",
+        "evidence_translated": "Grab Singapore collaborates with LTA on first-mile/last-mile pilot programs..."
+      }
+    },
     {
       "source": "Land Transport Authority",
       "target": "SMRT Corporation",
@@ -305,36 +418,23 @@
       }
     },
     {
-      "source": "Grab Singapore",
-      "target": "Land Transport Authority",
-      "relationship_description": "Grab Singapore collaborates with LTA on first-mile/last-mile pilot programs.",
+      "source": "Ministry of Transport",
+      "target": "Ministry of Finance",
+      "relationship_description": "MOT coordinates with MOF to secure infrastructure financing.",
       "relationship_category": "collaborates",
       "confidence": "90%",
       "source_metadata": {
         "file_name": "test_policy_text.txt",
         "document_id": "test_doc_001",
-        "evidence_original": "Grab Singapore collaborates with LTA on first-mile/last-mile pilot programs but has raised concerns about regulatory constraints on surge pricing.",
-        "evidence_translated": "Grab Singapore collaborates with LTA on first-mile/last-mile pilot programs but has raised concerns about regulatory constraints on surge pricing."
+        "evidence_original": "MOT coordinates with the Ministry of Finance (MOF) to secure infrastructure financing.",
+        "evidence_translated": "MOT coordinates with the Ministry of Finance (MOF) to secure infrastructure financing."
       }
     },
     {
-      "source": "National Environment Agency",
-      "target": "Land Transport Authority",
-      "relationship_description": "NEA works with LTA to enforce vehicle emissions standards.",
-      "relationship_category": "collaborates",
-      "confidence": "90%",
-      "source_metadata": {
-        "file_name": "test_policy_text.txt",
-        "document_id": "test_doc_001",
-        "evidence_original": "The National Environment Agency (NEA) works with LTA to enforce vehicle emissions standards and penalizes non-compliant fleet operators.",
-        "evidence_translated": "The National Environment Agency (NEA) works with LTA to enforce vehicle emissions standards and penalizes non-compliant fleet operators."
-      }
-    },
-    {
-      "source": "Commuters’ Association of Singapore",
+      "source": "Commuters' Association of Singapore",
       "target": "Ministry of Transport",
-      "relationship_description": "CAS advocates for passenger rights and submits policy feedback to MOT.",
-      "relationship_category": "other",
+      "relationship_description": "CAS submits policy feedback to MOT and advocates for passenger rights.",
+      "relationship_category": "collaborates",
       "confidence": "90%",
       "source_metadata": {
         "file_name": "test_policy_text.txt",
@@ -345,18 +445,6 @@
     }
   ],
   "pain_points": [
-    {
-      "stakeholder": "Land Transport Authority",
-      "painpoint": "Test site approval processes are too long, significantly delaying R&D progress.",
-      "painpoint_category": "Regulatory Hurdles",
-      "confidence": "85%",
-      "source_metadata": {
-        "file_name": "test_policy_text.txt",
-        "document_id": "test_doc_001",
-        "evidence_original": "土地交通局（LTA）与新加坡科技公司合作开发无人驾驶巴士项目，但该公司反映测试场地审批流程过长，严重延误了研发进度。",
-        "evidence_translated": "LTA cooperates with a Singaporean tech company to develop autonomous bus projects, but the company reported that test site approval processes are too long, significantly delaying R&D progress."
-      }
-    },
     {
       "stakeholder": "Grab Singapore",
       "painpoint": "Grab Singapore has raised concerns about regulatory constraints on surge pricing.",
@@ -370,15 +458,27 @@
       }
     },
     {
-      "stakeholder": "Commuters’ Association of Singapore",
+      "stakeholder": "Commuters' Association of Singapore",
       "painpoint": "CAS has criticized fare increases and service disruptions.",
-      "painpoint_category": "Service Quality",
+      "painpoint_category": "Financial Barriers",
       "confidence": "85%",
       "source_metadata": {
         "file_name": "test_policy_text.txt",
         "document_id": "test_doc_001",
         "evidence_original": "CAS has criticized fare increases and service disruptions.",
         "evidence_translated": "CAS has criticized fare increases and service disruptions."
+      }
+    },
+    {
+      "stakeholder": "Land Transport Authority",
+      "painpoint": "LTA faces delays in autonomous bus development due to lengthy testing site approval processes.",
+      "painpoint_category": "Regulatory Delays",
+      "confidence": "85%",
+      "source_metadata": {
+        "file_name": "test_policy_text.txt",
+        "document_id": "test_doc_001",
+        "evidence_original": "土地交通局（LTA）与新加坡科技公司合作开发无人驾驶巴士项目，但该公司反映测试场地审批流程过长，严重延误了研发进度。",
+        "evidence_translated": "The Land Transport Authority (LTA) collaborates with a Singapore technology company to develop autonomous bus projects, but the company has reported that lengthy testing site approval processes have severely delayed the development progress."
       }
     }
   ]

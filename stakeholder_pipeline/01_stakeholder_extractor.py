@@ -59,7 +59,7 @@ STAKEHOLDER_SCHEMA = {
             },
             "Role": {
                 "type": "string",
-                "description": "Specific role/description of the entity(e.g., 'Regulates public elderly services')",
+                "description": "Specific role/description of the entity(e.g., 'Regulates public elderly services') as mentioned in the text.",
             },
             "Confidence Score": {
                 "type": "string",
@@ -364,7 +364,7 @@ async def run_test_mode():
 
 
 async def main():
-    RUNNING_TEST_MODE = True  # CHANGE: Set to False to run real extraction
+    RUNNING_TEST_MODE = False  # CHANGE: Set to False to run real extraction
     if RUNNING_TEST_MODE:
         await run_test_mode()
         return
@@ -392,7 +392,7 @@ async def main():
 
     start = time.time()
     extractor = StakeholderExtractor(
-        model="openai/gpt-4o-mini", max_docs=3
+        model="openai/gpt-4o", max_docs=3
     )  # CHANGE: Limit to 3 docs for testing
 
     result = await extractor.extract_all_stakeholders_from_brain(brain_name, brain_id)

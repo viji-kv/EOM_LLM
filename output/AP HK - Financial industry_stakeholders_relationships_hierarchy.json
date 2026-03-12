@@ -1,202 +1,422 @@
-{
-  "brain": null,
-  "brain_id": "ce88cb71-2528-4598-a585-5fa2dfd03319",
-  "hierarchy_graph": {
-    "nodes": [
+[
+  {
+    "canonical_name": "AML/CFT Industry Partnership",
+    "roles": {
+      "Partner": "Addresses emerging money laundering and terrorism financing risks in Singapore as a private-public collaboration."
+    },
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "meso",
+    "parent": "Hong Kong Government"
+  },
+  {
+    "canonical_name": "Agency for Volunteer Service",
+    "roles": {
+      "Partner": "Presented Hong Kong Volunteer Award 2022"
+    },
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "meso",
+    "parent": "Hong Kong Government"
+  },
+  {
+    "canonical_name": "Agriculture, Fisheries and Conservation Department",
+    "roles": {
+      "Regulator": "Launched the Country Parks Plantation Enrichment Programme"
+    },
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "meso",
+    "parent": "Hong Kong Government"
+  },
+  {
+    "canonical_name": "Business Environment Council",
+    "roles": {
+      "Partner": "Collaborated with in corporate membership programmes"
+    },
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "micro",
+    "parent": "Hang Seng Bank"
+  },
+  {
+    "canonical_name": "CarbonCare InnoLab",
+    "roles": {
+      "Partner": "Collaborated on the Hang Seng Low Carbon Future – SolarCare Programme"
+    },
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "micro",
+    "parent": "Hang Seng Bank"
+  },
+  {
+    "canonical_name": "Chamber of Hong Kong Listed",
+    "roles": {
+      "Partner": "Organized the “2022 ESG and Green Finance Opportunities Forum”"
+    },
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "micro",
+    "parent": "Business Environment Council"
+  },
+  {
+    "canonical_name": "DBS Foundation",
+    "roles": {
+      "Partner": "Supports strategic partnerships to uplift communities and foster a socially-conscious society."
+    },
+    "relationships": [
       {
-        "id": "Infocomm Media Development Authority",
-        "level": "macro",
-        "parent": null,
-        "size": 50
+        "target": "The Community Chest of Hong Kong",
+        "relationship_type": "partners",
+        "description": "Through regular events and conversations with social service agencies including The Community Chest of Hong Kong, DBS aims to understand the social landscape and create impact."
       },
       {
-        "id": "Monetary Authority of Singapore",
-        "level": "macro",
-        "parent": null,
-        "size": 50
+        "target": "SMEs",
+        "relationship_type": "funds",
+        "description": "DBS Foundation provided the DBS Eco Renovate Loan to encourage SMEs to adopt eco-friendly solutions during renovations."
       },
       {
-        "id": "DBS Group Holdings",
-        "level": "meso",
-        "parent": "Monetary Authority of Singapore",
-        "size": 30
+        "target": "Migrant Workers",
+        "relationship_type": "collaborates",
+        "description": "Launched the 'MiDigi Ambassador Programme' to help migrant workers overcome language barriers in digital skills acquisition."
       },
       {
-        "id": "Hang Seng University",
-        "level": "meso",
-        "parent": null,
-        "size": 30
-      },
-      {
-        "id": "Community Chest",
-        "level": "meso",
-        "parent": null,
-        "size": 30
-      },
-      {
-        "id": "Singapore Centre for Social Enterprise",
-        "level": "meso",
-        "parent": null,
-        "size": 30
-      },
-      {
-        "id": "DBS Foundation",
-        "level": "micro",
-        "parent": "DBS Group Holdings",
-        "size": 15
-      },
-      {
-        "id": "Migrant Workers' Centre",
-        "level": "micro",
-        "parent": "DBS Group Holdings",
-        "size": 15
-      },
-      {
-        "id": "Reliance Industries",
-        "level": "micro",
-        "parent": "DBS Group Holdings",
-        "size": 15
-      },
-      {
-        "id": "Hong Kong Alzheimer's Disease Association",
-        "level": "micro",
-        "parent": "HSBC",
-        "size": 15
-      },
-      {
-        "id": "WWF Hong Kong",
-        "level": "micro",
-        "parent": "Hang Seng University",
-        "size": 15
-      },
-      {
-        "id": "Business Environment Council",
-        "level": "micro",
-        "parent": "Hang Seng University",
-        "size": 15
-      },
-      {
-        "id": "The Conservancy Association",
-        "level": "micro",
-        "parent": "Hang Seng University",
-        "size": 15
-      },
-      {
-        "id": "CarbonCare InnoLab",
-        "level": "micro",
-        "parent": "Hang Seng University",
-        "size": 15
-      },
-      {
-        "id": "Hong Kong Table Tennis Association",
-        "level": "micro",
-        "parent": "Hang Seng University",
-        "size": 15
-      },
-      {
-        "id": "The Community Chest of Hong Kong",
-        "level": "micro",
-        "parent": "Community Chest",
-        "size": 15
-      },
-      {
-        "id": "HSBC",
-        "level": "micro",
-        "parent": null,
-        "size": 15
+        "target": "Esplanade - Theatres on the Bay",
+        "relationship_type": "partners",
+        "description": "DBS Foundation partnered with Esplanade to support free community programs."
       }
     ],
-    "edges": [
+    "painpoints": [],
+    "primary_level": "meso",
+    "parent": "Hong Kong Government"
+  },
+  {
+    "canonical_name": "Dementia Friends",
+    "roles": {
+      "Partner": "A global movement to change perceptions of dementia and offer support."
+    },
+    "relationships": [
       {
-        "source": "HSBC",
         "target": "Hong Kong Alzheimer's Disease Association",
-        "weight": 1,
-        "evidence_strength": "low"
-      },
-      {
-        "source": "DBS Group Holdings",
-        "target": "Singapore Centre for Social Enterprise",
-        "weight": 1,
-        "evidence_strength": "low"
-      },
-      {
-        "source": "DBS Group Holdings",
-        "target": "Community Chest",
-        "weight": 1,
-        "evidence_strength": "low"
-      },
-      {
-        "source": "DBS Group Holdings",
-        "target": "Reliance Industries",
-        "weight": 1,
-        "evidence_strength": "low"
-      },
-      {
-        "source": "DBS Group Holdings",
-        "target": "Migrant Workers' Centre",
-        "weight": 1,
-        "evidence_strength": "low"
-      },
-      {
-        "source": "DBS Group Holdings",
-        "target": "Monetary Authority of Singapore",
-        "weight": 1,
-        "evidence_strength": "low"
-      },
-      {
-        "source": "DBS Group Holdings",
-        "target": "Infocomm Media Development Authority",
-        "weight": 1,
-        "evidence_strength": "low"
-      },
-      {
-        "source": "DBS Group Holdings",
-        "target": "DBS Foundation",
-        "weight": 1,
-        "evidence_strength": "low"
-      },
-      {
-        "source": "Hang Seng University",
-        "target": "The Community Chest of Hong Kong",
-        "weight": 1,
-        "evidence_strength": "low"
-      },
-      {
-        "source": "Hang Seng University",
-        "target": "Hong Kong Table Tennis Association",
-        "weight": 1,
-        "evidence_strength": "low"
-      },
-      {
-        "source": "Hang Seng University",
-        "target": "CarbonCare InnoLab",
-        "weight": 1,
-        "evidence_strength": "low"
-      },
-      {
-        "source": "Hang Seng University",
-        "target": "The Conservancy Association",
-        "weight": 1,
-        "evidence_strength": "low"
-      },
-      {
-        "source": "Hang Seng University",
-        "target": "WWF Hong Kong",
-        "weight": 1,
-        "evidence_strength": "low"
-      },
-      {
-        "source": "Hang Seng University",
-        "target": "Business Environment Council",
-        "weight": 1,
-        "evidence_strength": "low"
+        "relationship_type": "collaborates",
+        "description": "The Hong Kong Alzheimer’s Disease Association joined the Dementia Friends movement in 2017."
       }
-    ]
+    ],
+    "painpoints": [],
+    "primary_level": "micro",
+    "parent": "Hong Kong Alzheimer's Disease Association"
   },
-  "input_stats": {
-    "relationships_count": 14
+  {
+    "canonical_name": "Esplanade - Theatres on the Bay",
+    "roles": {
+      "Partner": "Collaborates with DBS to uplift the community through a strategic partnership."
+    },
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "micro",
+    "parent": "DBS Foundation"
   },
-  "processing_stats": {
-    "llm_calls": 1
+  {
+    "canonical_name": "Green Power",
+    "roles": {
+      "Partner": "Received donations for Green Power Hike"
+    },
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "micro",
+    "parent": "Hang Seng Bank"
+  },
+  {
+    "canonical_name": "Group Management Committee",
+    "roles": {
+      "Regulator": "Provides senior management direction and oversight for the implementation of Gen Al programme."
+    },
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "meso",
+    "parent": "Hong Kong Government"
+  },
+  {
+    "canonical_name": "HSBC",
+    "roles": {
+      "Bank": "Provides banking services and support for dementia care.",
+      "Partner": "Net zero ambitions contributor"
+    },
+    "relationships": [
+      {
+        "target": "Hong Kong Alzheimer's Disease Association",
+        "relationship_type": "partners",
+        "description": "HSBC is working in partnership with the Hong Kong Alzheimer’s Disease Association to build a more dementia-friendly community."
+      }
+    ],
+    "painpoints": [],
+    "primary_level": "meso",
+    "parent": "Hong Kong Government"
+  },
+  {
+    "canonical_name": "Hang Seng Bank",
+    "roles": {},
+    "relationships": [
+      {
+        "target": "The Conservancy Association",
+        "relationship_type": "collaborates",
+        "description": "Hang Seng Bank supported The Conservancy Association in the Country Parks Plantation Enrichment Programme."
+      },
+      {
+        "target": "World Wide Fund for Nature Hong Kong",
+        "relationship_type": "collaborates",
+        "description": "Hang Seng Bank provided support to the corporate membership programmes of the World Wide Fund for Nature Hong Kong."
+      },
+      {
+        "target": "Business Environment Council",
+        "relationship_type": "collaborates",
+        "description": "Hang Seng Bank provided support to the corporate membership programmes of the Business Environment Council."
+      },
+      {
+        "target": "Green Power",
+        "relationship_type": "funds",
+        "description": "Hang Seng Bank supported Green Power by donating to Green Power Hike for 15 years."
+      },
+      {
+        "target": "The Community Chest of Hong Kong",
+        "relationship_type": "supports",
+        "description": "Hang Seng Bank is the Diamond Sponsor of the Dress Casual Day hosted by The Community Chest of Hong Kong."
+      },
+      {
+        "target": "Hong Kong Table Tennis Association",
+        "relationship_type": "partners",
+        "description": "Hang Seng Bank co-organised the Hang Seng Table Tennis Academy with the Hong Kong Table Tennis Association."
+      },
+      {
+        "target": "Agency for Volunteer Service",
+        "relationship_type": "recognizes",
+        "description": "Hang Seng Volunteer Team received the Hong Kong Volunteer Award 2022, presented by the Agency for Volunteer Service."
+      },
+      {
+        "target": "CarbonCare InnoLab",
+        "relationship_type": "collaborates",
+        "description": "Hang Seng Bank funded the Hang Seng Low Carbon Future – SolarCare Programme in collaboration with CarbonCare InnoLab."
+      }
+    ],
+    "painpoints": [],
+    "primary_level": "meso",
+    "parent": "Hong Kong Government"
+  },
+  {
+    "canonical_name": "Hong Kong Alzheimer's Disease Association",
+    "roles": {
+      "Partner": "Provides information and support for dementia, building a dementia-friendly community."
+    },
+    "relationships": [],
+    "painpoints": [
+      {
+        "category": "Healthcare Access",
+        "description": "There is a challenge in motivating the public to put their care into action for dementia support."
+      }
+    ],
+    "primary_level": "micro",
+    "parent": "HSBC"
+  },
+  {
+    "canonical_name": "Hong Kong Government",
+    "roles": {
+      "Regulator": "Feed-in Tariff Scheme provider"
+    },
+    "relationships": [
+      {
+        "target": "Hang Seng Bank",
+        "relationship_type": "other",
+        "description": "The Hong Kong Government's Feed-in Tariff Scheme was utilised by Hang Seng Bank to organise youth climate education activities."
+      }
+    ],
+    "painpoints": [
+      {
+        "category": "Compliance Challenges",
+        "description": "The enforcement of new regulatory and legal requirements, as well as new global or market standards, presents a burden."
+      }
+    ],
+    "primary_level": "macro",
+    "parent": null
+  },
+  {
+    "canonical_name": "Hong Kong Judiciary",
+    "roles": {
+      "Regulator": "Appoints Committee of Estate for Mentally Incapacitated Persons."
+    },
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "macro",
+    "parent": null
+  },
+  {
+    "canonical_name": "Hong Kong Table Tennis Association",
+    "roles": {
+      "Partner": "Co-organized Hang Seng Table Tennis Academy"
+    },
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "micro",
+    "parent": "DBS Foundation"
+  },
+  {
+    "canonical_name": "Infocomm Media Development Authority of Singapore",
+    "roles": {
+      "Regulator": "Promotes DPTM programme to expand certified organisations for data safeguarding."
+    },
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "macro",
+    "parent": null
+  },
+  {
+    "canonical_name": "MAS-led Project COSMIC",
+    "roles": {
+      "Partner": "Digital platform for sharing key customer and transaction information on bad actors to accelerate detection of financial crime."
+    },
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "micro",
+    "parent": null
+  },
+  {
+    "canonical_name": "Migrant Workers",
+    "roles": {},
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "micro",
+    "parent": "DBS Foundation"
+  },
+  {
+    "canonical_name": "Monetary Authority of Singapore",
+    "roles": {
+      "Regulator": "Initiated Project MindForge to drive innovation and responsible Gen Al use."
+    },
+    "relationships": [
+      {
+        "target": "financial industry companies",
+        "relationship_type": "regulates",
+        "description": "MAS launched Project MindForge to develop a framework for Gen Al in the financial sector."
+      }
+    ],
+    "painpoints": [],
+    "primary_level": "macro",
+    "parent": null
+  },
+  {
+    "canonical_name": "RAI Taskforce",
+    "roles": {
+      "Regulator": "Approves Gen Al use cases, providing assurance of a holistic assessment before deployment."
+    },
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "meso",
+    "parent": "Monetary Authority of Singapore"
+  },
+  {
+    "canonical_name": "Responsible Data Use Committee",
+    "roles": {
+      "Regulator": "Evaluates and approves Gen Al use pilots for holistic assessment prior to deployment."
+    },
+    "relationships": [
+      {
+        "target": "RAI Taskforce",
+        "relationship_type": "collaborates",
+        "description": "The Responsible Data Use Committee and RAI Taskforce jointly evaluated and approved Gen Al use cases."
+      }
+    ],
+    "painpoints": [],
+    "primary_level": "meso",
+    "parent": "RAI Taskforce"
+  },
+  {
+    "canonical_name": "SMEs",
+    "roles": {},
+    "relationships": [],
+    "painpoints": [
+      {
+        "category": "Awareness",
+        "description": "Lack of awareness and adoption of sustainable practices in renovations."
+      }
+    ],
+    "primary_level": "micro",
+    "parent": null
+  },
+  {
+    "canonical_name": "Social Welfare Department",
+    "roles": {
+      "Regulator": "Provides Guardianship Orders and elderly services."
+    },
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "macro",
+    "parent": null
+  },
+  {
+    "canonical_name": "The Community Chest of Hong Kong",
+    "roles": {
+      "Partner": "Supported various charitable programmes"
+    },
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "meso",
+    "parent": "Social Welfare Department"
+  },
+  {
+    "canonical_name": "The Conservancy Association",
+    "roles": {
+      "Partner": "Partnered to plant seedlings in local country parks"
+    },
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "micro",
+    "parent": "The Community Chest of Hong Kong"
+  },
+  {
+    "canonical_name": "The Hong Kong Society for Rehabilitation",
+    "roles": {
+      "Non-profit Organization": "Provides community support and rehabilitation services."
+    },
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "micro",
+    "parent": "Social Welfare Department"
+  },
+  {
+    "canonical_name": "The Neighbourhood Advice-Action Council",
+    "roles": {
+      "Partner": "Recipient of staff donations"
+    },
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "micro",
+    "parent": "Social Welfare Department"
+  },
+  {
+    "canonical_name": "Tung Wah Group of Hospitals",
+    "roles": {
+      "Non-profit Organization": "Provides elderly services and community support."
+    },
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "micro",
+    "parent": "Social Welfare Department"
+  },
+  {
+    "canonical_name": "World Wide Fund for Nature Hong Kong",
+    "roles": {
+      "Partner": "Collaborated with in corporate membership programmes"
+    },
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "meso",
+    "parent": "The Community Chest of Hong Kong"
+  },
+  {
+    "canonical_name": "financial industry companies",
+    "roles": {},
+    "relationships": [],
+    "painpoints": [],
+    "primary_level": "micro",
+    "parent": "Monetary Authority of Singapore"
   }
-}
+]
