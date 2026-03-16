@@ -2,26 +2,28 @@ import asyncio
 import json
 import re
 import sys
-from dotenv import load_dotenv
-from typing import List, Dict, Any, Set
 from pathlib import Path
+from typing import Any, Dict, List
+
+from dotenv import load_dotenv
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+from tenacity import retry, stop_after_attempt, wait_exponential
+
 from stakeholder_pipeline.utils import (
     # parse_json_response,
     calculate_splitter_params,
-    save_output,
     calculate_threshold,
+    save_output,
 )
-from tenacity import retry, stop_after_attempt, wait_exponential
 
 load_dotenv()
 
 # Import from files
 from supabase_utils.select_data import (
-    initialize_supabase,
     get_documents_per_brain,
+    initialize_supabase,
 )
-from supabase_utils.supabase_db import get_document_data, decode_string
+from supabase_utils.supabase_db import decode_string, get_document_data
 
 RELATIONSHIP_SCHEMA = {
     "type": "object",
@@ -256,9 +258,9 @@ class RelationshipExtractor:
         filename: str,
     ) -> Dict[str, Any]:
         """Core extraction with batching and concurrency control."""
-        from enrichment.state import InputState
-        from enrichment.configuration import Configuration
         from enrichment import graph
+        from enrichment.configuration import Configuration
+        from enrichment.state import InputState
 
         aggregated_results = {"relationships": [], "pain_points": []}
         canonical_stakeholders = list(alias_map.keys())
@@ -457,7 +459,7 @@ class RelationshipExtractor:
 
     async def canonical_names_from_file(self, input_file: str) -> dict[str, list[str]]:
         """Utility to load canonical names from a JSON file."""
-        with open(input_file, "r", encoding="utf-8") as f:
+        with open(input_file, encoding="utf-8") as f:
             data = json.load(f)
 
         alias_map = await self.extract_alias(data)
@@ -472,7 +474,7 @@ async def run_test_mode():
         print(" TEST MODE: Loading from test_policy_text.txt")
 
         try:
-            with open(test_file_path, "r", encoding="utf-8") as f:
+            with open(test_file_path, encoding="utf-8") as f:
                 test_text = f.read()
 
             mock_doc_id = "test_doc_001"
@@ -512,13 +514,11 @@ async def run_test_mode():
             )
             # print(json.dumps(result, indent=2, ensure_ascii=False)[:1000] + "...")
 
-            with open(input_file, "r", encoding="utf-8") as f:
+            with open(input_file, encoding="utf-8") as f:
                 input_data = json.load(f)
 
             input_data["relationships"] = result["relationships"]
             input_data["pain_points"] = result["pain_points"]
-            # input_data["total_relationships"] = result["total_relationships"]
-            # input_data["total_pain_points"] = result["total_pain_points"]
 
             # Save
             output_filename = "test_policy_output_relationship.json"
@@ -566,7 +566,7 @@ async def main():
 
     elapsed = time.time() - start
 
-    with open(input_file, "r", encoding="utf-8") as f:
+    with open(input_file, encoding="utf-8") as f:
         input_data = json.load(f)
 
     input_data["relationships"] = result["relationships"]

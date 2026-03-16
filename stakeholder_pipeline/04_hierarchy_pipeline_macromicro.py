@@ -182,8 +182,7 @@ Output VALID JSON array only matching schema.
     assignment_map = {
         normalize_key(h["stakeholder"]): h for h in assignments
     }  # lowercase name-> stakholder info for assigned entities
-    # print(f"\n\nassignment_map:{assignment_map}")
-    # print(f"\n\nstakeholders:{stakeholders}")
+
     missing = [
         s["canonical_name"]
         for s in stakeholders  # input info
@@ -255,12 +254,12 @@ async def main():
         logger.error(f"Input error: {e}")
         return
 
-    # 🔴 Optional transform step
+    # transform step
     transformed_data = transform_stakeholder_data(input_data)
 
     config = HierarchyConfig(
         output_dir=args.output_dir,
-        batch_size=BATCH_SIZE,  # 🔴 Pass batch size
+        batch_size=BATCH_SIZE,  # Pass batch size
     )
     hierarchy_output = await assign_stakeholder_hierarchy(transformed_data, config)
 

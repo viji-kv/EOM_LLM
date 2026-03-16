@@ -1,20 +1,16 @@
-"""
-LLM-Only Stakeholder Clustering
-
-"""
+"""LLM-Only Stakeholder Clustering"""
 
 import asyncio
 import json
-import os
 import sys
-import re
-from pathlib import Path
-from typing import List, Dict, Optional
-from dataclasses import dataclass
-from dotenv import load_dotenv
 from collections import defaultdict
-from stakeholder_pipeline.utils import parse_json_response, save_output
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Dict, List
 
+from dotenv import load_dotenv
+
+from stakeholder_pipeline.utils import parse_json_response, save_output
 
 load_dotenv()
 
@@ -65,12 +61,10 @@ CLUSTERING_SCHEMA = {
 async def llm_cluster_stakeholders(
     stakeholders: List[Dict], category: str, config: LLMClusterConfig
 ) -> List[Dict]:
-    """
-    Use LLM to cluster stakeholders within a category.
-    """
-    from enrichment.state import InputState
-    from enrichment.configuration import Configuration
+    """Use LLM to cluster stakeholders within a category."""
     from enrichment import graph
+    from enrichment.configuration import Configuration
+    from enrichment.state import InputState
 
     # Build prompt with all stakeholders
     prompt_text = f"""You are clustering {len(stakeholders)} {category} stakeholders to identify duplicates.
@@ -85,7 +79,7 @@ STAKEHOLDERS (by index):
         # prompt_text += f"{i}. {name} - {role} (conf: {conf})\n"
         prompt_text += f"{i}. {name}\n"
 
-    prompt_text += f"""
+    prompt_text += """
 
 TASK: Group stakeholders that represent the SAME entity (duplicates/variants).
 
@@ -124,9 +118,7 @@ def merge_llm_clusters(
     stakeholders: List[Dict],
     original_indices: List[int],  # Pass actual indices for this category
 ) -> List[Dict]:
-    """
-    Merge stakeholders based on LLM clustering with validation.
-    """
+    """Merge stakeholders based on LLM clustering with validation."""
     consolidated = []
     used_indices = set()
 
@@ -216,23 +208,6 @@ def merge_llm_clusters(
 
         consolidated.append(master)
 
-    # # Add ONLY unused stakeholders from original_indices
-    # for real_idx in original_indices:
-    #     if real_idx not in used_indices:
-    #         singleton = stakeholders[real_idx].copy()
-    #         singleton["consolidation_info"] = {
-    #             "cluster_size": 1,
-    #             "member_indices": [real_idx],
-    #         }
-    #         consolidated.append(singleton)
-    #         used_indices.add(real_idx)
-
-    # print(
-    #     f"       Created {len(consolidated)} consolidated (from {len(original_indices)} original)"
-    # )
-
-    # return consolidated
-
     for real_idx in original_indices:
         if real_idx not in used_indices:
             singleton = stakeholders[real_idx].copy()
@@ -267,9 +242,7 @@ def merge_llm_clusters(
 async def consolidate_with_llm_only(
     stakeholders: List[Dict], config: LLMClusterConfig
 ) -> Dict:
-    """
-    Pure LLM clustering pipeline (for comparison testing).
-    """
+    """Pure LLM clustering pipeline (for comparison testing)."""
     if config is None:
         config = LLMClusterConfig()
 
@@ -290,16 +263,6 @@ async def consolidate_with_llm_only(
 
         # Extract stakeholders for this category
         cat_stakeholders = [stakeholders[i] for i in indices]
-
-        # if len(cat_stakeholders) == 1:
-        #     # Singleton category
-        #     single = cat_stakeholders[0].copy()
-        #     single["consolidation_info"] = {
-        #         "cluster_size": 1,
-        #         "member_indices": indices,
-        #     }
-        #     all_consolidated.append(single)
-        #     continue
 
         if len(cat_stakeholders) == 1:
             # Singleton category
@@ -381,7 +344,7 @@ async def consolidate_with_llm_only(
 
 async def consolidate_from_file(input_file: str, config: LLMClusterConfig) -> Dict:
     """Load JSON, cluster with LLM, return result."""
-    with open(input_file, "r", encoding="utf-8") as f:
+    with open(input_file, encoding="utf-8") as f:
         data = json.load(f)
 
     result = await consolidate_with_llm_only(data["stakeholders"], config)
@@ -422,7 +385,7 @@ def main():
 
     # Print summary
     stats = result["consolidation_stats"]
-    print(f"\n LLM-Only Clustering Complete")
+    print("\n LLM-Only Clustering Complete")
     print(
         f"    Original: {stats['original_count']} → Consolidated: {stats['consolidated_count']}"
     )

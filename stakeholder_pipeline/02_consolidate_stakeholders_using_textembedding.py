@@ -1,27 +1,26 @@
-#!/usr/bin/env python
-"""
-Stakeholder Consolidator: Normalize → Embeddings → LLM Labels
+"""Stakeholder Consolidator: Normalize → Embeddings → LLM Labels
 Emdedding is done based on normalized names.
 """
 
 import asyncio
 import json
-import sys
-import re
 import os
-from pathlib import Path
-from typing import List, Dict, Tuple, Optional
-from dataclasses import dataclass
-from dotenv import load_dotenv
+import re
+import sys
 from collections import defaultdict
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Dict, List, Optional
+
 import numpy as np
-from sklearn.metrics.pairwise import cosine_similarity
+from dotenv import load_dotenv
 from openai import AsyncOpenAI
+from sklearn.metrics.pairwise import cosine_similarity
 
 load_dotenv()
 
 
-# Configuration class for UI parameterization
+# Configuration class
 @dataclass
 class ConsolidationConfig:
     """Configuration for consolidation pipeline."""
@@ -70,7 +69,7 @@ async def get_embeddings(texts: List[str], config: ConsolidationConfig) -> np.nd
 
     print(f"      Fetching OpenAI embeddings for {len(texts)} stakeholders...")
 
-    # Use config.embedding_model instead of hardcoded
+    # Use config.embedding_model
     response = await client.embeddings.create(
         model=config.embedding_model,
         input=texts,
@@ -144,9 +143,9 @@ async def llm_canonical_label(
     cluster_names: List[str], category: str, config: ConsolidationConfig
 ) -> str:
     """LLM generates ONE canonical name for a cluster."""
-    from enrichment.state import InputState
-    from enrichment.configuration import Configuration
     from enrichment import graph
+    from enrichment.configuration import Configuration
+    from enrichment.state import InputState
 
     prompt_text = f"""Given these variant names for a {category} stakeholder, provide the SINGLE most official/canonical name.
 
@@ -260,8 +259,7 @@ async def merge_with_llm_labels(
 async def consolidate_stakeholders(
     stakeholders: List[Dict], config: Optional[ConsolidationConfig] = None
 ) -> Dict:
-    """
-    Pipeline: Normalize → Embeddings → LLM Labels
+    """Pipeline: Normalize → Embeddings → LLM Labels
 
     Args:
         stakeholders: List of stakeholder dicts
@@ -312,10 +310,6 @@ async def consolidate_stakeholders(
         "stats": {
             "original_count": len(stakeholders),
             "consolidated_count": len(consolidated),
-            # "reduction_pct": round(
-            #     (1 - len(consolidated) / len(stakeholders)) * 100, 1
-            # ),
-            # "method": "normalize_embeddings_llm_labels",
             "embedding_threshold": config.embedding_threshold,
         },
     }
@@ -326,7 +320,7 @@ async def consolidate_from_file(
     input_file: str, config: Optional[ConsolidationConfig] = None
 ) -> Dict:
     """Load JSON, consolidate, return result (no file writing)."""
-    with open(input_file, "r", encoding="utf-8") as f:
+    with open(input_file, encoding="utf-8") as f:
         data = json.load(f)
 
     result = await consolidate_stakeholders(data["stakeholders"], config)
@@ -379,9 +373,7 @@ def main():
 
     # Stats dict
     print(f"\nConsolidated {result['stats']['consolidated_count']} stakeholders")
-    # print(f"   Reduced by {result['stats']['reduction_pct']}%")
     print(f"   Saved: {output_path}")
-    # print(f"   Method: Embeddings + LLM Labels (semantic, 92-95% recall)")
 
 
 if __name__ == "__main__":

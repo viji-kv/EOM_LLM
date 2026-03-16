@@ -1,4 +1,4 @@
-"""Stakeholder Hierarchy Pipeline - DYNAMIC LAYERS VERSION"""
+"""Stakeholder Hierarchy Pipeline - LLM Decides Hierarchy"""
 
 import argparse
 import asyncio
@@ -63,13 +63,6 @@ ECOSYSTEM_DISCOVERY_SCHEMA = {
                         "description": "Precise role of this layer in hierarchy",
                         "maxLength": 100,
                     },
-                    # "level": {
-                    #     "type": "integer",
-                    #     "minimum": 1,
-                    #     "maximum": 5,
-                    #     "description": "1 = top (macro), higher = lower in hierarchy",
-                    # },
-                    #   "criteria": {"type": "string", "maxLength": 100}
                 },
                 "required": ["name", "description"],
             },
@@ -257,9 +250,7 @@ RULES:
         response = extract_json_from_response(final_state.get("answer", "[]"))
         # print(f"final_state:{final_state}")
         layers = response.get("layers", [])
-        # print(f"layers:{layers}")
         assignments = response.get("assignments", [])
-        # print(f"assignments:{assignments}")
         logger.info(
             f"  Batch {batch_num}: {len(assignments)}/{len(stakeholders)} assigned, {len(layers)} layers"
         )
@@ -322,7 +313,6 @@ RULES:
             "roles": stakeholder.get("roles", {}),
             "relationships": stakeholder.get("relationships", []),
             "painpoints": stakeholder.get("painpoints", []),
-            # "layer": assignment.get("layer", "unassigned"),
             "layer_info": layer_map.get(normalize_key(assignment.get("layer", "")), {}),
             "parent": assignment.get("parent"),
             "reasoning": assignment.get("reasoning", ""),

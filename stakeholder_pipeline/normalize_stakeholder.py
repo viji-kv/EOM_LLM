@@ -1,8 +1,11 @@
+"""Helper to normalize stakeholder name"""
+
 import asyncio
-import openai  # Add if not present; assumes OPENAI_API_KEY in .env
-from typing import List, Dict, Any
-from dotenv import load_dotenv
 import json
+from typing import Any, Dict, List
+
+import openai  # Add if not present; assumes OPENAI_API_KEY in .env
+from dotenv import load_dotenv
 
 load_dotenv()
 

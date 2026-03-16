@@ -1,14 +1,17 @@
+"""Helper to consolidate stakeholder data.
+Used in dynamic heirarchy pipeline and macromicro pipeline
+"""
+
 import json
-from collections import defaultdict, Counter
-from typing import Dict, List, Any
-from stakeholder_pipeline.utils import save_output
+from collections import defaultdict
 from pathlib import Path
+from typing import Any, Dict, List
+
+from stakeholder_pipeline.utils import save_output
 
 
 def transform_stakeholder_data(input_data: Dict[str, Any]) -> List[Dict[str, Any]]:
-    """
-    Transform stakeholder data, extracting ALL roles from all_sources array.
-    """
+    """Transform stakeholder data, extracting ALL roles from all_sources array."""
     consolidated = input_data.get("consolidated_stakeholders", [])
     relationships = input_data.get("relationships", [])
     pain_points = input_data.get("pain_points", [])
@@ -93,7 +96,7 @@ if __name__ == "__main__":
     # Your original JSON data here
     input_file = "output/test_policy_output_relationship.json"
 
-    with open(input_file, "r", encoding="utf-8") as f:
+    with open(input_file, encoding="utf-8") as f:
         data = json.load(f)
     transformed = transform_stakeholder_data(data)
 

@@ -1,0 +1,30 @@
+stakeholder_name,level1_cluster_id,level1_cluster_label,level2_cluster_id,level2_cluster_label
+HKSAR Government,0,Policymakers,0,Governance Framework
+Chief Executive (Hong Kong),0,Policymakers,0,Governance Framework
+WHO,0,Policymakers,0,Governance Framework
+Hospital Authority,1,Healthcare Providers,1,Service Delivery
+Food and Health Bureau,0,Policymakers,0,Governance Framework
+Social Welfare Department,0,Policymakers,0,Governance Framework
+Department of Health,0,Policymakers,0,Governance Framework
+Older adults (50+ in HK),2,End Users,2,Community Stakeholders
+Family Caregivers,2,End Users,2,Community Stakeholders
+Elderly centres (DECC/NEC/S/E),3,Community Services,2,Community Stakeholders
+Elderly Commission,0,Policymakers,0,Governance Framework
+Census and Statistics Department,4,Data and Analytics,0,Governance Framework
+Hong Kong Jockey Club Charities Trust,5,Philanthropy,0,Governance Framework
+HKCSS,3,Community Services,2,Community Stakeholders
+District Councils,6,Local Governance,0,Governance Framework
+Labour and Welfare Bureau,0,Policymakers,0,Governance Framework
+Hong Kong Housing Authority,7,Housing,1,Service Delivery
+Hong Kong Housing Society,7,Housing,1,Service Delivery
+MTR Corporation,8,Transport,1,Service Delivery
+Franchised Bus Companies,8,Transport,1,Service Delivery
+Taxi Operators,8,Transport,1,Service Delivery
+Legislative Council (LegCo),0,Policymakers,0,Governance Framework
+Jockey Club Age-friendly City Project (JCAFC),5,Philanthropy,0,Governance Framework
+Non-governmental organizations (NGOs),3,Community Services,2,Community Stakeholders
+Foreign domestic helpers (FDHs),2,End Users,2,Community Stakeholders
+Private healthcare providers,1,Healthcare Providers,1,Service Delivery
+Private RCHE operators,7,Housing,1,Service Delivery
+Community care service providers,3,Community Services,2,Community Stakeholders
+eHRSS / eHealth,4,Data and Analytics,0,Governance Framework
